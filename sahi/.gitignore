@@ -1,0 +1,24 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+junittestrun.out
+classes/
+deploy/
+lib/
+temp/
+userdata/
+config/version.txt
+docs/java_client/
+temp
+
+.project
+!sahi/.project
+
+!sahi/extlib/*/*
+
+target/
+out/

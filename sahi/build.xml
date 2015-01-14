@@ -47,7 +47,7 @@
 			</classpath>
 		</javac>
 		<copy todir="${sahi.output.dir}/net/sf/sahi/resources">
-			<fileset dir="src/net/sf/sahi/resources" includes="*"/>
+			<fileset dir="src/main/resources" includes="*"/>
 		</copy>
 	</target>
 
