@@ -22,3 +22,5 @@ temp
 
 target/
 out/
+
+.idea/workspace.xml

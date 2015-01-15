@@ -1,6 +1,7 @@
 package net.sf.sahi.test;
 
 import junit.framework.TestCase;
+import org.junit.Test;
 
 /**
  * Sahi - Web Automation and Test Tool

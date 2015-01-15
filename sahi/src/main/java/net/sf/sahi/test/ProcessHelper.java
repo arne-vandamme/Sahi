@@ -2,11 +2,12 @@ package net.sf.sahi.test;
 
 import net.sf.sahi.util.OSUtils;
 import net.sf.sahi.util.Utils;
+import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.StringTokenizer;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Logger;
@@ -139,11 +140,24 @@ public class ProcessHelper
 		return newlyAdded;
 	}
 
+	private List<String> executeCommand( String command ) {
+		try {
+			Process p = Runtime.getRuntime().exec( Utils.getCommandTokens( command ) );
+
+			return IOUtils.readLines( p.getInputStream() );
+		}
+		catch ( IOException ioe ) {
+			throw new RuntimeException( ioe );
+		}
+	}
+
 	ArrayList<String> getPIDs() {
 		ArrayList<String> ar = new ArrayList<String>();
 		try {
 			String listCmd = OSUtils.getPIDListCommand().replaceAll( "\\$imageName", imageName );
-			Process p = Runtime.getRuntime().exec( Utils.getCommandTokens( listCmd ) );
+
+			List<String> lines = executeCommand( listCmd );
+/*
 			InputStream in = p.getInputStream();
 			StringBuffer sb = new StringBuffer();
 			byte c;
@@ -153,12 +167,13 @@ public class ProcessHelper
 			String output = sb.toString();
 			StringTokenizer tokenizer = new StringTokenizer( output, "\r\n" );
 			while ( tokenizer.hasMoreTokens() ) {
-				String line = tokenizer.nextToken();
+				String line = tokenizer.nextToken();*/
+			for ( String line : lines ) {
 				// System.out.println(line);
 				line = line.replaceAll( "\\s+", " " ).trim();
 				// System.out.println(line);
 				if ( line.equals( "" ) ) {
-					break;
+					continue;
 				}
 				StringTokenizer spaceTokenizer = new StringTokenizer( line );
 				int i = 0;
@@ -178,7 +193,7 @@ public class ProcessHelper
 				}
 			}
 		}
-		catch ( IOException e ) {
+		catch ( Exception e ) {
 			e.printStackTrace();
 		}
 

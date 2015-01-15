@@ -20,6 +20,8 @@ package net.sf.sahi.client;
 
 import net.sf.sahi.Proxy;
 import net.sf.sahi.config.Configuration;
+import org.junit.After;
+import org.junit.Before;
 
 public abstract class SahiTestCase
 {
@@ -33,6 +35,7 @@ public abstract class SahiTestCase
 
 	public abstract void setBrowser();
 
+	@Before
 	public void setUp() {
 		Configuration.initJava( sahiBasePath, userDataDirectory );
 
@@ -47,6 +50,7 @@ public abstract class SahiTestCase
 		browser.open();
 	}
 
+	@After
 	public void tearDown() {
 		browser.setSpeed( 100 );
 		browser.close();
