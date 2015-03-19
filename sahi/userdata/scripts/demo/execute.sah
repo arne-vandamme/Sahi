@@ -1,3 +1,14 @@
+<browser>
+	function getOS(){
+		var OSName="unknown OS";
+		var $appVersion = navigator.appVersion;
+		if ($appVersion.indexOf("Win")!=-1) OSName="Windows";
+		if ($appVersion.indexOf("Mac")!=-1) OSName="MacOS";
+		if ($appVersion.indexOf("X11")!=-1) OSName="UNIX";
+		if ($appVersion.indexOf("Linux")!=-1) OSName="Linux";
+		return OSName;
+	}
+</browser>
 function exists(dir){
 	var f = new java.io.File(dir);
 	return f.exists();
@@ -35,10 +46,17 @@ function testExecutionReturnsOutput(){
 
 function testCreateDeleteDir(){
 	var $dir = "test_execute";
-	_execute('cmd /C mkdir "' + $dir + '"', true);
+	_set($os, getOS());
+	if($os == "Windows")
+		_execute('cmd /C mkdir "' + $dir + '"', true);
+	else
+		_execute('mkdir "' + $dir + '"', true);
 	var $exists = exists($dir);
 	_assertTrue($exists);
-	_execute('cmd /C rmdir "' + $dir + '"', true);
+	if($os == "Windows")
+		_execute('cmd /C rmdir "' + $dir + '"', true);
+	else
+		_execute('rmdir "' + $dir + '"', true);
 	$exists = exists($dir);
 	_assertFalse($exists);
 }

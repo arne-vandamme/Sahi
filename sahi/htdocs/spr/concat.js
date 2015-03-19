@@ -7,7 +7,8 @@
 __sahiDebug__("concat.js: start");
 var Sahi = function(){
 	// if triggerType is set to mousedown, textbox _setValues will be recorded AFTER button clicks. Is wrong
-    this.triggerType = "click";
+    this.triggerType = "mouseup";
+    this.mouseDownEl = null; 
     this.cmds = new Array();
     this.cmdDebugInfo = new Array();
 
@@ -62,13 +63,14 @@ var Sahi = function(){
     this.ADs = [];
     this.controllerURL = "/_s_/spr/controller7.htm";
     this.controllerHeight = 550;
-    this.controllerWidth = 480
+    this.controllerWidth = 485;
     this.recorderClass = "Recorder";
     this.stabilityIndex = this.STABILITY_INDEX;
     this.xyoffsets = new Sahi.Dict();
     this.escapeUnicode = false;
     this.CHECK_REGEXP = /^\/.*\/i?$/;
-    this.navigator = {"userAgent": navigator.userAgent, "appName": navigator.appName};
+    //this.navigator = {"userAgent": navigator.userAgent, "appName": navigator.appName};
+    this.navigator = {"userAgent": navigator.userAgent, "appName": navigator.appName, "appVersion": navigator.appVersion};
     this.textboxTypes = ["text", "number", "password", "textarea", "date", "datetime", "datetime-local", "email", "month", "number", "range", "search", "tel", "time", "url", "week" ];
     this.isOREnabled = false;
     this.browserType = "";
@@ -811,6 +813,10 @@ Sahi.prototype.simulateDoubleClick = function (el, isRight, isDouble, combo) {
 	    this.simulateMouseEvent(el, "mouseover");
 	    this.simulateMouseEvent(el, "mousedown", isRight, false, combo);
 	    this.invokeLastBlur();
+	    if(this._isIE11Plus()){
+	    	this.simulateEvent(el, "beforeactivate");
+	    	this.simulateEvent(el, "activate");
+    	}
 	    if (this._isIE()) this.simulateEvent(el, "focusin");
 	    this.simulateMouseEvent(el, "focus");
 	    this.simulateMouseEvent(el, "mouseup", isRight, false, combo);
@@ -819,6 +825,9 @@ Sahi.prototype.simulateDoubleClick = function (el, isRight, isDouble, combo) {
 	    this.simulateMouseEvent(el, "mouseup", isRight, isDouble, combo);
 	    this.simulateMouseEvent(el, "click", isRight, isDouble, combo);
 	    this.simulateMouseEvent(el, "dblclick", isRight, isDouble, combo);
+	    if(this._isIE11Plus()){
+	    	this.simulateEvent(el, "deactivate");
+	    }
     } 
     if (callBlur){
 		this.setLastBlurFn(function(){
@@ -842,6 +851,7 @@ Sahi.prototype.simulateRightClick = function (el, isRight, isDouble, combo) {
 	    this.simulateMouseEvent(el, "mouseover");
 	    this.simulateMouseEvent(el, "mousedown", isRight, false, combo);
 	    this.invokeLastBlur();
+	    
 	    callBlur = this.isFocusableFormElement(el);
 	    if (callBlur)  {
 	    	this.simulateEvent(el, "focus");
@@ -853,10 +863,17 @@ Sahi.prototype.simulateRightClick = function (el, isRight, isDouble, combo) {
 	    this.simulateMouseEvent(el, "mouseover");
 	    this.simulateMouseEvent(el, "mousedown", isRight, false, combo);
 	    this.invokeLastBlur();
+	    if(this._isIE11Plus()){
+	    	this.simulateEvent(el, "beforeactivate");
+	    	this.simulateEvent(el, "activate");
+    	}
 	    this.simulateEvent(el, "focusin");
 	    this.simulateMouseEvent(el, "focus");
 	    this.simulateMouseEvent(el, "mouseup", isRight, false, combo);
 	    this.simulateMouseEvent(el, "contextmenu", isRight, false, combo);
+	    if(this._isIE11Plus()){
+	    	this.simulateEvent(el, "deactivate");
+    	}
     }
     if (callBlur){
 		this.setLastBlurFn(function(){
@@ -897,6 +914,10 @@ Sahi.prototype.simulateClick = function (el, isRight, isDouble, combo) {
     this.simulateMouseEvent(el, "mouseover");
     this.simulateMouseEvent(el, "mousedown", isRight, false, combo);
     this.invokeLastBlur();
+    if(this._isIE11Plus()){
+    	this.simulateEvent(el, "beforeactivate");
+    	this.simulateEvent(el, "activate");
+    }
     var focusBlur = this.isFocusableFormElement(el);
     if (focusBlur) {
     	if (this._isIE()) this.simulateEvent(el, "focusin");
@@ -938,6 +959,9 @@ Sahi.prototype.simulateClick = function (el, isRight, isDouble, combo) {
         	}
         }
     } catch(e) {
+    }
+    if(this._isIE11Plus()){
+    	this.simulateEvent(el, "deactivate");
     }
     if (focusBlur){
 		this.setLastBlurFn(function(){
@@ -987,7 +1011,7 @@ Sahi.prototype.simulateDragEventXY = function (el, type, x, y, dataTransfer, com
     var isAlt = combo.indexOf("ALT")!=-1;
     var isMeta = combo.indexOf("META")!=-1;
     
-    if (this._isIE()) {
+    if (this._isIE() && !this._isIE11Plus()) {
     	var evt = el.ownerDocument.createEventObject();
         evt.clientX = x;
         evt.clientY = y;
@@ -1022,7 +1046,7 @@ Sahi.prototype.simulateDragEventXY = function (el, type, x, y, dataTransfer, com
         dataTransfer
         );
         el.dispatchEvent(evt);
-    } else if (this._isChrome()) {
+    } else if (this._isChrome() || this._isIE11Plus()) {
         var evt = el.ownerDocument.createEvent("HTMLEvents");
         evt.initEvent(
         type,
@@ -1060,8 +1084,8 @@ Sahi.prototype.simulateMouseEventXY = function (el, type, x, y, isRight, isDoubl
 	            evt.initEvent(type, true, true);
 	            evt.clientX = x;
 	            evt.clientY = y;
-	            evt.pageX = x;
-	            evt.pageY = y;
+	            evt.pageX = x + this.getScrollOffsetX();
+	            evt.pageY = y + this.getScrollOffsetY();
 	            evt.screenX = x;
 	            evt.screenY = y;
 	            evt.button = isRight ? 2 : 0;
@@ -1083,8 +1107,8 @@ Sahi.prototype.simulateMouseEventXY = function (el, type, x, y, isRight, isDoubl
             true, //cancelable
             el.ownerDocument.defaultView, //view
             (isDouble ? 2 : 1), //detail
-            x, //screen x
-            y, //screen y
+            x + this.getScrollOffsetX(), //screen x
+            y + this.getScrollOffsetY(), //screen y
             x, //client x
             y, //client y
             isCtrl,
@@ -1097,11 +1121,11 @@ Sahi.prototype.simulateMouseEventXY = function (el, type, x, y, isRight, isDoubl
             el.dispatchEvent(evt);
         }
     } 
-    if (this.checkForDuplicateEventsOnIE9Plus(el, type)) {
+    if (this.checkForDuplicateEventsOnIE9Plus(el, type) && !this._isIE11Plus()) {
         // IE
         var evt = el.ownerDocument.createEventObject();
-        evt.clientX = x;
-        evt.clientY = y;
+        evt.clientX = x + this.getScrollOffsetX();
+        evt.clientY = y + this.getScrollOffsetY();
         evt.ctrlKey = isCtrl;
         evt.altKey = isAlt;
         evt.metaKey = isMeta;            
@@ -1135,7 +1159,46 @@ Sahi.prototype.addOffset = function(el, origin){
     }	
     return [x,y];
 }
-
+Sahi.prototype.isWindowAccessible = function(win) {
+	if (window == win) return true;
+	try {
+		var x = win.location.protocol;
+		if (x) return true;
+	} catch(e){e=null;}
+	return false;
+};
+Sahi.prototype._getSelectionText = function (win) {
+	if (!win) win = this.top();
+	if (this.isWindowAccessible(win)) {
+		var el = win.document.activeElement;
+		var selectedText = null;
+		if ((this._isFF() || this._isIE11Plus()) && el && ((this.findInArray(this.textboxTypes, el.type) != -1) || el.type == "textarea")) {
+			var startPos = el.selectionStart;
+			var endPos = el.selectionEnd;
+			selectedText = el.value.substring(startPos, endPos);
+		} else {
+			var userSelection;
+			if (win.getSelection && (!this._isIE9PlusStrictMode() || this._isIE11Plus()) ) {
+				userSelection = win.getSelection();
+			}
+			else if (win.document.selection) { 
+				userSelection = win.document.selection.createRange();
+			}
+			selectedText = userSelection;
+			if (userSelection.text != undefined)
+				selectedText = userSelection.text;
+			else 
+				selectedText = "" + userSelection;
+		}
+		if (!this.isBlankOrNull(selectedText)) return selectedText;
+	}
+	for (var i=0; i<win.frames.length; i++) {
+		var f = win.frames[i];
+		var t = this._getSelectionText(f);
+		if (!this.isBlankOrNull(t)) return t;
+	}
+	return "";
+}
 Sahi.pointTimer = 0;
 Sahi.prototype._highlight = function (el) {
 	if (this.isFlexObj(el)) return el.highlight();
@@ -1307,6 +1370,7 @@ Sahi.prototype._setValue = function (el, val) {
 	this.invokeLastBlur();
 	this.setValue(el, val);
 };
+
 Sahi.prototype.shouldAppend = function (el) {
 	return !((this._isFF() && !this._isFF4Plus() && !this._isHTMLUnit()) || el.readOnly || el.disabled);
 }
@@ -1318,19 +1382,27 @@ Sahi.prototype.setValue = function (el, val) {
 //    try{
 //    	this.getWindow(el).focus();
 //    }catch(e){}
-    if (this._isIE()) this.simulateEvent(el, "focusin");
+    if (this._isIE()) { 
+    	
+    	el.setActive();
+    	this.simulateEvent(el, "focusin");
+    }
     this.simulateEvent(el, "focus");
-    
     val = "" + val;
     var ua = this.navigator.userAgent.toLowerCase();
     if (ua.indexOf("windows") != -1) {
     	val = val.replace(/\r/g, '');
     	if (!this._isFF() || this._getFFVersion() >= 12) val = val.replace(/\n/g, '\r\n');
-    } 
+    } else if (ua.indexOf("macintosh")) {
+		val = val.replace(/\r\n/g, '\r');
+		val = val.replace(/\n/g, '\r');
+	} else if (ua.indexOf("linux") != -1){
+		val = val.replace(/\r\n/g, '\n');
+		val = val.replace(/\r/g, '\n');
+	}
     var prevVal = el.value;
     //if (!window.document.createEvent) el.value = val;
     if (this._isFF4Plus()) this._focus(el); // test with textarea.sah
-
     if (el.type && (el.type == "hidden")){
     	el.value = val;    
     	return;
@@ -1353,15 +1425,43 @@ Sahi.prototype.setValue = function (el, val) {
     var triggerOnchange = prevVal != val;
     this.setLastBlurFn(function(){
     	try{
-    		// on IE9, sequence is change, focusout, blur
+    		// on IE9, sequence is change, deactivate, focusout, blur
+    		// others change, blur, focusout
     	    if (triggerOnchange) {
     	        if (!_sahi._isFF3()) 
     	        	_sahi.simulateEvent(el, "change"); 		
     	    }     		
-    		if (_sahi._isIE()) _sahi.simulateEvent(el, "focusout");
+    		if (_sahi._isIE()) {
+    			_sahi.simulateEvent(el, "deactivate");
+    			_sahi.simulateEvent(el, "focusout");
+    		}
+    		if (_sahi._isIE()) {
+    			el.blur(); 
+    		} 
     		_sahi.simulateEvent(el, "blur");
+    		if (!_sahi._isIE()) _sahi.simulateEvent(el, "focusout");
     	}catch(e){}
     });
+};
+Sahi.prototype._setFile = function (el, v, url) {
+	if (v == null) return;
+    if (!url) {
+    	url = (!el.form || this.isBlankOrNull(el.form.action) || (typeof el.form.action != "string")) ? this.getWindow(el).location.href : el.form.action;
+	    if (url && (q = url.indexOf("?")) != -1) url = url.substring(0, q);
+	    if (url.indexOf("http") != 0) {
+	        var loc = window.location;
+	        if (url.indexOf("/") == 0){
+	            url = loc.protocol+ "//" +  loc.hostname + (loc.port ? (':'+loc.port) : '') + url;
+	        }else{
+	            var winUrl = loc.href;
+	            url = winUrl.substring(0, winUrl.lastIndexOf ('/') + 1) + url;
+	        }
+	    }
+    }
+    var msg = this._callServer("FileUpload_setFile", "n=" + el.name + "&v=" + this.encode(v) + "&action=" + this.encode(url));
+    if (msg != "true") {
+    	throw new Error(msg);
+    }
 };
 Sahi.prototype._setFile2 = function (el, v, url) {
 	this._setFile(el, v, url);
@@ -1380,29 +1480,11 @@ Sahi.prototype._setFile2 = function (el, v, url) {
 		this._blur(el);
 	}
 }
-Sahi.prototype._setFile = function (el, v, url) {
-	if (v == null) return;
-    if (!url) url = (!el.form || this.isBlankOrNull(el.form.action) || (typeof el.form.action != "string")) ? this.getWindow(el).location.href : el.form.action;
-    if (url && (q = url.indexOf("?")) != -1) url = url.substring(0, q);
-    if (url.indexOf("http") != 0) {
-        var loc = window.location;
-        if (url.indexOf("/") == 0){
-            url = loc.protocol+ "//" +  loc.hostname + (loc.port ? (':'+loc.port) : '') + url;
-        }else{
-            var winUrl = loc.href;
-            url = winUrl.substring(0, winUrl.lastIndexOf ('/') + 1) + url;
-        }
-    }
-    var msg = this._callServer("FileUpload_setFile", "n=" + el.name + "&v=" + this.encode(v) + "&action=" + this.encode(url));
-    if (msg != "true") {
-    	throw new Error(msg);
-    }
-};
-
 Sahi.prototype.simulateEvent = function (target, evType) {
-//    if (!this._isIE() || this._isIE9PlusStrictMode()) { // fix for tramada IE9 onchange not triggered.
-	var useCreateEvent = !this._isIE() || this._isIE9PlusStrictMode();
-	var useCreateEventObject = this._isIE();
+	// fix for tramada IE9 onchange not triggered.
+	// IE9 in strict mode requires both useCreateEvent and useCreateEventObject
+	var useCreateEvent = !this._isIE() || this._isIE11Plus(); // IE 9 in strict mode or any non IE browser
+	var useCreateEventObject = this._isIE() && !this._isIE11Plus();
     if (useCreateEvent) {
         var evt = new Object();
         evt.type = evType;
@@ -1477,7 +1559,7 @@ Sahi.prototype.simulateKeyEvent = function (codes, target, evType, combo) {
             target.dispatchEvent(event);
         }
     } 
-    if (this._isIE()) { // IE
+    if (this._isIE() && !this._isIE11Plus()) { // IE
         var evt = target.ownerDocument.createEventObject();
         evt.type = evType;
         evt.bubbles = true;
@@ -1822,7 +1904,8 @@ Sahi.prototype._getTextNoTrim = function (el) {
     		return this.getSelectBoxText(el, false);
     	}
     }
-    if (this._isIE() || this.isSafariLike()) return el.innerText;
+//    if (this._isIE() || this.isSafariLike()) return el.innerText;
+    if (this._isIE() || (this.isSafariLike() && !this._isChrome())) return el.innerText || el.textContent || "";
     var html = el.innerHTML;
     if (!html) return el.textContent; // text nodes
     if (html.indexOf("<br") == -1 && html.indexOf("<BR") == -1) return el.textContent;
@@ -2349,31 +2432,36 @@ Sahi.prototype.getBlankResult = function () {
     res.element = null;
     return res;
 };
-Sahi.prototype.getArrayNameAndIndex = function (id) {
-    var o = new Object();
-    if (!(id instanceof RegExp)) {
-    	if (typeof id == "object") {
-    		o.index = (id.sahiIndex != null) ? id.sahiIndex : -1;
-    		o.name = {};
-    		for (var k in id) {
-    			if (k != "sahiIndex") o.name[k] = this.checkRegex(id[k]);
-    		}
-    		return o;
-    	} else {
-	    	var m = id.match(/(.*)\[([0-9]*)\]$/);
-	    	if (m){
-		        o.name = this.checkRegex(m[1]);
-		        o.index = m[2];
-		        return o;
-	    	}
-    	}
-    }
-	o.name = this.checkRegex(id);
+Sahi.prototype.getArrayNameAndIndex = function (id, makeRegexGlobal) {
+	var o = new Object();
+	if (!(id instanceof RegExp)) {
+		if (typeof id == "object") {
+			o.index = (id.sahiIndex != null) ? id.sahiIndex : -1;
+			o.name = {};
+			for (var k in id) {
+				if (k != "sahiIndex") o.name[k] = this.checkRegex(id[k], makeRegexGlobal);
+			}
+			return o;
+		} else {
+			var m = id.match(/(.*)\[([0-9]*)\]$/);
+			if (m){
+				o.name = this.checkRegex(m[1], makeRegexGlobal);
+				o.index = m[2];
+				return o;
+			}
+		}
+	}
+	o.name = this.checkRegex(id, makeRegexGlobal);
 	o.index = -1;
-    return o;
+	return o;
 };
-Sahi.prototype.checkRegex = function(s){
-	return ((typeof s) == "string" && s.match(this.CHECK_REGEXP)) ?  eval(s) : s;
+Sahi.prototype.checkRegex = function(s, makeRegexGlobal){
+	try{
+		return ((typeof s) == "string" && s.match(this.CHECK_REGEXP)) ?  eval(s + ((!s.match(/\/i$/))?"i":"") + (makeRegexGlobal?"g":"")) : s;
+	}
+	catch(e){
+		return s;
+	}
 };
 Sahi.prototype.findInForms = function (id, win, type) {
     var fms = win.document.forms;
@@ -2650,7 +2738,7 @@ Sahi.prototype.recordStep = function (step, OREntry, fromController) {
 	if (!fromController) this.showStepsInController(step, true);
 	var recordQS = 'step=' + this.encode(step) + (OREntry ? "&orname=" + this.encode(OREntry["name"]) + "&orvalue=" 
 	               + this.encode(OREntry["value"]) : "");
-	this.sendToServer('/_s_/dyn/' + this.recorderClass + '_record?' + recordQS, true);
+	this.sendToServer('/_s_/dyn/' + this.recorderClass + '_record?' + recordQS, false);
 }
 Sahi.prototype.isRecording = function () {
     if (this.topSahi()._isRecording == null)
@@ -2705,13 +2793,17 @@ var SahiNotMyDomainException = function (n) {
         this.message = "Base domain not found!";
     }
 };
+Sahi.prototype.onMouseDownEv = function (e) {
+	var targ = this.getKnownTags(this.getTarget(e));
+	this.mouseDownEl = targ;
+}
 Sahi.prototype.onEv = function (e) {
     if (e.handled == true) return; //FF
 //    if (this.doNotRecord || this.getServerVar("sahiEvaluateExpr") == true) return;
     if (this.doNotRecord) return;
     var targ = this.getKnownTags(this.getTarget(e));
     if (targ.id && targ.id.indexOf("_sahi_ignore_") != -1) return;
-    if (e.type == this.triggerType) {
+    if (e.type == this.triggerType || e.type == "click") {
         if (targ.type) {
             var type = targ.type;
             if (type == "text" || type == "textarea" || type == "password"
@@ -2725,7 +2817,14 @@ Sahi.prototype.onEv = function (e) {
 	var script = this.getScript(ids, targ, e.type, e);
 	if (script == null) return;
 	if (this.hasEventBeenRecorded(script)) return; //IE
-	this.recordStep(script, OREntry);
+	if(e.type == this.triggerType){
+		if(targ == this.mouseDownEl){
+			this.recordStep(script, OREntry);
+		}
+	}
+	else{
+		this.recordStep(script, OREntry);
+	}
 	//this.sendIdsToController(elInfo, "RECORD");
     e.handled = true;
     //this.showInController(ids[0]);
@@ -2897,6 +2996,7 @@ Sahi.prototype.attachEvents = function (el) {
 Sahi.prototype.attachFormElementEvents = function (el) {
     var type = el.type;
     var wrapped = this.wrappedOnEv; 
+    var wrappedOnMouseDown = this.wrappedOnMouseDownEv;
     if (el.onchange == wrapped || el.onblur == wrapped || el.onclick == wrapped) return;
     if (type == "text" || type == "file" || type == "textarea" || type == "password") {
         this.addEvent(el, "change", wrapped);
@@ -2905,13 +3005,19 @@ Sahi.prototype.attachFormElementEvents = function (el) {
         this.addEvent(el, "change", wrapped);
     } else if (type == "button" || type == "submit" || type == "reset" || type == "checkbox" || type == "radio" || type == "image") {
         this.addEvent(el, this.triggerType, wrapped);
+        this.addEvent(el, "dblclick", wrapped);
+        this.addEvent(el, "mousedown", wrappedOnMouseDown);
     }
     this.addEvent(el, "contextmenu", wrapped);
 };
 Sahi.prototype.attachLinkEvents = function (el) {
+	this.addWrappedEvent(el, "mousedown", this.onMouseDownEv);
     this.addWrappedEvent(el, this.triggerType, this.onEv);
+    this.addWrappedEvent(el, "dblclick", this.onEv);
 };
 Sahi.prototype.attachImageEvents = function (el) {
+	this.addWrappedEvent(el, "mousedown", this.onMouseDownEv);
+	this.addWrappedEvent(el, "click", this.onEv);
     this.addWrappedEvent(el, this.triggerType, this.onEv);
     this.addWrappedEvent(el, "contextmenu", this.onEv);
 };
@@ -3340,29 +3446,46 @@ Sahi.prototype.skipTill = function(n){
 };
 // This is needed for non Sahi drivers.
 Sahi.prototype.ping = function () {
-	if (this.controllerMode == "sahi") return;
-	if (!this.pinger){
-		this.pinger = this.createRequestObject();
-		this.pinger.onreadystatechange = function(){
-			 if(this.readyState==4){
-			    	try{
-				    	if ( this.status == 200 ){
-				    		var s = this.responseText;
-				    		var obj = eval("(" + s + ")");
-//				    		alert(s);
-				    		_sahi.setState(obj);
-				    		window.setTimeout("_sahi.ping()", 1000);
-				    	}else{
-				    		//_sahi._alert( "HTTP "+req.status+".  An error was encountered: "+ req.statusText );
-				    	}	
-			    	}catch(e){
-			    		//throw(e);
-			    	}
-				}	
+	try {
+		_sahi.pingTimer = window.setTimeout(function(){_sahi.ping()}, 5000); // as backup
+		// Should be top window, or first frame of particular domain
+		var topWin = this.top();
+		if (topWin != window) { // not top window, or first frame of particular domain
+			// if frame domain is same as _sahi_top, stop pinging totally
+			if (topWin == _sahi_top) {
+				if (_sahi.pingTimer) window.clearTimeout(_sahi.pingTimer); // remove backup		
+				return;
+			}
+			// cancel ping
+			this.pingReset();
+			return;
+		}
+		try {
+		if (this._isChrome() && window.document.readyState == "complete") {
+			this.onWindowLoad();
+		}}catch(e){}
+		var pinger = this.createRequestObject();
+		pinger.onreadystatechange = function(){
+			if(pinger.readyState==4){
+		    	try{
+			    	if (pinger.status == 200){
+			    		var s = pinger.responseText;
+			    		var obj = window.eval("(" + s + ")");
+			    		_sahi.pingCallback(obj);
+			    	}else{
+//				    	_sahi._alert( "HTTP "+req.status+".  An error was encountered: "+ req.statusText );
+			    	}	
+		    	}catch(e){
+//			    	console.log(e);
+		    	}
+			}	
 		}	
-	}
-	this.pinger.open("GET", "/_s_/dyn/SessionState_ping", true);
-	this.pinger.send(null);	
+		pinger.open("POST", this.makeFullURL("/_s_/dyn/SessionState_ping"), true);
+		var rand = (new Date()).getTime() + Math.floor(Math.random() * (10000));
+		pinger.send("sahisid=" + encodeURIComponent(this.sid) + "&t=" + encodeURIComponent(rand) + "&" + this.getWindowDomainQS());
+	} catch (e) {
+//		console.log(e);
+	} 
 }
 Sahi.prototype.setState = function(o){
 	if (this.topSahi()._isRecording != o.isRecording){
@@ -3424,6 +3547,10 @@ Sahi.prototype.ex = function (isStep) {
             //this.stopPlaying();
             return;
             }
+        }
+        if (this.waitForLoad == 0) {
+        	this._log("Page has not loaded. Proceeding further due to timeout.", "CUSTOM");
+        	this.waitForLoad  = -1; // reduce it further so that it does not come into this if condition again. Happens on error.
         }
         var step = stepInfo['step'];
         // this._debug(this.getPopupName() + "::" + type+"::"+ new Date());
@@ -3842,11 +3969,18 @@ Sahi.prototype.findInArray = function (ar, el) {
     }
     return -1;
 };
-Sahi.prototype._isIE = function () {return this.navigator.appName == "Microsoft Internet Explorer";}
+Sahi.prototype._isIE = function () {return this.navigator.appName == "Microsoft Internet Explorer" || (this.navigator.appVersion && this.navigator.appVersion.indexOf("Trident") != -1);}
+Sahi.prototype._isIE6 = function () {return /MSIE 6[.]/.test(this.navigator.userAgent);};
+Sahi.prototype._isIE7 = function () {return /MSIE 7[.]/.test(this.navigator.userAgent);};
 Sahi.prototype._isIE8 = function () {return /MSIE 8[.]/.test(this.navigator.userAgent);};
 Sahi.prototype._isIE9 = function () {return /MSIE 9[.]/.test(this.navigator.userAgent);};
+Sahi.prototype._isIE10 = function () {return /MSIE 10[.]/.test(this.navigator.userAgent);};
+Sahi.prototype._isIE11 = function () {return !this._isChrome() && this._isIE() && document.documentMode==11;};
+Sahi.prototype._isIE11Plus = function () {return !this._isChrome() && this._isIE() && document.documentMode>=11;};
 Sahi.prototype._isIE9Plus = function () {return this._isIE() && !(/MSIE [0-8][.]/.test(this.navigator.userAgent));};
+Sahi.prototype._isIE9StrictMode = function () {return this._isIE() && document.documentMode==9;};
 Sahi.prototype._isIE9PlusStrictMode = function () {return this._isIE() && document.documentMode>=9;};
+
 Sahi.prototype._isFF2 = function () {return /Firefox\/2[.]|Iceweasel\/2[.]|Shiretoko\/2[.]/.test(this.navigator.userAgent);};
 Sahi.prototype._isFF3 = function () {return /Firefox\/3[.]|Iceweasel\/3[.]|Shiretoko\/3[.]/.test(this.navigator.userAgent);};
 Sahi.prototype._isFF4 = function () {return /Firefox\/4[.]|Iceweasel\/4[.]|Shiretoko\/4[.]/.test(this.navigator.userAgent);};
@@ -4019,7 +4153,7 @@ Sahi.prototype.onWindowLoad = function (e){
     if (this.self() == this.top()) {
     	__sahiDebug__("onWindowLoad: this.self() == this.top(), play()");
         this.play();
-        this.ping();
+        //this.ping();
     }
     if (this.isRecording()) {
     	__sahiDebug__("init: isRecording() addHandlersToAllFrames");
@@ -4061,6 +4195,7 @@ Sahi.prototype.init = function (e) {
 	__sahiDebug__("init: before isHTMLUnit");
     
     this.wrappedOnEv = this.wrap(this.onEv);
+    this.wrappedOnMouseDownEv = this.wrap(this.onMouseDownEv);
 //	this.isHTMLUnit = this._isHTMLUnit();
 //    alert("Cookies: " + document.domain + " " + document.cookie);
 //    this.listen();    
@@ -4120,6 +4255,157 @@ Sahi.prototype.isRecordabeKeyDown = function (el, e){
 		|| k == 27
 		|| k == 13);
 		
+}
+Sahi.prototype.getDocumentNode = function(el) {
+	if (el.tagName.toLowerCase() == 'iframe') {
+		el = el.contentWindow.document.body;
+	} else if (this.isWindow(el)) {
+		el = el.document.body;
+	}	
+	return el;
+}
+Sahi.prototype._selectTextRange = function(el, text, type) {
+	this.checkNull(el, "_selectTextRange");
+	var start = 0;
+	var end = 0;
+	var el = this.getDocumentNode(el);
+	if (this.findInArray(this.textboxTypes, el.type) != -1  || el.type == "textarea") {
+		var s = el.value;
+	} else {
+		var s = el.textContent;		
+	}
+	if (s) {
+		var ixes = this.getStartEndIndexes(text, s);
+		start = ixes[0];
+		end = ixes[1];
+	}
+	this._selectRange(el, start, end, type);
+	
+}
+Sahi.prototype.getTextNodesIn = function(node) {
+	var textNodes = [];
+	if (node.nodeType == 3) {
+		textNodes.push(node);
+	} else {
+		var children = node.childNodes;
+		for ( var i = 0, len = children.length; i < len; ++i) {
+			textNodes.push.apply(textNodes, this.getTextNodesIn(children[i]));
+		}
+	}
+	return textNodes;
+}
+Sahi.prototype.getStartEndIndexes = function(searchFor, searchIn) {
+	var start = -1;
+	var end = -1;
+    var o = this.getArrayNameAndIndex(searchFor, true);
+    var ix = o.index;
+    var toMatch = o.name;
+    if (ix == -1) ix = 0;
+	if (toMatch instanceof RegExp) {
+		var res = null;
+		for (var i=0; i<=ix; i++) {
+			res = toMatch.exec(searchIn);
+			if (res == null) break;
+		}
+		if (res) {
+			start = res.index;
+			end = toMatch.lastIndex;
+		}
+		
+	} else {
+		var startIx = -1;
+		for (var i=0; i<=ix; i++) {
+			startIx = searchIn.indexOf(toMatch, startIx+1);
+			if (startIx == -1) break;
+		}
+		if (startIx != -1) {
+			start = startIx;
+			end = start + toMatch.length;						
+		}
+	}
+	return [start, end];
+}
+Sahi.prototype._selectRange = function(el, start, end, type) {
+	if (start == -1 || end == -1) return;
+	if (type == "after") start = end;
+	this.checkNull(el, "_selectRange");
+	var el = this.getDocumentNode(el);
+	var win = this.getWindow(el);
+	if (this.findInArray(this.textboxTypes, el.type) != -1  || el.type == "textarea") {
+		if (type == "before") end = start;
+		if (el.createTextRange) {
+			// IE10
+			var selRange = el.createTextRange();
+			selRange.collapse(true);
+			selRange.moveStart('character', start);
+			if (this._isIE()) end = end - start;
+			selRange.moveEnd('character', end);
+			selRange.select();
+			el.focus();
+		} else if (typeof el.selectionStart != 'undefined') {
+			el.selectionStart = start;
+			el.selectionEnd = end;
+			el.focus();
+		} else if (el.setSelectionRange) {
+			el.focus();
+			el.setSelectionRange(start, end);
+		}
+		return;
+	}
+	
+	if (document.createRange && window.getSelection) {
+		var range = win.document.createRange();
+		range.selectNodeContents(el);
+
+		var textNodes = this.getTextNodesIn(el);
+		var foundStart = false;
+		var charCount = 0, endCharCount;
+
+		for ( var i = 0, textNode; textNode = textNodes[i++];) {
+			endCharCount = charCount + textNode.length;
+
+			if (!foundStart
+					&& start >= charCount
+					&& (start < endCharCount || (start == endCharCount && i < textNodes.length))) {
+				if (type == "before") {
+					if (start - charCount == textNode.length && end != start) {
+						if (i+1 < textNodes.length) {
+							var nextTextNode = textNodes[i];
+							range.setStartBefore(nextTextNode);
+							range.setEnd(nextTextNode, 0);
+							range.collapse(true);
+							break;
+						}
+					}
+					range.setStart(textNode, start - charCount);
+					range.setEnd(textNode, start - charCount);
+					break;
+				}
+				range.setStart(textNode, start - charCount);
+				foundStart = true;
+			}
+
+			if (foundStart && end <= endCharCount) {
+				range.setEnd(textNode, end - charCount);
+				break;
+			}
+
+			charCount = endCharCount;
+		}
+
+		var sel = win.getSelection();
+
+		sel.removeAllRanges();
+		sel.addRange(range);
+	} else if (document.selection && document.body.createTextRange) {
+		var textRange = this.getWindow(el).document.body.createTextRange();
+
+		textRange.moveToElementText(el);
+		textRange.collapse(true);
+		textRange.moveEnd('character', end);
+		textRange.moveStart('character', start);
+		textRange.select();
+	}
 }
 Sahi.prototype.getScript = function (infoAr, el, evType, e) {
 	var info = infoAr[0];
@@ -4626,11 +4912,10 @@ Sahi.prototype._leftOf = function(el, offset){
 	var alignYOuter = alignY + el.offsetHeight;
 	var w = el.offsetWidth;
 	var limitX = xy[0];
-	var leftOffset = offset == null ? 0 : offset;
-
+	offset = this.fixOffset(offset);
 	return {"element":el, "relation":"_leftOf", "type": "position", 
-		alignY: (alignY - leftOffset),
-		alignYOuter: (alignYOuter + leftOffset),
+		alignY: (alignY - offset[0]),
+		alignYOuter: (alignYOuter + offset[1]),
 		limitX: limitX};
 };
 
@@ -4642,11 +4927,11 @@ Sahi.prototype._rightOf = function(el, offset){
 	var alignYOuter = alignY + el.offsetHeight;
 	var w = el.offsetWidth;
 	var limitX = xy[0] + (isNaN(w) ? 0 : w/2);
-	var rightOffset = offset == null ? 0 : offset;
 
+	offset = this.fixOffset(offset);
 	return {"element":el, "relation":"_rightOf", "type": "position", 
-		alignY: (alignY - rightOffset),
-		alignYOuter: (alignYOuter + rightOffset),
+		alignY: (alignY - offset[0]),
+		alignYOuter: (alignYOuter + offset[1]),
 		limitX: limitX};
 };
 
@@ -4655,11 +4940,10 @@ Sahi.prototype._leftOrRightOf = function(el, offset){
 
 	var alignY = this.getLeftTop(el)[1];
 	var alignYOuter = alignY + el.offsetHeight;
-	var rightOffset = offset == null ? 0 : offset;
-
+	offset = this.fixOffset(offset);
 	return {"element":el, "relation":"_rowOf", "type": "position", 
-		alignY: (alignY - rightOffset),
-		alignYOuter: (alignYOuter + rightOffset)};
+		alignY: (alignY - offset[0]),
+		alignYOuter: (alignYOuter + offset[1])};
 };
 Sahi.prototype._aboveOrUnder = function(el, offset){
 	this.checkNull(el, "_aboveOrUnder");
@@ -4672,6 +4956,14 @@ Sahi.prototype._aboveOrUnder = function(el, offset){
 		alignX: (alignX - aboveOffset),
 		alignXOuter: (alignXOuter + aboveOffset)};
 };
+
+Sahi.prototype.fixOffset = function(offset){
+	if (offset == null) offset = [0,0];
+	else if (typeof offset == 'number') {
+		offset = [offset, offset];
+	}
+	return offset;
+}
 
 Sahi.prototype._xy = function(el, x, y){
 	this.checkNull(el, "_xy");
@@ -4978,8 +5270,9 @@ Sahi.prototype.prepareADs = function(){
 	this.addAD({tag: "INPUT", type: "time", event:"change", name: "_timebox", attributes: ["name", "id", "index", "className"], action: "_setValue", value: "value"});
 	this.addAD({tag: "INPUT", type: "url", event:"change", name: "_urlbox", attributes: ["name", "id", "index", "className"], action: "_setValue", value: "value"});
 	this.addAD({tag: "INPUT", type: "week", event:"change", name: "_weekbox", attributes: ["name", "id", "index", "className"], action: "_setValue", value: "value"});
-
-	
+	this.addAD({tag: "FIELDSET", type: null , event:"", name: "_fieldset", attributes: ["name", "id", "className",this.getAssociatedLegendName, "index", "disabled"], action: "", value: "sahiText"});
+	this.addAD({tag: "IFRAME", type: null, event:"", name: "_iframe", attributes: ["id", "name", "className", "index"], action: "", value: ""});
+	this.addAD({tag: "FRAME", type: null, event:"", name: "_frame", attributes: ["id", "name", "className", "index"], action: "", value: ""});
 	
 	this.addAD({tag: "SELECT", type: null, event:"change", name: "_select", attributes: ["name", "id", "index", "className"], action: "_setSelected", value: function(el){return _sahi._getSelectedText(el) || _sahi.getOptionId(el, el.value) || el.value;},
 		assertions: function(value){return [_sahi.language.ASSERT_SELECTION];}});	
@@ -5005,7 +5298,8 @@ Sahi.prototype.prepareADs = function(){
 	this.addAD({tag: "BLOCKQUOTE", type: null, event:"click", name: "_blockquote", attributes: ["sahiText", "id", "className", "index"], action: "_click", value: "sahiText"});
 	this.addAD({tag: "CANVAS", type: null, event:"click", name: "_canvas", attributes: ["sahiText", "id", "className", "index"], action: "_click", value: "sahiText"});
 	this.addAD({tag: "ABBR", type: null, event:"click", name: "_abbr", attributes: ["encaps_A", "sahiText", "title", "id", "className", "index"], action: "_click", value: "sahiText"});
-
+	this.addAD({tag: "HR", type: null, event:"click", name: "_hr", attributes: ["id", "className", "index"], action: "_click", value: ""});
+	this.addAD({tag: "FONT", type: null, event:"none", name: "_font", attributes: ["sahiText", "color", "face", "size"], action: "none", value: ""});
 	var o_fn1 = function(o){try{return o._sahi_getFlexId();}catch(e){}};
 	var o_fn2 = function(o){try{return o._sahi_getUID();}catch(e){}};
 	this.addAD({tag: "OBJECT", type: null, event:"click", name: "_object", attributes: ["id", "name", "data", o_fn1, o_fn2], action: "_click", value: ""});

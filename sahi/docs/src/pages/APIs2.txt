@@ -11,7 +11,7 @@ Simple case where links are uniquely identifiable:
 For example, 
 
 <div id="link_container">
-<a href="http://sahi.co.in" id="sahi_link">Link to Sahi website</a> <img src="add.gif" id="my_img">
+<a href="http://sahipro.com" id="sahi_link">Link to Sahi website</a> <img src="add.gif" id="my_img">
 </div>
 
 can be represented in the following ways:

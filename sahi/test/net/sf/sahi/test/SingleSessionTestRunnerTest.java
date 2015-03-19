@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 public class SingleSessionTestRunnerTest extends TestCase {
 	private static final long serialVersionUID = 4687325716286230955L;
 	private String browserType = "firefox";
-	private String base = "http://sahi.co.in/demo/";
+	private String base = "http://sahipro.com/demo/";
 	
 	public void testSingleBrowserSession() throws Exception {
 

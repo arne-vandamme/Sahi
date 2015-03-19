@@ -82,7 +82,7 @@ public class Session {
 
 	private Map<String, Object> objectVariables = new HashMap<String, Object>();
 	private boolean is204;
-	static double playbackInactiveTimeout = Configuration.getMaxInactiveTimeForScript() * 1.5;
+	static double playbackInactiveTimeout = Configuration.getMaxPageLoadTime() * 1.5;
 	static double recorderInactiveTimeout = 20 * 60 * 1000; // 20 minutes
 	
 	static {

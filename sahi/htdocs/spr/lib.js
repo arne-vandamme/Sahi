@@ -365,13 +365,16 @@ Sahi.prototype.schedule2 = function(cmd, debugInfo, cycles, stepType, throwExcep
         	if (ScriptRunner.needsStackTrace()) {
         		ScriptRunner.setStackTrace(this.getSahiScriptStackTrace());
         	}
+        	ScriptRunner.getSession().touch(); // prevent timeout in long waits
             this.wait(this.stepInterval);
         }
     }
     if (throwException){
 	    var msg = "Step >" + cmd + "< did not complete in "+(this.maxTimeout/1000)+" seconds.";
 	    this.print(msg);
-	    throw new SahiException(msg, debugInfo);
+	    var exc = new SahiException(msg, debugInfo);
+	    exc.isBrowserNotResponding = true;
+	    throw exc;
     }else{
     	var resultType = (stepType == "NO_LOG") ? "NO_LOG" : "INFO";
     	ScriptRunner.markStepDoneFromLib(""+this.lastId, resultType, null);
@@ -445,10 +448,13 @@ Sahi.prototype._writeFile = function (str, filePath, overwrite) {
 };
 Sahi.prototype._writeToFile = Sahi.prototype._writeFile;
 Sahi.prototype._deleteFile = function (filePath) {
-	return "" + Packages.net.sf.sahi.util.Utils.deleteFile(filePath) == "true";
+	var absolutePath = this._resolvePath(filePath);
+	return "" + Packages.net.sf.sahi.util.Utils.deleteFile(absolutePath) == "true";
 };
 Sahi.prototype._renameFile = function (oldPath, newPath) {
-	return "" + Packages.net.sf.sahi.util.FileUtils.renameFile(oldPath, newPath) == "true";
+	var absoluteOldPath = this._resolvePath(oldPath);
+	var absoluteNewPath = this._resolvePath(newPath);
+	return "" + Packages.net.sf.sahi.util.FileUtils.renameFile(absoluteOldPath, absoluteNewPath) == "true";
 };
 Sahi.prototype._scriptStatus = function(){
 	return ScriptRunner.hasErrors() ? "FAILURE" : "SUCCESS";
@@ -583,13 +589,16 @@ Sahi.dB = function (driver, jdbcurl, username, password) {
 		this.usingProps = true;
 		this.props = username;
 	}
-    this.select = function (sql, includeHeader) {
-        var dbclient = new Packages.net.sf.sahi.plugin.DBClient();
+	this.getDBClient = function() {
         if (this.usingProps) {
-        	var json = dbclient.select(this.driver, this.jdbcurl, this.props, sql);        	
+        	return new Packages.net.sf.sahi.plugin.DBClient(this.driver, this.jdbcurl, this.props);        	
         } else {
-        	var json = dbclient.select(this.driver, this.jdbcurl, this.username, this.password, sql);
+        	return new Packages.net.sf.sahi.plugin.DBClient(this.driver, this.jdbcurl, this.username, this.password);
         }
+	}
+	this.select = function (sql, includeHeader) {
+		var dbclient = this.getDBClient();
+		var json = dbclient.select(sql);
         if (json.indexOf("exception") == 0) {
         	throw new SahiException(json);
         }
@@ -605,13 +614,8 @@ Sahi.dB = function (driver, jdbcurl, username, password) {
         return this.select(sql, true);
     };
     this.update = function (sql) {
-        var dbclient = new Packages.net.sf.sahi.plugin.DBClient();
-        if (this.usingProps) {
-        	var error = dbclient.execute(this.driver, this.jdbcurl, this.props, sql);
-        } else {
-        	var error = dbclient.execute(this.driver, this.jdbcurl, this.username, this.password, sql);
-        }        
-        
+    	var dbclient = this.getDBClient();
+    	var error = dbclient.execute(sql);        
         if (error != null) {
         	throw new SahiException(error);
         }
@@ -670,12 +674,18 @@ SahiException = function(message, debugInfo){
 	this.message = message;
 	this.debugInfo = debugInfo;
 	this.toString = function(){return this.message;};
+	this.isBrowserNotResponding = false;
 };
 Sahi.prototype._scriptPath = function(){
     return "" + ScriptRunner.getScript().getFilePath();
 };
 Sahi.prototype._scriptStartTime = function(){
-	return "" + ScriptRunner.getReport().getStartTime();
+	var currentTime = ScriptRunner.getReport().getStartTime();
+	var date = new Date(currentTime);
+	return date;
+};
+Date.prototype.getMonth2 = function(){
+	return this.getMonth() + 1;
 };
 Sahi.prototype._sessionInfo = function(){
     var info = eval("(" + ScriptRunner.getSession().getInfoJSON() + ")");
@@ -683,6 +693,7 @@ Sahi.prototype._sessionInfo = function(){
     info.scriptPath = this._scriptPath();
     return info;
 };
+
 Sahi.prototype._suiteInfo = function(){
 	var suite = ScriptRunner.getSession().getSuite();
 	if (suite == null) return null;
@@ -807,6 +818,12 @@ Sahi.prototype.showFunctions = function(){
 	}	
 }
 
+Sahi.prototype._copyFile = function (srcFilePath, destFilePath) {
+	var absoluteSrc = this._resolvePath(srcFilePath);
+	var absoluteDest = this._resolvePath(destFilePath);
+	net.sf.sahi.util.FileUtils.copyFile(absoluteSrc, absoluteDest);
+};
+
 Sahi.prototype.getWrapped = function($n, $v){
 	return function () {
 		//_log("Enter " + $n, "custom2");
@@ -824,6 +841,7 @@ Sahi.prototype._runUnitTests = function(testAr){
 			}
 		}
 	}
+	var abortNoTeardown = false;
 	for(var i=0; i<testAr.length; i++){
 		var fnName = testAr[i];
 		var $status = "success";
@@ -842,15 +860,7 @@ Sahi.prototype._runUnitTests = function(testAr){
 		}
 	}
 }
-Sahi.prototype.getWrappedFunctionWithLogging = function (scope, fnName){
-	return function (){
-		var $testcase = _sahi.grouper('+', fnName + '(' + _sahi.formArgString.apply(_sahi, arguments) + ')').start();
-		try {
-			return scope[fnName+"_sahiorig"].apply(scope, arguments);
-		} finally {$testcase.end();}
-	}
-	
-} 
+
 Sahi.prototype.formArgString = function(){
 	var s = "";
 	for (var i=0; i<arguments.length; i++){
@@ -876,7 +886,6 @@ Sahi.prototype.trim = function (s) {
 };
 
 Sahi.prototype._fail = function(message){
-	this._log("<!--SAHI_TESTCASE_FAIL_MARKER-->", "RAW");
 	throw new SahiException("Fail" + (message ? (": " + message) : ""), "FORCED_FAIL");
 }
 Sahi.prototype._stackTrace = function(){
@@ -924,7 +933,7 @@ Sahi.prototype.makeFetchAPIs = function(){
 	            "_containsHTML", "_getText", "_getCellText", "_getSelectedText", 
 	            "_lastAlert", "_lastPrompt", "_lastConfirm", "_style", "_cookie", 
 	            "_position", "_rteHTML", "_rteText", "_isVisible", 
-	            "_contains", "_title", "_exists", "_isIE", "_isIE9", "_isFF", "_isFF3", "_isFF4", "_isChrome", "_isSafari", "_isOpera",
+	            "_contains", "_title", "_exists", "_isIE", "_isIE6", "_isIE7", "_isIE8", "_isIE9", "_isIE10", "_isIE11", "_isIE11Plus", "_isFF", "_isFF3", "_isFF4", "_isChrome", "_isSafari", "_isOpera",
 	            "_lastDownloadedFileName", "_prompt", "_confirm", "_count", "_extract"];
 	for (var i=0; i<apis.length; i++){
 		var api = apis[i];
@@ -992,48 +1001,6 @@ Sahi.prototype.getInitJS = function(){
 	if(ScriptRunner.getSession() != null && ScriptRunner.getSession().getSuite() != null)
 		return "" + ScriptRunner.getSession().getSuite().getInitJS();
 }
-/* TestCase Start */
-Sahi.TestCase = function(id, msg){
-	this.id = id;
-	this.msg = msg;
-	this.ecBef = 0;
-	this.ecAft = 0;
-	this.ended = false;
-	this.status = "RUNNING";
-} 
-Sahi.TestCase.prototype.start = function(){
-	var $s = "[" + this.id + "] " + this.msg;
-	this.ecBef = ScriptRunner.errorCount();
-	this.startTime = new Date();
-	_sahi._log($s, this.isGroup ? "GROUP_START" : "TESTCASE_START");
-	return this;
-}
-Sahi.TestCase.prototype.end = function(){
-	this.ecAft = ScriptRunner.errorCount();
-	this.endTime = new Date();
-	this.ended = true;
-	if (this.ecAft > this.ecBef) {
-		this.status = "FAILURE";
-		_sahi._log("<!--SAHI_TESTCASE_FAIL_MARKER-->", "RAW");
-	} else {
-		this.status = "SUCCESS"
-	}
-	try {
-		// this works only for non distributed runs.
-		var summary = ScriptRunner.getSession().getSuite().getTestCaseResultSummary();
-		summary.update(this.id, this.status, "" + (this.endTime.getTime() - this.startTime.getTime()));
-	}catch(e){}
-	_sahi._log("", this.isGroup ? "GROUP_END" : "TESTCASE_END");
-}
-Sahi.TestCase.prototype.getStatus = function(){
-	return this.status;
-}
-Sahi.prototype.grouper = function(id, msg){
-	var t = new Sahi.TestCase(id, msg);
-	t.isGroup = true;
-	return t;
-} 
-/* TestCase End */
 
 //_sahi.print("initJS: " + _sahi.getInitJS());
 if(_sahi.getInitJS() && _sahi.getInitJS() != "null"){

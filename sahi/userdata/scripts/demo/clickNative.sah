@@ -76,17 +76,28 @@ function getY(){
 }
 </browser>
 
-_sahi.robot = new java.awt.Robot(); 
-for (var i=0; i<2; i++)
-{
-	_focus(_file("f1"));
+function setFiles() {
+	//_focus(_file("f1"));
 	_wait(1000);
-	_set($x, getX() + _sahi.findPosX(_file("f2")) + _file("f2").offsetWidth - 20 ); 
-	_set($y, getY() + _sahi.findPosY(_file("f2")) + (_file("f2").offsetHeight/2) ); 
+	_set($x, getX() + _sahi.findPosX(_file("file[]")) + _file("file[]").offsetWidth - 20 ); 
+	_set($y, getY() + _sahi.findPosY(_file("file[]")) + (_file("file[]").offsetHeight/2) ); 
+	_log($x+ " " +$y);
 	_sahi._clickNative($x, $y);
 	_wait(1000);
-	_sahi._typeNative("D:\\sahi_v2\\temp\\xx.txt");
+	_sahi._typeNative(_resolvePath("uploadme.txt"));
 	_wait(1000);
 	_sahi._typeNativeKeyCode(java.awt.event.KeyEvent.VK_ENTER);
 	_wait(1000);
 }
+
+_navigateTo("/demo/php/fileUpload.htm");
+_sahi.robot = new java.awt.Robot(); 
+for (var i=0; i<2; i++)
+{
+	setFiles();
+}
+
+_navigateTo("/demo/");
+_click(_link("IFrames Test"));
+_click(_link("File Upload Test[1]"));
+setFiles();

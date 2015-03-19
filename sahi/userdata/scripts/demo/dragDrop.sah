@@ -4,6 +4,11 @@ function testDragDrop($draggable, $droppable, $result) {
 	_assertNotExists($droppable);
 }
 
-_navigateTo("http://www.snook.ca/technical/mootoolsdragdrop/");
+_navigateTo("/demo/dragDropMooTools.htm");
 testDragDrop(_div("Drag me"), _div("Item 1"), _div("dropped"));
 testDragDrop(_div("Drag me"), _div("Item 2"), _div("dropped[1]"));
+
+_navigateTo("/demo/dragDropMooTools.htm");
+_log("Test slow drag drop");
+_call(Sahi.DRAG_DROP_SPEED = 50);
+testDragDrop(_div("Drag me"), _div("Item 1"), _div("dropped"));

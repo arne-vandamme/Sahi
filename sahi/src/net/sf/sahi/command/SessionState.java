@@ -41,6 +41,10 @@ public class SessionState {
         return new SimpleHttpResponse(session.isPlaying() ? "1" : "0");    	
     }   
     
+    public HttpResponse userExtensions(final HttpRequest request){
+		return new HttpFileResponse(Configuration.getUserDataDir() + "/config/user_extensions.js");
+    }
+    
     public HttpResponse domainfix(final HttpRequest request){
     	String domainFixInfo = Configuration.getDomainFixInfo();
 		Properties props = new Properties();

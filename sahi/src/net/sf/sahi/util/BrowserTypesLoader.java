@@ -88,7 +88,7 @@ public class BrowserTypesLoader {
 		Map<String, BrowserType> availableBrowserTypes = new HashMap<String, BrowserType>();
 		for (Iterator<String> iterator = browserTypes.keySet().iterator(); iterator.hasNext();) {
 			BrowserType browserType = browserTypes.get(iterator.next());
-			final String expanded = Utils.expandSystemProperties(browserType.path());
+			final String expanded = Utils.expandSystemProperties(browserType.path(), true);
 			if (browserType.force() || new File(expanded).exists()) {
 				availableBrowserTypes.put(browserType.name(), browserType);
 			} else {

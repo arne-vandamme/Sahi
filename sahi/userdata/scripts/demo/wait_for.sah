@@ -11,7 +11,8 @@ _wait(1000);
 
 _click(_button("Click me"));
 _assertNotNull(_textbox("t1"));
-_wait(990, _byId("id2"));
+var $time = 990;
+_wait($time, _byId("id2"));
 _assertEqual("", _textbox("t1").value);
 
 _navigateTo("/demo/waitFor.htm")

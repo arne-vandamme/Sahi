@@ -3,6 +3,7 @@ package net.sf.sahi.ui;
 import java.awt.Cursor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.logging.Logger;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -10,25 +11,28 @@ import javax.swing.JOptionPane;
 import net.sf.sahi.util.Utils;
 
 public class LinkButton extends JLabel {
+	private static final Logger logger = Logger.getLogger("net.sf.sahi.ui.LinkButton");
 	private static final long serialVersionUID = 8273875024682878518L;
-
+	
 	public LinkButton(final String text) {
-		this(text, null);
+		this(text, null, null);
 	}
-	public LinkButton(final String text, final String uri) {
+	public LinkButton(final String text, final String uri, final String tooltip) {
 		super();
 		setText(text);
-		if (uri != null) setToolTipText(uri.toString());
+		if (tooltip != null) setToolTipText(tooltip.toString());
 		addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
+				if(Utils.isMac() && text.equals("Bin")){ 
+					runAppleScript(uri); 
+					return;
+				}
 				open(uri);
 			}
-
 			public void mouseEntered(MouseEvent e) {
 				setCursor(new Cursor(Cursor.HAND_CURSOR));  
 				setText(text, true);
 			}
-
 			public void mouseExited(MouseEvent e) {
 				setCursor(new Cursor(Cursor.DEFAULT_CURSOR));  
 				setText(text, false);
@@ -47,11 +51,10 @@ public class LinkButton extends JLabel {
 	}
 	
 	protected void open(String url) {
-		String osName = System.getProperty("os.name");
 		String cmd = null;
-		if (osName.startsWith("Mac OS")){
+		if (Utils.isMac()){
 			cmd = "open ";
-		} else if (osName.startsWith("Windows")) {
+		} else if (Utils.isWindows()) {
 			 cmd = "cmd.exe /C start ";
 		} else {
 			 cmd = "xdg-open ";
@@ -62,8 +65,22 @@ public class LinkButton extends JLabel {
 		} catch (Exception e) {
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null,
-					"Please navigate to http://localost:9999/_s_/ControllerUI to configure browsers for Sahi",
+					"Please navigate to http://localhost:9999/_s_/dyn/ConfigureUI to configure browsers for Sahi",
 					"Cannot Launch Link", JOptionPane.WARNING_MESSAGE);
 		}
 	}
+	protected void runAppleScript(String url) { 
+		String cmd = url.toString();
+		try {
+			logger.info(cmd);
+//			System.out.println(cmd);
+			Utils.executeAndGetProcess(Utils.getCommandTokens(cmd));
+		} catch (Exception e) {
+			e.printStackTrace();
+			JOptionPane.showMessageDialog(null,
+					"Please navigate to http://localhost:9999/_s_/dyn/ConfigureUI to configure browsers for Sahi",
+					"Cannot Launch Link", JOptionPane.WARNING_MESSAGE);
+		}
+	}
+
 }

@@ -1,17 +1,25 @@
-Copy sahi.syn to <TextPad_Install_dir>/system
+For syntax highlighting:
+------------------------
 
-Add sahi.syn as the syntax file for .sah files:
-Go to "Configure"->"New Document Class ..."
-Document class name: Sahi
-Next
-Class members: *.sah
-Next
-Enable Syntax Highlighting (check this)
-Syntax definition file: choose sahi.syn
-Next
-Finish
+1. Copy <SAHI_INSTALLED_DIRECTORY>\editors\textpad\sahi.syn to <TEXTPAD_INSTALLED_DIRECTORY>\system
 
-If you want the clip library too,
-Copy sahi.TCL to C:\Documents and Settings\<UserName>\Application Data\TextPad
+2. Add sahi.syn as the syntax file for .sah files:
 
-Restart textpad.
+- Open TextPad and go to [ Configure -> New Document Class... ]
+- Document class name: Sahi
+- Next
+- Class members: *.sah
+- Next
+- Enable Syntax Highlighting (check this)
+- Syntax definition file: choose sahi.syn
+- Next
+- Finish
+- Restart TextPad
+
+
+To clip library:
+----------------
+
+1. Copy <SAHI_INSTALLED_DIRECTORY>\editors\textpad\sahi.TCL to <TEXTPAD_INSTALLED_DIRECTORY>\Samples
+2. Open TextPad and go to [ View -> Clip Library ]
+3. Choose "Sahi Keywords" from the drop-down list

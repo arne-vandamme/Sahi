@@ -37,7 +37,7 @@ public class ProcessHelperTest extends TestCase {
 	public void xtestGetPIDs() {
 		ProcessHelper ph = new ProcessHelper(
 				"\"C:\\Program Files\\Mozilla Firefox\\firefox.exe\" -profile \"D:/sahi_v2/browser/ff/profiles/sahi0\"", "firefox.exe");
-		ph.getPIDs();
+//		ph.getPIDs();
 	}
 	public void testDummy(){
 		assertEquals("", "");

@@ -1,4 +1,4 @@
-_navigateTo("http://sahi.co.in/demo/training/");
+_navigateTo("http://sahipro.com/demo/training/");
 _setValue(_textbox("user"), "test");
 _setValue(_password("password"), "secret");
 _click(_submit("Login"));

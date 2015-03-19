@@ -4,11 +4,11 @@
 
 	<info>
 		<appname>Sahi</appname>
-		<appversion>4.4</appversion>
+		<appversion>5.0</appversion>
 		<authors>
 			<author name="Tyto Software Pvt. Ltd." email="info@tytosoftware.com" />
 		</authors>
-		<url>http://sahi.co.in/</url>
+		<url>http://sahipro.com/</url>
 		<javaversion>1.5</javaversion>
 	</info>
 
@@ -79,6 +79,14 @@
 				<os family="mac" />
 			</executable>
 			<executable targetfile="$INSTALL_PATH/bin/sahi.sh">
+				<os family="unix" />
+				<os family="mac" />
+			</executable>
+			<executable targetfile="$INSTALL_PATH/tools/changeproxy.sh">
+				<os family="unix" />
+				<os family="mac" />
+			</executable>
+			<executable targetfile="$INSTALL_PATH/tools/revertproxy.sh">
 				<os family="unix" />
 				<os family="mac" />
 			</executable>

@@ -22,7 +22,7 @@ package net.sf.sahi.client;
  * Each of the APIs returns an ElementStub which is a representation of a particular 
  * HTML DOM element on the browser.<br/>
  * 
- * Have a look at <a href="http://sahi.co.in/w/browser-accessor-apis">Sahi Browser Accessor APIS</a>
+ * Have a look at <a href="http://sahipro.com/w/browser-accessor-apis">Sahi Browser Accessor APIS</a>
  * for more information on each accessor.
  * 
  * Note that regular expressions based accessors are different from Sahi's native accessors in that they are quoted as Strings:<br/><br/>
@@ -1103,7 +1103,7 @@ public abstract class BrowserElements {
 	 * Identifier: index, name, id, className<br/>
 	 * <br/>
 	 * Example:<br/>
-	 * <code>browser.urlbox("homepage").setValue("http://sahi.co.in/")</code><br/>
+	 * <code>browser.urlbox("homepage").setValue("http://sahipro.com/")</code><br/>
 	 * 
 	 * @param Identifier: can be index, name, id, className
 	 * @return a stub representing the element

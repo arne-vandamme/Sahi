@@ -231,6 +231,13 @@ public class Utils {
 		}
 		return false;
 	}
+	public static String getBlankString(int length) {
+		char[] blanks = new char[length];
+		for (int i=0; i<length; i++) {
+		blanks[i] = ' ';
+		}
+		return new String(blanks);
+	}
 	
 	public static String readFileAsString(final File file) {
 		return getString(readFile(file));
@@ -409,6 +416,10 @@ public class Utils {
 
 	public static boolean isWindows() {
 		return System.getProperty("os.name").toLowerCase().startsWith("windows");
+	}
+	
+	public static boolean isMac() {
+		return System.getProperty("os.name").startsWith("Mac OS");
 	}
 
 	public static boolean isWindowsNT() {
@@ -606,8 +617,11 @@ public class Utils {
 		return map;
 	}
 
-	public static String expandSystemProperties(String cmd) {
-		return substitute(cmd, System.getenv());
+	public static String expandSystemProperties(String cmd, boolean removeDuplicateX86) {
+		String substituted = substitute(cmd, System.getenv());
+		if (removeDuplicateX86)
+			substituted = substituted.replace("(x86) (x86)", "(x86)");
+		return substituted;
 	}
 
 	public static String getOSFamily() {
@@ -619,6 +633,9 @@ public class Utils {
 	}
 	
 	public static String replaceLocalhostWithMachineName(String url){
+		if (!url.matches("^[^:]*://localhost[:/?].*$") && !url.matches("^[^:]*://localhost")) {
+			return url;
+		}
 		String computername;
 		try {
 			computername = InetAddress.getLocalHost().getHostName();

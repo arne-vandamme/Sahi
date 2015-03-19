@@ -17,19 +17,19 @@ public class MockURLTest extends SahiTestCase {
 	}
 	
 	public void testMock(){
-		browser.navigateTo("http://sahi.co.in/demo/index.htm");
+		browser.navigateTo("http://sahipro.com/demo/index.htm");
 		assertTrue(browser.link("Link Test").exists());
 		
 		browser.addURLMock(".*sahi[.]co[.]in.*");
-		browser.navigateTo("http://sahi.co.in/demo/index.htm", true);
+		browser.navigateTo("http://sahipro.com/demo/index.htm", true);
 		assertFalse(browser.link("Link Test").exists());
 
 		browser.removeURLMock(".*sahi[.]co[.]in.*");
-		browser.navigateTo("http://sahi.co.in/demo/index.htm", true);
+		browser.navigateTo("http://sahipro.com/demo/index.htm", true);
 		assertTrue(browser.link("Link Test").exists());		
 		
 		browser.addURLMock(".*sahi[.]co[.]in.*", "net.sf.sahi.client.MockURLTest_mockMe");
-		browser.navigateTo("http://sahi.co.in/demo/index.htm", true);
+		browser.navigateTo("http://sahipro.com/demo/index.htm", true);
 		assertTrue(browser.div("Hi there").exists());		
 	}
 

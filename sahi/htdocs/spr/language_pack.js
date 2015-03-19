@@ -28,7 +28,7 @@ if (_sahi.controllerMode == "java"){
 	Sahi.prototype.getNavigateToScript = function(url){
 		return "browser." + this.getPopupDomainPrefixes() + "navigateTo(" + this.quotedEscapeValue(url) + ");"
 	}
-	Sahi.prototype.getScript = function (infoAr) {
+	Sahi.prototype.getScript = function (infoAr, el, evType, e) {
 		var info = infoAr[0];
 	    var accessor = this.escapeDollar(this.getAccessor1(info));
 	    if (accessor == null) return null;
@@ -41,17 +41,28 @@ if (_sahi.controllerMode == "java"){
 	    var cmd = null;
 	    if (value == null)
 	        value = "";
-	    if (ev == "_click") {
-	        cmd = accessor + ".click();";
-	    } else if (ev == "_setValue") {
-	        cmd = accessor + ".setValue(" + this.quotedEscapeValue(value) + ");";
-	    } else if (ev == "_setSelected") {
-	        cmd = accessor + ".choose(" + this.quotedEscapeValue(value) + ");";
-	    } else if (ev == "_setFile") {
-	        cmd = accessor + ".setFile(" + this.quotedEscapeValue(value) + ");";
+	 // handle F12 and contextmenu
+	    if (evType == "keydown") {
+	    	if (e && e.keyCode >= 112 && e.keyCode <= 123 && !e.charCode){
+	    		cmd =  accessor + ".keyPress(\"[" + e.keyCode + "," + 0 + "]\");";
+	    	}
+		    if (!cmd) return null;
+	    } else { 
+		    if (ev == "_click") {
+		    	if (evType && evType.toLowerCase() == "contextmenu") {
+		    		cmd = accessor + ".rightClick();";
+		    	}
+		    	else cmd = accessor + ".click();";
+		    } else if (ev == "_setValue") {
+		        cmd = accessor + ".setValue(" + this.quotedEscapeValue(value) + ");";
+		    } else if (ev == "_setSelected") {
+		        cmd = accessor + ".choose(" + this.quotedEscapeValue(value) + ");";
+		    } else if (ev == "_setFile") {
+		        cmd = accessor + ".setFile(" + this.quotedEscapeValue(value) + ");";
+		    }
 	    }
 	    cmd = this.addPopupDomainPrefixes(cmd);
-	    cmd = "browser." + cmd;    
+	    cmd = "browser." + cmd;
 	    return cmd;
 	};
 	Sahi.prototype.escapeDollar = function (s) {
@@ -96,7 +107,7 @@ if (_sahi.controllerMode == "ruby"){
 	Sahi.prototype.getNavigateToScript = function(url){
 		return "browser." + this.getPopupDomainPrefixes() + "navigate_to(" + this.quotedEscapeValue(url) + ")"
 	}
-	Sahi.prototype.getScript = function (infoAr) {
+	Sahi.prototype.getScript = function (infoAr, el, evType, e) {
 		var info = infoAr[0];
 	    var accessor = this.escapeDollar(this.getAccessor1(info));
 	    if (accessor == null) return null;
@@ -109,17 +120,28 @@ if (_sahi.controllerMode == "ruby"){
 	    var cmd = null;
 	    if (value == null)
 	        value = "";
-	    if (ev == "_click") {
-	        cmd = accessor + ".click";
-	    } else if (ev == "_setValue") {
-	        cmd = accessor + ".value = " + this.quotedEscapeValue(value);
-	    } else if (ev == "_setSelected") {
-	        cmd = accessor + ".choose(" + this.quotedEscapeValue(value) + ")";
-	    } else if (ev == "_setFile") {
-	        cmd = accessor + ".file = " + this.quotedEscapeValue(value);
+		 // handle F12 and contextmenu
+	    if (evType == "keydown") {
+	    	if (e && e.keyCode >= 112 && e.keyCode <= 123 && !e.charCode){
+	    		cmd =  accessor + ".key_press(\"[" + e.keyCode + "," + 0 + "]\");";
+	    	}
+		    if (!cmd) return null;
+	    } else { 	    
+		    if (ev == "_click") {
+		    	if (evType && evType.toLowerCase() == "contextmenu") {
+		    		cmd =  accessor + ".right_click;";
+		    	}
+		    	else cmd = accessor + ".click";
+		    } else if (ev == "_setValue") {
+		        cmd = accessor + ".value = " + this.quotedEscapeValue(value);
+		    } else if (ev == "_setSelected") {
+		        cmd = accessor + ".choose(" + this.quotedEscapeValue(value) + ")";
+		    } else if (ev == "_setFile") {
+		        cmd = accessor + ".file = " + this.quotedEscapeValue(value);
+		    }
 	    }
 	    cmd = this.addPopupDomainPrefixes(cmd);
-	    cmd = "browser." + cmd;    
+	    cmd = "browser." + cmd;
 	    return cmd;
 	};
 	Sahi.prototype.escapeDollar = function (s) {

@@ -1,16 +1,17 @@
 require 'net/http'
-require 'guid'
+require 'time'
+require 'json'
 
 module Sahi
   # The Browser class controls different browsers via Sahi's proxy.
   #
   # Thank you Sai Venkat for helping kickstart the ruby driver.
   #
-  # Author::    Narayan Raman (mailto:narayan@sahi.co.in)
+  # Author::    Narayan Raman (mailto:narayan@sahipro.com)
   # Copyright:: Copyright (c) 2006  V Narayan Raman
   # License::   Apache License, Version 2.0
   #
-  # Download Sahi from http://sahi.co.in/ .
+  # Download Sahi from http://sahipro.com/ .
   # Java 1.5 or greater is needed to run Sahi.
   #
   # Start Sahi:
@@ -93,7 +94,7 @@ module Sahi
     #opens the browser
     def open()
       check_proxy()
-      @sahisid = Guid.new.to_s
+      @sahisid = Time.now.to_f
       start_url = "http://sahi.example.com/_s_/dyn/Driver_initialized"
       if (@browser_type != null)
         exec_command("launchPreconfiguredBrowser", {"browserType" => @browser_type, "startUrl" => start_url})
@@ -150,6 +151,30 @@ module Sahi
         end
       end
     end
+    
+    def execute_sahi(step)
+      if popup?() 
+        step = "_sahi._popup(#{Utils.quoted(@popup_name)})." + step
+      end
+      if domain?() 
+        step = "_sahi._domain(#{Utils.quoted(@domain_name)})." + step
+      end
+      #puts step
+      exec_command("setStep", {"step" => step, 'addSahi' => true})
+      i = 0
+      while (i < 500)
+        sleep(0.1)
+        i+=1
+        check_done = exec_command("doneStep")
+        done = "true".eql?(check_done)
+        
+        error = check_done.index("error:") == 0
+        return if done
+		if (error)
+          raise check_done
+		end        
+      end      
+    end
 
     def method_missing(m, *args, &block)
       return ElementStub.new(self, m.to_s, args)
@@ -157,7 +182,7 @@ module Sahi
 
     # evaluates a javascript expression on the browser and fetches its value
     def fetch(expression)
-      key = "___lastValue___" +Guid.new.to_s()
+      key = "___lastValue___" + Time.now.getutc.to_s
       execute_step("_sahi.setServerVarPlain('"+key+"', " + expression + ")")
       return check_nil(exec_command("getVariable", {"key" => key}))
     end
@@ -310,6 +335,15 @@ module Sahi
       return fetch("_sahi._title()")
     end
 
+ 	# return selection text
+	def selection_text(win = nil)
+	  if(win != nil)
+	    return fetch("_sahi._getSelectionText(#{win.to_s()})")
+	  else
+	    return fetch("_sahi._getSelectionText()")
+	  end	
+	end             
+
     # returns true if browser is Internet Explorer
     def ie?()
       return fetch_boolean("_sahi._isIE()")
@@ -365,7 +399,7 @@ module Sahi
   # This class is a stub representation of various elements on the browser
   # Most of the methods are implemented via method missing.
   #
-  # All APIs available in Sahi are available in ruby. The full list is available here: http://sahi.co.in/w/browser-accessor-apis
+  # All APIs available in Sahi are available in ruby. The full list is available here: http://sahipro.com/w/browser-accessor-apis
   #
   # Most commonly used action methods are:
   # click - for all elements
@@ -395,6 +429,25 @@ module Sahi
       end
     end
 
+	# select text for manipulation
+	
+	def select_range(rangeStart, rangeEnd, type=nil)
+	  if(type!= nil)
+	  	@browser.execute_step("_sahi._selectRange(#{self.to_s()}, rangeStart, rangeEnd, #{Utils.quoted(type)})")
+	  else
+	    @browser.execute_step("_sahi._selectRange(#{self.to_s()}, #{rangeStart}, #{rangeEnd})")
+	  end
+	end  
+	      
+	def select_text_range(searchText, position=nil)
+	  if(position != nil)
+		@browser.execute_step("_sahi._selectTextRange(#{self.to_s()}, #{Utils.quoted(searchText)}, #{Utils.quoted(position)})")
+	  else
+	    @browser.execute_step("_sahi._selectTextRange(#{self.to_s()}, #{Utils.quoted(searchText)})")
+	  end
+	end
+	
+
     def _perform(type)
       step = "_sahi._#{type}(#{self.to_s()})"
       @browser.execute_step(step)
@@ -405,6 +458,11 @@ module Sahi
       @browser.execute_step("_sahi._dragDrop(#{self.to_s()}, #{el2.to_s()})")
     end
 
+	# simulates pressing a key on the given element.
+	def key_press(codes, combo=nil)
+		@browser.execute_step("_sahi._keyPress(#{self.to_s()}, #{codes.to_json}, #{combo.to_json})")
+	end
+	
     # choose option in a select box
     def choose(val)
       @browser.execute_step("_sahi._setSelected(#{self.to_s()}, #{Utils.quoted(val)})")
@@ -527,9 +585,18 @@ module Sahi
       return @browser.fetch("_sahi._containsHTML(#{self.to_s()}, #{Utils.quoted(html)})")
     end
 
-    # returns count of elements similar to this element
+     # returns count of elements similar to this element
     def count_similar()
     	return Integer(@browser.fetch("_sahi._count(\"_#{@type}\", #{concat_identifiers(@identifiers).join(", ")})"))
+    end
+    
+    # returns element attributes of all elements of type attr matching the identifier within relations
+    def collect(els, attr=nil)
+	  if(attr == nil)
+    	return els.collect_similar()
+      else
+		return fetch("_sahi.collectAttributesJava(#{Utils.quoted(attr)}, #{Utils.quoted(els.to_type())}, #{els.to_identifiers()})").split("___sahi___")
+      end
     end
     
     # returns array elements similar to this element

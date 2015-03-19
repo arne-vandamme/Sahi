@@ -209,7 +209,7 @@ public class TestRunner {
         System.out.println("Usage: java -cp /path/to/ant-sahi.jar net.sf.sahi.test.TestRunner <test_or_suite_name> <browser_executable> <start_url> <log_dir> <sahi_host> <sahi_port> <number_of_threads> <browser_executable> [<browser_option>]");
         System.out.println("Set log_dir to \"default\" to log to the default log dir");
         System.out.println("Set number_of_threads to a number which is compatible with your machine CPU and RAM.");
-        System.out.println("Look at http://sahi.co.in/w/Running+multiple+tests+in+batch+mode for details on browser options for various browsers.");
+        System.out.println("Look at http://sahipro.com/w/Running+multiple+tests+in+batch+mode for details on browser options for various browsers.");
         System.out.println("------------------------");
         System.exit(-1);
     }

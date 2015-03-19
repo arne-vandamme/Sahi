@@ -28,7 +28,7 @@ function testContainsHTML(){
 function testStyle(){
 	_navigateTo("/demo/index.htm");
 	var $c = _style(_link(0), "text-decoration")
-	_assertEqual("underline", $c);
+	_assertTrue($c.indexOf("underline") != -1);
 }
 function testAPIs(){
 	var apis = ["_getValue", "_getAttribute", "_containsText",

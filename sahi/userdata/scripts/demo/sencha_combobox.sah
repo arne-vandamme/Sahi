@@ -2,15 +2,15 @@ _setStrictVisibilityCheck(true);
 
 _navigateTo("http://dev.sencha.com/deploy/dev/examples/form/combos.html");
 
-function chooseState($textboxId, $state){
-	_click(_image("s.gif", _near(_textbox($textboxId))));
-	_click(_div($state));
-	_assertEqual($state, _getValue(_textbox($textboxId)));
+function chooseState($textboxId, $state, $displayValue){
+	_click(_div("/x-form-arrow-trigger/", _near(_textbox($textboxId))));
+	_click(_listItem($state));
+	_assertEqual($displayValue, _getValue(_textbox($textboxId)));
 }
 
-chooseState("local-states", "California");
-chooseState("local-states-with-qtip", "Colorado");
-chooseState("array-states", "Arizona");
+chooseState(0, "California", "California");
+chooseState(1, "Colorado (CO)", "Colorado");
+chooseState("array-states", "Arizona", "Arizona");
 
 _navigateTo("http://dev.sencha.com/deploy/dev/examples/grid/edit-grid.html");
 

@@ -4,6 +4,7 @@ import java.util.Properties;
 import java.util.logging.Logger;
 
 import net.sf.sahi.config.Configuration;
+import net.sf.sahi.playback.SahiScript;
 import net.sf.sahi.request.HttpRequest;
 import net.sf.sahi.response.HttpFileResponse;
 import net.sf.sahi.response.HttpModifiedResponse2;
@@ -125,6 +126,7 @@ public class Driver {
 		session.setIsReadyForDriver(true);
 		String startUrl = request.getParameter("startUrl");
 		Properties properties = new Properties();
+		properties.setProperty("version", Configuration.getVersion());
 		if (startUrl == null) startUrl = "";
 		properties.setProperty("startUrl", Utils.replaceLocalhostWithMachineName(startUrl));
     	HttpFileResponse httpFileResponse = new HttpFileResponse(Configuration.getHtdocsRoot() + "spr/initialized.htm", properties, false, true);
@@ -142,7 +144,8 @@ public class Driver {
     
     public void setStep(final HttpRequest request){
     	String step = request.getParameter("step");
-		setStep(request, step);
+    	boolean addSahi = "true".equals(request.getParameter("addSahi"));
+		setStep(request, step, addSahi);
     }
     
 	public void setBrowserJS(final HttpRequest request) {
@@ -223,7 +226,7 @@ public class Driver {
 		if (!"true".equals(request.getParameter("fromBrowser"))) 
 			setStep(request, "_sahi.closeController()");
 		session.setIsRecording(false);
-		session.setIsPlaying(true);    	
+		//session.setIsPlaying(true);    	
     }
     
     public SimpleHttpResponse isRecording(final HttpRequest request) {
@@ -231,9 +234,15 @@ public class Driver {
     }
     
 	private void setStep(final HttpRequest request, String step) {
+		setStep(request, step, false);
+	}    
+	
+	private void setStep(final HttpRequest request, String step, boolean addSahi) {
+		if(addSahi)
+			step = SahiScript.modifyFunctionNames(step);
 		Session session = request.session();
 		session.getScriptRunner().setStep(step, "");
-	}    
+	}
 	
 	public void setSpeed(final HttpRequest request) {
 		try { 

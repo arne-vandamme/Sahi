@@ -1,4 +1,4 @@
-var $URLContents = _readURL("http://sahi.co.in/demo/");
+var $URLContents = _readURL("http://sahipro.com/demo/");
 var $lines = $URLContents.replace(/\r\r/g, '').split("\n");
 var $pattern='linkTest.htm'; 
 for(var $i=0;$i<$lines.length;$i++){

@@ -11,6 +11,13 @@ function test_nbsp_IsIgnored(){
 	_assertEqual("span with nbsp space", _getText(_span("span with nbsp space")));
 }
 
+function testGetTextWorksForInvisibleElements(){
+	_assertExists(_div("visibility hidden"));
+	_assertFalse(_isVisible(_div("visibility hidden")));
+	_assertExists(_div("display none"));
+	_assertFalse(_isVisible(_div("display none")));
+}
+
 function testBRTagReplacedWithSpace(){
 	_assertExists(_span("span with br"));
 	_assertEqual("span with<br><br><br>br", _span("span with br").innerHTML.toLowerCase());

@@ -17,7 +17,7 @@ public class TestRunnerTest extends TestCase {
 	
 	/*
 	 * java -cp %SAHI_HOME%\lib\ant-sahi.jar net.sf.sahi.test.TestRunner scripts/demo/sahi_demo.sah 
-	 * "C:\Program Files\Mozilla Firefox\firefox.exe" http://sahi.co.in/demo/ logs/playback/aaa 
+	 * "C:\Program Files\Mozilla Firefox\firefox.exe" http://sahipro.com/demo/ logs/playback/aaa 
 	 * localhost 9999 3 
 	 * firefox.exe "-profile %SAHI_USERDATA_DIR%/browser/ff/profiles/sahi$threadNo -no-remote"
 	 * 
@@ -30,7 +30,7 @@ public class TestRunnerTest extends TestCase {
 	public void testPreconfiguredBrowsers() throws Exception {
 		final String suiteName = "scripts/demo/integration.sah";
 		final String browserType = "firefox";
-		String base = "http://sahi.co.in/demo/training/";
+		String base = "http://sahipro.com/demo/training/";
 		String threads = "1";
 
 		String initJS = "$user='test';$pwd='secret';";
@@ -49,7 +49,7 @@ public class TestRunnerTest extends TestCase {
 
 	private void runSingleTest(String suiteName) throws IOException, InterruptedException {
 		String browser = "C:\\Program Files\\Mozilla Firefox\\firefox.exe";
-		String base = "http://sahi.co.in/demo/";
+		String base = "http://sahipro.com/demo/";
 		String sahiHost = "localhost";
 		String port = "9999";
 		String threads = "1";
@@ -67,7 +67,7 @@ public class TestRunnerTest extends TestCase {
 	
 	public void testEOP() throws IOException, InterruptedException {
 		String browserType = "firefox";
-		String base = "http://sahi.co.in/demo/training/";
+		String base = "http://sahipro.com/demo/training/";
 		String sahiHost = "localhost";
 		String port = "9999";
 		String threads = "1";
