@@ -25,8 +25,8 @@ public class CustomResponseManagerTest extends TestCase
 
 	public void testGetCommand() {
 		MockResponder mockResponder = new MockResponder();
-		mockResponder.add( ".*sahi[.]co[.]in.*", "net.sf.sahi.Test_test" );
-		String command = mockResponder.getCommand( "http://www.sahi.co.in" );
+		mockResponder.add( ".*sahipro[.]com.*", "net.sf.sahi.Test_test" );
+		String command = mockResponder.getCommand( "http://www.sahipro.com" );
 		assertEquals( "net.sf.sahi.Test_test", command );
 	}
 

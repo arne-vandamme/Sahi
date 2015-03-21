@@ -42,10 +42,11 @@ function testFileSingleWith3rdParamWithSetFile2(){
 
 function testWithTypeChange(){
 	_setFile(_file("file"), "scripts/demo/uploadme.txt");
-	if (_isIE()){
-		_call(_file("file").outerHTML = _file("file").outerHTML.replace(/type=file/, "type=text"));
+	if (_isIE()){_alert("ghjdhj");
+		_call(_file("file").outerHTML = _file("file").outerHTML.replace(/type=['"]?file['"]?/, "type=text"));
 	}else{
 		_call(_file("file").type = "text");
+		_alert("909");
 	}
 	_setValue(_textbox("file"), "scripts/demo/uploadme.txt");
 	_click(_submit("Submit Single"));

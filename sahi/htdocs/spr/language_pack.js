@@ -151,7 +151,7 @@ if (_sahi.controllerMode == "ruby"){
 		    }
 	    }
 	    cmd = this.addPopupDomainPrefixes(cmd);
-	    cmd = "browser." + cmd;    
+	    cmd = "browser." + cmd;
 	    return cmd;
 	};
 	Sahi.prototype.escapeDollar = function (s) {

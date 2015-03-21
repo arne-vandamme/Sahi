@@ -15,5 +15,5 @@ goto :EOF
 echo "Usage: %0 <sah file|suite file> <startURL> <browserType>"
 echo "File path is relative to userdata/scripts"
 echo "Example:" 
-echo "%0 demo/demo.suite http://sahi.co.in/demo/ firefox"
-echo "%0 demo/sahi_demo.sah http://sahi.co.in/demo/ ie"
+echo %0 demo/demo.suite http://sahipro.com/demo/ firefox
+echo %0 demo/sahi_demo.sah http://sahipro.com/demo/ ie

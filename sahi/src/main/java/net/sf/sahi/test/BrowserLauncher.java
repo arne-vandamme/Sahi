@@ -57,25 +57,25 @@ public class BrowserLauncher
 		cmd = cmd.replaceAll( "%20", " " ).replaceAll( "[&]", "__SahiAmpersandSahi__" );
 		cmd = cmd.replaceAll( "[$]userDir", Configuration.getUserDataDir().replace( '\\', '/' ) );
 		cmd = cmd.replaceAll( "[$]threadNo", "0" ); // if this has not been substituted, change it to 0.
-		cmd = Utils.expandSystemProperties( cmd );
+		cmd = Utils.expandSystemProperties( cmd, true );
 		process = new ProcessHelper( cmd, browserProcessName, maxTimeToWaitForPIDs );
 		process.execute();
-		addShutDownHook();
+//		addShutDownHook();
 		return process;
 	}
-
-	private void addShutDownHook() {
-		ProcessExitDetector processExitDetector = new ProcessExitDetector( process.getActiveProcess() );
-		processExitDetector.addProcessListener( new ProcessListener()
-		{
-			public void processFinished( Process process ) {
-				if ( useProxy ) {
-					toggleProxy( false );
-				}
-			}
-		} );
-		processExitDetector.start();
-	}
+//
+//	private void addShutDownHook() {
+//		ProcessExitDetector processExitDetector = new ProcessExitDetector( process.getActiveProcess() );
+//		processExitDetector.addProcessListener( new ProcessListener()
+//		{
+//			public void processFinished( Process process ) {
+//				if ( useProxy ) {
+//					toggleProxy( false );
+//				}
+//			}
+//		} );
+//		processExitDetector.start();
+//	}
 
 	private void toggleProxy( boolean selected ) {
 		if ( selected ) {

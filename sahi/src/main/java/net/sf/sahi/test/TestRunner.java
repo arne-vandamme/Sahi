@@ -239,7 +239,7 @@ public class TestRunner
 		System.out.println( "Set log_dir to \"default\" to log to the default log dir" );
 		System.out.println( "Set number_of_threads to a number which is compatible with your machine CPU and RAM." );
 		System.out.println(
-				"Look at http://sahi.co.in/w/Running+multiple+tests+in+batch+mode for details on browser options for various browsers." );
+				"Look at http://sahipro.com/w/Running+multiple+tests+in+batch+mode for details on browser options for various browsers." );
 		System.out.println( "------------------------" );
 		System.exit( -1 );
 	}

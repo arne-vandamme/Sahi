@@ -1,11 +1,12 @@
 require 'test/unit'
-require '../lib/sahi'
+require '../lib/sahi.rb'
 
 class SahiDriverTest < Test::Unit::TestCase
   def setup
     @browser = init_browser()
+    @b = @browser
     @browser.open
-    @base_url = "http://sahi.co.in"
+    @base_url = "http://localhost.sahi.co.in"
   end
 
   def teardown
@@ -31,7 +32,7 @@ class SahiDriverTest < Test::Unit::TestCase
     assert_equal("Cell with id", @browser.cell("CellWithId").text)
   end
 
-  def test_ZK
+  def xtest_ZK
     @browser.speed = 200
     @browser.navigate_to("http://www.zkoss.org/zkdemo/userguide/")
     @browser.div("Hello World").click
@@ -55,6 +56,21 @@ class SahiDriverTest < Test::Unit::TestCase
   def test_fetch()
     @browser.navigate_to(@base_url + "/demo/formTest.htm")
     assert_equal(@base_url + "/demo/formTest.htm", @browser.fetch("window.location.href"))
+  end
+
+  def test_key_press()
+  	@browser.navigate_to("#{@base_url}/demo/formTest.htm")
+  	@browser.textbox("t1").key_press("a")
+  	assert_equal("a", @browser.textbox("t1").value)
+  	@browser.textbox("t1").key_press([66,98]);
+  	assert_equal("ab", @browser.textbox("t1").value)
+  end
+
+  def test_execute_sahi()
+    @browser.navigate_to(@base_url + "/demo/")
+    #@browser.execute_step("_sahi._click(_sahi._link('Link Test'))")
+    @browser.execute_sahi("_click(_link('Link Test'))") 
+    assert_equal("Link Test", @browser.heading2("Link Test").text)           
   end
 
   def test_accessors()
@@ -379,7 +395,7 @@ class SahiDriverTest < Test::Unit::TestCase
 
   def test_dragdrop()
     @browser.navigate_to("http://www.snook.ca/technical/mootoolsdragdrop/")
-    @browser.div("Drag me").drag_and_drop_on(@browser.div("Item 2"))
+    @browser.div("Drag me").drag_and_drop_on(@browser.xy(@browser.div("Item 2"), 5, 5))
     assert @browser.div("dropped").exists?
     assert @browser.div("Item 1").exists?
     assert @browser.div("Item 3").exists?
@@ -392,14 +408,27 @@ class SahiDriverTest < Test::Unit::TestCase
     assert_equal("populated", @browser.textbox("t1").value)
   end
 
-  def test_google()
-    @browser.navigate_to("http://www.google.com")
-    @browser.textbox("q").value = "sahi forums"
-    @browser.submit("Google Search").click
-    @browser.link("Sahi - Web Automation and Test Tool").click
-    @browser.link("Login").click
-    assert @browser.textbox("req_username").visible?
-  end
+  #def test_google()
+  #	@browser.navigate_to("http://www.google.com")
+  # @browser.textbox("q").value = "sahi forums"
+  #  @browser.submit("Google Search").click
+  #  @browser.link("Sign in").click        
+  #  assert @browser.emailbox("Email").visible?
+  #end
+  
+  def test_range()
+  	@browser.navigate_to(@base_url  + "/demo/")
+  	@browser.link("Form Test").click
+  	@browser.textarea("ta1").value = "abcdefgh";
+  	@browser.textarea("ta1").select_range(2,4)
+  	assert_equal("cd", @browser.selection_text())
+  	@browser.navigate_to(@base_url + "/demo/", true)
+	@browser.link("IFrames Test").click
+	@browser.link("Form Test").click
+	@browser.textarea("ta1").value = "abcdefgh"
+	@browser.textarea("ta1").select_range(2, 4)
+	assert_equal("cd", @browser.selection_text())
+  end	
 
   def test_dblclick()
     @browser.navigate_to("#{@base_url}/demo/clicks.htm")
@@ -415,20 +444,18 @@ class SahiDriverTest < Test::Unit::TestCase
     @browser.button("Clear").click
   end
 
-  def test_different_domains()
-    @browser.navigate_to("#{@base_url}/demo/")
-    @browser.link("Different Domains External").click
-    domain_tyto = @browser.domain("www.tytosoftware.com")
-    domain_bing = @browser.domain("www.bing.com")
+#def test_different_domains()
+#   @b.navigate_to("#{@base_url}/demo/")
+#   @b.link("Different Domains External").click
+#   domain_tyto = @b.domain("www.tytosoftware.com")
+#   domain_bing = @b.domain("www.bing.com")
+#   domain_tyto.link("Link Test").click
+#   domain_bing.textbox("q").value = "fdsfsd"
+#   domain_tyto.link("Back").click
+#   domain_bing.div("bgDiv").click
 
-    domain_tyto.link("Link Test").click
-    domain_bing.textbox("q").value = "fdsfsd"
-
-    domain_tyto.link("Back").click
-    domain_bing.div("bgDiv").click
-
-    @browser.navigate_to("#{@base_url}/demo/");
-  end
+#   @b.navigate_to("#{@base_url}/demo/");
+# end
 
   def test_browser_types()
     @browser.navigate_to("#{@base_url}/demo/")
@@ -477,7 +504,7 @@ class SahiDriverTest < Test::Unit::TestCase
 	assert_equal("b", @browser.textbox("q[1]").value)
 	@browser.strict_visibility_check = true
 	assert_equal("c", @browser.textbox("q[1]").value)
-	@browser.strict_visibility_check = true
+	@browser.strict_visibility_check = false
 	assert_equal("b", @browser.textbox("q[1]").value)
   end
 

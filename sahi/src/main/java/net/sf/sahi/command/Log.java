@@ -24,13 +24,13 @@ import net.sf.sahi.report.LogViewer;
 import net.sf.sahi.request.HttpRequest;
 import net.sf.sahi.response.HttpFileResponse;
 import net.sf.sahi.response.HttpResponse;
-import net.sf.sahi.response.NoCacheHttpResponse;
 import net.sf.sahi.response.SimpleHttpResponse;
 import net.sf.sahi.util.FileNotFoundRuntimeException;
 import net.sf.sahi.util.URLParser;
 import net.sf.sahi.util.Utils;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Properties;
 
 public class Log
 {
@@ -38,16 +38,18 @@ public class Log
 	public HttpResponse viewLogs( final HttpRequest request ) {
 		String fileName = URLParser.logFileNamefromURI( request.uri() );
 		if ( "".equals( fileName ) ) {
-//        	long start = System.currentTimeMillis();
-			String logsList = LogViewer.getLogsList( Configuration.getPlayBackLogsRoot() );
-//            System.out.println((System.currentTimeMillis() - start));
-			NoCacheHttpResponse response = new NoCacheHttpResponse( logsList );
-//            System.out.println((System.currentTimeMillis() - start));
-			return response;
+			return getLogIndexResponse();
 		}
 		else {
 			return new HttpFileResponse( fileName, null, false, false );
 		}
+	}
+
+	public HttpResponse getLogIndexResponse() {
+		Properties p = new Properties();
+		p.setProperty( "logsList", LogViewer.getLogsList( Configuration.getPlayBackLogsRoot() ) );
+		return new HttpFileResponse( Utils.concatPaths( Configuration.getHtdocsRoot(), "spr/logs_template.htm" ), p,
+		                             false, true );
 	}
 
 	public HttpResponse getBrowserScript( final HttpRequest request ) {

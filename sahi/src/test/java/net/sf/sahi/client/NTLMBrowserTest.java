@@ -11,7 +11,7 @@ public class NTLMBrowserTest extends TestCase
 	private Browser browser;
 	private String sahiBasePath = ".";
 	private String userDataDirectory = "./userdata/";
-	private String baseURL = "http://sahi.co.in";
+	private String baseURL = "http://sahipro.com";
 
 	public void testNTLMBrowser() {
 		browser.navigateTo( baseURL + "/demo/formTest.htm" );

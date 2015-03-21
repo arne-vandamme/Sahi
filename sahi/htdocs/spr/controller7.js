@@ -677,8 +677,17 @@ function onScriptFormSubmit(f) {
 	if($('seturl').style.display == "none")	f = window.document.scriptfileform;
 	else f = window.document.scripturlform;  
     if (!checkScript(f)) return false;
+    
     if (f.starturl.value == "") f.starturl.value = sahiOpener().location.href;
     var url = checkURL(f.starturl.value);
+    
+	var startURL = $('script_starturl').value;
+	if (startURL.indexOf("http://") != 0 && startURL.indexOf("https://") != 0) startURL = "http://" + startURL;
+	if (startURL.indexOf("http://localhost:") != -1 || startURL.indexOf("https://localhost:") != -1 || startURL.indexOf("http://localhost/") != -1 || startURL.indexOf("https://localhost/") != -1) {
+		var confirm= window.confirm("Proxy is bypassed for localhost so Sahi may not work on this URL. Please use the machine name or IP address if localhost does not work. Proceed with localhost?");
+		if(confirm != true) return;
+	}
+
     resetStep();
     clearLogs();
 	sendPlaybackSnapshot();
@@ -919,7 +928,7 @@ function getVersion(){
 }
 function updateVersion(){
 	var currentVersion = getVersion();
-	window.open("http://sahi.co.in/w/version-check?v="+currentVersion, "_blank");
+	window.open("http://sahipro.com/w/version-check?v="+currentVersion, "_blank");
 }
 function sahiHandleException(e){}
 function showProperties(){

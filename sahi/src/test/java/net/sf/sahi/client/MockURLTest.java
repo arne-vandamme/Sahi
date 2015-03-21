@@ -6,12 +6,10 @@ import net.sf.sahi.response.HttpResponse;
 import net.sf.sahi.response.SimpleHttpResponse;
 import net.sf.sahi.response.StreamingHttpResponse;
 import net.sf.sahi.stream.filter.ChunkedFilter;
-import org.junit.Ignore;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-@Ignore
 public class MockURLTest extends SahiTestCase
 {
 	private static final long serialVersionUID = 250310150223836438L;
@@ -22,19 +20,19 @@ public class MockURLTest extends SahiTestCase
 	}
 
 	public void testMock() {
-		browser.navigateTo( "http://sahi.co.in/demo/index.htm" );
+		browser.navigateTo( "http://sahipro.com/demo/index.htm" );
 		assertTrue( browser.link( "Link Test" ).exists() );
 
 		browser.addURLMock( ".*sahi[.]co[.]in.*" );
-		browser.navigateTo( "http://sahi.co.in/demo/index.htm", true );
+		browser.navigateTo( "http://sahipro.com/demo/index.htm", true );
 		assertFalse( browser.link( "Link Test" ).exists() );
 
 		browser.removeURLMock( ".*sahi[.]co[.]in.*" );
-		browser.navigateTo( "http://sahi.co.in/demo/index.htm", true );
+		browser.navigateTo( "http://sahipro.com/demo/index.htm", true );
 		assertTrue( browser.link( "Link Test" ).exists() );
 
 		browser.addURLMock( ".*sahi[.]co[.]in.*", "net.sf.sahi.client.MockURLTest_mockMe" );
-		browser.navigateTo( "http://sahi.co.in/demo/index.htm", true );
+		browser.navigateTo( "http://sahipro.com/demo/index.htm", true );
 		assertTrue( browser.div( "Hi there" ).exists() );
 	}
 

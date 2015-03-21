@@ -1,7 +1,6 @@
 package net.sf.sahi.test;
 
 import junit.framework.TestCase;
-import org.junit.Test;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -42,7 +41,7 @@ public class ProcessHelperTest extends TestCase
 		ProcessHelper ph = new ProcessHelper(
 				"\"C:\\Program Files\\Mozilla Firefox\\firefox.exe\" -profile \"D:/sahi_v2/browser/ff/profiles/sahi0\"",
 				"firefox.exe" );
-		ph.getPIDs();
+//		ph.getPIDs();
 	}
 
 	public void testDummy() {

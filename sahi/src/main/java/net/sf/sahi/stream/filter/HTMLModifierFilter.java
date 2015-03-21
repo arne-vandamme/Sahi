@@ -6,6 +6,8 @@ import net.sf.sahi.util.Utils;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -134,6 +136,13 @@ public class HTMLModifierFilter extends StreamFilter
 	}
 
 	private int getTagEndIndex( String s ) {
+		return getTagEndIndex( s, Configuration.handleXuaIeMetaTag() );
+	}
+
+	private int getTagEndIndex( String s, boolean forXUA ) {
+		if ( Configuration.handleConditionalHTMLComments() ) {
+			s = removeComments( s );
+		}
 		int scriptStartIx = s.indexOf( "<script" );
 		int scriptEndIx = s.indexOf( "</script" );
 		if ( scriptEndIx == -1 ) {
@@ -148,7 +157,58 @@ public class HTMLModifierFilter extends StreamFilter
 			headIx = -1;
 		}
 		int ix = ( isXHTML && headIx != -1 ) ? headIx : htmlIx;
+		if ( forXUA == true ) {
+			int xuaIx = getModifyIxIeUaCompatibility( s );
+			if ( xuaIx != -1 ) {
+				ix = xuaIx;
+			}
+		}
 		return ix;
+	}
+
+	private String removeComments( String s ) {
+		s = removeComments( s, "<!--[if", "endif]-->" );
+		s = removeComments( s, "<!--", "-->" );
+		return s;
+	}
+
+	int getModifyIxIeUaCompatibility( String s ) {
+		int matchEndIx = getTagEndIndex( s, "</head" );
+		if ( matchEndIx == -1 ) {
+			matchEndIx = s.length();
+		}
+		String baseStr = s.substring( 0, matchEndIx );
+		String patt = "(<meta[^>]*http[-]equiv\\s*[=]\\s*[\"']?X[-]UA[-]Compatible[\"']?.*?>)";
+		Pattern regex = Pattern.compile( patt, Pattern.CASE_INSENSITIVE | Pattern.DOTALL );
+		Matcher regexMatcher = regex.matcher( baseStr );
+		boolean find = regexMatcher.find();
+		if ( !find ) {
+			return -1;
+		}
+		String match = regexMatcher.group( 0 ).toString();
+		return s.indexOf( match ) + match.length() - 1; // minus 1 for end > tag
+	}
+
+	private static String removeComments( String s, final String startTag, final String endTag ) {
+		StringBuilder sb = new StringBuilder( s );
+		int startIndex = 0;
+		int loopbreaker = 0;
+		while ( loopbreaker++ < 100 ) {
+			int commentStartIx = s.indexOf( startTag, startIndex );
+			if ( commentStartIx == -1 ) {
+				break;
+			}
+			int commentEndIx = s.indexOf( endTag, commentStartIx + 1 );
+			if ( commentEndIx == -1 ) {
+				commentEndIx = s.length();
+			}
+			else {
+				commentEndIx = commentEndIx + endTag.length();
+			}
+			sb.replace( commentStartIx, commentEndIx, Utils.getBlankString( commentEndIx - commentStartIx ) );
+			startIndex = commentEndIx;
+		}
+		return sb.toString();
 	}
 
 	private int getTagEndIndex( String s, String tag ) {

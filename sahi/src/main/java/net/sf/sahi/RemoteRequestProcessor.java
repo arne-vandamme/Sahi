@@ -193,6 +193,12 @@ public class RemoteRequestProcessor
 				String fileName = null;
 				boolean contentDispositionForcesDownload = false;
 
+				if ( attachment ) {
+					fileName = response.getAttachmentFileName();
+					contentDispositionForcesDownload = !isMatchingContentTypes( contentTypeHeader, Configuration
+							.attachmentOverrideContentTypes() );
+				}
+
 				if ( fileName == null ) {
 					fileName = requestFromBrowser.fileName();
 				}

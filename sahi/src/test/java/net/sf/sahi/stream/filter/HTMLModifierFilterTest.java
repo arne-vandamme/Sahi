@@ -78,6 +78,30 @@ public class HTMLModifierFilterTest extends AbstractFilterTestCase
 				output );
 	}
 
+	private int getModifyIxIUCompatibility( String s ) {
+		String charset = "utf-8";
+		boolean isXHTML = false;
+		HTMLModifierFilter hmf = new HTMLModifierFilterWithInjectContent( charset, isXHTML, false );
+		return hmf.getModifyIxIeUaCompatibility( s );
+	}
+
+	public void testIUACompatibility() {
+		String str = "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" />ram";
+		assertEquals( getModifyIxIUCompatibility( str ), 51 );
+		str = "<meta http-equiv=X-UA-Compatible content=\"IE=8\" />";
+		assertEquals( getModifyIxIUCompatibility( str ), 49 );
+		str = "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" >";
+		assertEquals( getModifyIxIUCompatibility( str ), 50 );
+		str = "<meta http-equiv=X-UA-Compatible content=\"IE=8\" >";
+		assertEquals( getModifyIxIUCompatibility( str ), 48 );
+		str = "<meta http-equiv=X-UA-Compatible content=\"IE=8\">";
+		assertEquals( getModifyIxIUCompatibility( str ), 47 );
+		str = "<meta http-equiv=\" X-UA-Compatible \" content=\"IE=8\" />";
+		assertEquals( getModifyIxIUCompatibility( str ), -1 );
+		str = "<meta http-equiv=\" X-UA-Compatible\" content=\"IE=8\" />";
+		assertEquals( getModifyIxIUCompatibility( str ), -1 );
+	}
+
 	class HTMLModifierFilterWithInjectContent extends HTMLModifierFilter
 	{
 

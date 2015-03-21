@@ -20,7 +20,7 @@ All accessor APIs take an *identifier* and an optional *domRelation*.
 
 For example, 
 <code>
-<a href="http://sahi.co.in" id="sahi_link">Link to Sahi website</a>
+<a href="http://sahipro.com" id="sahi_link">Link to Sahi website</a>
 </code>
 
 can be represented in the following ways:

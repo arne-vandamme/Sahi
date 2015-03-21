@@ -204,6 +204,40 @@ public class Configuration
 		}
 	}
 
+	public static String getMacProxyResetCommand() {
+		return getUserProperty( "mac.proxy.revert.cmd" ).replace( "$toolsBasePath",
+		                                                          getToolsPath() ) + " " + getUserProperty(
+				"mac.networkserviceorder" );
+	}
+
+	public static long getDelayInBrowserLaunchAfterProxyChange() {
+		try {
+			return Integer.parseInt( getUserProperty( "browser_launch.delay_after_proxy_change" ) );
+		}
+		catch ( Exception e ) {
+			return 0;
+		}
+	}
+
+	public static String getMacProxySetCommand() {
+		return getUserProperty( "mac.proxy.set.cmd" ).replace( "$toolsBasePath",
+		                                                       getToolsPath() ) + " " + getUserProperty(
+				"mac.networkserviceorder" );
+	}
+
+	public static boolean isWindowsContinuousProxyReset() {
+		return "true".equals( getUserProperty( "windows.proxy.continuous.reset" ) );
+	}
+
+	public static int getWindowsContinuousProxyResetInterval() {
+		try {
+			return Integer.parseInt( getUserProperty( "windows.proxy.continuous.reset.interval" ) );
+		}
+		catch ( Exception e ) {
+			return 300;
+		}
+	}
+
 	public static int getPort() {
 		try {
 			return Integer.parseInt( getUserProperty( "proxy.port" ) );
@@ -294,13 +328,8 @@ public class Configuration
 		}
 	}
 
-	public static int getMaxInactiveTimeForScript() {
-		try {
-			return Integer.parseInt( getUserProperty( "suite.max_inactive_time_for_script" ) ) * 1000;
-		}
-		catch ( Exception e ) {
-			return 20000;
-		}
+	public static int getMaxPageLoadTime() {
+		return getMaxCyclesForPageLoad() * getTimeBetweenSteps();
 	}
 
 	public static void createScriptsDirIfNeeded() {
@@ -525,12 +554,34 @@ public class Configuration
 	public static Pattern getDownloadContentTypesRegExp() {
 		String[] downloadables = getNonBlankLines( Utils.readCachedFile( Utils.concatPaths( userDataDir,
 		                                                                                    "config/download_contenttypes.txt" ) ) );
-		if ( downloadables.length != 0 ) {
+		return getPattern( downloadables );
+//		String[] downloadables = getNonBlankLines(Utils.readCachedFile(Utils.concatPaths(userDataDir,
+//				"config/download_contenttypes.txt")));
+//		if (downloadables.length != 0) {
+//			try {
+//				StringBuilder sb = new StringBuilder("(?:.*");
+//				for (int i = 0; i < downloadables.length; i++) {
+//					sb.append(downloadables[i]);
+//					if (i != downloadables.length - 1) {
+//						sb.append(".*)|(?:");
+//					}
+//				}
+//				sb.append(".*)");
+//				return Pattern.compile(sb.toString());
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
+//		return Pattern.compile("");
+	}
+
+	private static Pattern getPattern( String[] tokens ) {
+		if ( tokens.length != 0 ) {
 			try {
 				StringBuilder sb = new StringBuilder( "(?:.*" );
-				for ( int i = 0; i < downloadables.length; i++ ) {
-					sb.append( downloadables[i] );
-					if ( i != downloadables.length - 1 ) {
+				for ( int i = 0; i < tokens.length; i++ ) {
+					sb.append( tokens[i] );
+					if ( i != tokens.length - 1 ) {
 						sb.append( ".*)|(?:" );
 					}
 				}
@@ -783,8 +834,42 @@ public class Configuration
 		return Configuration.getAbsolutePath( "config/inject_top.txt" );
 	}
 
+	public static String getProxyAlertMessage() {
+		return Configuration.getAbsolutePath( "config/proxy_config_alert.txt" );
+	}
+
+	public static boolean isProxyAlertOn() {
+		return "false".equals( getUserProperty( "proxy_alert.disabled" ) );
+	}
+
+	public static void setProxyAlertOff( boolean flag ) {
+		userProperties.setProperty( "proxy_alert.disabled", "" + flag );
+		String userPropsPath = Utils.concatPaths( userDataDir, SAHI_USER_PROPERTIES );
+		String userPropsData = Utils.readFileAsString( userPropsPath );
+		if ( userPropsData.indexOf( "proxy_alert.disabled" ) == -1 ) {
+			userPropsData = userPropsData + "/n" + "proxy_alert.disabled=true";
+		}
+		else {
+			String regex = "proxy_alert.disabled\\s*=\\s*false";
+			userPropsData = userPropsData.replaceAll( regex, "proxy_alert.disabled=true" );
+		}
+		Utils.writeFile( userPropsData, userPropsPath, true );
+	}
+
 	public static String getInjectBottom() {
 		return Configuration.getAbsolutePath( "config/inject_bottom.txt" );
+	}
+
+	public static boolean handleConditionalHTMLComments() {
+		return "true".equals( getUserProperty( "sahi.inject.handle_conditional_html_comments" ) );
+	}
+
+	public static boolean handleXuaIeMetaTag() {
+		return "true".equals( getUserProperty( "sahi.inject.handle_xua_ie_meta_tag" ) );
+	}
+
+	public static boolean forceTreatAsXHTML() {
+		return "true".equals( getUserProperty( "sahi.inject.force_treat_as_xhtml" ) );
 	}
 
 	public static String getSSLCommandFile() {
@@ -809,6 +894,11 @@ public class Configuration
 
 	public static String getVersion() {
 		String path = Utils.concatPaths( getConfigPath(), "version.txt" );
+		return new String( Utils.readCachedFile( path ) );
+	}
+
+	public static String getVersionTimeStamp() {
+		String path = Utils.concatPaths( getConfigPath(), "version_ts.txt" );
 		return new String( Utils.readCachedFile( path ) );
 	}
 
@@ -866,16 +956,34 @@ public class Configuration
 		return getUserProperty( "recorder.ignorable_ids.pattern", "^z_" ).trim();
 	}
 
-	public static boolean forceTreatAsXHTML() {
-		return "true".equals( getUserProperty( "sahi.inject.force_treat_as_xhtml" ) );
-	}
-
 	public static int getMaxTimeForPIDGatherFromDashboard() {
 		try {
 			return Integer.parseInt( getUserProperty( "dashboard.max_time_for_pid_gather", "5000" ) );
 		}
 		catch ( Exception e ) {
 			return 5000;
+		}
+	}
+
+	public static String getBaseDir() {
+		return basePath;
+	}
+
+	public static int getWaitTimeForPIDsBeforeKill() {
+		try {
+			return Integer.parseInt( getUserProperty( "kill.max_time_for_pid_gather_before_kill" ) );
+		}
+		catch ( Exception e ) {
+			return 60000;
+		}
+	}
+
+	public static int getMaxBrowserRelaunchCount() {
+		try {
+			return Integer.parseInt( getUserProperty( "browser.max_relaunch_count" ) );
+		}
+		catch ( Exception e ) {
+			return 2;
 		}
 	}
 
@@ -888,5 +996,24 @@ public class Configuration
 		}
 	}
 
+	public static Pattern attachmentOverrideContentTypes() {
+		return getPattern( getUserProperty( "download.contentdispostion.override_contenttypes" ).split( "," ) );
+	}
+
+	public static boolean isControllerStateRemembered() {
+		return "true".equals( getUserProperty( "controller.remember_state.enabled" ) );
+	}
+
+	public static boolean isSahiExpressFlagOn() {
+		return "true".equals( getUserProperty( "sahi.express.flag" ) );
+	}
+
+	public static String getVersionNumber() {
+		return "5.0";
+	}
 	// Pro start
+
+	public static boolean showVersionUpdateAvailable() {
+		return "true".equals( userProperties.getProperty( "sahi_start_page.show_version_update_available.enabled" ) );
+	}
 }

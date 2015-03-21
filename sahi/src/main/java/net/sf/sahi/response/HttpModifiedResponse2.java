@@ -42,7 +42,7 @@ public class HttpModifiedResponse2 extends HttpResponse
 		copyFrom( response );
 	    /*
         removing cache headers again for login problem.
-        test on IE sahi.co.in login/logout
+        test on IE sahipro.com login/logout
         */
 		this.isSSL = isSSL;
 		if ( responseCode < 300 || responseCode >= 400 ) { // Response code other than 3xx

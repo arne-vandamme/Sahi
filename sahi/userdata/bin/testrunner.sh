@@ -4,8 +4,8 @@ then
 echo "Usage: testrunner.sh <sah file|suite file> <startURL> <browserType>"
 echo "File path is relative to userdata/scripts"
 echo "Example:" 
-echo "testrunner.sh demo/demo.suite http://sahi.co.in/demo/ <browserType>"
-echo "testrunner.sh demo/sahi_demo.sah http://sahi.co.in/demo/ <browserType>"
+echo "./testrunner.sh demo/demo.suite http://sahipro.com/demo/ firefox"
+echo "./testrunner.sh demo/sahi_demo.sah http://sahipro.com/demo/ chrome"
 else
 
 export SAHI_HOME=../..

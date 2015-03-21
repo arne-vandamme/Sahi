@@ -31,6 +31,8 @@ import net.sf.sahi.util.Utils;
 
 public class ControllerUI
 {
+	private static String updateHTML = null;
+
 	//    private static final Logger logger = Logger.getLogger("net.sf.sahi.command.ControllerUI");
 	public void opened( final HttpRequest request ) {
 		request.session().setIsWindowOpen( true );
@@ -100,7 +102,25 @@ public class ControllerUI
 		return new NoCacheHttpResponse( dataStr );
 	}
 
+	public HttpResponse showUpdate( final HttpRequest request ) {
+		if ( ( updateHTML == null || Configuration.isDevMode() )
+				&& Configuration.showVersionUpdateAvailable() ) {
+			try {
+				byte[] bytes = Utils.readURLThrowException(
+						"http://sahipro.com/static/builds/os/download_installer.htm" );
+				updateHTML = new String( bytes );
+			}
+			catch ( Exception e ) {
+				updateHTML = "";
+			}
+		}
+		else {
+			updateHTML = "";
+		}
+		return new SimpleHttpResponse( updateHTML );
+	}
+
 	public HttpResponse getSahiVersion( final HttpRequest request ) {
-		return new SimpleHttpResponse( Configuration.getVersion() );
+		return new SimpleHttpResponse( Configuration.getVersionTimeStamp() );
 	}
 }

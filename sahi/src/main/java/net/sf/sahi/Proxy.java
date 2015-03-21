@@ -169,7 +169,7 @@ public class Proxy
 
 			server.setReuseAddress( true );
 			server.bind( new InetSocketAddress( port ), 300 );
-			System.out.println( ">>>> Sahi started. Listening on port: " + port );
+			System.out.println( ">>>> Sahi OS v5.0 started. Listening on port: " + port );
 			System.out.println( ">>>> Configure your browser to use this server and port as its proxy" );
 			System.out.println(
 					">>>> Browse any page and CTRL-ALT-DblClick on the page to bring up the Sahi Controller" );

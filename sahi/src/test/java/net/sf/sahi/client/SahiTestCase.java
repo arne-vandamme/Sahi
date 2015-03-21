@@ -27,6 +27,7 @@ public abstract class SahiTestCase
 {
 	private static final long serialVersionUID = 9094239240720483156L;
 	protected Browser browser;
+	protected Browser b;
 	protected Proxy proxy;
 	protected String sahiBasePath = ".";
 	protected String userDataDirectory = "./userdata/";
@@ -47,6 +48,7 @@ public abstract class SahiTestCase
 		setBrowser();
 
 		browser = new Browser( browserName );
+		b = browser;
 		browser.open();
 	}
 

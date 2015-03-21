@@ -40,7 +40,7 @@ public class TestReporter
 		if ( report != null ) {
 			report.addResult( SahiScript.stripSahiFromFunctionNames( request.getParameter( "msg" ) ),
 			                  request.getParameter( "type" ), request.getParameter( "debugInfo" ), request.getParameter(
-					"failureMsg" ) );
+							"failureMsg" ) );
 		}
 	}
 }

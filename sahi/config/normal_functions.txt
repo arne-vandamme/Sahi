@@ -36,6 +36,7 @@ _in
 _near
 _rte
 _iframe
+_frame
 _tableHeader
 _heading1
 _heading2
@@ -84,7 +85,11 @@ _title
 _exists
 
 _isIE
-_isIE9
+_isIE6
+_isIE7
+_isIE8
+_isIE9 
+_isIE10
 _isFF
 _isFF3
 _isFF4
@@ -92,7 +97,7 @@ _isChrome
 _isSafari
 _isOpera
 _isHTMLUnit
-
+_fieldset
 
 _fetch
 _random
@@ -164,3 +169,9 @@ _dTerm
 _dDesc
 _paragraph
 _scriptStartTime
+_isIE11
+_isIE11Plus
+_font
+_hr
+_getSelectionText
+_copyFile

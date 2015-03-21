@@ -68,6 +68,8 @@ public class Browser extends BrowserElements
 	private String browserPath;
 	private String browserOption;
 	private String browserProcessName;
+	private ArrayList<String> steps = new ArrayList<String>();
+	private boolean translationMode = false;
 
 	/**
 	 * Constructs a Browser object and associates it with a session on Sahi Proxy
@@ -118,12 +120,16 @@ public class Browser extends BrowserElements
 		super.browser = this;
 	}
 
-	private String getProxyURL( String command, QueryStringBuilder qs ) {
+	private String getProxyURL( String string, QueryStringBuilder queryStringBuilder ) {
+		return getProxyURL( string, queryStringBuilder, false );
+	}
+
+	private String getProxyURL( String command, QueryStringBuilder qs, boolean addSahi ) {
 		if ( qs == null ) {
 			qs = new QueryStringBuilder();
 		}
 		qs.add( "sahisid", sessionId );
-		return "http://" + host + ":" + port + "/_s_/dyn/Driver_" + command + qs.toString();
+		return "http://" + host + ":" + port + "/_s_/dyn/Driver_" + command + qs.toString() + "&addSahi=" + addSahi;
 	}
 
 	/**
@@ -144,7 +150,18 @@ public class Browser extends BrowserElements
 	}
 
 	private String execCommand( String command, QueryStringBuilder qs ) {
-		return new String( Utils.readURL( getProxyURL( command, qs ) ) );
+		return execCommand( command, qs, false );
+	}
+
+	private String execCommand( String command, QueryStringBuilder qs, boolean addSahi ) {
+		try {
+			return new String( Utils.readURL( getProxyURL( command, qs, addSahi ) ), "UTF-8" );
+		}
+		catch ( UnsupportedEncodingException e ) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	/**
@@ -172,11 +189,50 @@ public class Browser extends BrowserElements
 	/**
 	 * Sahi waits for AJAX readyStates 1,2 and 3.
 	 * Some applications may have an AJAX request open at state 1 for long periods of time.
-	 * Sahi should be asked to ignore readyState 1. _setXHRReadyStatesToWaitFor(�2,3?) can be called in this case.
-	 * $waitStates is just a string of comma separated readyStates (�1,2,3? or �2? or �2,3? etc.).
+	 * Sahi should be asked to ignore readyState 1. _setXHRReadyStatesToWaitFor(2,3?) can be called in this case.
+	 * $waitStates is just a string of comma separated readyStates (1,2,3? or 2? or 2,3? etc.).
 	 *
 	 * @param s
 	 */
+
+	public void selectRange( ElementStub element, int rangeStart, int rangeEnd ) throws ExecutionException {
+		execute( "_sahi._selectRange(" + element + ", " + rangeStart + ", " + rangeEnd + ")" );
+	}
+
+	/**
+	 * Getting the selected text
+	 *
+	 * @param window Eg. browser.selectRange(browser.div("s4Id"), 1, 4);
+	 */
+	public String getSelectionText( ElementStub window ) {
+		return fetch( "_sahi._getSelectionText(" + window + ")" );
+	}
+
+	public String getSelectionText() {
+		return getSelectionText( null );
+	}
+
+	/**
+	 * Selecting text for manipulation (like selecting text in a Rich Text Editor to change font to bold)
+	 *
+	 * @param element
+	 * @param searchText
+	 * @param position   Eg. browser.selectTextRange(_rte(1), "red apple", "before");
+	 */
+	public void selectTextRange( ElementStub element, String searchText, String position ) throws ExecutionException {
+		execute( "_sahi._selectRange(" + element + ", " + searchText + ", " + position + ")" );
+	}
+
+	/**
+	 * Selecting text for manipulation (like selecting text in a Rich Text Editor to change font to bold)
+	 *
+	 * @param element
+	 * @param searchText Eg. browser.selectTextRange(_rte(1), "red apple");
+	 */
+	public void selectTextRange( ElementStub element, String searchText ) throws ExecutionException {
+		selectTextRange( element, searchText, null );
+	}
+
 	public void setXHRReadyStatesToWaitFor( String s ) {
 		execute( "_sahi._setXHRReadyStatesToWaitFor(" + quoted( s ) + ")" );
 	}
@@ -188,6 +244,22 @@ public class Browser extends BrowserElements
 	 * @throws ExecutionException
 	 */
 	public void execute( String step ) throws ExecutionException {
+		step = addPrefixToStep( step );
+		executeStep( step );
+	}
+
+	/**
+	 * Executes any sahi code and javascript on the browser.
+	 *
+	 * @param step
+	 * @throws ExecutionException
+	 */
+	public void executeSahi( String step ) throws ExecutionException {
+		step = addPrefixToStep( step );
+		executeStep( step, true );
+	}
+
+	private String addPrefixToStep( String step ) {
 		String prefix = "";
 		if ( isDomain() ) {
 			prefix = "_sahi._domain(\"" + domainName.replaceAll( "\"", "\\\"" ) + "\").";
@@ -196,7 +268,7 @@ public class Browser extends BrowserElements
 			prefix += "_sahi._popup(\"" + popupName.replaceAll( "\"", "\\\"" ) + "\").";
 		}
 		step = prefix + step;
-		executeStep( step );
+		return step;
 	}
 
 	private boolean isPopup() {
@@ -208,12 +280,20 @@ public class Browser extends BrowserElements
 	}
 
 	public void executeStep( String step ) throws ExecutionException {
+		executeStep( step, false );
+	}
+
+	public void executeStep( String step, boolean addSahi ) throws ExecutionException {
+		steps.add( step );
+		if ( translationMode ) {
+			return;
+		}
 		QueryStringBuilder qs = new QueryStringBuilder();
 		// System.out.println("step=" + step);
 		qs.add( "step", step );
-		execCommand( "setStep", qs );
+		execCommand( "setStep", qs, addSahi );
 		int i = 0;
-		while ( i < 4000 ) {
+		while ( i < 1500 ) {
 			try {
 				Thread.sleep( Configuration.getTimeBetweenSteps() );
 			}
@@ -234,8 +314,34 @@ public class Browser extends BrowserElements
 				throw new ExecutionException( checkDone );
 			}
 		}
+		throw new BrowserUnresponsiveException(
+				"did not complete in " + ( 1500 * getTimeBetweenSteps() / 1000 ) + " seconds." );
 	}
 
+	/**
+	 * Returns the time taken between each step
+	 *
+	 * @return
+	 */
+	public long getTimeBetweenSteps() {
+		return 100;
+	}
+
+	/**
+	 * Returns the array of steps executed
+	 *
+	 * @return
+	 */
+	public String[] getSteps() {
+		return steps.toArray( new String[0] );
+	}
+
+	/**
+	 * Sets the translation mode as true or false
+	 */
+	public void setTranslationMode( boolean b ) {
+		this.translationMode = b;
+	}
 //	public void reset() {
 //		try {
 //			navigateTo(getResetURL());
@@ -369,6 +475,35 @@ public class Browser extends BrowserElements
 	 */
 	public void setFile( ElementStub textbox, String value, String URL ) throws ExecutionException {
 		execute( "_sahi._setFile(" + textbox + ", " + quoted( value ) + ", " + quoted( URL ) + ")" );
+	}
+
+	/**
+	 * Sets the file to be posted to the server via a file input field.
+	 * This method instructs the proxy to inject the file contents directly in the request.
+	 * setFile2 also changes the file field to an input field and sets the value.
+	 * This helps in cases where there is javascript validation on the file field being populated
+	 *
+	 * @param elementStub
+	 * @param value
+	 * @param url         String The form "action" url pattern to which this upload request is submitted
+	 * @throws ExecutionException
+	 */
+	public void setFile2( ElementStub textbox, String value, String URL ) throws ExecutionException {
+		execute( "_sahi._setFile2(" + textbox + ", " + quoted( value ) + ", " + quoted( URL ) + ")" );
+	}
+
+	/**
+	 * Sets the file to be posted to the server via a file input field.
+	 * This method instructs the proxy to inject the file contents directly in the request.
+	 * setFile2 also changes the file field to an input field and sets the value.
+	 * This helps in cases where there is javascript validation on the file field being populated
+	 *
+	 * @param elementStub
+	 * @param value
+	 * @throws ExecutionException
+	 */
+	public void setFile2( ElementStub textbox, String value ) throws ExecutionException {
+		execute( "_sahi._setFile2(" + textbox + ", " + quoted( value ) + ")" );
 	}
 
 	/**
@@ -575,6 +710,9 @@ public class Browser extends BrowserElements
 	 * @throws ExecutionException
 	 */
 	public String fetch( String expression ) throws ExecutionException {
+		if ( translationMode ) {
+			return expression;
+		}
 		Date d = new Date();
 		String key = "___lastValue___" + d.toString();
 		execute( "_sahi.setServerVarPlain('" + key + "', " + expression + ")" );

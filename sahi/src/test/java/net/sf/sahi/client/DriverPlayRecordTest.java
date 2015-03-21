@@ -67,7 +67,7 @@ public class DriverPlayRecordTest extends TestCase
 		browser.waitFor( 1000 ); // check that controller window is closed.
 
 		// Perform a few actions, the way Twist performs initial steps and halts for recording
-		browser.navigateTo( "http://sahi.co.in/demo/index.htm" );
+		browser.navigateTo( "http://sahipro.com/demo/index.htm" );
 		assertTrue( browser.link( "Link Test" ).exists() );
 		assertFalse( browser.link( "Link Test 1111" ).exists() );
 		browser.link( "Link Test" ).click();

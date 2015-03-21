@@ -31,6 +31,8 @@ public class Dashboard extends JFrame
 
 	private static final long serialVersionUID = 8348788972744726483L;
 
+	private Map<String, BrowserType> browserTypes;
+
 	private Proxy currentInstance;
 
 	private JPanel masterPanel;
@@ -41,6 +43,14 @@ public class Dashboard extends JFrame
 
 	private boolean isTrafficEnabled;
 
+	private int rigidAreaWidth;
+
+	private int columns = 1;
+
+	private int dashboardWidth;
+
+	private int dashboardHeight;
+
 	public Dashboard() {
 		try {
 			UIManager.setLookAndFeel( UIManager.getSystemLookAndFeelClassName() );
@@ -50,13 +60,16 @@ public class Dashboard extends JFrame
 		}
 		setTitle( "Sahi Dashboard" );
 		startProxy();
+		loadBrowserTypes();
 		buildUI();
 		addOnExit();
-		final Dimension dashboardSize = new Dimension( 200, 225 + 50 + browserTypesHeight );
+		final Dimension dashboardSize = new Dimension( dashboardWidth, dashboardHeight );
+//		final Dimension dashboardSize = new Dimension(200, 325 + 50 + browserTypesHeight);
 		setSize( dashboardSize );
 		setPreferredSize( dashboardSize );
 		refreshTrafficLink();
 		setVisible( true );
+		proxyConfigAlert();
 	}
 
 	private void startProxy() {
@@ -68,60 +81,139 @@ public class Dashboard extends JFrame
 	private void buildUI() {
 		masterPanel = new JPanel();
 		masterPanel.setBackground( new Color( 255, 255, 255 ) );
-		masterPanel.add( Box.createRigidArea( new Dimension( 120, 5 ) ) );
+		masterPanel.add( Box.createRigidArea( new Dimension( rigidAreaWidth, 5 ) ) );
 		masterPanel.add( getBrowserButtons() );
-		masterPanel.add( Box.createRigidArea( new Dimension( 120, 15 ) ) );
+		masterPanel.add( Box.createRigidArea( new Dimension( rigidAreaWidth, 5 ) ) );
 		masterPanel.add( getLogo() );
-		masterPanel.add( Box.createRigidArea( new Dimension( 120, 15 ) ) );
+		masterPanel.add( Box.createRigidArea( new Dimension( rigidAreaWidth, 5 ) ) );
 		masterPanel.add( getLinksPanel1() );
-		masterPanel.add( Box.createRigidArea( new Dimension( 120, 2 ) ) );
+		masterPanel.add( Box.createRigidArea( new Dimension( rigidAreaWidth, 5 ) ) );
 		masterPanel.add( getLinksPanel2() );
-		masterPanel.add( Box.createRigidArea( new Dimension( 120, 2 ) ) );
+		masterPanel.add( Box.createRigidArea( new Dimension( rigidAreaWidth, 5 ) ) );
 		masterPanel.add( getLinksPanel3() );
+		masterPanel.add( Box.createRigidArea( new Dimension( rigidAreaWidth, 5 ) ) );
+		masterPanel.add( showVersionNo() );
+		masterPanel.add( Box.createRigidArea( new Dimension( rigidAreaWidth, 5 ) ) );
+		masterPanel.add( trySahiProPanel() );
+		masterPanel.add( Box.createRigidArea( new Dimension( rigidAreaWidth, 5 ) ) );
+		masterPanel.add( showSocialPlugins() );
 		add( masterPanel );
+	}
 
+	private Component showSocialPlugins() {
+		JPanel buttonPane = new JPanel();
+
+		LinkButton facebook = new LinkButton( "", "https://www.facebook.com/sahi.software", null );
+		facebook.setIcon( new ImageIcon( getImageBytes( "facebook24.png" ), "" ) );
+		buttonPane.add( facebook );
+
+		LinkButton twitter = new LinkButton( "", "https://twitter.com/_sahi", null );
+		twitter.setIcon( new ImageIcon( getImageBytes( "twitter24.png" ), "" ) );
+		buttonPane.add( twitter );
+
+		LinkButton linkedin = new LinkButton( "", "http://www.linkedin.com/company/tyto-software-pvt.-ltd.", null );
+		linkedin.setIcon( new ImageIcon( getImageBytes( "linkedin24.png" ), "" ) );
+		buttonPane.add( linkedin );
+
+		LinkButton google = new LinkButton( "", "https://plus.google.com/+Sahiproautomation/posts", null );
+		google.setIcon( new ImageIcon( getImageBytes( "google24.png" ), "" ) );
+		buttonPane.add( google );
+
+		buttonPane.setBackground( new Color( 255, 255, 255 ) );
+		buttonPane.setLayout( new BoxLayout( buttonPane, BoxLayout.LINE_AXIS ) );
+		return buttonPane;
+	}
+
+	private void loadBrowserTypes() {
+		browserTypes = BrowserTypesLoader.getAvailableBrowserTypes( false );
+		setDashboardDimensions( browserTypes.size() );
+	}
+
+	private void setDashboardDimensions( int size ) {
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		Dimension dim = toolkit.getScreenSize();
+		final double screenHeight = dim.getHeight();
+		int maxButtonsInColumn = (int) ( ( screenHeight - 300 ) / 60 );
+		columns = ( browserTypes.size() / maxButtonsInColumn ) + 1;
+		dashboardWidth = columns * 120 + 80;
+		browserTypesHeight = ( browserTypes.size() == 0 ) ? 120 : ( ( browserTypes
+				.size() + ( columns > 1 ? 1 : 0 ) ) * 50 / columns );
+		dashboardHeight = 360 + 50 + browserTypesHeight;
+		rigidAreaWidth = columns * 120 + 40;
 	}
 
 	private Component getLinksPanel1() {
-		LinkButton link = new LinkButton( "Configure", "http://localhost:9999/_s_/dyn/ConfigureUI" );
-		String scriptsPath = Configuration.getScriptRoots()[0];
-		if ( scriptsPath.endsWith( "/" ) || scriptsPath.endsWith( "\\" ) ) {
-			scriptsPath = scriptsPath.substring( 0, scriptsPath.length() - 1 );
-		}
-		LinkButton link2;
-		if ( System.getProperty( "os.name" ).startsWith( "Windows" ) ) {
-			link2 = new LinkButton( "Scripts", "explorer /e,\"" + scriptsPath + "\"" );
-		}
-		else {
-			link2 = new LinkButton( "Scripts", "\"" + scriptsPath + "\"" );
-		}
-
 		JPanel buttonPane = new JPanel();
-		buttonPane.setBackground( new Color( 255, 255, 255 ) );
-		buttonPane.setLayout( new BoxLayout( buttonPane, BoxLayout.LINE_AXIS ) );
+		String scriptsPath = Configuration.getScriptRoots()[0];
+
+		LinkButton link = new LinkButton( "Configure", "http://localhost:9999/_s_/dyn/ConfigureUI",
+		                                  "Edit configurable files" );
 		buttonPane.add( link );
 		buttonPane.add( Box.createRigidArea( new Dimension( 10, 0 ) ) );
+
+		LinkButton link2;
+		if ( Utils.isWindows() ) {
+			if ( Configuration.isSahiExpressFlagOn() ) {
+				link2 = new LinkButton( "Scripts Dir", "explorer /e,\"" + scriptsPath + "\"",
+				                        "Opens the script folder" );
+			}
+			else {
+				link2 = new LinkButton( "Scripts", "explorer /e,\"" + scriptsPath + "\"", "Opens the script folder" );
+			}
+		}
+		else {
+			if ( Configuration.isSahiExpressFlagOn() ) {
+				link2 = new LinkButton( "Scripts Dir", "\"" + scriptsPath + "\"", "Opens the script folder" );
+			}
+			else {
+				link2 = new LinkButton( "Scripts", "\"" + scriptsPath + "\"", "Opens the script folder" );
+			}
+		}
 		buttonPane.add( link2 );
+		buttonPane.add( Box.createRigidArea( new Dimension( 10, 0 ) ) );
+
+		LinkButton webrunner = new LinkButton( "Editor", "http://sahipro.com/docs/using-sahi/sahi-script-editor.html",
+		                                       "Documentation for Web Based Editor (Sahi Pro feature)" );
+		buttonPane.add( webrunner );
+		buttonPane.add( Box.createRigidArea( new Dimension( 10, 0 ) ) );
+
+		buttonPane.setBackground( new Color( 255, 255, 255 ) );
+		buttonPane.setLayout( new BoxLayout( buttonPane, BoxLayout.LINE_AXIS ) );
 		return buttonPane;
 	}
 
 	private Component getLinksPanel2() {
-		LinkButton link3 = new LinkButton( "Logs", "http://localhost:9999/logs/" );
-		LinkButton link4 = new LinkButton( "DB Logs", "http://localhost:9999//_s_/dyn/pro/DBReports" );
-
 		JPanel buttonPane = new JPanel();
-		buttonPane.setBackground( new Color( 255, 255, 255 ) );
-		buttonPane.setLayout( new BoxLayout( buttonPane, BoxLayout.LINE_AXIS ) );
+
+		LinkButton link6 = new LinkButton( "Docs", "http://sahipro.com/docs/introduction/index.html",
+		                                   "Open Sahi Pro documentation" );
+		buttonPane.add( link6 );
+		buttonPane.add( Box.createRigidArea( new Dimension( 10, 0 ) ) );
+
+		LinkButton link3 = new LinkButton( "Logs", "http://localhost:9999/logs/", "Open playback logs" );
 		buttonPane.add( link3 );
 		buttonPane.add( Box.createRigidArea( new Dimension( 10, 0 ) ) );
-		buttonPane.add( link4 );
 
-		if ( System.getProperty( "os.name" ).startsWith( "Windows" ) ) {
-			LinkButton link5 = new LinkButton( "Bin", "cmd.exe /K cd " + Configuration.getAbsoluteUserPath( "bin" ) );
-			buttonPane.add( Box.createRigidArea( new Dimension( 10, 0 ) ) );
+		if ( Utils.isWindows() ) {
+			LinkButton link5 = new LinkButton( "Bin", "cmd.exe /K cd " + Configuration.getAbsoluteUserPath( "bin" ),
+			                                   "Open command prompt at userdata/bin folder" );
 			buttonPane.add( link5 );
+			buttonPane.add( Box.createRigidArea( new Dimension( 10, 0 ) ) );
+		}
+		else if ( Utils.isMac() ) {
+			LinkButton link5 = new LinkButton( "Bin",
+			                                   "osascript -e 'tell application \"Terminal\" to do script \"cd " + Configuration
+					                                   .getAbsoluteUserPath( "bin" ) + "\"'",
+			                                   "Open command prompt at userdata/bin folder" );
+			buttonPane.add( link5 );
+			buttonPane.add( Box.createRigidArea( new Dimension( 10, 0 ) ) );
+		}
+		else {
+			// some blank space in UI?
 		}
 
+		buttonPane.setBackground( new Color( 255, 255, 255 ) );
+		buttonPane.setLayout( new BoxLayout( buttonPane, BoxLayout.LINE_AXIS ) );
 		return buttonPane;
 	}
 
@@ -163,6 +255,29 @@ public class Dashboard extends JFrame
 		buttonPane.setLayout( new FlowLayout() );
 		buttonPane.add( trafficLabel );
 
+		LinkButton link2;
+		String logsPath = Configuration.getLogsRoot();
+		final String text = "[&#8599;]";
+		if ( Utils.isWindows() ) {
+			link2 = new LinkButton( text, "explorer /e,\"" + logsPath + "\"", "Go to the Traffic Logs directory" );
+		}
+		else {
+			link2 = new LinkButton( text, "\"" + logsPath + "\"", "Go to the Traffic Logs directory" );
+		}
+		buttonPane.add( link2 );
+
+		return buttonPane;
+	}
+
+	private Component trySahiProPanel() {
+		JPanel buttonPane = new JPanel();
+
+		LinkButton toSahiProLink = new LinkButton( "Try Sahi Pro", "http://sahipro.com/sahi-open-source/",
+		                                           "TRY THE LATEST SAHI PRO!" );
+		buttonPane.setBackground( new Color( 255, 255, 255 ) );
+		buttonPane.add( toSahiProLink );
+		buttonPane.add( Box.createRigidArea( new Dimension( 10, 0 ) ) );
+//		buttonPane.setLayout(new BoxLayout(buttonPane, BoxLayout.LINE_AXIS));
 		return buttonPane;
 	}
 
@@ -186,7 +301,7 @@ public class Dashboard extends JFrame
 
 	private JPanel getBrowserButtons() {
 		JPanel panel = new JPanel();
-		final GridLayout layout = new GridLayout( 0, 1, 0, 10 );
+		final GridLayout layout = new GridLayout( 0, columns, 0, 10 );
 		panel.setLayout( layout );
 		final Border innerBorder = BorderFactory.createEmptyBorder( 0, 10, 10, 10 );
 		final Border outerBorder = BorderFactory.createEtchedBorder( EtchedBorder.LOWERED );
@@ -194,13 +309,11 @@ public class Dashboard extends JFrame
 		final Border titleBorder = BorderFactory.createTitledBorder( compoundBorder, "Launch Browser" );
 		panel.setBorder( titleBorder );
 		add( panel );
-		final Map<String, BrowserType> browserTypes = BrowserTypesLoader.getAvailableBrowserTypes( false );
 		if ( browserTypes.size() == 0 ) {
 			final JLabel label = new JLabel(
 					"<html><b>No usable browsers<br>found in<br>browser_types.xml</b>.<br><br> Click on the<br><u>Configure</u> link below<br>to add/edit browsers.</html>" );
 			label.setSize( 120, 100 );
 			panel.add( label );
-			browserTypesHeight = 100;
 		}
 		else {
 			for ( Iterator<String> iterator = browserTypes.keySet().iterator(); iterator.hasNext(); ) {
@@ -208,10 +321,20 @@ public class Dashboard extends JFrame
 				BrowserType browserType = browserTypes.get( name );
 				addButton( browserType, panel );
 			}
-			browserTypesHeight = browserTypes.size() * 50;
 		}
 		panel.setBackground( new Color( 255, 255, 255 ) );
 		return panel;
+	}
+
+	private Component showVersionNo() {
+		JPanel buttonPane = new JPanel();
+		buttonPane.setBackground( new Color( 255, 255, 255 ) );
+		buttonPane.setLayout( new FlowLayout() );
+//		buttonPane.add(new JLabel("Sahi OS " + Configuration.getVersionNumber() + " (" + Configuration.getVersion().split(" ")[0] +")"));
+		buttonPane.add( new JLabel(
+				"Sahi OS " + Configuration.getVersion() + " (" + Configuration.getVersionTimeStamp().split(
+						" " )[0] + ")" ) );
+		return buttonPane;
 	}
 
 	private void setIcon( AbstractButton button, String iconFile ) {
@@ -224,7 +347,8 @@ public class Dashboard extends JFrame
 
 	private byte[] getImageBytes( String iconFile ) {
 		try {
-			final InputStream resourceAsStream = Dashboard.class.getResourceAsStream( "/main/resources/" + iconFile );
+			final InputStream resourceAsStream = Dashboard.class.getResourceAsStream(
+					"/net/sf/sahi/resources/" + iconFile );
 			return Utils.getBytes( resourceAsStream );
 		}
 		catch ( IOException e ) {
@@ -288,6 +412,32 @@ public class Dashboard extends JFrame
 		}
 		catch ( Exception ex ) {
 			Logger.getLogger( Dashboard.class.getName() ).log( Level.SEVERE, null, ex );
+		}
+	}
+
+	private void proxyConfigAlert() {
+		if ( Configuration.isProxyAlertOn() ) {
+			String message = Utils.readFileAsString( Configuration.getProxyAlertMessage() );
+			JCheckBox checkbox = new JCheckBox( "Do not show this message again." );
+			String title = "Sahi Proxy Question";
+			UIManager.put( "OptionPane.okButtonText", "Continue..." );
+			UIManager.put( "OptionPane.cancelButtonText", "Quit Sahi" );
+			Object[] params = { message, checkbox };
+			int n = JOptionPane.showConfirmDialog( null, params, title, JOptionPane.OK_CANCEL_OPTION,
+			                                       JOptionPane.QUESTION_MESSAGE );
+			boolean dontShow = checkbox.isSelected();
+			if ( n == JOptionPane.OK_OPTION ) { // Affirmative
+				if ( dontShow ) {
+					Configuration.setProxyAlertOff( true );
+				}
+				return;
+			}
+			else if ( n == JOptionPane.CANCEL_OPTION ) { // negative
+				System.exit( 0 );
+			}
+			else if ( n == JOptionPane.CLOSED_OPTION ) { // closed the dialog
+				System.exit( 0 );
+			}
 		}
 	}
 

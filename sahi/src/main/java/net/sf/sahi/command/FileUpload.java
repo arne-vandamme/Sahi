@@ -51,8 +51,17 @@ public class FileUpload
 		String filePath = request.getParameter( "v" );
 		list.add( filePath );
 		session.setObject( key, list );
-		session.mockResponder().add( request.getParameter( "action" ).replaceAll( "[.]", "[.]" ) + ".*",
-		                             "FileUpload_appendFiles" );
+		String urlPattern = request.getParameter( "action" );
+		if ( urlPattern.startsWith( "/" ) && ( urlPattern.endsWith( "/" ) ) ) {
+			urlPattern = urlPattern.substring( 1, urlPattern.length() - 1 );
+		}
+		else {
+			boolean addDotStarAtStart = !( urlPattern.startsWith( "http://" ) || urlPattern.startsWith( "https://" ) );
+			urlPattern = ( addDotStarAtStart ? ".*" : "" ) + urlPattern.replaceAll( "[.]", "[.]" ) + ".*";
+		}
+		logger.info( "Adding pattern: " + urlPattern );
+//        System.out.println("Adding pattern: " + urlPattern);
+		session.mockResponder().add( urlPattern.toLowerCase(), "FileUpload_appendFiles" );
 		if ( new File( Configuration.getAbsoluteUserPath( filePath ) ).exists() ) {
 			return new SimpleHttpResponse( "true" );
 		}
@@ -98,7 +107,7 @@ public class FileUpload
 				part.setFileName( new File( fileName ).getName() );
 			}
 			rebuiltRequest = multiPartRequest.getRebuiltRequest();
-			session.mockResponder().remove( request.url().replaceAll( "[.]", "[.]" ) );
+			session.mockResponder().remove( request.matchedPattern() );
 		}
 		return new RemoteRequestProcessor().processHttp( rebuiltRequest );
 	}

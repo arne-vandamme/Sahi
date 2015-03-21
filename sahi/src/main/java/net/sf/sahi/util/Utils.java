@@ -239,6 +239,14 @@ public class Utils
 		return false;
 	}
 
+	public static String getBlankString( int length ) {
+		char[] blanks = new char[length];
+		for ( int i = 0; i < length; i++ ) {
+			blanks[i] = ' ';
+		}
+		return new String( blanks );
+	}
+
 	public static String readFileAsString( final File file ) {
 		return getString( readFile( file ) );
 	}
@@ -252,12 +260,16 @@ public class Utils
 	// equivalent. Eg : By passing "Éléphant", the function would return
 	// "Elephant".
 	// Should consider refactoring to StringBuilder();
-	public static String convertStringToASCII(String s) {
-		return s.replaceAll("(è|é|ê|ë)", "e").replaceAll("(ù|ú|û|ü)", "u").replaceAll("(à|á|â|ã|ä|å)", "a").replaceAll(
-				"æ", "ae").replaceAll("(ì|í|î|ï)", "i").replaceAll("(ò|ó|ô|õ|ö|ø)", "o").replaceAll("(ý|ÿ)", "y")
-		        .replaceAll("ñ", "n").replaceAll("ç", "c").replaceAll("(À|Á|Â|Ã|Ä|Å)", "A").replaceAll("Æ", "AE")
-		        .replaceAll("Ç", "C").replaceAll("(È|É|Ê|Ë)", "E").replaceAll("(Ì|Í|Î|Ï)", "I").replaceAll("Ñ", "N")
-		        .replaceAll("(Ò|Ó|Ô|Õ|Ö|Ø)", "O").replaceAll("(Ù|Ú|Û|Ü)", "U").replaceAll("Ý", "Y");
+	public static String convertStringToASCII( String s ) {
+		return s.replaceAll( "(è|é|ê|ë)", "e" ).replaceAll( "(ù|ú|û|ü)", "u" ).replaceAll( "(à|á|â|ã|ä|å)", "a" )
+		        .replaceAll(
+				        "æ", "ae" ).replaceAll( "(ì|í|î|ï)", "i" ).replaceAll( "(ò|ó|ô|õ|ö|ø)", "o" ).replaceAll(
+						"(ý|ÿ)", "y" )
+		        .replaceAll( "ñ", "n" ).replaceAll( "ç", "c" ).replaceAll( "(À|Á|Â|Ã|Ä|Å)", "A" ).replaceAll( "Æ",
+		                                                                                                      "AE" )
+		        .replaceAll( "Ç", "C" ).replaceAll( "(È|É|Ê|Ë)", "E" ).replaceAll( "(Ì|Í|Î|Ï)", "I" ).replaceAll( "Ñ",
+		                                                                                                          "N" )
+		        .replaceAll( "(Ò|Ó|Ô|Õ|Ö|Ø)", "O" ).replaceAll( "(Ù|Ú|Û|Ü)", "U" ).replaceAll( "Ý", "Y" );
 	}
 
 	public static synchronized String createLogFileName( final String scriptFileName ) {
@@ -422,6 +434,10 @@ public class Utils
 
 	public static boolean isWindows() {
 		return System.getProperty( "os.name" ).toLowerCase().startsWith( "windows" );
+	}
+
+	public static boolean isMac() {
+		return System.getProperty( "os.name" ).startsWith( "Mac OS" );
 	}
 
 	public static boolean isWindowsNT() {
@@ -633,8 +649,12 @@ public class Utils
 		return map;
 	}
 
-	public static String expandSystemProperties( String cmd ) {
-		return substitute( cmd, System.getenv() );
+	public static String expandSystemProperties( String cmd, boolean removeDuplicateX86 ) {
+		String substituted = substitute( cmd, System.getenv() );
+		if ( removeDuplicateX86 ) {
+			substituted = substituted.replace( "(x86) (x86)", "(x86)" );
+		}
+		return substituted;
 	}
 
 	public static String getOSFamily() {
@@ -649,6 +669,9 @@ public class Utils
 	}
 
 	public static String replaceLocalhostWithMachineName( String url ) {
+		if ( !url.matches( "^[^:]*://localhost[:/?].*$" ) && !url.matches( "^[^:]*://localhost" ) ) {
+			return url;
+		}
 		String computername;
 		try {
 			computername = InetAddress.getLocalHost().getHostName();

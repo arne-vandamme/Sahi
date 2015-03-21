@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="Windows-1252" ?>
 <NotepadPlus>
 	<AutoComplete ignoreCase="no" startFunc="(" stopFunc=")" paramSeparator="," terminal=";" >
+		<KeyWord name="_abbr" />
+		<KeyWord name="_above" />
+		<KeyWord name="_aboveOrUnder" />
 		<KeyWord name="_addMock" />
 		<KeyWord name="_accessor" />
+		<KeyWord name="_activeElement" />
 		<KeyWord name="_alert" />
 		<KeyWord name="_areEqualArrays" />
 		<KeyWord name="_area" />
@@ -30,7 +34,6 @@
 		<KeyWord name="_byXPath" />
 		<KeyWord name="_call" />
 		<KeyWord name="_callServer" />
-		<KeyWord name="_callServer" />
 		<KeyWord name="_cell" />
 		<KeyWord name="_check" />
 		<KeyWord name="_checkbox" />
@@ -53,7 +56,7 @@
 		<KeyWord name="_createCookie" />
 		<KeyWord name="_dataDrive" />
 		<KeyWord name="_datebox" />
-		<KeyWord name="_datetime-localbox" />
+		<KeyWord name="_datetimelocalbox" />
 		<KeyWord name="_datetimebox" />
 		<KeyWord name="_debug" />
 		<KeyWord name="_debugToErr" />
@@ -79,9 +82,11 @@
 		<KeyWord name="_expectPrompt" />
 		<KeyWord name="_fail" />
 		<KeyWord name="_fetch" />
+		<KeyWord name="_fieldset" />
 		<KeyWord name="_file" />
 		<KeyWord name="_flex" />
 		<KeyWord name="_focus" />
+		<KeyWord name="_frame" />
 		<KeyWord name="_get" />
 		<KeyWord name="_getAttribute" />
 		<KeyWord name="_getCellText" />
@@ -97,7 +102,6 @@
 		<KeyWord name="_heading5" />
 		<KeyWord name="_heading6" />
 		<KeyWord name="_hidden" />
-		<KeyWord name="_hidden" />
 		<KeyWord name="_highlight" />
 		<KeyWord name="_iframe" />
 		<KeyWord name="_image" />
@@ -106,8 +110,16 @@
 		<KeyWord name="_isChrome" />
 		<KeyWord name="_isFF" />
 		<KeyWord name="_isFF3" />
+		<KeyWord name="_isFF4" />
 		<KeyWord name="_isHTMLUnit" />
 		<KeyWord name="_isIE" />
+		<KeyWord name="_isIE6" />
+		<KeyWord name="_isIE7" />
+		<KeyWord name="_isIE8" />
+		<KeyWord name="_isIE9" />
+		<KeyWord name="_isIE10" />
+		<KeyWord name="_isIE11" />
+		<KeyWord name="_isIE11Plus" />
 		<KeyWord name="_isOpera" />
 		<KeyWord name="_isSafari" />
 		<KeyWord name="_isVisible" />
@@ -120,6 +132,8 @@
 		<KeyWord name="_lastConfirm" />
 		<KeyWord name="_lastDownloadedFileName" />
 		<KeyWord name="_lastPrompt" />
+		<KeyWord name="_leftOf" />
+		<KeyWord name="_leftOrRightOf" />
 		<KeyWord name="_link" />
 		<KeyWord name="_list" />
 		<KeyWord name="_listItem" />
@@ -162,6 +176,7 @@
 		<KeyWord name="_resetSavedRandom" />
 		<KeyWord name="_resolvePath" />
 		<KeyWord name="_rightClick" />
+		<KeyWord name="_rightOf" />
 		<KeyWord name="_row" />
 		<KeyWord name="_rte" />
 		<KeyWord name="_rteHTML" />
@@ -173,16 +188,23 @@
 		<KeyWord name="_scriptName" />
 		<KeyWord name="_scriptPath" />
 		<KeyWord name="_scriptStatus" />
+		<KeyWord name="_searchbox" />
 		<KeyWord name="_select" />
 		<KeyWord name="_selectDomain" />
+		<KeyWord name="_selectRange" />
+		<KeyWord name="_selectTextRange" />
 		<KeyWord name="_selectWindow" />
+		<KeyWord name="_sendHTMLResponseAfterFileDownload" />
 		<KeyWord name="_sessionInfo" />
 		<KeyWord name="_setFile" />
+		<KeyWord name="_setFile2" />
 		<KeyWord name="_setGlobal" />
 		<KeyWord name="_setRecovery" />
 		<KeyWord name="_setSelected" />
 		<KeyWord name="_setSpeed" />
+		<KeyWord name="_setStrictVisibilityCheck" />
 		<KeyWord name="_setValue" />
+		<KeyWord name="_setXHRReadyStatesToWaitFor" />
 		<KeyWord name="_simulateEvent" />
 		<KeyWord name="_simulateMouseEvent" />
 		<KeyWord name="_simulateMouseEventXY" />
@@ -197,6 +219,7 @@
 		<KeyWord name="_table" />
 		<KeyWord name="_tableHeader" />
 		<KeyWord name="_telbox" />
+		<KeyWord name="_telephonebox" />
 		<KeyWord name="_textarea" />
 		<KeyWord name="_textbox" />
 		<KeyWord name="_timebox" />
@@ -213,5 +236,18 @@
 		<KeyWord name="_writeFile" />
 		<KeyWord name="_writeToFile" />
 		<KeyWord name="_xy" />
+		<KeyWord name="_count" />
+		<KeyWord name="_collect" />
+		<KeyWord name="_canvas" />
+		<KeyWord name="_dList" />
+		<KeyWord name="_dTerm" />
+		<KeyWord name="_dDesc" />
+		<KeyWord name="_paragraph" />
+		<KeyWord name="_scriptStartTime" />
+		<KeyWord name="_font" />
+		<KeyWord name="_hr" />
+		<KeyWord name="_getSelectionText" />
+		<KeyWord name="_testcase" />
+		<KeyWord name="_copyFile" />
 	</AutoComplete>
 </NotepadPlus>

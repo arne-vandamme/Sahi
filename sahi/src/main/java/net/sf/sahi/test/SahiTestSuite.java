@@ -269,7 +269,7 @@ public class SahiTestSuite
 	void cullInactiveTests() {
 		Iterator<String> keys = testsMap.keySet().iterator();
 		long now = System.currentTimeMillis();
-		long inactivityLimit = Configuration.getMaxInactiveTimeForScript();
+		long inactivityLimit = Configuration.getMaxPageLoadTime();
 		while ( keys.hasNext() ) {
 			String sessionId = (String) keys.next();
 			Session session = Session.getExistingInstance( sessionId );

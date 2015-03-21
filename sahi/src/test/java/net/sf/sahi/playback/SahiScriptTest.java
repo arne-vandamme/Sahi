@@ -2,7 +2,6 @@ package net.sf.sahi.playback;
 
 import junit.framework.TestCase;
 import net.sf.sahi.config.Configuration;
-import org.junit.Ignore;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -243,8 +242,8 @@ public class SahiScriptTest extends TestCase
 //        File file = new File("C:\\unicode.txt");
 //        FileOutputStream out = new FileOutputStream(file);
 		String s = "\u4E2D\u6587";
-		assertEquals(2, s.getBytes().length);
-		assertEquals("\u4E2D\u6587", "\u4e2d\u6587");
+		assertEquals( 2, s.getBytes().length );
+		assertEquals( "\u4E2D\u6587", "\u4e2d\u6587" );
 //        out.write(s.getBytes("UTF-16"));
 //        out.close();
 //        System.out.print("\u4E2D\u6587");

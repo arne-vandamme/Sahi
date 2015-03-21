@@ -18,7 +18,7 @@ at_exit do
 end
 
 Given /^I am not logged in$/ do
-  browser.navigate_to("http://sahi.co.in/demo/training/index.htm")
+  browser.navigate_to("http://sahipro.com/demo/training/index.htm")
 end
 
 When /^I try to login with "([^\"]*)" and "([^\"]*)"$/ do |username, password|

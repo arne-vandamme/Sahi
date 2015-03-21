@@ -20,8 +20,8 @@ package net.sf.sahi;
 
 import net.sf.sahi.command.CommandExecuter;
 import net.sf.sahi.command.Hits;
+import net.sf.sahi.command.Log;
 import net.sf.sahi.config.Configuration;
-import net.sf.sahi.report.LogViewer;
 import net.sf.sahi.request.HttpRequest;
 import net.sf.sahi.response.*;
 import net.sf.sahi.util.URLParser;
@@ -52,7 +52,7 @@ public class LocalRequestProcessor
 			                                          requestFromBrowser.isSSL(), requestFromBrowser.fileExtension() );
 		}
 		else if ( uri.indexOf( "/logs" ) != -1 ) {
-			httpResponse = new NoCacheHttpResponse( LogViewer.getLogsList( Configuration.getPlayBackLogsRoot() ) );
+			httpResponse = new Log().getLogIndexResponse();
 		}
 		else {
 			httpResponse = new HttpFileResponse( Configuration.getHtdocsRoot() + "/spr/launch.htm" );
