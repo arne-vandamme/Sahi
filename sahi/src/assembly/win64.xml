@@ -14,33 +14,13 @@ http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 ">
 				<include>config/**</include>
 				<include>htdocs/**</include>
 				<include>userdata/**</include>
+				<include>tools/**</include>
 			</includes>
 		</fileSet>
 		<fileSet>
 			<directory>${project.build.directory}/lib</directory>
 			<outputDirectory>lib</outputDirectory>
 		</fileSet>
-		<!---->
-		<!--<fileSet>-->
-			<!--<useDefaultExcludes>false</useDefaultExcludes>-->
-			<!--<excludes>-->
-				<!--<exclude>${project.basedir}/target/**</exclude>-->
-				<!--<exclude>${project.basedir}/log/**</exclude>-->
-				<!--<exclude>${project.basedir}/out/**</exclude>-->
-				<!--<exclude>${project.basedir}/.classpath</exclude>-->
-				<!--<exclude>${project.basedir}/.project</exclude>-->
-				<!--<exclude>${project.basedir}/.settings</exclude>-->
-				<!--<exclude>${project.basedir}/.idea/**</exclude>-->
-				<!--<exclude>${project.basedir}/*.iml</exclude>-->
-				<!--<exclude>${project.basedir}/*.iws</exclude>-->
-				<!--<exclude>${project.basedir}/.DS_Store</exclude>-->
-				<!--<exclude>${project.basedir}/temp/**</exclude>-->
-				<!--<exclude>${project.basedir}/src/**</exclude>-->
-				<!--<exclude>.gitignore</exclude>-->
-				<!--<exclude>pom.xml</exclude>-->
-			<!--</excludes>-->
-		<!--</fileSet>-->
-
 	</fileSets>
 	<files>
 		<file>
