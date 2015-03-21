@@ -4,17 +4,36 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>net.sf.sahi</groupId>
-	<artifactId>sahi</artifactId>
-	<version>4.4.1-SNAPSHOT</version>
+	<groupId>com.foreach.sahi</groupId>
+	<artifactId>sahi-proxy</artifactId>
+	<version>5.0-SNAPSHOT</version>
 
 	<properties>
+		<project.finalVersion>5.0</project.finalVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
 	<build>
+		<finalName>sahi-${project.finalVersion}</finalName>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>net.sf.sahi.Proxy</mainClass>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+						</manifest>
+						<manifestEntries>
+							<Build-Date>${maven.build.timestamp}</Build-Date>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -27,11 +46,30 @@
 							<goal>copy-dependencies</goal>
 						</goals>
 						<configuration>
-							<includeScope>compile</includeScope>
-							<outputDirectory>${project.build.directory}</outputDirectory>
+							<includeScope>runtime</includeScope>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
 							<overWriteReleases>false</overWriteReleases>
 							<overWriteSnapshots>false</overWriteSnapshots>
 							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					<execution>
+						<id>create-archive</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptors>
+								<descriptor>${project.basedir}/src/assembly/win64.xml</descriptor>
+							</descriptors>
 						</configuration>
 					</execution>
 				</executions>

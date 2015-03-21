@@ -20,12 +20,10 @@ package net.sf.sahi.config;
 import net.sf.sahi.util.FileUtils;
 import net.sf.sahi.util.Utils;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Properties;
+import java.util.jar.Manifest;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
@@ -893,13 +891,25 @@ public class Configuration
 	}
 
 	public static String getVersion() {
-		String path = Utils.concatPaths( getConfigPath(), "version.txt" );
-		return new String( Utils.readCachedFile( path ) );
+		InputStream in = Configuration.class.getResourceAsStream( "/META-INF/MANIFEST.MF" );
+		try {
+			Manifest m = new Manifest( in );
+			return m.getMainAttributes().getValue( "Implementation-Version" );
+		}
+		catch ( IOException ioe ) {
+			return "dev";
+		}
 	}
 
 	public static String getVersionTimeStamp() {
-		String path = Utils.concatPaths( getConfigPath(), "version_ts.txt" );
-		return new String( Utils.readCachedFile( path ) );
+		InputStream in = Configuration.class.getResourceAsStream( "/META-INF/MANIFEST.MF" );
+		try {
+			Manifest m = new Manifest( in );
+			return m.getMainAttributes().getValue( "Build-Date" );
+		}
+		catch ( IOException ioe ) {
+			return "dev";
+		}
 	}
 
 	public static int getRhinoOptimizationLevel() {

@@ -3,11 +3,12 @@ package net.sf.sahi.test;
 import net.sf.sahi.config.Configuration;
 import net.sf.sahi.util.OSUtils;
 import net.sf.sahi.util.Utils;
+import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.StringTokenizer;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Logger;
@@ -63,6 +64,17 @@ public class ProcessHelper
 	private static boolean hasProcessStarted;
 	private int maxRetryCount = Configuration.getMaxBrowserRelaunchCount();
 	private int retryCount = 0;
+
+	private List<String> executeCommand( String command ) {
+		try {
+			Process p = Runtime.getRuntime().exec( Utils.getCommandTokens( command ) );
+
+			return IOUtils.readLines( p.getInputStream() );
+		}
+		catch ( IOException ioe ) {
+			throw new RuntimeException( ioe );
+		}
+	}
 
 	public void execute() throws Exception {
 		try {
@@ -160,6 +172,33 @@ public class ProcessHelper
 			String imageNameToUse = ( OSUtils.getPIDListExcludeImageExtension() ? imageName.substring( 0, imageName
 					.lastIndexOf( "." ) ) : imageName );
 			String listCmd = OSUtils.getPIDListCommand().replaceAll( "\\$imageName", imageNameToUse );
+			List<String> lines = executeCommand( listCmd );
+
+			for ( String line : lines ) {
+				// System.out.println(line);
+				line = line.replaceAll( "\\s+", " " ).trim();
+				// System.out.println(line);
+				if ( line.equals( "" ) ) {
+					continue;
+				}
+				StringTokenizer spaceTokenizer = new StringTokenizer( line );
+				int i = 0;
+				int colNo = OSUtils.getPIDListColumnNo();
+				boolean hasCol = false;
+				String pid = null;
+				while ( spaceTokenizer.hasMoreTokens() ) {
+					i++;
+					pid = spaceTokenizer.nextToken();
+					if ( i == colNo ) {
+						hasCol = true;
+						break;
+					}
+				}
+				if ( hasCol ) {
+					ar.add( pid );
+				}
+			}
+			/*
 			Process p = Runtime.getRuntime().exec( Utils.getCommandTokens( listCmd ) );
 			InputStream in = p.getInputStream();
 			StringBuffer sb = new StringBuffer();
@@ -199,16 +238,13 @@ public class ProcessHelper
 					ar.add( pid );
 				}
 			}
+			*/
 		}
-		catch ( IOException e ) {
+		catch ( Exception e ) {
 			e.printStackTrace();
 		}
 
 		return ar;
-	}
-
-	public static void main( String[] args ) {
-
 	}
 
 	public void kill() {

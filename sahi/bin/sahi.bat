@@ -11,7 +11,7 @@ goto startsahi
 set SAHI_USERDATA_DIR_TMP=%SAHI_USERDATA_DIR%
 
 :startsahi
-set SAHI_CLASS_PATH=%SAHI_HOME%\lib\sahi.jar;%SAHI_HOME%\extlib\rhino\js.jar;%SAHI_HOME%\extlib\apc\commons-codec-1.3.jar
+set SAHI_CLASS_PATH=%SAHI_HOME%/lib/*
 
 echo --------
 echo SAHI_HOME: %SAHI_HOME%
