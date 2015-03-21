@@ -28,7 +28,6 @@ import java.net.URLEncoder;
 
 public class BrowserLauncher
 {
-
 	private String browserProcessName;
 	private String browser;
 	private String browserOption;
