@@ -474,11 +474,9 @@ public class RemoteRequestProcessor
 
 	private void setConnectionRequestHeaders( HttpRequest requestFromBrowser, HttpURLConnection connection ) {
 		HttpHeaders headers = requestFromBrowser.headers();
-		Iterator<String> iterator = headers.keysIterator();
-		while ( iterator.hasNext() ) {
-			String key = iterator.next();
-			String value = headers.getHeader( key );
-			connection.addRequestProperty( key, value );
+
+		for ( String key : headers.keys() ) {
+			connection.addRequestProperty( key, headers.getHeader( key ) );
 		}
 	}
 

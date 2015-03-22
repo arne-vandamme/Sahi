@@ -11,18 +11,23 @@ public class TestHttpHeaders
 	@Test
 	public void keyIsStoredCaseInsensitive() {
 		HttpHeaders headers = new HttpHeaders();
-		headers.addHeader( "Transfer-Encoding", "value" );
 
+		headers.addHeader( "Transfer-Encoding", "value" );
 		assertTrue( headers.hasHeader( "transfer-encoding" ) );
 		assertTrue( headers.hasHeader( "Transfer-Encoding" ) );
 		assertTrue( headers.hasHeader( "Transfer-encoding" ) );
+		assertEquals( 1, headers.size() );
+
+		headers.setHeader( "transfer-encoding", "value2" );
+		assertEquals( "value2", headers.getHeader( "Transfer-Encoding" ) );
+		assertEquals( 1, headers.size() );
 
 		headers.removeHeader( "Transfer-encoding" );
 		assertFalse( headers.hasHeader( "transfer-encoding" ) );
 		assertFalse( headers.hasHeader( "Transfer-Encoding" ) );
 		assertFalse( headers.hasHeader( "Transfer-encoding" ) );
 
-		assertTrue( headers.keySet().isEmpty() );
+		assertTrue( headers.isEmpty() );
 	}
 
 	@Test

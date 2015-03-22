@@ -25,6 +25,8 @@
         <module name="sahi" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="sahi" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
-

@@ -1,148 +1,92 @@
 package net.sf.sahi;
 
-import net.sf.sahi.util.CaseInsensitiveString;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
 
-/**
- * Sahi - Web Automation and Test Tool
- * <p/>
- * Copyright  2006  V Narayan Raman
- * <p/>
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p/>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 public class HttpHeaders
 {
-	LinkedHashMap<CaseInsensitiveString, List<String>> headers = new LinkedHashMap<CaseInsensitiveString, List<String>>(
-			15 );
+	private final Map<String, List<String>> headers = new TreeMap<>( String.CASE_INSENSITIVE_ORDER );
 
 	public void addHeader( String key, String value ) {
-		CaseInsensitiveString keyIgnoreCase = new CaseInsensitiveString( key );
-		List<String> entry = (List<String>) headers.get( keyIgnoreCase );
-		if ( entry == null ) {
-			entry = new ArrayList<String>();
-			headers.put( keyIgnoreCase, entry );
-		}
-		entry.add( value );
+		getOrCreate( key ).add( value );
 	}
 
 	public void setHeader( String key, String value ) {
-		CaseInsensitiveString keyIgnoreCase = new CaseInsensitiveString( key );
-		List<String> entry = new ArrayList<String>();
+		List<String> entry = new ArrayList<>();
 		entry.add( value );
-		headers.put( keyIgnoreCase, entry );
+
+		headers.put( key, entry );
 	}
 
 	public boolean hasHeader( String key ) {
-		return headers.containsKey( new CaseInsensitiveString( key ) );
+		return headers.containsKey( key );
 	}
 
-	public String getHeader( String key ) {
-		CaseInsensitiveString keyIgnoreCase = new CaseInsensitiveString( key );
-		List<String> values = headers.get( keyIgnoreCase );
-		if ( values == null ) {
-			return null;
-		}
-		StringBuffer sb = new StringBuffer();
-		int size = values.size();
-		for ( int i = 0; i < size; i++ ) {
-			String value = (String) values.get( i );
-			if ( i > 0 ) {
-				sb.append( "," );
-			}
-			sb.append( value );
-		}
-		return sb.toString();
-	}
-
-	public List<String> getHeaders( String key ) {
-		CaseInsensitiveString keyIgnoreCase = new CaseInsensitiveString( key );
-		return headers.get( keyIgnoreCase );
-	}
-
-	public void addHeaders( String key, List<String> newHeaders ) {
-		if ( newHeaders == null ) {
-			return;
-		}
-		CaseInsensitiveString keyIgnoreCase = new CaseInsensitiveString( key );
-		List<String> entry = headers.get( keyIgnoreCase );
-		if ( entry == null ) {
-			entry = new ArrayList<String>();
-			headers.put( keyIgnoreCase, entry );
-		}
-		entry.addAll( newHeaders );
-	}
-
-	public String getLastHeader( String key ) {
-		List<String> entry = headers.get( new CaseInsensitiveString( key ) );
-		if ( entry == null ) {
-			return null;
-		}
-		return (String) entry.get( entry.size() - 1 );
-	}
-
-	public byte[] getBytes() {
-		return null;
-	}
-
-	public String toString() {
-		StringBuffer sb = new StringBuffer();
-		Iterator<CaseInsensitiveString> keys = headers.keySet().iterator();
-		while ( keys.hasNext() ) {
-			CaseInsensitiveString key = (CaseInsensitiveString) keys.next();
-			if ( key.isNull() ) {
-				continue;
-			}
-			List<String> values = headers.get( key );
-			int size = values.size();
-			for ( int i = 0; i < size; i++ ) {
-				String value = (String) values.get( i );
-				sb.append( key ).append( ": " ).append( value ).append( "\r\n" );
-			}
-		}
-		return sb.toString();
-	}
-
-	public void removeHeader( String key ) {
-		headers.remove( new CaseInsensitiveString( key ) );
-	}
-
-	public Set<CaseInsensitiveString> keySet() {
+	public Collection<String> keys() {
 		return headers.keySet();
 	}
 
-	class HttpHeadersIterator implements Iterator<String>
-	{
-		private Iterator<CaseInsensitiveString> iterator;
+	public String getHeader( String key ) {
+		return StringUtils.join( headers.get( key ), "," );
+	}
 
-		public HttpHeadersIterator( Iterator<CaseInsensitiveString> iterator ) {
-			this.iterator = iterator;
-		}
+	public List<String> getHeaders( String key ) {
+		return headers.get( key );
+	}
 
-		public boolean hasNext() {
-			return iterator.hasNext();
-		}
-
-		public String next() {
-			return iterator.next().toString();
-		}
-
-		public void remove() {
-			iterator.remove();
+	public void addHeaders( String key, List<String> newHeaders ) {
+		if ( newHeaders != null ) {
+			getOrCreate( key ).addAll( newHeaders );
 		}
 	}
 
-	public Iterator<String> keysIterator() {
-		return new HttpHeadersIterator( keySet().iterator() );
+	private List<String> getOrCreate( String key ) {
+		List<String> entry = headers.get( key );
+
+		if ( entry == null ) {
+			entry = new ArrayList<>();
+			headers.put( key, entry );
+		}
+
+		return entry;
+	}
+
+	public String getLastHeader( String key ) {
+		List<String> entry = headers.get( key );
+
+		if ( entry == null ) {
+			return null;
+		}
+		return entry.get( entry.size() - 1 );
+	}
+
+	public String toString() {
+		StringBuilder output = new StringBuilder();
+
+		for ( Map.Entry<String, List<String>> entry : headers.entrySet() ) {
+			if ( entry.getKey() != null ) {
+				for ( String headerValue : entry.getValue() ) {
+					output.append( entry.getKey() )
+					      .append( ": " )
+					      .append( headerValue )
+					      .append( System.lineSeparator() );
+				}
+			}
+		}
+
+		return output.toString();
+	}
+
+	public void removeHeader( String key ) {
+		headers.remove( key );
+	}
+
+	public boolean isEmpty() {
+		return headers.isEmpty();
+	}
+
+	public int size() {
+		return headers.size();
 	}
 }
