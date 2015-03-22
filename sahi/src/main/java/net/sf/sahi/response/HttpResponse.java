@@ -99,8 +99,6 @@ public class HttpResponse extends StreamHandler
 	public void proxyKeepAlive( final boolean keepAliveEnabled ) {
 		setFirstLine( firstLine().replaceAll( "HTTP/1.0", "HTTP/1.1" ) );
 		removeHeader( "Connection" );
-		removeHeader( "Accept-ranges" );
-		removeHeader( "Accept-Ranges" );
 		setHeader( "Accept-Ranges", "none" );
 		setHeader( "Proxy-Connection", keepAliveEnabled ? "Keep-Alive" : "close" );
 	}
@@ -130,7 +128,14 @@ public class HttpResponse extends StreamHandler
 		proxyKeepAlive( isKeepAlive );
 		// The Transfer-Encoding should never be chunked, since we are sending it sequentially
 		removeHeader( "Transfer-Encoding" );
-		removeHeader( "Transfer-encoding" );
+		// Remove some security related headers impacting browser behavior
+		removeHeader( "Content-Security-Policy" );
+		removeHeader( "X-WebKit-CSP" );
+		removeHeader( "X-Content-Security-Policy" );
+		removeHeader( "X-Frame-Options" );
+		removeHeader( "Frame-Options" );
+		removeHeader( "X-Content-Type-Options" );
+		removeHeader( "X-XSS-Protection" );
 		setContentLength( getModifiedContentLength() );
 	}
 
