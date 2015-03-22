@@ -1,17 +1,18 @@
 package net.sf.sahi;
 
-import junit.framework.TestCase;
 import net.sf.sahi.config.Configuration;
+import org.junit.Test;
 
-public class RemoteRequestProcessorTest extends TestCase
+import static org.junit.Assert.*;
+
+public class TestRemoteRequestProcessor
 {
-	private static final long serialVersionUID = 1346774483290088617L;
-
 	static {
 		Configuration.init();
 	}
 
-	public void testGetScheme() throws Exception {
+	@Test
+	public void getScheme() throws Exception {
 		RemoteRequestProcessor rrp = new RemoteRequestProcessor();
 		assertEquals( "somethingelse", rrp.getScheme( "SomeThingElse" ) );
 		assertEquals( "basic", rrp.getScheme( "Basic" ) );
@@ -22,7 +23,8 @@ public class RemoteRequestProcessorTest extends TestCase
 		assertEquals( "ntlm", rrp.getScheme( "NTLM" ) );
 	}
 
-	public void testGetRealm() throws Exception {
+	@Test
+	public void getRealm() throws Exception {
 		RemoteRequestProcessor rrp = new RemoteRequestProcessor();
 		assertEquals( null, rrp.getRealm( "Basic" ) );
 		assertEquals( "WallyWorld", rrp.getRealm( "Basic realm=\"WallyWorld\"" ) );
@@ -35,7 +37,8 @@ public class RemoteRequestProcessorTest extends TestCase
 		assertEquals( null, rrp.getRealm( "NTLM" ) );
 	}
 
-	public void testDownloadableContentType() throws Exception {
+	@Test
+	public void downloadableContentType() throws Exception {
 		RemoteRequestProcessor rrp = new RemoteRequestProcessor();
 		assertTrue( rrp.isDownloadContentType( "zip" ) );
 		assertTrue( rrp.isDownloadContentType( "abcd/zip" ) );

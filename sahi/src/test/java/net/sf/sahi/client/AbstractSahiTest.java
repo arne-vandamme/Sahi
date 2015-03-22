@@ -23,7 +23,7 @@ import net.sf.sahi.config.Configuration;
 import org.junit.After;
 import org.junit.Before;
 
-public abstract class SahiTestCase
+public abstract class AbstractSahiTest
 {
 	private static final long serialVersionUID = 9094239240720483156L;
 	protected Browser browser;
@@ -59,10 +59,6 @@ public abstract class SahiTestCase
 		if ( isProxyInSameProcess ) {
 			proxy.stop();
 		}
-	}
-
-	public void testDummySomething() {
-
 	}
 
 	public void setBrowser( String browserName ) {

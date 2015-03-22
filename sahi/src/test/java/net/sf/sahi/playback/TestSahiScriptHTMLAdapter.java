@@ -1,6 +1,9 @@
-package net.sf.sahi.command;
+package net.sf.sahi.playback;
 
 import junit.framework.TestCase;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -19,15 +22,10 @@ import junit.framework.TestCase;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class CustomResponseManagerTest extends TestCase
+public class TestSahiScriptHTMLAdapter
 {
-	private static final long serialVersionUID = -8104865035753409420L;
-
-	public void testGetCommand() {
-		MockResponder mockResponder = new MockResponder();
-		mockResponder.add( ".*sahipro[.]com.*", "net.sf.sahi.Test_test" );
-		String command = mockResponder.getCommand( "http://www.sahipro.com" );
-		assertEquals( "net.sf.sahi.Test_test", command );
+	@Test
+	public void createHTML() {
+		assertEquals( "<pre>a<br/>b</pre>", SahiScriptHTMLAdapter.createHTML( "a\r\nb" ) );
 	}
-
 }

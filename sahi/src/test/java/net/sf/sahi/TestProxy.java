@@ -1,7 +1,9 @@
-package net.sf.sahi.playback;
+package net.sf.sahi;
 
-import junit.framework.TestCase;
 import net.sf.sahi.config.Configuration;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -20,32 +22,25 @@ import net.sf.sahi.config.Configuration;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class URLScriptTest extends TestCase
+public class TestProxy
 {
-	static {
+	@Test
+	public void createAndStartProxyFromJava() throws Exception {
 		Configuration.init();
-	}
+		final Proxy proxy = new Proxy();
+		assertFalse( proxy.isRunning() );
 
-	private static final long serialVersionUID = 9089031044975786876L;
-
-	public void testFQN() {
-		MockURLScript urlScript = new MockURLScript( "http://abc/def/a.sah" );
-		assertEquals( "http://abc/def/b.sah", urlScript.getFQN( "b.sah" ) );
-	}
-
-	public void testFQNWithFullURL() {
-		MockURLScript urlScript = new MockURLScript( "http://abc/def/a.sah" );
-		assertEquals( "http://xxx/b.sah", urlScript.getFQN( "http://xxx/b.sah" ) );
-	}
-
-	private class MockURLScript extends URLScript
-	{
-		public MockURLScript( String fileName ) {
-			super( fileName );
+		try {
+			proxy.start( true );
+			Thread.sleep( 1500 );
+			assertTrue( proxy.isRunning() );
 		}
-
-		protected void loadScript( String fileName ) {
+		catch ( Exception e ) {
+			fail( e.getMessage() );
+		}
+		finally {
+			proxy.stop();
+			assertFalse( proxy.isRunning() );
 		}
 	}
-
 }

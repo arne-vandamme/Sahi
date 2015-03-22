@@ -1,7 +1,11 @@
 package net.sf.sahi.command;
 
-import junit.framework.TestCase;
 import net.sf.sahi.request.HttpRequest;
+import org.junit.After;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -20,28 +24,31 @@ import net.sf.sahi.request.HttpRequest;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class CommandExecuterTest extends TestCase
+public class TestCommandExecutor
 {
-	private static final long serialVersionUID = -918331594375717865L;
-	static boolean called = false;
+	public static boolean called = false;
 
-	public void testMethodCalled() throws Exception {
+	@After
+	public void tearDown() {
+		called = false;
+	}
+
+	@Test
+	public void methodCalled() throws Exception {
 		final HttpRequest httpRequest = null;
 		new CommandExecuter( "net.sf.sahi.command.TestClass_act", httpRequest, false ).execute();
 		assertTrue( called );
 	}
 
-	public void testMethodCalledWithoutClassFQN() throws Exception {
+	@Test
+	public void methodCalledWithoutClassFQN() throws Exception {
 		final HttpRequest httpRequest = null;
 		new CommandExecuter( "TestClass_act", httpRequest, false ).execute();
 		assertTrue( called );
 	}
 
-	public void tearDown() {
-		called = false;
-	}
-
-	public void testCommandClass() throws Exception {
+	@Test
+	public void commandClass() throws Exception {
 		final HttpRequest httpRequest = null;
 		assertEquals( "com.domain.TestClass", new CommandExecuter( "com.domain.TestClass_act", httpRequest, false )
 				.getCommandClass() );

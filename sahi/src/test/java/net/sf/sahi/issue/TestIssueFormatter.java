@@ -1,8 +1,10 @@
 package net.sf.sahi.issue;
 
-import junit.framework.TestCase;
 import net.sf.sahi.report.ReportUtil;
 import net.sf.sahi.report.TestSummary;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -27,16 +29,17 @@ import net.sf.sahi.report.TestSummary;
  * Date: Dec 11, 2006
  * Time: 4:39:57 PM
  */
-public class IssueFormatterTest extends TestCase
+public class TestIssueFormatter
 {
-	private static final long serialVersionUID = -8843504667335098410L;
 	private IssueFormatter formatter = new IssueFormatter();
 
-	public void testGetSummaryDataForSuccessSummary() {
+	@Test
+	public void getSummaryDataForSuccessSummary() {
 		assertEquals( "", formatter.getSummaryData( new TestSummary() ) );
 	}
 
-	public void testGetSummaryDataForFailureSummary() {
+	@Test
+	public void getSummaryDataForFailureSummary() {
 		String expected = "\n\nScript: test\nFailures: 1\nErrors: 0";
 		assertEquals( expected, formatter.getSummaryData( ReportUtil.getTestSummary() ) );
 	}

@@ -1,10 +1,12 @@
 package net.sf.sahi.request;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -23,11 +25,8 @@ import java.util.List;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class HttpRequestTest extends TestCase
+public class TestHttpRequest
 {
-
-	private static final long serialVersionUID = 7198890274763001829L;
-
 //	public void testRebuildCookies() {
 //		Map<String, String> cookies = new LinkedHashMap<String, String>();
 //		cookies.put("_session_id", "cookieVal");
@@ -38,11 +37,14 @@ public class HttpRequestTest extends TestCase
 //		assertEquals("_session_id=cookieVal; sahisid=cookieVal2; cookieName3=cookieVal3", HttpRequest.rebuildCookies(cookies));
 //	}
 
-	public void testUnicode() throws UnsupportedEncodingException {
+	@Test
+	@SuppressWarnings("all")
+	public void unicode() throws UnsupportedEncodingException {
 		URLDecoder.decode( "abc", "sadalkdjlaksjdfl" );
 	}
 
-	public void testSetUri() {
+	@Test
+	public void setUri() {
 		assertEquals( "/login?service=http://www.hostname.com/landing",
 		              new HttpRequest().stripHostName( "/login?service=http://www.hostname.com/landing",
 		                                               "www.hostname.com", false ) );
@@ -60,7 +62,8 @@ public class HttpRequestTest extends TestCase
 				              false ) );
 	}
 
-	public void testHandleSahiCookie() throws Exception {
+	@Test
+	public void handleSahiCookie() throws Exception {
 		checkCookie( "a=b; sahisid=123; c=d", "a=b; c=d" );
 		checkCookie( "a=b; sahisid=123;", "a=b" );
 		checkCookie( "sahisid=123; c=d", "c=d" );
@@ -76,7 +79,8 @@ public class HttpRequestTest extends TestCase
 		assertEquals( after, request.headers().getLastHeader( "Cookie" ) );
 	}
 
-	public void testCheckMultiCookieHeader() throws Exception {
+	@Test
+	public void checkMultiCookieHeader() throws Exception {
 		HttpRequest request = new HttpRequest();
 		request.addHeader( "Cookie", "sahisid=1231212; a=b; c=d" );
 		request.addHeader( "Cookie", "e=f" );
@@ -87,7 +91,8 @@ public class HttpRequestTest extends TestCase
 		assertEquals( "e=f", headers.get( 1 ) );
 	}
 
-	public void testCheckMultiCookieHeaderIgnoresBlank() throws Exception {
+	@Test
+	public void checkMultiCookieHeaderIgnoresBlank() throws Exception {
 		HttpRequest request = new HttpRequest();
 		request.addHeader( "Cookie", "sahisid=1231212" );
 		request.addHeader( "Cookie", "e=f" );

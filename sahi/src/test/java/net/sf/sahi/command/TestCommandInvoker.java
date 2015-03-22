@@ -22,28 +22,38 @@ package net.sf.sahi.command;
 
 import net.sf.sahi.request.HttpRequest;
 import net.sf.sahi.response.HttpResponse;
-import org.jmock.Mock;
-import org.jmock.cglib.MockObjectTestCase;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import java.io.File;
 import java.net.URL;
 
-public class CommandInvokerTest extends MockObjectTestCase
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+@Ignore
+public class TestCommandInvoker
 {
-	private static final long serialVersionUID = -8519265344249609705L;
-	private CommandInvoker commandInvoker;
 	private final File HELPFILE = new File( "help.txt" );
 
-	protected void setUp() throws Exception {
+	private CommandInvoker commandInvoker;
+
+	@Before
+	public void setUp() throws Exception {
 		commandInvoker = new CommandInvoker();
 		HELPFILE.createNewFile();
 	}
 
-	protected void tearDown() throws Exception {
+	@After
+	public void tearDown() throws Exception {
 		HELPFILE.delete();
 	}
 
-	public void xtestExecuteRunsACommand() throws InterruptedException {
+	@Test
+	public void executeRunsACommand() throws InterruptedException {
 		assertTrue( HELPFILE.exists() );
 		HttpResponse response = commandInvoker.execute( prepareMockHttpRequest( getCommandPath( "test.cmd" ), true ) );
 		String actualResponse = new String( response.data() );
@@ -51,28 +61,26 @@ public class CommandInvokerTest extends MockObjectTestCase
 		assertFalse( HELPFILE.exists() );
 	}
 
-	public void xtestExecuteReturnsFailureForInvalidCommand() throws InterruptedException {
+	@Test
+	public void executeReturnsFailureForInvalidCommand() throws InterruptedException {
 		HttpResponse response = commandInvoker.execute( prepareMockHttpRequest( "invalid", true ) );
 		String actualResponse = new String( response.data() );
 		assertEquals( CommandInvoker.FAILURE, actualResponse );
 	}
 
-	public void xtestExecuteRunsACommandInAsyncMode() throws InterruptedException {
+	@Test
+	public void executeRunsACommandInAsyncMode() throws InterruptedException {
 		HttpResponse response = commandInvoker.execute( prepareMockHttpRequest( getCommandPath( "test.cmd" ), false ) );
 		String actualResponse = new String( response.data() );
 		assertEquals( CommandInvoker.SUCCESS, actualResponse );
 	}
 
 	private HttpRequest prepareMockHttpRequest( String commandToExecute, boolean sync ) {
-		Mock mock = mock( HttpRequest.class );
-		mock.expects( once() ).method( "getParameter" ).with( eq( RequestConstants.COMMAND ) ).will( returnValue(
-				commandToExecute ) );
-		mock.expects( once() ).method( "getParameter" ).with( eq( RequestConstants.SYNC ) ).will( returnValue(
-				Boolean.toString( sync ) ) );
-		return (HttpRequest) mock.proxy();
-	}
+		HttpRequest request = mock( HttpRequest.class );
+		when( request.getParameter( RequestConstants.COMMAND ) ).thenReturn( commandToExecute );
+		when( request.getParameter( RequestConstants.SYNC ) ).thenReturn( Boolean.toString( sync ) );
 
-	public void testDummy() {
+		return request;
 	}
 
 	private String getCommandPath( String command ) {

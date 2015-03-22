@@ -1,9 +1,14 @@
 package net.sf.sahi.client;
 
-import junit.framework.TestCase;
 import net.sf.sahi.Proxy;
 import net.sf.sahi.config.Configuration;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Ignore;
+import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -23,14 +28,15 @@ import org.junit.Ignore;
  * limitations under the License.
  */
 @Ignore
-public class DriverPlayRecordTest extends TestCase
+public class TestDriverPlayRecord
 {
-	private static final long serialVersionUID = -5086443670358903534L;
 	private Browser browser;
 	private Proxy proxy;
-	String basePath = ".";
+
+	private String basePath = ".";
 	private String userDataDirectory = "./userdata/";
 
+	@Before
 	public void setUp() {
 		System.setProperty( "sahi.mode.dev", "true" );
 		Configuration.initJava( basePath, userDataDirectory );
@@ -49,7 +55,21 @@ public class DriverPlayRecordTest extends TestCase
 		browser.open();
 	}
 
-	public void testRecorder() throws ExecutionException {
+	@After
+	public void tearDown() {
+		browser.close();
+		proxy.stop();
+		try {
+			Runtime.getRuntime().exec( new String[] { basePath + "\\tools\\toggle_IE_proxy.exe", "disable" } );
+			Thread.sleep( 1000 );
+		}
+		catch ( Exception e ) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void recorder() throws ExecutionException {
 		System.out.println( "--- startRecording" );
 		browser.startRecording(); // check that controller window is opened, and navigateTo is added.
 		int i = 0;
@@ -102,17 +122,5 @@ public class DriverPlayRecordTest extends TestCase
 		browser.link( "Form Test" ).click();
 		browser.waitFor( 2000 ); // check that controller window is not re-opened.
 		browser.link( "Back" ).click();
-	}
-
-	public void tearDown() {
-		browser.close();
-		proxy.stop();
-		try {
-			Runtime.getRuntime().exec( new String[] { basePath + "\\tools\\toggle_IE_proxy.exe", "disable" } );
-			Thread.sleep( 1000 );
-		}
-		catch ( Exception e ) {
-			e.printStackTrace();
-		}
 	}
 }

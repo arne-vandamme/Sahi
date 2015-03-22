@@ -1,11 +1,14 @@
 package net.sf.sahi.playback;
 
-import junit.framework.TestCase;
 import net.sf.sahi.config.Configuration;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.*;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -24,25 +27,27 @@ import java.util.List;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class SahiScriptTest extends TestCase
+public class TestSahiScript
 {
 	static {
 		Configuration.init();
 	}
 
-	private static final long serialVersionUID = -3933249717685341073L;
-	TestScript testScript = new TestScript( "scrName", null, "scrName" );
+	private TestScript testScript = new TestScript( "scrName", null, "scrName" );
 
-	public void testGetInclude() {
+	@Test
+	public void getInclude() {
 		assertEquals( "prof.sah", SahiScript
 				.getInclude( "/*asdad*/ _include(\"prof.sah\"); //asdasd\n" ) );
 	}
 
-	public void testGetIncludeSingleQuote() {
+	@Test
+	public void getIncludeSingleQuote() {
 		assertEquals( "prof.sah", SahiScript.getInclude( "_include('prof.sah')" ) );
 	}
 
-	public void testModify() {
+	@Test
+	public void modify() {
 		assertEquals( "_sahi.schedule(\"_sahi._assertEqual(_sahi._table(\\\"aa\\\"))\", \"scrName&n=1\");\r\n",
 		              testScript.modify( "_assertEqual(_table(\"aa\"))" ) );
 
@@ -79,38 +84,45 @@ public class SahiScriptTest extends TestCase
 
 	}
 
-	public void testKeywordsAsASubstringFails() {
+	@Test
+	public void keywordsAsASubstringFails() {
 		assertEquals(
 				"_sahi.schedule(\"_sahi._setValue(_sahi._textbox (\\\"form_loginname\\\"), \\\"narayanraman\\\");\", \"scrName&n=1\");\r\n",
 				testScript
 						.modify( "_setValue(_textbox (\"form_loginname\"), \"narayanraman\");" ) );
 	}
 
-	public void testModifyFunctionNames() {
+	@Test
+	public void modifyFunctionNames() {
 		assertEquals( "_sahi._setGlobal(", TestScript.modifyFunctionNames( "_setGlobal(" ) );
 		assertEquals( "_insert  (", TestScript.modifyFunctionNames( "_insert  (" ) );
 		assertEquals( "_sahi._setValue (", TestScript.modifyFunctionNames( "__setValue (" ) );
 	}
 
-	public void testGetRegExp() {
-		ArrayList<String> keywords = new ArrayList<String>();
+	@Test
+	public void getRegExp() {
+		ArrayList<String> keywords = new ArrayList<>();
 		keywords.add( "_accessor" );
 		keywords.add( "_alert" );
 		assertEquals( "_sahi._?(_accessor|_alert)(\\s*\\()", TestScript.getRegExp( true, keywords ) );
 	}
 
-	public void testGetActionRegExp() {
+	@Test
+	public void getActionRegExp() {
 		ArrayList<String> keywords = new ArrayList<String>();
 		keywords.add( "_alert" );
 		keywords.add( "_assertEqual" );
 		assertEquals( "^(?:_alert|_assertEqual)\\s*\\(.*", TestScript.getActionRegExp( keywords ) );
 	}
 
-	public void testLineStartsWithActionKeyword() {
+	@Test
+	public void lineStartsWithActionKeyword() {
 		assertTrue( TestScript.lineStartsWithActionKeyword( "_alert()" ) );
 	}
 
-	public void xtestEfficiency() {
+	@Test
+	@Ignore
+	public void efficiency() {
 		long start = System.currentTimeMillis();
 		TestScript.lineStartsWithActionKeyword( "_alert()" );
 
@@ -127,7 +139,8 @@ public class SahiScriptTest extends TestCase
 		System.out.println( t1 + "\n" + t2 );
 	}
 
-	public void testRegEx() {
+	@Test
+	public void regEx() {
 		assertEquals( "sahi_alert", "__alert".replaceAll( "_?(_alert)", "sahi$1" ) );
 		assertEquals( "sahi_alert", "_alert".replaceAll( "_?(_alert)", "sahi$1" ) );
 	}
@@ -154,7 +167,8 @@ public class SahiScriptTest extends TestCase
 		}
 	}
 
-	public void testBrackets() {
+	@Test
+	public void brackets() {
 		assertEquals( "axx", "a((".replaceAll( "\\(", "x" ) );
 		assertEquals( "sahi_log (form_login", "_log (form_login".replaceAll(
 				"_?(_log|_textbox)(\\s*\\()", "sahi$1$2" ) );
@@ -164,7 +178,8 @@ public class SahiScriptTest extends TestCase
 		assertTrue( "_assertEqual           (".matches( "^(_assertEqual)\\s*\\(" ) );
 	}
 
-	public void testGetActionKeywords() {
+	@Test
+	public void getActionKeywords() {
 		List<?> keywords = SahiScript.getActionKeyWords();
 		assertTrue( keywords.contains( "_alert" ) );
 		assertTrue( keywords.contains( "_assertEqual" ) );
@@ -189,7 +204,8 @@ public class SahiScriptTest extends TestCase
 		assertTrue( keywords.contains( "_navigateTo" ) );
 	}
 
-	public void testGetKeywords() {
+	@Test
+	public void getKeywords() {
 		List<?> keywords = SahiScript.getKeyWords();
 		assertTrue( keywords.contains( "_accessor" ) );
 		assertTrue( keywords.contains( "_alert" ) );
@@ -237,7 +253,9 @@ public class SahiScriptTest extends TestCase
 		assertTrue( keywords.contains( "_navigateTo" ) );
 	}
 
-	public void ignoredTestUnicode() throws IOException {
+	@Test
+	@Ignore
+	public void unicode() throws IOException {
 //        assertEquals("??", "\u4E2D\u6587");
 //        File file = new File("C:\\unicode.txt");
 //        FileOutputStream out = new FileOutputStream(file);
@@ -249,14 +267,16 @@ public class SahiScriptTest extends TestCase
 //        System.out.print("\u4E2D\u6587");
 	}
 
-	public void testFindCondition() {
+	@Test
+	public void findCondition() {
 		assertEquals( "'' == _textbox(\"t1\").value", testScript.findCondition(
 				"_condition('' == _textbox(\"t1\").value)" ) );
 		assertEquals( "'$x' == _textbox(\"t1\").value", testScript.findCondition(
 				"_condition('$x' == _textbox(\"t1\").value)" ) );
 	}
 
-	public void testIsSet() throws Exception {
+	@Test
+	public void isSet() throws Exception {
 		assertTrue( testScript.isSet( "_set($a, \"abc\")" ) );
 		assertFalse( testScript.isSet( "_setValue(xxx, \"abc\")" ) );
 		assertTrue( testScript.isSet( "_popup(\"abc\")._set($a, \"abc\")" ) );
@@ -264,12 +284,14 @@ public class SahiScriptTest extends TestCase
 		assertFalse( testScript.isSet( "_xx_set(xxx, \"abc\")" ) );
 	}
 
-	public void testModifyConditionWithTwo$Vars() throws Exception {
+	@Test
+	public void modifyConditionWithTwo$Vars() throws Exception {
 		assertEquals( "if (_sahi._condition(\"\"+s_v($a)+\"==\"+s_v($b)+\"\", \"scrName&n=0\"))",
 		              testScript.modifyCondition( "if (_condition($a==$b))", 0 ) );
 	}
 
-	public void testModifyCondition() throws Exception {
+	@Test
+	public void modifyCondition() throws Exception {
 		assertEquals( "if (_sahi._condition(\"a==b\", \"scrName&n=0\"))", testScript.modifyCondition(
 				"if (_condition(a==b))", 0 ) );
 		assertEquals( "if (_sahi._condition(\"\"+s_v($i)+\"==10\", \"scrName&n=0\"))", testScript.modifyCondition(
@@ -285,7 +307,8 @@ public class SahiScriptTest extends TestCase
 //                testScript.modifyIf("if (_condition('' == _textbox(\"t1\").value)) {", 10));
 //    }
 
-	public void testWait() {
+	@Test
+	public void executeWait() {
 		assertEquals( "_sahi.executeWait(\"_sahi._wait(1000)\", \"scrName&n=5\");\r\n", testScript.modifyWait(
 				"_wait(1000)", 5 ) );
 		assertEquals( "_sahi.executeWait(\"_sahi._wait(1000, _sahi._byId(\\\"abc\\\"));\", \"scrName&n=5\");\r\n",
@@ -297,7 +320,8 @@ public class SahiScriptTest extends TestCase
 				testScript.modifyWait( "_wait(1000, _exists($BYID_ABC))", 5 ) );
 	}
 
-	public void testProcessSet() {
+	@Test
+	public void processSet() {
 //		String tempVarName = "$aaaa[$i]".replaceAll("[$]", "\\\\\\$");
 //		System.out.println("tempVarName="+tempVarName);		
 		assertEquals(
@@ -317,57 +341,67 @@ public class SahiScriptTest extends TestCase
 				testScript.processSet( "_popup('win')._set(abc, document.links)", 23 ) );
 	}
 
-	public void testRemoveBrowserJS() {
+	@Test
+	public void removeBrowserJS() {
 		assertEquals( "a                  \n              b                                c",
 		              testScript.removeBrowserJS(
 				              "a <browser> asbs sd\n sd </browser>b<browser> asbs sd sd </browser> c" ) );
 	}
 
-	public void test2Params() {
+	@Test
+	public void params() {
 		assertEquals( "_assertEqual(\\\"Rs. 18\\\", \"+s_v($table.get(\"Soap\", \"Price\"))+\");",
 		              SahiScript.separateVariables( "_assertEqual(\"Rs. 18\", $table.get(\"Soap\", \"Price\"));" ) );
 		assertEquals( "_assertEqual(\\\"Rs. 18\\\", \"+s_v($table.get(\"Soap\",\t\"Price\"))+\");",
 		              SahiScript.separateVariables( "_assertEqual(\"Rs. 18\", $table.get(\"Soap\",\t\"Price\"));" ) );
 	}
 
-	public void testExtractBrowserJS() {
+	@Test
+	public void extractBrowserJS() {
 		assertEquals( "  alert(123);\n  print('abc');\n", testScript.extractBrowserJS(
 				"a <browser>\n  alert(123);\n</browser>\nb\n<browser>\n  print('abc');\n</browser>\nc\n", false ) );
 	}
 
-	public void testWhiteSpaces() {
+	@Test
+	public void whiteSpaces() {
 		assertEquals( "a();\r\n\r\nb();\r\n", testScript.modify( "a();\r\n\r\nb();" ) );
 		assertEquals( "a();\r\n\r\nb();\r\n", testScript.modify( "a();\r\n\r\nb();\r\n" ) );
 	}
 
-	public void testQuotedDollarVariables() {
+	@Test
+	public void quotedDollarVariables() {
 		assertEquals(
 				"_sahi.schedule(\"_sahi.setServerVar('abc', \\\"$url\\\");\", \"scrName&n=23\");\r\nabc = _sahi.getServerVar('abc');\r\n",
 				testScript.processSet( "_set(abc, \"$url\")", 23 ) );
 	}
 
-	public void testSeparateVariablesNoDollar() {
+	@Test
+	public void separateVariablesNoDollar() {
 		assertEquals( "_setValue(_textbox(1), \\\"url\\\")", SahiScript.separateVariables(
 				"_setValue(_textbox(1), \"url\")" ) );
 	}
 
-	public void testSeparateVariablesWithQuotedDollar() {
+	@Test
+	public void separateVariablesWithQuotedDollar() {
 		assertEquals( "_setValue(_textbox(1), \\\"$url\\\")", SahiScript.separateVariables(
 				"_setValue(_textbox(1), \"$url\")" ) );
 	}
 
-	public void testSeparateVariablesWithDollar() {
+	@Test
+	public void separateVariablesWithDollar() {
 		assertEquals( "_setValue(_textbox(1), \"+s_v($url)+\")", SahiScript.separateVariables(
 				"_setValue(_textbox(1), $url)" ) );
 	}
 
-	public void testSeparateVariablesWith2Dollar() {
+	@Test
+	public void separateVariablesWith2Dollar() {
 		assertEquals( "\"\"+s_v($a)+\"==\"+s_v($b)+\"\"", "\"" + SahiScript.separateVariables( "$a==$b" ) + "\"" );
 		assertEquals( "\"_setValue(\"+s_v($a)+\", \"+s_v($b)+\")\"", "\"" + SahiScript.separateVariables(
 				"_setValue($a, $b)" ) + "\"" );
 	}
 
-	public void testSeparateVariablesWithRegExp() {
+	@Test
+	public void separateVariablesWithRegExp() {
 		assertEquals( "_assertEqual(\"+s_v($fullFilePath.replace(/\\/g, '/'))+\", 'a');", SahiScript.separateVariables(
 				"_assertEqual($fullFilePath.replace(/\\/g, '/'), 'a');" ) );
 		assertEquals(
@@ -376,7 +410,8 @@ public class SahiScriptTest extends TestCase
 						"_assertEqual($fullFilePath.replace(/\\/g, '/'), $resolvedPath.replace(/\\/g, '/'));" ) );
 	}
 
-	public void testNormalizeNewLinesForOSes() throws Exception {
+	@Test
+	public void normalizeNewLinesForOSes() throws Exception {
 		assertEquals( "a\nb\nc", testScript.normalizeNewLinesForOSes( "a\r\nb\r\nc" ) );
 		assertEquals( "a\nb\nc", testScript.normalizeNewLinesForOSes( "a\nb\nc" ) );
 		assertEquals( "a\nb\nc", testScript.normalizeNewLinesForOSes( "a\rb\rc" ) );
@@ -384,5 +419,4 @@ public class SahiScriptTest extends TestCase
 		assertEquals( "a\nb\n\nc", testScript.normalizeNewLinesForOSes( "a\rb\r\rc" ) );
 		assertEquals( "a\nb\n\nc", testScript.normalizeNewLinesForOSes( "a\r\nb\r\n\r\nc" ) );
 	}
-
 }

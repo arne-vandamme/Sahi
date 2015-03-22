@@ -1,8 +1,11 @@
 package net.sf.sahi.config;
 
-import junit.framework.TestCase;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.File;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -21,34 +24,36 @@ import java.io.File;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class ConfigurationTest extends TestCase
+public class TestConfiguration
 {
-	private static final long serialVersionUID = -2118478735809372530L;
 	private String basePath;
 	private String userDataDirectory;
 
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp();
+	@Before
+	public void setUp() throws Exception {
 		basePath = new File( "." ).getCanonicalPath().replace( '\\', '/' );
 		userDataDirectory = new File( basePath, "userdata/" ).getCanonicalPath().replace( '\\', '/' );
 	}
 
-	public void testSplit() {
+	@Test
+	public void split() {
 		assertEquals( "a", "a\nb\nc".split( "\n" )[0] );
 		assertEquals( "b", "a\nb\nc".split( "\n" )[1] );
 		assertEquals( "c", "a\nb\nc".split( "\n" )[2] );
 	}
 
-	public void testGetRenderableContentTypes() {
+	@Test
+	public void getRenderableContentTypes() {
 		assertEquals( "a\nb", "a\r\nb".replaceAll( "\\\r", "" ) );
 	}
 
-	public void testGetNonBlankLines() {
+	@Test
+	public void getNonBlankLines() {
 		assertEquals( "a", Configuration.getNonBlankLines( " \r\n a \r\n" )[0] );
 	}
 
-	public void testInit() {
+	@Test
+	public void init() {
 		Configuration.init( basePath + "", userDataDirectory );
 		assertEquals( userDataDirectory + "/logs/playback", Configuration.getPlayBackLogsRoot().replace( '\\', '/' ) );
 		assertEquals( userDataDirectory + "/certs", Configuration.getCertsPath().replace( '\\', '/' ) );
@@ -56,7 +61,8 @@ public class ConfigurationTest extends TestCase
 		assertEquals( "sahi", Configuration.getControllerMode() );
 	}
 
-	public void testInitJava() {
+	@Test
+	public void initJava() {
 		Configuration.initJava( basePath + "", userDataDirectory );
 		assertEquals( userDataDirectory + "/logs/playback", Configuration.getPlayBackLogsRoot().replace( '\\', '/' ) );
 		assertEquals( userDataDirectory + "/certs", Configuration.getCertsPath().replace( '\\', '/' ) );

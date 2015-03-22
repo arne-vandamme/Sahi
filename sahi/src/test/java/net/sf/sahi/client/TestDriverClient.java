@@ -1,5 +1,8 @@
 package net.sf.sahi.client;
 
+import org.junit.Ignore;
+import org.junit.Test;
+
 import java.io.File;
 import java.util.List;
 
@@ -23,18 +26,15 @@ import static org.junit.Assert.*;
  * limitations under the License.
  */
 
-/**
- * This is a sample junit test used to demonstrate various
- * apis of Sahi.
- * You need sahi/lib/sahi.jar in your classpath
- */
-public class DriverClientTest extends SahiTestCase
+// todo: fix as IT
+@Ignore
+public class TestDriverClient extends AbstractSahiTest
 {
-	//	protected String baseURL = "http://gramam";
 	protected String baseURL = "http://sahipro.com";
-	private static final long serialVersionUID = 5492057299341976253L;
 
-	public void xtestZK() {
+	@Test
+	@Ignore
+	public void zk() {
 		browser.setSpeed( 210 );
 		browser.navigateTo( "http://www.zkoss.org/zkdemo/userguide/" );
 		browser.div( "Hello World" ).click();
@@ -57,7 +57,8 @@ public class DriverClientTest extends SahiTestCase
 		assertTrue( browser.textbox( "z-combobox-inp[2]" ).exists() );
 	}
 
-	public void testOpen() {
+	@Test
+	public void open() {
 		browser.navigateTo( baseURL + "/demo/formTest.htm" );
 		browser.textbox( "t1" ).setValue( "aaa" );
 		browser.link( "Back" ).click();
@@ -65,13 +66,15 @@ public class DriverClientTest extends SahiTestCase
 		assertEquals( "Cell with id", browser.cell( "CellWithId" ).getText() );
 	}
 
-	public void testFetch() throws Exception {
+	@Test
+	public void fetch() throws Exception {
 		browser.navigateTo( baseURL + "/demo/formTest.htm" );
 		assertEquals( baseURL + "/demo/formTest.htm", browser.fetch( "window.location.href" ) );
 
 	}
 
-	public void testDragDrop() {
+	@Test
+	public void dragDrop() {
 		browser.navigateTo( "http://www.snook.ca/technical/mootoolsdragdrop/" );
 		browser.div( "Drag me" ).dragAndDropOn( browser.div( "Item 2" ) );
 //		browser.waitFor(3000);
@@ -82,7 +85,8 @@ public class DriverClientTest extends SahiTestCase
 		browser.div( "Item 4" ).exists();
 	}
 
-	public void testSahiDemoAccessors() {
+	@Test
+	public void sahiDemoAccessors() {
 		browser.navigateTo( baseURL + "/demo/formTest.htm" );
 		assertEquals( "", browser.textbox( "t1" ).value() );
 		assertNotNull( browser.textbox( 1 ) );
@@ -133,14 +137,16 @@ public class DriverClientTest extends SahiTestCase
 		assertNotNull( browser.byXPath( "//table[1]/tbody/tr[1]/td[@id='CellWithId']" ) );
 	}
 
-	public void testSelect() {
+	@Test
+	public void select() {
 		browser.navigateTo( baseURL + "/demo/formTest.htm" );
 		assertEquals( "o1", browser.select( "s1Id[1]" ).selectedText() );
 		browser.select( "s1Id[1]" ).choose( "o2" );
 		assertEquals( "o2", browser.select( "s1Id[1]" ).selectedText() );
 	}
 
-	public void testMultiSelect() {
+	@Test
+	public void multiSelect() {
 		browser.navigateTo( baseURL + "/demo/selectTest.htm" );
 		browser.select( "s4Id" ).choose( "o1" );
 		assertEquals( "o1", browser.select( "s4Id" ).selectedText() );
@@ -152,7 +158,8 @@ public class DriverClientTest extends SahiTestCase
 		assertEquals( "o1,o2,o3", browser.select( "s4Id" ).selectedText() );
 	}
 
-	public void testSetFile() {
+	@Test
+	public void setFile() {
 		browser.navigateTo( baseURL + "/demo/php/fileUpload.htm" );
 		browser.file( "file" ).setFile( "scripts/demo/uploadme.txt" );
 		browser.submit( "Submit Single" ).click();
@@ -162,7 +169,8 @@ public class DriverClientTest extends SahiTestCase
 		browser.link( "Back to form" ).click();
 	}
 
-	public void testMultiFileUpload() {
+	@Test
+	public void multiFileUpload() {
 		browser.navigateTo( baseURL + "/demo/php/fileUpload.htm" );
 		browser.file( "file[]" ).setFile( "scripts/demo/uploadme.txt" );
 		browser.file( "file[]" ).setFile( "scripts/demo/uploadme2.txt" );
@@ -175,7 +183,8 @@ public class DriverClientTest extends SahiTestCase
 		assertTrue( browser.span( "size[1]" ).text().indexOf( "0.32421875 Kb" ) != -1 );
 	}
 
-	public void testSettingAndGettingSelectionText() {
+	@Test
+	public void settingAndGettingSelectionText() {
 		browser.navigateTo( baseURL + "/demo/" );
 		browser.click( browser.link( "Form Test" ) );
 		browser.setValue( browser.textarea( "ta1" ), "abcdefgh" );
@@ -191,7 +200,8 @@ public class DriverClientTest extends SahiTestCase
 		assertEquals( "cd", value2 );
 	}
 
-	public void testSahiDemoClicks() {
+	@Test
+	public void sahiDemoClicks() {
 		browser.navigateTo( baseURL + "/demo/formTest.htm" );
 		assertNotNull( browser.checkbox( "c1" ) );
 		browser.checkbox( "c1" ).click();
@@ -210,7 +220,8 @@ public class DriverClientTest extends SahiTestCase
 		assertFalse( browser.radio( "r1" ).checked() );
 	}
 
-	public void testLinks() {
+	@Test
+	public void links() {
 		browser.navigateTo( baseURL + "/demo/index.htm" );
 		browser.link( "Link Test" ).click();
 		browser.link( "linkByContent" ).click();
@@ -240,7 +251,8 @@ public class DriverClientTest extends SahiTestCase
 		browser.link( "Back" ).click();
 	}
 
-	public void testPopupTitleNameMix() {
+	@Test
+	public void popupTitleNameMix() {
 		browser.navigateTo( baseURL + "/demo/index.htm" );
 		browser.link( "Window Open Test" ).click();
 		browser.link( "Window Open Test With Title" ).click();
@@ -275,7 +287,8 @@ public class DriverClientTest extends SahiTestCase
 		browser.link( "Back" ).click();
 	}
 
-	public void testIn() {
+	@Test
+	public void in() {
 		browser.navigateTo( baseURL + "/demo/tableTest.htm" );
 		assertEquals( "111", browser.textarea( "ta" ).near( browser.cell( "a1" ) ).getValue() );
 		assertEquals( "222", browser.textarea( "ta" ).near( browser.cell( "a2" ) ).getValue() );
@@ -283,13 +296,15 @@ public class DriverClientTest extends SahiTestCase
 		assertTrue( browser.link( "Link Test" ).exists() );
 	}
 
-	public void testExists() {
+	@Test
+	public void exists() {
 		browser.navigateTo( baseURL + "/demo/index.htm" );
 		assertTrue( browser.link( "Link Test" ).exists() );
 		assertFalse( browser.link( "Link Test NonExistent" ).exists() );
 	}
 
-	public void testWaitFor() {
+	@Test
+	public void waitFor() {
 		browser.navigateTo( baseURL + "/demo/waitCondition1.htm" );
 		BrowserCondition condition = new BrowserCondition( browser )
 		{
@@ -302,7 +317,18 @@ public class DriverClientTest extends SahiTestCase
 		assertEquals( "populated", browser.textbox( "t1" ).value() );
 	}
 
-	public void alert1( String message ) {
+	@Test
+	public void alert() {
+		alert1( "One" );
+		alert1( "Two" );
+		alert1( "Three" );
+		browser.button( "Click For Multiline Alert" ).click();
+		assertEquals(
+				"You must correct the following Errors:\nYou must select a messaging price plan.\nYou must select an international messaging price plan.\nYou must enter a value for the Network Lookup Charge",
+				browser.lastAlert() );
+	}
+
+	private void alert1( String message ) {
 		browser.navigateTo( baseURL + "/demo/alertTest.htm" );
 		browser.textbox( "t1" ).setValue( "Message " + message );
 		browser.button( "Click For Alert" ).click();
@@ -313,17 +339,9 @@ public class DriverClientTest extends SahiTestCase
 		assertNull( browser.lastAlert() );
 	}
 
-	public void testAlert() {
-		alert1( "One" );
-		alert1( "Two" );
-		alert1( "Three" );
-		browser.button( "Click For Multiline Alert" ).click();
-		assertEquals(
-				"You must correct the following Errors:\nYou must select a messaging price plan.\nYou must select an international messaging price plan.\nYou must enter a value for the Network Lookup Charge",
-				browser.lastAlert() );
-	}
-
-	public void xtestGoogle() {
+	@Test
+	@Ignore
+	public void google() {
 		browser.open();
 		browser.navigateTo( "http://www.google.com" );
 		browser.setValue( browser.textbox( "q" ), "sahi forums" );
@@ -334,7 +352,9 @@ public class DriverClientTest extends SahiTestCase
 		assertTrue( browser.textbox( "req_username" ).exists() );
 	}
 
-	public void xtestGoogleDD() throws Exception {
+	@Test
+	@Ignore
+	public void googleDD() throws Exception {
 		browser.open();
 		browser.navigateTo( "http://www.google.com" );
 		browser.setValue( browser.textbox( "q" ), "sahi dow" );
@@ -345,13 +365,16 @@ public class DriverClientTest extends SahiTestCase
 		assertEquals( "sahi download", browser.textbox( "q" ).getValue() );
 	}
 
-	public void xtestForumsExists() throws Exception {
+	@Test
+	@Ignore
+	public void forumsExists() throws Exception {
 		browser.navigateTo( "http://sahipro.com/forums/" );
 		browser.link( "Login" ).click();
 		assertTrue( browser.textbox( "req_username" ).exists() );
 	}
 
-	public void testConfirm() {
+	@Test
+	public void confirm() {
 		browser.navigateTo( baseURL + "/demo/confirmTest.htm" );
 		browser.expectConfirm( "Some question?", true );
 		browser.button( "Click For Confirm" ).click();
@@ -377,7 +400,8 @@ public class DriverClientTest extends SahiTestCase
 		assertNull( browser.lastConfirm() );
 	}
 
-	public void testPrompt() {
+	@Test
+	public void prompt() {
 		browser.navigateTo( baseURL + "/demo/promptTest.htm" );
 		browser.expectPrompt( "Some prompt?", "abc" );
 		browser.button( "Click For Prompt" ).click();
@@ -390,8 +414,9 @@ public class DriverClientTest extends SahiTestCase
 		assertNull( browser.lastPrompt() );
 	}
 
+	@Test
 	@SuppressWarnings("deprecation")
-	public void testIsVisible() {
+	public void isVisible() {
 		browser.navigateTo( baseURL + "/demo/index.htm" );
 		browser.link( "Visible Test" ).click();
 		assertTrue( browser.spandiv( "using display" ).isVisible() );
@@ -417,7 +442,8 @@ public class DriverClientTest extends SahiTestCase
 
 	}
 
-	public void testCheck() throws Exception {
+	@Test
+	public void check() throws Exception {
 		browser.navigateTo( baseURL + "/demo/" );
 		browser.link( "Form Test" ).click();
 		assertEquals( "false", browser.checkbox( "c1" ).fetch( "checked" ) );
@@ -435,7 +461,8 @@ public class DriverClientTest extends SahiTestCase
 		assertEquals( "true", browser.checkbox( "c1" ).fetch( "checked" ) );
 	}
 
-	public void testFocus() throws Exception {
+	@Test
+	public void focus() throws Exception {
 		browser.navigateTo( baseURL + "/demo/focusTest.htm" );
 		browser.textbox( "t2" ).focus();
 		assertEquals( "focused", browser.textbox( "t1" ).value() );
@@ -445,7 +472,8 @@ public class DriverClientTest extends SahiTestCase
 		assertEquals( "focused", browser.textbox( "t1" ).value() );
 	}
 
-	public void testTitle() throws Exception {
+	@Test
+	public void title() throws Exception {
 		browser.navigateTo( baseURL + "/demo/index.htm" );
 		assertEquals( "Sahi Tests", browser.title() );
 		browser.link( "Form Test" ).click();
@@ -455,7 +483,8 @@ public class DriverClientTest extends SahiTestCase
 		assertEquals( "With Title", browser.popup( "With Title" ).title() );
 	}
 
-	public void testArea() throws Exception {
+	@Test
+	public void area() throws Exception {
 		browser.navigateTo( baseURL + "/demo/map.htm" );
 		browser.navigateTo( "map.htm" );
 		assertTrue( browser.area( "Record" ).exists() );
@@ -471,19 +500,21 @@ public class DriverClientTest extends SahiTestCase
 		//browser.navigateTo("map.htm");		
 	}
 
-	public void testRegExp() throws Exception {
+	@Test
+	public void regExp() throws Exception {
 		browser.navigateTo( baseURL + "/demo/regexp.htm" );
 		assertEquals( "Inner", browser.div( "Inner" ).getText() );
 		assertEquals( "Inner", browser.div( "/Inner/[1]" ).getText() );
 		assertTrue( !browser.div( "/Inner/[3]" ).exists() );
 
-		assertTrue( browser.link( "/Vi/[0]" ).fetch( "href" ).indexOf( "0.htm" ) != -1 );
-		assertTrue( browser.link( "View[1]" ).fetch( "href" ).indexOf( "1.htm" ) != -1 );
-		assertTrue( browser.link( "/Vi/[2]" ).fetch( "href" ).indexOf( "2.htm" ) != -1 );
-		assertTrue( browser.link( "View[3]" ).fetch( "href" ).indexOf( "3.htm" ) != -1 );
+		assertTrue( browser.link( "/Vi/[0]" ).fetch( "href" ).contains( "0.htm" ) );
+		assertTrue( browser.link( "View[1]" ).fetch( "href" ).contains( "1.htm" ) );
+		assertTrue( browser.link( "/Vi/[2]" ).fetch( "href" ).contains( "2.htm" ) );
+		assertTrue( browser.link( "View[3]" ).fetch( "href" ).contains( "3.htm" ) );
 	}
 
-	public void testContainsText() throws Exception {
+	@Test
+	public void containsText() throws Exception {
 		browser.navigateTo( baseURL + "/demo/containTest.htm" );
 		assertTrue( browser.div( "a" ).containsText( "find me here" ) );
 		assertTrue( browser.div( "a" ).containsText( "me" ) );
@@ -494,7 +525,8 @@ public class DriverClientTest extends SahiTestCase
 		assertTrue( browser.accessor( "document.body" ).containsHTML( "/find .* here/" ) );
 	}
 
-	public void testStyle() throws Exception {
+	@Test
+	public void style() throws Exception {
 		browser.navigateTo( baseURL + "/demo/mouseover.htm" );
 		if ( browser.isChrome() || browser.isFirefox() ) {
 			assertEquals( "16px", browser.span( "Hi Kamlesh" ).style( "font-size" ) );
@@ -504,10 +536,10 @@ public class DriverClientTest extends SahiTestCase
 			assertEquals( "12pt", browser.span( "Hi Kamlesh" ).style( "font-size" ) );
 			assertEquals( "#0066cc", browser.span( "Hi Kamlesh" ).style( "color" ) );
 		}
-
 	}
 
-	public void testDoubleClick() throws Exception {
+	@Test
+	public void doubleClick() throws Exception {
 		browser.navigateTo( baseURL + "/demo/clicks.htm" );
 		browser.div( "dbl click me" ).highlight();
 		browser.div( "dbl click me" ).doubleClick();
@@ -515,14 +547,16 @@ public class DriverClientTest extends SahiTestCase
 		browser.button( "Clear" ).click();
 	}
 
-	public void testRightClick() throws Exception {
+	@Test
+	public void rightClick() throws Exception {
 		browser.navigateTo( baseURL + "/demo/clicks.htm" );
 		browser.div( "right click me" ).rightClick();
 		assertEquals( "[RIGHT_CLICK]", browser.textarea( "t2" ).value() );
 		browser.button( "Clear" ).click();
 	}
 
-	public void testUnder() throws Exception {
+	@Test
+	public void under() throws Exception {
 		browser.navigateTo( baseURL + "/demo/tableTest.htm" );
 		assertEquals( "x1-2", browser.cell( 0 ).near( browser.cell( "x1-0" ) ).under( browser.tableHeader(
 				"header 3" ) ).getText() );
@@ -530,7 +564,9 @@ public class DriverClientTest extends SahiTestCase
 				"header 4" ) ).getText() );
 	}
 
-	public void xtestSaveAs() throws Exception {
+	@Test
+	@Ignore
+	public void saveAs() throws Exception {
 		browser.navigateTo( baseURL + "/demo/" );
 		String absolutePath = "testsaveas_x.zip";
 		File file = new File( absolutePath );
@@ -553,7 +589,8 @@ public class DriverClientTest extends SahiTestCase
 
 	}
 
-	public void testBrowserJS() throws Exception {
+	@Test
+	public void browserJS() throws Exception {
 		browser.setBrowserJS( "function giveMyNumber(){return '23';}" );
 		browser.navigateTo( baseURL + "/demo/" );
 		assertEquals( "23", browser.fetch( "giveMyNumber()" ) );
@@ -562,7 +599,8 @@ public class DriverClientTest extends SahiTestCase
 		browser.link( "Back" ).click();
 	}
 
-	public void testFillMe() throws Exception {
+	@Test
+	public void fillMe() throws Exception {
 		browser.navigateTo( baseURL + "/demo/" );
 		browser.link( "Link Test" ).click();
 		browser.link( "Back" ).click();
@@ -572,7 +610,9 @@ public class DriverClientTest extends SahiTestCase
 		browser.popup( "popWin" ).link( "Break Frames" ).click();
 	}
 
-	public void xtestDomain() {
+	@Test
+	@Ignore
+	public void domain() {
 		// works only on FF right now.
 		browser.navigateTo( baseURL + "/demo/" );
 		browser.link( "Different Domains External" ).click();
@@ -583,7 +623,9 @@ public class DriverClientTest extends SahiTestCase
 		browser.navigateTo( baseURL + "/demo/" );
 	}
 
-	public void xtestLateRooms() throws Exception {
+	@Test
+	@Ignore
+	public void lateRooms() throws Exception {
 		browser.navigateTo( "http://www.laterooms.com/" );
 		browser.textbox( "k" ).setValue( "Manchester" );
 		browser.submit( "do" ).click();
@@ -591,7 +633,8 @@ public class DriverClientTest extends SahiTestCase
 		assertTrue( browser.heading1( "/Premier Apartments Manchester/" ).exists() );
 	}
 
-	public void testFileUploadWithChangedType() throws Exception {
+	@Test
+	public void fileUploadWithChangedType() throws Exception {
 		browser.navigateTo( baseURL + "/demo/php/fileUpload.htm" );
 		browser.file( "file" ).setFile( "scripts/demo/uploadme.txt" );
 		if ( "true".equals( browser.fetch( "_sahi._isIE()" ) ) ) {
@@ -604,19 +647,21 @@ public class DriverClientTest extends SahiTestCase
 		browser.textbox( "file" ).setValue( "scripts/demo/uploadme.txt" );
 		browser.submit( "Submit Single" ).click();
 		assertTrue( browser.span( "size" ).exists() );
-		assertTrue( browser.span( "size" ).text().indexOf( "0.3046875 Kb" ) != -1 );
-		assertTrue( browser.span( "type" ).text().indexOf( "Single" ) != -1 );
+		assertTrue( browser.span( "size" ).text().contains( "0.3046875 Kb" ) );
+		assertTrue( browser.span( "type" ).text().contains( "Single" ) );
 		browser.link( "Back to form" ).click();
 	}
 
-	public void testTextareaHandlesNewlines() throws Exception {
+	@Test
+	public void textareaHandlesNewlines() throws Exception {
 		browser.navigateTo( baseURL + "/demo/" );
 		browser.link( "Form Test" ).click();
 		browser.textarea( "ta1" ).setValue( "a\nb" );
 		assertEquals( "a\nb", browser.textarea( "ta1" ).getValue().replace( "\r\n", "\n" ) );
 	}
 
-	public void testCount() throws Exception {
+	@Test
+	public void count() throws Exception {
 		browser.navigateTo( baseURL + "/demo/count.htm" );
 		assertEquals( 4, browser.link( "group 0 link" ).countSimilar() );
 		assertEquals( 0, browser.link( "group non existent link" ).countSimilar() );
@@ -624,7 +669,8 @@ public class DriverClientTest extends SahiTestCase
 		assertEquals( 2, browser.link( "/group 1/" ).in( browser.div( "div1" ) ).countSimilar() );
 	}
 
-	public void testCollect() throws Exception {
+	@Test
+	public void collect() throws Exception {
 		browser.navigateTo( baseURL + "/demo/count.htm" );
 		List<ElementStub> els = browser.link( "/group 1/" ).collectSimilar();
 		assertEquals( 5, els.size() );
@@ -645,7 +691,8 @@ public class DriverClientTest extends SahiTestCase
 
 	}
 
-	public void testHTML5FormFields() throws Exception {
+	@Test
+	public void html5FormFields() throws Exception {
 		browser.navigateTo( baseURL + "/demo/html5_form_fields.htm" );
 		browser.datebox( "dob" ).setValue( "2010-10-10" );
 		assertEquals( "2010-10-10", browser.datebox( "dob" ).getValue() );
@@ -657,13 +704,15 @@ public class DriverClientTest extends SahiTestCase
 		assertEquals( "2009-W10", browser.weekbox( "week2" ).getValue() );
 	}
 
-	public void testWikipedia() throws Exception {
+	@Test
+	public void wikipedia() throws Exception {
 		browser.navigateTo( "http://www.wikipedia.org" );
 		browser.searchbox( "search" ).setValue( "sahi software" );
 		browser.submit( "go" ).click();
 	}
 
-	public void testStrictVisibility() throws Exception {
+	@Test
+	public void strictVisibility() throws Exception {
 		browser.navigateTo( baseURL + "/demo/strict_visible.htm" );
 		assertTrue( browser.textbox( "q" ).exists() );
 		assertTrue( browser.textbox( "q[1]" ).exists() );
@@ -682,12 +731,14 @@ public class DriverClientTest extends SahiTestCase
 		assertTrue( browser.textbox( "q[2]" ).exists() );
 	}
 
-	public void testCuteEditor() throws Exception {
+	@Test
+	public void cuteEditor() throws Exception {
 		browser.navigateTo( "http://cutesoft.net/asp/EnableAll.asp" );
 		browser.rte( "CE_Editor1_ID_Frame" ).rteWrite( "<html><b>Hhahaia</b></html>" );
 	}
 
-	public void testActiveElement() throws Exception {
+	@Test
+	public void activeElement() throws Exception {
 		browser.navigateTo( baseURL + "/demo/training/login.htm" );
 		browser.textbox( "user" ).focus();
 		assertEquals( "user", browser.activeElement().fetch( "name" ) );
@@ -695,7 +746,8 @@ public class DriverClientTest extends SahiTestCase
 		assertEquals( "password", browser.activeElement().fetch( "name" ) );
 	}
 
-	public void testMouseDownMouseUp() throws Exception {
+	@Test
+	public void mouseDownMouseUp() throws Exception {
 		browser.navigateTo( baseURL + "/demo/mouseEvents.htm" );
 		browser.button( "Capture mouse down" ).mouseDown();
 		assertEquals( "[MOUSE_DOWN]", browser.getText( browser.textarea( "t2" ) ) );
@@ -703,7 +755,8 @@ public class DriverClientTest extends SahiTestCase
 		assertEquals( "[MOUSE_DOWN][MOUSE_UP]", browser.getText( browser.textarea( "t2" ) ) );
 	}
 
-	public void testKeyPressAndGetAttribute() {
+	@Test
+	public void keyPressAndGetAttribute() {
 		browser.navigateTo( baseURL + "/demo/keypress.htm" );
 		browser.click( browser.radio( "r3" ) );
 		browser.keyPress( browser.textbox( "t2" ), "a", "CTRL" );
@@ -715,7 +768,8 @@ public class DriverClientTest extends SahiTestCase
 		assertEquals( "key pressed charCode=[99] keyCode=[0] NONE", browser.getText( browser.textbox( "t1" ) ) );
 	}
 
-	public void testBlur() {
+	@Test
+	public void blur() {
 		browser.navigateTo( baseURL + "/demo/focusTest.htm" );
 		browser.focus( browser.textbox( "t2" ) );
 		assertEquals( "focused", browser.textbox( "t1" ).getValue() );
@@ -728,7 +782,8 @@ public class DriverClientTest extends SahiTestCase
 
 	}
 
-	public void testPrintCalledAndClearPrintCalled() {
+	@Test
+	public void printCalledAndClearPrintCalled() {
 		browser.navigateTo( baseURL + "/demo/print.htm" );
 		assertFalse( browser.printCalled() );
 		browser.click( browser.button( "Print" ) );
@@ -740,7 +795,8 @@ public class DriverClientTest extends SahiTestCase
 
 	}
 
-	public void testSetXSRStates() {
+	@Test
+	public void setXSRStates() {
 		browser.navigateTo( baseURL + "/demo/" );
 		assertEquals( "true", browser.fetch( "_sahi.waitWhenXHRReadyState1" ) );
 		assertEquals( "true", browser.fetch( "_sahi.waitWhenXHRReadyState2" ) );
@@ -761,20 +817,20 @@ public class DriverClientTest extends SahiTestCase
 		assertEquals( "false", browser.fetch( "_sahi.waitWhenXHRReadyState1" ) );
 		assertEquals( "true", browser.fetch( "_sahi.waitWhenXHRReadyState2" ) );
 		assertEquals( "false", browser.fetch( "_sahi.waitWhenXHRReadyState3" ) );
-
 	}
 
-	public void testSetFileWithThirdArguement() {
+	@Test
+	public void setFileWithThirdArguement() {
 		browser.navigateTo( baseURL + "/demo/php/fileUpload.htm" );
 		browser.setFile( browser.file( "file4" ), "scripts/demo/uploadme.txt", "fileUpload.php" );
 		browser.click( browser.submit( "Submit Single" ) );
 		assertTrue( browser.span( "size" ).exists() );
 		assertTrue( browser.span( "size" ).getText().contains( "0.3046875 Kb" ) );
 		assertTrue( browser.span( "type" ).getText().contains( "Single" ) );
-
 	}
 
-	public void testFileSingleWith3rdParamWithSetFile2() {
+	@Test
+	public void fileSingleWith3rdParamWithSetFile2() {
 		browser.navigateTo( baseURL + "/demo/php/fileUpload.htm" );
 		browser.setFile2( browser.file( "file4" ), "scripts/demo/uploadme.txt", "fileUpload.php" );
 		browser.click( browser.submit( "Submit Single" ) );
@@ -790,17 +846,20 @@ public class DriverClientTest extends SahiTestCase
 		browser.containsText( browser.span( "type" ), "Single" );
 	}
 
-	public void testSetFile2() {
+	@Test
+	public void setFile2() {
 		browser.navigateTo( baseURL + "/demo/php/fileUpload.htm" );
 		browser.file( "file" ).setFile2( "scripts/demo/uploadme.txt" );
 		browser.submit( "Submit Single" ).click();
 		assertTrue( browser.span( "size" ).exists() );
-		assertTrue( browser.span( "size" ).text().indexOf( "0.3046875 Kb" ) != -1 );
-		assertTrue( browser.span( "type" ).text().indexOf( "Single" ) != -1 );
+		assertTrue( browser.span( "size" ).text().contains( "0.3046875 Kb" ) );
+		assertTrue( browser.span( "type" ).text().contains( "Single" ) );
 		browser.link( "Back to form" ).click();
 	}
 
-	public void xtestKeyUpAndKeyDown() {
+	@Test
+	@Ignore
+	public void keyUpAndKeyDown() {
 		browser.navigateTo( baseURL + "/demo/keypress.htm" );
 		browser.check( browser.radio( "r2" ) );
 //		browser.keyDown(browser.textbox("t2"), "a", "CTRL");

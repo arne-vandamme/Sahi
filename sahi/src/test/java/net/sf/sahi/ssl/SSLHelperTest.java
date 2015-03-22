@@ -22,8 +22,6 @@ import net.sf.sahi.util.Utils;
  */
 public class SSLHelperTest extends TestCase
 {
-	private static final long serialVersionUID = -5997317724110573969L;
-
 	public void xtestSSLCommand() {
 		SSLHelper helper = new SSLHelper();
 		assertEquals(

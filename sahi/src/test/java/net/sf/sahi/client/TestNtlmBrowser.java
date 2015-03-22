@@ -1,19 +1,39 @@
 package net.sf.sahi.client;
 
-import junit.framework.TestCase;
 import net.sf.sahi.config.Configuration;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Ignore;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 @Ignore
-public class NTLMBrowserTest extends TestCase
+public class TestNtlmBrowser
 {
-	private static final long serialVersionUID = -4296085986550978115L;
 	private Browser browser;
 	private String sahiBasePath = ".";
 	private String userDataDirectory = "./userdata/";
 	private String baseURL = "http://sahipro.com";
 
-	public void testNTLMBrowser() {
+	@Before
+	public void setUp() throws Exception {
+		Configuration.initJava( sahiBasePath, userDataDirectory );
+
+		toggleIEProxy( true );
+
+		browser = new Browser( "ie" );
+		browser.open();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		browser.close();
+		toggleIEProxy( false );
+	}
+
+	@Test
+	public void ntlmBrowser() {
 		browser.navigateTo( baseURL + "/demo/formTest.htm" );
 		browser.textbox( "t1" ).setValue( "aaa" );
 
@@ -23,7 +43,6 @@ public class NTLMBrowserTest extends TestCase
 		browser.link( "Back" ).click();
 		browser.link( "Table Test" ).click();
 		assertEquals( "Cell with id", browser.cell( "CellWithId" ).getText() );
-
 	}
 
 	public void toggleIEProxy( boolean enable ) {
@@ -36,21 +55,4 @@ public class NTLMBrowserTest extends TestCase
 			e.printStackTrace();
 		}
 	}
-
-	@Override
-	protected void setUp() throws Exception {
-		Configuration.initJava( sahiBasePath, userDataDirectory );
-
-		toggleIEProxy( true );
-
-		browser = new Browser( "ie" );
-		browser.open();
-	}
-
-	@Override
-	protected void tearDown() throws Exception {
-		browser.close();
-		toggleIEProxy( false );
-	}
-
 }

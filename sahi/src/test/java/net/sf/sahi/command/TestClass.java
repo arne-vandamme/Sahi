@@ -23,7 +23,7 @@ import net.sf.sahi.response.HttpResponse;
 public class TestClass
 {
 	public HttpResponse act( HttpRequest request ) {
-		CommandExecuterTest.called = true;
+		TestCommandExecutor.called = true;
 		return null;
 	}
 }

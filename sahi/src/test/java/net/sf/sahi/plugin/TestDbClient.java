@@ -1,9 +1,11 @@
 package net.sf.sahi.plugin;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -22,18 +24,16 @@ import java.util.ArrayList;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class DBClientTest extends TestCase
+public class TestDbClient
 {
-
-	private static final long serialVersionUID = 4356784736325894569L;
-
 	public String driverName;
 	public String jdbcurl;
 	public String username;
 	public String password;
 	public String sql;
 
-	public void testGetJSObject() throws SQLException, ClassNotFoundException {
+	@Test
+	public void getJSObject() throws SQLException, ClassNotFoundException {
 		final DBClient dbClient = new DBClient();
 		ArrayList<ArrayList<String>> list = new ArrayList<ArrayList<String>>();
 		ArrayList<String> columnNames = new ArrayList<String>();
