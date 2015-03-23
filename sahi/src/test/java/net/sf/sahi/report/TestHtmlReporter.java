@@ -2,6 +2,10 @@ package net.sf.sahi.report;
 
 import junit.framework.TestCase;
 import net.sf.sahi.config.Configuration;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -26,27 +30,28 @@ import net.sf.sahi.config.Configuration;
  * Date: Dec 7, 2006
  * Time: 4:31:15 PM
  */
-public class HtmlReporterTest extends TestCase
+public class TestHtmlReporter
 {
-	private static final long serialVersionUID = -6094737586743413166L;
-
 	static {
 		Configuration.init();
 	}
 
 	private SahiReporter reporter;
 
-	public void testGetSuiteDirForDefaultLogDir() {
+	@Test
+	public void getSuiteDirForDefaultLogDir() {
 		reporter = new HtmlReporter();
 		assertEquals( Configuration.getPlayBackLogsRoot(), reporter.getLogDir() );
 	}
 
-	public void testGetSuiteDirForCustomLogDir() {
+	@Test
+	public void getSuiteDirForCustomLogDir() {
 		reporter = new HtmlReporter( "testDir" );
 		assertEquals( "testDir", reporter.getLogDir() );
 	}
 
-	public void testGetSuiteDirForCreatedSuiteLogDir() {
+	@Test
+	public void getSuiteDirForCreatedSuiteLogDir() {
 		reporter = new HtmlReporter( true );
 		reporter.setSuiteName( "testSuite" );
 		assertTrue( reporter.getLogDir().indexOf( "testSuite" ) != -1 );

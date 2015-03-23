@@ -1,9 +1,13 @@
 package net.sf.sahi.util;
 
-import junit.framework.TestCase;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -22,15 +26,10 @@ import java.util.regex.Pattern;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class UtilsTest extends TestCase
+public class TestUtils
 {
-	private static final long serialVersionUID = 2636931487031933499L;
-
-	public UtilsTest( String name ) {
-		super( name );
-	}
-
-	public void testBlankLinesDoNotCauseProblemsInNumbering() {
+	@Test
+	public void blankLinesDoNotCauseProblemsInNumbering() {
 		String s = "1\na\n\nbx\ny";
 		assertEquals( 5, Utils.getTokens( s ).size() );
 		s = "1\na\n\nbx\ny\n";
@@ -43,15 +42,18 @@ public class UtilsTest extends TestCase
 		assertEquals( 1, Utils.getTokens( s ).size() );
 	}
 
-	public void testConvertStringToASCII() {
+	@Test
+	public void convertStringToASCII() {
 		assertEquals( "Elephant", Utils.convertStringToASCII( "Éléphant" ) );
 	}
 
-	public void testMakeString() {
+	@Test
+	public void makeString() {
 		assertEquals( "a\\nb", Utils.makeString( "a\nb" ) );
 	}
 
-	public void testStripChildSessionId() {
+	@Test
+	public void stripChildSessionId() {
 		assertEquals( "2371283", Utils.stripChildSessionId( "2371283sahix34x" ) );
 		assertEquals( "2371283sahixx", Utils.stripChildSessionId( "2371283sahixx" ) );
 		assertEquals( "2371283sahix", Utils.stripChildSessionId( "2371283sahix" ) );
@@ -59,7 +61,9 @@ public class UtilsTest extends TestCase
 				"1423530803cef04658083dd04ea6eaf6f5c0sahix5986fee00ab5704bbd083480be104d1035afx" ) );
 	}
 
-	public void xtestConcatPaths() {
+	@Test
+	@Ignore
+	public void concatPaths() {
 		assertEqualPaths( "D:/my/sahi/certs/a.txt", Utils.concatPaths( "../certs", "a.txt" ) );
 	}
 
@@ -67,19 +71,22 @@ public class UtilsTest extends TestCase
 		assertEquals( Utils.makePathOSIndependent( expected ), Utils.makePathOSIndependent( actual ) );
 	}
 
-	public void testMakeOSInedpendent() {
+	@Test
+	public void makeOsIndependent() {
 		if ( Utils.isWindows() ) {
 			assertEquals( "D:/my/sahi/certs/a.txt", Utils.makePathOSIndependent( "D:\\my\\sahi\\certs\\a.txt" ) );
 		}
 	}
 
-	public void testSplit() {
+	@Test
+	public void split() {
 		assertEquals( "aa", "aa\nbb\r\ncc".replaceAll( "\r", "" ).split( "[\n]" )[0] );
 		assertEquals( "bb", "aa\nbb\r\ncc".replaceAll( "\r", "" ).split( "[\n]" )[1] );
 		assertEquals( "cc", "aa\nbb\r\ncc".replaceAll( "\r", "" ).split( "[\n]" )[2] );
 	}
 
-	public void testInclude() {
+	@Test
+	public void include() {
 		String inputStr =
 				"_click(_link($linkText));\r\n_include(\"includes/sahi_demo_include.sah\");\r\n//_include(\"http://localhost:9999/_s_/scripts/sahi_demo_include.sah\");";
 		String patternStr = "[^\"']*[.]sah";
@@ -91,7 +98,8 @@ public class UtilsTest extends TestCase
 		}
 	}
 
-	public void testGetCommandTokensDoubleQuotes() {
+	@Test
+	public void getCommandTokensDoubleQuotes() {
 		String s = "sh -c \"ps -ef | grep firefox-bin\"";
 		String[] tokens = Utils.getCommandTokens( s );
 		assertEquals( "sh", tokens[0] );
@@ -99,7 +107,8 @@ public class UtilsTest extends TestCase
 		assertEquals( "ps -ef | grep firefox-bin", tokens[2] );
 	}
 
-	public void testGetCommandTokensSingleQuotes() {
+	@Test
+	public void getCommandTokensSingleQuotes() {
 		String s = "sh -c 'ps -ef | grep firefox-bin'";
 		String[] tokens = Utils.getCommandTokens( s );
 		assertEquals( "sh", tokens[0] );
@@ -107,7 +116,8 @@ public class UtilsTest extends TestCase
 		assertEquals( "ps -ef | grep firefox-bin", tokens[2] );
 	}
 
-	public void testGetCommandTokensMixedQuotes() {
+	@Test
+	public void getCommandTokensMixedQuotes() {
 		assertEquals( "ps -ef | grep \\'firefox-bin\\'", Utils.getCommandTokens(
 				"sh -c 'ps -ef | grep \\'firefox-bin\\''" )[2] );
 		assertEquals( "ps -ef | grep \"firefox-bin\"", Utils.getCommandTokens(
@@ -115,13 +125,15 @@ public class UtilsTest extends TestCase
 //    	assertEquals("'ps -ef | grep \\'firefox-bin\\''", Utils.getCommandTokens("sh -c 'ps -ef | grep \\'firefox-bin\\''")[2]);
 	}
 
-	public void testGetUUIDn() {
+	@Test
+	public void getUUIDn() {
 		for ( int i = 0; i < 100; i++ ) {
 			checkGetUUID();
 		}
 	}
 
-	public void testQuotesAndSpacesBug() {
+	@Test
+	public void quotesAndSpacesBug() {
 		assertEquals( "-genkey", Utils.getCommandTokens( "\"keytool\" -genkey" )[1] );
 	}
 
@@ -133,18 +145,22 @@ public class UtilsTest extends TestCase
 		assertFalse( uuid1.equals( uuid2 ) );
 	}
 
-	public void testEncode() throws Exception {
+	@Test
+	public void encode() throws Exception {
 		assertEquals( "1+%2B+2", Utils.encode( "1 + 2" ) );
 	}
 
-	public void xtestEnv() throws Exception {
+	@Test
+	@Ignore
+	public void env() throws Exception {
 		final String osName = System.getProperty( "os.name" );
 		if ( "Windows 7".equals( osName ) ) {
 			assertEquals( "C:\\Program Files\\a\\b", Utils.expandSystemProperties( "$ProgramFiles\\a\\b", true ) );
 		}
 	}
 
-	public void testExecuteWithTimeout() throws Exception {
+	@Test
+	public void executeWithTimeout() throws Exception {
 //    	final String str = Utils.executeCommand("\"C:\\Program Files\\Internet Explorer\\iexplore.exe\"", false, 10000);
 //    	System.out.println(">> str: " + str);
 		final String osName = System.getProperty( "os.name" );

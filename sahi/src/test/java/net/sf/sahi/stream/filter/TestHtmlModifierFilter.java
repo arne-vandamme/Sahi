@@ -1,8 +1,11 @@
 package net.sf.sahi.stream.filter;
 
 import net.sf.sahi.config.Configuration;
+import org.junit.Test;
 
 import java.io.IOException;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -21,16 +24,14 @@ import java.io.IOException;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class HTMLModifierFilterTest extends AbstractFilterTestCase
+public class TestHtmlModifierFilter extends AbstractFilterTest
 {
-	private static final long serialVersionUID = -8595824041373557849L;
-
 	static {
 		Configuration.init();
 	}
 
-	String injectionTop = "<X x><Y y>";
-	String injectionBottom = "<Z z>";
+	private String injectionTop = "<X x><Y y>";
+	private String injectionBottom = "<Z z>";
 
 	private String getFiltered( String[] ss, boolean isXHTML ) throws IOException {
 		String charset = "utf-8";
@@ -38,7 +39,8 @@ public class HTMLModifierFilterTest extends AbstractFilterTestCase
 		return getFiltered( ss, modifierFilter, charset );
 	}
 
-	public void testSingleLine() throws IOException {
+	@Test
+	public void singleLine() throws IOException {
 		String output;
 		String s1 = "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />";
 		output = getFiltered( new String[] { s1 }, false );
@@ -50,7 +52,8 @@ public class HTMLModifierFilterTest extends AbstractFilterTestCase
 				output );
 	}
 
-	public void testSingleLineXHTML() throws IOException {
+	@Test
+	public void singleLineXHTML() throws IOException {
 		String output;
 		String s1 =
 				"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">" +
@@ -64,7 +67,8 @@ public class HTMLModifierFilterTest extends AbstractFilterTestCase
 				output );
 	}
 
-	public void testMultiLine1() throws IOException {
+	@Test
+	public void multiLine1() throws IOException {
 		String output;
 		String s1 =
 				"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\"";
@@ -85,7 +89,8 @@ public class HTMLModifierFilterTest extends AbstractFilterTestCase
 		return hmf.getModifyIxIeUaCompatibility( s );
 	}
 
-	public void testIUACompatibility() {
+	@Test
+	public void iuaCompatibility() {
 		String str = "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" />ram";
 		assertEquals( getModifyIxIUCompatibility( str ), 51 );
 		str = "<meta http-equiv=X-UA-Compatible content=\"IE=8\" />";
@@ -104,7 +109,6 @@ public class HTMLModifierFilterTest extends AbstractFilterTestCase
 
 	class HTMLModifierFilterWithInjectContent extends HTMLModifierFilter
 	{
-
 		public HTMLModifierFilterWithInjectContent( String charset, boolean isXHTML, boolean isSSL ) {
 			super( charset, isXHTML, isSSL );
 		}
@@ -116,6 +120,5 @@ public class HTMLModifierFilterTest extends AbstractFilterTestCase
 		protected String getInjectAtBottom() {
 			return injectionBottom;
 		}
-
 	}
 }

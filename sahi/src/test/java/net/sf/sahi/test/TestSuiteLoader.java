@@ -1,14 +1,17 @@
 package net.sf.sahi.test;
 
-import junit.framework.TestCase;
 import net.sf.sahi.config.Configuration;
 import net.sf.sahi.util.Utils;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -33,23 +36,22 @@ import java.util.List;
  * Date: Dec 8, 2006
  * Time: 3:35:44 PM
  */
-public class SuiteLoaderTest extends TestCase
+public class TestSuiteLoader
 {
-	private static final long serialVersionUID = 4009823211721628781L;
-
 	static {
 		Configuration.init();
 	}
 
 	private File dir = new File( Configuration.getScriptRoots()[0] + System.getProperty( "file.separator" ) + "junit" );
 
-	protected void setUp() throws Exception {
-		super.setUp();
+	@Before
+	public void setUp() throws Exception {
 		Utils.deleteDir( dir );
 		dir.mkdirs();
 	}
 
-	public void testProcessSuiteDir() throws IOException {
+	@Test
+	public void processSuiteDir() throws IOException {
 		new File( dir, "script3.sah" ).createNewFile();
 		new File( dir, "script2.sahi" ).createNewFile();
 		new File( dir, "dummy.txt" ).createNewFile();
@@ -63,7 +65,8 @@ public class SuiteLoaderTest extends TestCase
 		assertEquals( "testBase", test.getStartURL() );
 	}
 
-	public void testProcessSuiteFile() throws IOException {
+	@Test
+	public void processSuiteFile() throws IOException {
 		File suiteFile = createSuiteFile();
 		List<TestLauncher> listTest = new SuiteLoader( Utils.getAbsolutePath( suiteFile ), "http://testBase" )
 				.getListTest();

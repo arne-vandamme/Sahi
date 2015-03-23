@@ -22,10 +22,8 @@ import java.io.IOException;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public abstract class AbstractFilterTestCase extends TestCase
+public abstract class AbstractFilterTest
 {
-	private static final long serialVersionUID = -7765749910538404904L;
-
 	protected String getFiltered( String[] strings, StreamFilter modifierFilter ) throws IOException {
 		return getFiltered( strings, modifierFilter, "iso-8859-1" );
 	}

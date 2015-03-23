@@ -1,6 +1,8 @@
 package net.sf.sahi.test;
 
 import junit.framework.TestCase;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import java.io.IOException;
 
@@ -21,13 +23,12 @@ import java.io.IOException;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class SahiTestTest extends TestCase
+public class TestSahiTest
 {
-
-	private static final long serialVersionUID = 7669927478979181445L;
-
+	@Test
+	@Ignore
 	@SuppressWarnings("unchecked")
-	public void xtestProcess2() throws IOException, InterruptedException {
+	public void process2() throws IOException, InterruptedException {
 		Process p = null;
 		java.util.Properties envVars = new java.util.Properties();
 		Runtime r = Runtime.getRuntime();
@@ -78,7 +79,9 @@ public class SahiTestTest extends TestCase
 //        Runtime.getRuntime().exec("C:/Program Files/Mozilla Firefox/firefox -profile \"d:/SahiFFProfileB\"", props);
 	}
 
-	public void xtestProcess() throws IOException, InterruptedException {
+	@Test
+	@Ignore
+	public void process() throws IOException, InterruptedException {
 //        Properties properties = System.getProperties();
 //
 //        Object[] objects = System.getenv();
@@ -121,8 +124,4 @@ public class SahiTestTest extends TestCase
 		System.out.println( p.toString() );
 		p2.destroy();
 	}
-
-	public void test() {
-	}
-
 }

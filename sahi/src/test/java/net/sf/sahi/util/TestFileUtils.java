@@ -1,10 +1,14 @@
 package net.sf.sahi.util;
 
-import junit.framework.TestCase;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
+import static org.junit.Assert.*;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -24,16 +28,16 @@ import java.io.IOException;
  * limitations under the License.
  */
 
-public class FileUtilsTest extends TestCase
+public class TestFileUtils
 {
-	private static final long serialVersionUID = 4433222425549723764L;
-	String src = "../temp/copysrc/";
-	String dest = "../temp/copydest/";
-	String file1 = "a.txt";
-	String file2 = "nested/b.txt";
+	private String src = "../temp/copysrc/";
+	private String dest = "../temp/copydest/";
+	private String file1 = "a.txt";
+	private String file2 = "nested/b.txt";
 	public String content = "Some text";
 
-	protected void setUp() throws Exception {
+	@Before
+	public void setUp() throws Exception {
 		new File( src ).mkdirs();
 		new File( src + "nested" ).mkdirs();
 
@@ -48,21 +52,8 @@ public class FileUtilsTest extends TestCase
 		out.close();
 	}
 
-	public void testCopyDir() throws IOException, InterruptedException {
-		FileUtils.copyDir( src, dest );
-		assertTrue( new File( dest + file1 ).exists() );
-		assertTrue( new File( dest + file2 ).exists() );
-
-	}
-
-	public void testCopyFile() throws IOException {
-		String destFile = dest + file1;
-		FileUtils.copyFile( src + file1, destFile );
-		assertTrue( new File( destFile ).exists() );
-		assertEquals( content, new String( Utils.readFileAsString( destFile ) ) );
-	}
-
-	protected void tearDown() throws Exception {
+	@After
+	public void tearDown() throws Exception {
 		new File( src + file1 ).delete();
 		new File( src + file2 ).delete();
 		new File( dest + file1 ).delete();
@@ -74,10 +65,25 @@ public class FileUtilsTest extends TestCase
 		new File( dest ).delete();
 	}
 
-	public void testCleanFileName() throws IOException {
+	@Test
+	public void copyDir() throws IOException, InterruptedException {
+		FileUtils.copyDir( src, dest );
+		assertTrue( new File( dest + file1 ).exists() );
+		assertTrue( new File( dest + file2 ).exists() );
+	}
+
+	@Test
+	public void copyFile() throws IOException {
+		String destFile = dest + file1;
+		FileUtils.copyFile( src + file1, destFile );
+		assertTrue( new File( destFile ).exists() );
+		assertEquals( content, new String( Utils.readFileAsString( destFile ) ) );
+	}
+
+	@Test
+	public void cleanFileName() throws IOException {
 		assertEquals( "abcdefghijk", FileUtils.cleanFileName( "a\\b/c:d*e?f\"g<h>i|jk" ) );
 		String fileName = null;
 		assertNull( FileUtils.cleanFileName( fileName ) );
 	}
-
 }

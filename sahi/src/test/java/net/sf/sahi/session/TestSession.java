@@ -1,6 +1,8 @@
 package net.sf.sahi.session;
 
-import junit.framework.TestCase;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -19,13 +21,12 @@ import junit.framework.TestCase;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class SessionTest extends TestCase
+public class TestSession
 {
-	private static final long serialVersionUID = 5444089813420833709L;
+	private Session session = new Session( "" );
 
-	Session session = new Session( "" );
-
-	public void testRemoveVariables() {
+	@Test
+	public void removeVariables() {
 		session.setVariable( "condn1", "1" );
 		session.setVariable( "condn2", "2" );
 		session.setVariable( "condn3", "3" );
@@ -42,18 +43,20 @@ public class SessionTest extends TestCase
 
 	}
 
-	public void testSessionState() {
+	@Test
+	public void sessionState() {
 		session.setIsRecording( true );
 		assertTrue( session.isRecording() );
 		session.setIsRecording( false );
 		assertFalse( session.isRecording() );
 	}
 
-	public void testRemoveInactiveDoesNotRemoveRecordingSessions() throws Exception {
+	@Test
+	public void removeInactiveDoesNotRemoveRecordingSessions() throws Exception {
 		session.setIsPlaying( true );
-		assertEquals( Session.playbackInactiveTimeout, session.getInactiveTimeout() );
+		assertEquals( Session.playbackInactiveTimeout, session.getInactiveTimeout(), 0 );
 		session.setIsPlaying( false );
-		assertEquals( Session.recorderInactiveTimeout, session.getInactiveTimeout() );
+		assertEquals( Session.recorderInactiveTimeout, session.getInactiveTimeout(), 0 );
 
 	}
 }

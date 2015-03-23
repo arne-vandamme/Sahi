@@ -1,8 +1,13 @@
 package net.sf.sahi.util;
 
-import junit.framework.TestCase;
 import net.sf.sahi.command.Command;
 import net.sf.sahi.config.Configuration;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -21,41 +26,49 @@ import net.sf.sahi.config.Configuration;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class URLParserTest extends TestCase
+public class TestUrlParser
 {
-	private static final long serialVersionUID = 2523979964480946017L;
-	final String uri = "/_s_/dyn/Log_highlight/sahi_demo_include.sah?n=2";
+	private final String uri = "/_s_/dyn/Log_highlight/sahi_demo_include.sah?n=2";
 
+	@Before
 	public void setUp() {
 		Configuration.init();
 	}
 
-	public void xtestScriptFileNamefromURI() {
+	@Test
+	@Ignore
+	public void scriptFileNamefromURI() {
 		assertEquals( "../scripts/sahi_demo_include.sah", URLParser.scriptFileNamefromURI( uri, "/Log_highlight/" ) );
 	}
 
-	public void xtestScriptFileNamefromURI2() {
+	@Test
+	@Ignore
+	public void scriptFileNamefromURI2() {
 		final String uri2 = "/_s_/dyn/scripts/sahi_demo_include.sah?n=2";
 		assertEquals( "../scripts/sahi_demo_include.sah", URLParser.scriptFileNamefromURI( uri2, "/scripts/" ) );
 	}
 
-	public void testLogFileNamefromURI() {
+	@Test
+	public void logFileNamefromURI() {
 		assertEquals( "", URLParser.logFileNamefromURI( "/_s_/" + Command.LOG_VIEW + "/" ) );
 		assertEquals( "", URLParser.logFileNamefromURI( "/_s_/" + Command.LOG_VIEW ) );
 		assertEquals( "", URLParser.logFileNamefromURI( "/_s_/" + Command.LOG_VIEW + "////////" ) );
 	}
 
-	public void testFileNameFromURIIgnoresQueryString() {
+	@Test
+	public void fileNameFromURIIgnoresQueryString() {
 		assertTrue( URLParser.fileNamefromURI( "/_s_/spr/a/b/c/d.eee?fff" ).replace( '\\', '/' ).endsWith(
 				"spr/a/b/c/d.eee" ) );
 	}
 
-	public void testGetRelativeLogFile() {
+	@Test
+	public void getRelativeLogFile() {
 		assertEquals( "a/b/c", URLParser.getRelativeLogFile( "/_s_/dyn/" + Command.LOG_VIEW + "/a/b/c" ) );
 		assertEquals( "a/b/c", URLParser.getRelativeLogFile( "/_s_//////////dyn/" + Command.LOG_VIEW + "/a/b/c" ) );
 	}
 
-	public void testGetCommandFromUri() {
+	@Test
+	public void getCommandFromUri() {
 		assertEquals( "Player_currentParsedScript", URLParser.getCommandFromUri(
 				"http://www.google.co.in/_s_/dyn/Player_currentParsedScript", "/dyn/" ) );
 		assertEquals( "Player_currentParsedScript", URLParser.getCommandFromUri(
@@ -65,5 +78,4 @@ public class URLParserTest extends TestCase
 		assertEquals( "Player_currentParsedScript", URLParser.getCommandFromUri(
 				"http://www.google.co.in/_s_/dyn/Player_currentParsedScript/", "/dyn/" ) );
 	}
-
 }

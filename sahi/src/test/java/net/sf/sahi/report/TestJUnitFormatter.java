@@ -1,6 +1,9 @@
 package net.sf.sahi.report;
 
-import junit.framework.TestCase;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -19,40 +22,39 @@ import junit.framework.TestCase;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class JUnitFormatterTest extends TestCase
+public class TestJUnitFormatter
 {
-	private static final long serialVersionUID = 1842921551229934964L;
-
 	private JUnitFormatter formatter = null;
 
-	protected void setUp() throws Exception {
-		super.setUp();
+	@Before
+	public void setUp() throws Exception {
 		formatter = new JUnitFormatter();
 	}
 
-	protected void tearDown() throws Exception {
-		super.tearDown();
-	}
-
-	public void testGetFileName() {
+	@Test
+	public void getFileName() {
 		assertEquals( "TEST-test.xml", formatter.getFileName( "test" ) );
 	}
 
-	public void testGetFooter() {
+	@Test
+	public void getFooter() {
 		String expected = "</testcase></testsuite>";
 		assertEquals( expected, formatter.getFooter() );
 	}
 
-	public void testGetHeader() {
+	@Test
+	public void getHeader() {
 		String expected = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>";
 		assertEquals( expected, formatter.getHeader() );
 	}
 
-	public void testGetResultDataForEmptyList() {
+	@Test
+	public void getResultDataForEmptyList() {
 		assertEquals( "", formatter.getResultData( null ) );
 	}
 
-	public void testGetResultDataForListWithAllTypesOfResults() {
+	@Test
+	public void getResultDataForListWithAllTypesOfResults() {
 		String expected = new StringBuffer( formatter.getStringResult( ReportUtil
 				                                                               .getInfoResult() ) ).append( "\n" )
 		                                                                                           .append(
@@ -73,7 +75,8 @@ public class JUnitFormatterTest extends TestCase
 				                                                 .getListResult() ) );
 	}
 
-	public void testGetSummaryDataForEmptyList() {
+	@Test
+	public void getSummaryDataForEmptyList() {
 		String expected =
 				"\n<testsuite errors=\"0\" failures=\"0\" name=\"null.test\" tests=\"1\" time=\"0.0\">\n<testcase classname=\"null.test\" name=\"test\" time=\"0.0\">";
 		TestSummary summary = new TestSummary();
@@ -81,26 +84,30 @@ public class JUnitFormatterTest extends TestCase
 		assertEquals( expected, formatter.getSummaryData( summary ) );
 	}
 
-	public void testGetSummaryDataForAllTypes() {
+	@Test
+	public void getSummaryDataForAllTypes() {
 		String expected =
 				"\n<testsuite errors=\"0\" failures=\"1\" name=\"null.test\" tests=\"1\" time=\"0.0\">\n<testcase classname=\"null.test\" name=\"test\" time=\"0.0\">";
 		assertEquals( expected, formatter.getSummaryData( ReportUtil
 				                                                  .getTestSummary() ) );
 	}
 
-	public void testGetStringResultForSuccessResult() {
+	@Test
+	public void getStringResultForSuccessResult() {
 		String expected = "";
 		assertEquals( expected, formatter.getStringResult( ReportUtil
 				                                                   .getSuccessResult() ) );
 	}
 
-	public void testGetStringResultForFailureResultWithoutDebugInfo() {
+	@Test
+	public void getStringResultForFailureResultWithoutDebugInfo() {
 		String expected = "\n<failure message=\"Assertion Failed\"><![CDATA[Assertion Failed.]]></failure>\n";
 		assertEquals( expected, formatter.getStringResult( ReportUtil
 				                                                   .getFailureResultWithoutDebugInfo() ) );
 	}
 
-	public void testGetStringResultForFailureResultWithDebugInfo() {
+	@Test
+	public void getStringResultForFailureResultWithDebugInfo() {
 		String expected =
 				"\n<failure message=\"Assertion Failed\"><![CDATA[Assertion Failed. Expected:[2] Actual:[1]]]></failure>\n";
 		assertEquals( expected, formatter.getStringResult( ReportUtil

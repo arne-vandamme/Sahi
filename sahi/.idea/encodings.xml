@@ -4,7 +4,7 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/net/sf/sahi/util/Utils.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/net/sf/sahi/playback/TestSahiScript.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/test/java/net/sf/sahi/util/UtilsTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/net/sf/sahi/util/TestUtils.java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

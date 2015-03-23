@@ -1,11 +1,15 @@
 package net.sf.sahi.test;
 
-import junit.framework.TestCase;
 import net.sf.sahi.config.Configuration;
 import net.sf.sahi.util.FileUtils;
 import net.sf.sahi.util.Utils;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import java.io.File;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -25,29 +29,32 @@ import java.io.File;
  * limitations under the License.
  */
 
-public class BrowserLauncherTest extends TestCase
+public class TestBrowserLauncher
 {
-
-	private static final long serialVersionUID = -2231996285413401877L;
 	public String launchURL;
 
-	protected void setUp() throws Exception {
+	@Before
+	public void setUp() throws Exception {
 		launchURL = "http://auto?startUrl=http://www.starturl.com&sessionId=123";
 	}
 
-	public void testEscapeForWindows() {
+	@Test
+	public void escapeForWindows() {
 		BrowserLauncher browserLauncher = new BrowserLauncher( "C:\\ie.exe", "ie.exe", "", true );
 		assertEquals( "\"C:\\ie.exe\"  \"http://auto?startUrl=http://www.starturl.com&sessionId=123\"",
 		              browserLauncher.buildCommandForWindows( launchURL ) );
 	}
 
-	public void testEscapeForNonWindows() {
+	@Test
+	public void escapeForNonWindows() {
 		BrowserLauncher browserLauncher = new BrowserLauncher( "/usr/programs/firefox", "firefox", "", false );
 		assertEquals( "/usr/programs/firefox http://auto?startUrl=http://www.starturl.com&sessionId=123",
 		              browserLauncher.buildCommandForNonWindows( launchURL ) );
 	}
 
-	public void ytestFirefoxFirstLaunchAndKill() throws Exception {
+	@Test
+	@Ignore
+	public void firefoxFirstLaunchAndKill() throws Exception {
 		String pathname = "D:/sahi/sf/sahi_993/userdata/browser/ff/profiles/sahi9";
 		Utils.deleteDir( new File( pathname ) );
 		FileUtils.copyDir( "D:/sahi/sf/sahi_993/config/ff_profile_template", pathname );

@@ -1,8 +1,13 @@
 package net.sf.sahi.report;
 
-import junit.framework.TestCase;
 import net.sf.sahi.config.Configuration;
 import net.sf.sahi.util.Utils;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -25,10 +30,8 @@ import net.sf.sahi.util.Utils;
 /**
  * @author dlewis
  */
-public class HtmlFormatterTest extends TestCase
+public class TestHtmlFormatter
 {
-	private static final long serialVersionUID = 17080619161553882L;
-
 	static {
 		Configuration.init();
 	}
@@ -43,44 +46,49 @@ public class HtmlFormatterTest extends TestCase
 			.append(
 					"<td>1</td><td>0</td><td>66%</td><td>0</td></tr>" ).toString();
 
-	protected void setUp() throws Exception {
-		super.setUp();
+	@Before
+	public void setUp() throws Exception {
 		formatter = new HtmlFormatter();
 	}
 
-	protected void tearDown() throws Exception {
-		super.tearDown();
-	}
-
-	public void testGetFileName() {
+	@Test
+	public void getFileName() {
 		assertEquals( "test.htm", formatter.getFileName( "test" ) );
 	}
 
-	public void xtestGetStringResultForSuccessResult() {
+	@Test
+	@Ignore
+	public void getStringResultForSuccessResult() {
 		String expected = "<div class=\"SUCCESS\"><a class=\"SUCCESS\">_assertNotNull(_textarea(\"t2\"));</a></div>";
 		assertEquals( expected, formatter.getStringResult( ReportUtil
 				                                                   .getSuccessResult() ) );
 	}
 
-	public void xtestGetStringResultForFailureResult() {
+	@Test
+	@Ignore
+	public void getStringResultForFailureResult() {
 		String expected =
 				"<div class=\"FAILURE\"><a class=\"FAILURE\">_call(testAccessors()); Assertion Failed.</a></div>";
 		assertEquals( expected, formatter.getStringResult( ReportUtil
 				                                                   .getFailureResultWithoutDebugInfo() ) );
 	}
 
-	public void xtestGetStringResultForInfoResult() {
+	@Test
+	@Ignore
+	public void getStringResultForInfoResult() {
 		String expected =
 				"<div class=\"INFO\"><a class=\"INFO\" href=\"/_s_/dyn/Log_highlight?href=blah\">_click(_link(\"Form Test\"));</a></div>";
 		assertEquals( expected, formatter.getStringResult( ReportUtil
 				                                                   .getInfoResult() ) );
 	}
 
-	public void testGetResultDataForEmptyList() {
+	@Test
+	public void getResultDataForEmptyList() {
 		assertEquals( "", formatter.getResultData( null ) );
 	}
 
-	public void testGetResultDataForListWithAllTypesOfResults() {
+	@Test
+	public void getResultDataForListWithAllTypesOfResults() {
 		String expected = new StringBuffer( formatter.getStringResult( ReportUtil
 				                                                               .getInfoResult() ) ).append( "\n" )
 		                                                                                           .append(
@@ -101,7 +109,8 @@ public class HtmlFormatterTest extends TestCase
 				                                                 .getListResult() ) );
 	}
 
-	public void testGetHeader() {
+	@Test
+	public void getHeader() {
 		String expected = new StringBuffer(
 				"<head><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\" />\n<style>\n" ).append(
 				new String( Utils.readFileAsString( Configuration
@@ -112,40 +121,45 @@ public class HtmlFormatterTest extends TestCase
 		assertEquals( expected, formatter.getHeader() );
 	}
 
-	public void testGetSummaryHeader() {
+	@Test
+	public void getSummaryHeader() {
 		String expected =
 				"<table class='summary'><tr><td>Test</td><td>Total Steps</td><td>Failures</td><td>Errors</td><td>Success Rate</td><td>Time Taken (ms)</td></tr>";
 		assertEquals( expected, formatter.getSummaryHeader() );
 	}
 
-	public void testGetSummaryFooter() {
+	@Test
+	public void getSummaryFooter() {
 		String expected = "</table>";
 		assertEquals( expected, formatter.getSummaryFooter() );
 	}
 
-	public void testGetSummaryDataForEmptyList() {
+	@Test
+	public void getSummaryDataForEmptyList() {
 		TestSummary summary = new TestSummary();
 		summary.setScriptName( "test" );
 		assertEquals( expectedSummaryForEmptyList, formatter
 				.getSummaryData( summary ) );
 	}
 
-	public void testGetSummaryDataForAllTypesWithoutLink() {
+	@Test
+	public void getSummaryDataForAllTypesWithoutLink() {
 		assertEquals( expectedSummaryForAllTypes, formatter
 				.getSummaryData( ReportUtil.getTestSummary() ) );
 	}
 
-	public void testGetSummaryDataForAllTypesWithLink() {
+	@Test
+	public void getSummaryDataForAllTypesWithLink() {
 		String expected = expectedSummaryForAllTypes.replaceFirst( "test",
 		                                                           "<a class=\"SCRIPT\" href=\"test.htm\">test</a>" );
 		TestSummary summary = ReportUtil.getTestSummary();
 		summary.setLogFileName( "test" );
 		summary.setAddLink( true );
-		assertEquals( expected, formatter
-				.getSummaryData( summary ) );
+		assertEquals( expected, formatter.getSummaryData( summary ) );
 	}
 
-	public void testNewLinesConvertedToBRTag() {
+	@Test
+	public void newLinesConvertedToBRTag() {
 		String expected = "Difference in array length:<br/>Expected Length<br/>Another line<br/>abc";
 		TestResult result = new TestResult( "Difference in array length:\nExpected Length\nAnother line",
 		                                    ResultType.INFO, "abc", "abc" );

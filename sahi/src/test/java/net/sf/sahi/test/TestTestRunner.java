@@ -1,22 +1,18 @@
 package net.sf.sahi.test;
 
-import junit.framework.TestCase;
 import net.sf.sahi.ant.Report;
 import net.sf.sahi.util.Utils;
 import org.junit.Ignore;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.util.HashMap;
 
-@Ignore
-public class TestRunnerTest extends TestCase
-{
-	private static final long serialVersionUID = 3104595408470646058L;
+import static org.junit.Assert.assertEquals;
 
-	protected void setUp() throws Exception {
-		super.setUp();
-	}
-	
+@Ignore
+public class TestTestRunner
+{
 	/*
 	 * java -cp %SAHI_HOME%\lib\ant-sahi.jar net.sf.sahi.test.TestRunner scripts/demo/sahi_demo.sah 
 	 * "C:\Program Files\Mozilla Firefox\firefox.exe" http://sahipro.com/demo/ logs/playback/aaa 
@@ -25,11 +21,13 @@ public class TestRunnerTest extends TestCase
 	 * 
 	 */
 
-	public void testExecute() throws Exception {
+	@Test
+	public void execute() throws Exception {
 		runSingleTest( "scripts/demo/link_test.sah" );
 	}
 
-	public void testPreconfiguredBrowsers() throws Exception {
+	@Test
+	public void preconfiguredBrowsers() throws Exception {
 		final String suiteName = "scripts/demo/integration.sah";
 		final String browserType = "firefox";
 		String base = "http://sahipro.com/demo/training/";
@@ -66,7 +64,8 @@ public class TestRunnerTest extends TestCase
 		assertEquals( "SUCCESS", status );
 	}
 
-	public void testEOP() throws IOException, InterruptedException {
+	@Test
+	public void eop() throws IOException, InterruptedException {
 		String browserType = "firefox";
 		String base = "http://sahipro.com/demo/training/";
 		String sahiHost = "localhost";

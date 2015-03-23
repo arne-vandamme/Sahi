@@ -1,12 +1,14 @@
 package net.sf.sahi.response;
 
-import junit.framework.TestCase;
 import net.sf.sahi.util.Utils;
+import org.junit.Test;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Properties;
 import java.util.TimeZone;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -29,11 +31,10 @@ import java.util.TimeZone;
 /**
  * User: nraman Date: May 15, 2005 Time: 10:14:34 PM
  */
-public class HttpFileResponseTest extends TestCase
+public class TestHttpFileResponse
 {
-	private static final long serialVersionUID = -4093505712461135994L;
-
-	public void testSubstitute() {
+	@Test
+	public void substitute() {
 		Properties props = new Properties();
 		props.setProperty( "isRecording", "true" );
 		props.setProperty( "isPlaying", "false" );
@@ -44,7 +45,8 @@ public class HttpFileResponseTest extends TestCase
 				Utils.substitute( template, props ) );
 	}
 
-	public void testSubstituteWorksWhenTheReplacedTextHasDollarInIt() {
+	@Test
+	public void substituteWorksWhenTheReplacedTextHasDollarInIt() {
 		Properties props = new Properties();
 		props.setProperty( "sessionId", "$sahi_1281210" );
 		String template = "setCookie('$sessionId')";
@@ -53,7 +55,8 @@ public class HttpFileResponseTest extends TestCase
 				Utils.substitute( template, props ) );
 	}
 
-	public void testFormatForExpiresHeader() {
+	@Test
+	public void formatForExpiresHeader() {
 		Date date = new GregorianCalendar( 2001, 4, 5 ).getTime();
 
 		assertEquals( "Sat, 05 May 2001 12:00:00 " + getTimeZone( date ), HttpFileResponse.formatForExpiresHeader(

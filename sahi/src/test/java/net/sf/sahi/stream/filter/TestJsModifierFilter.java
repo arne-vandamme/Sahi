@@ -1,8 +1,12 @@
 package net.sf.sahi.stream.filter;
 
 import net.sf.sahi.config.Configuration;
+import org.junit.Test;
 
 import java.io.IOException;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -21,15 +25,14 @@ import java.io.IOException;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class JSModifierFilterTest extends AbstractFilterTestCase
+public class TestJsModifierFilter extends AbstractFilterTest
 {
-	private static final long serialVersionUID = -723608175329141025L;
-
 	static {
 		Configuration.init();
 	}
 
-	public void testActiveXIsSubstituted() throws IOException {
+	@Test
+	public void activeXIsSubstituted() throws IOException {
 		assertTrue( Configuration.modifyActiveX() );
 		String s1 = "new ActiveXObject";
 		String output = getFiltered( new String[] { s1 } );
@@ -40,7 +43,8 @@ public class JSModifierFilterTest extends AbstractFilterTestCase
 		assertEquals( "obj = new_ActiveXObject('Microsoft.XMLHTTP');", output );
 	}
 
-	public void testWithTabsAndSpaces() throws IOException {
+	@Test
+	public void withTabsAndSpaces() throws IOException {
 		String s1;
 		String output;
 		s1 = "new\t    \t\t\tActiveXObject";
@@ -48,7 +52,8 @@ public class JSModifierFilterTest extends AbstractFilterTestCase
 		assertEquals( "new_ActiveXObject", output );
 	}
 
-	public void testWithTab() throws IOException {
+	@Test
+	public void withTab() throws IOException {
 		String s1;
 		String output;
 		s1 = "new\tActiveXObject";
@@ -56,7 +61,8 @@ public class JSModifierFilterTest extends AbstractFilterTestCase
 		assertEquals( "new_ActiveXObject", output );
 	}
 
-	public void testWithSpaces() throws IOException {
+	@Test
+	public void withSpaces() throws IOException {
 		String s1;
 		String output;
 		s1 = "new          ActiveXObject";
@@ -64,7 +70,8 @@ public class JSModifierFilterTest extends AbstractFilterTestCase
 		assertEquals( "new_ActiveXObject", output );
 	}
 
-	public void testBrokenStreamParsing1() throws IOException {
+	@Test
+	public void brokenStreamParsing1() throws IOException {
 		byte[] s1 = "xx a = new ActiveXObject(); yy".getBytes();
 		JSModifierFilter modifierFilter = new JSModifierFilter( "iso-8859-1" );
 		byte[] result = modifierFilter.modify( s1 );
@@ -72,20 +79,23 @@ public class JSModifierFilterTest extends AbstractFilterTestCase
 		assertEquals( "xx a = new_ActiveXObject(); yy", new String( result ) + new String( remaining ) );
 	}
 
-	public void testBrokenStreamParsing11() throws IOException {
+	@Test
+	public void brokenStreamParsing11() throws IOException {
 		String s1 = "xx a = new    ActiveXObject(); yy";
 		String output = getFiltered( new String[] { s1 } );
 		assertEquals( "xx a = new_ActiveXObject(); yy", output );
 	}
 
-	public void testBrokenStreamParsing2() throws IOException {
+	@Test
+	public void brokenStreamParsing2() throws IOException {
 		String s1 = "xx a = new ActiveX";
 		String s2 = "Object(); yy";
 		String output = getFiltered( new String[] { s1, s2 } );
 		assertEquals( "xx a = new_ActiveXObject(); yy", output );
 	}
 
-	public void testBrokenStreamParsing3() throws IOException {
+	@Test
+	public void brokenStreamParsing3() throws IOException {
 		String s1 = "xx a = ne";
 		String s2 = "w ActiveX";
 		String s3 = "Object(); yy";
@@ -93,7 +103,8 @@ public class JSModifierFilterTest extends AbstractFilterTestCase
 		assertEquals( "xx a = new_ActiveXObject(); yy", output );
 	}
 
-	public void testBrokenStreamParsing4() throws IOException {
+	@Test
+	public void brokenStreamParsing4() throws IOException {
 		String s1 = "xx a = ne";
 		String s2 = "w                      ActiveX";
 		String s3 = "Object(); yy";
@@ -101,7 +112,8 @@ public class JSModifierFilterTest extends AbstractFilterTestCase
 		assertEquals( "xx a = new_ActiveXObject(); yy", output );
 	}
 
-	public void testBrokenStreamParsing5() throws IOException {
+	@Test
+	public void brokenStreamParsing5() throws IOException {
 		String s1 = "xx a = ne";
 		String s2 = "w                  ";
 		String s3 = "    ActiveX";
@@ -110,7 +122,8 @@ public class JSModifierFilterTest extends AbstractFilterTestCase
 		assertEquals( "xx a = new_ActiveXObject(); yy", output );
 	}
 
-	public void testWithTabsAndSpacesBroken() throws IOException {
+	@Test
+	public void withTabsAndSpacesBroken() throws IOException {
 		String output;
 		String s1 = "new\t   ";
 		String s2 = " \t\t\tActiveXObject";
@@ -118,7 +131,8 @@ public class JSModifierFilterTest extends AbstractFilterTestCase
 		assertEquals( "new_ActiveXObject", output );
 	}
 
-	public void testWithTabsBroken() throws IOException {
+	@Test
+	public void withTabsBroken() throws IOException {
 		String output;
 		String s1 = "new\t";
 		String s2 = "\t\t\tActiveX";
@@ -127,7 +141,8 @@ public class JSModifierFilterTest extends AbstractFilterTestCase
 		assertEquals( "new_ActiveXObject", output );
 	}
 
-	public void testWithTabsAndSpacesBroken2() throws IOException {
+	@Test
+	public void withTabsAndSpacesBroken2() throws IOException {
 		String output;
 		String s1 = "new\t   ";
 		String s2 = " \t ";

@@ -1,11 +1,14 @@
 package net.sf.sahi.response;
 
-import junit.framework.TestCase;
 import net.sf.sahi.config.Configuration;
 import net.sf.sahi.stream.filter.StreamFilter;
+import org.junit.Test;
 
 import java.util.Iterator;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -25,15 +28,14 @@ import java.util.List;
  * limitations under the License.
  */
 
-public class HttpModifiedResponseTest extends TestCase
+public class TestHttpModifiedResponse
 {
-	private static final long serialVersionUID = -3402971698869800021L;
-
 	static {
 		Configuration.init();
 	}
 
-	public void testCharsetReturnsCharsetInMetaTag() {
+	@Test
+	public void charsetReturnsCharsetInMetaTag() {
 		String s =
 				"<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /><meta http-equiv=\"zxz\"/></head>";
 		SimpleHttpResponse simpleHttpResponse = new SimpleHttpResponse( s );
@@ -43,7 +45,8 @@ public class HttpModifiedResponseTest extends TestCase
 		assertEquals( "utf-8", resp.charset() );
 	}
 
-	public void testCharsetReturnsCharsetInHeader() {
+	@Test
+	public void charsetReturnsCharsetInHeader() {
 		String s =
 				"<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=xx\" /><meta http-equiv=\"zxz\"/></head>";
 		SimpleHttpResponse simpleHttpResponse = new SimpleHttpResponse( s );
@@ -54,7 +57,8 @@ public class HttpModifiedResponseTest extends TestCase
 		assertEquals( "utf-8", resp.charset() );
 	}
 
-	public void testCharsetReturnsISO88591IfNoCharset() {
+	@Test
+	public void charsetReturnsISO88591IfNoCharset() {
 		String s = "<html><head><meta http-equiv=\"zxz\"/></head>";
 		SimpleHttpResponse simpleHttpResponse = new SimpleHttpResponse( s );
 		simpleHttpResponse.removeHeader( "Content-Type" );
@@ -63,7 +67,8 @@ public class HttpModifiedResponseTest extends TestCase
 		assertEquals( "iso-8859-1", resp.charset() );
 	}
 
-	public void testCharsetReturnsISO88591IfBadCharset() {
+	@Test
+	public void charsetReturnsISO88591IfBadCharset() {
 		String s =
 				"<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=xx\" /><meta http-equiv=\"zxz\"/></head>";
 		SimpleHttpResponse simpleHttpResponse = new SimpleHttpResponse( s );
@@ -73,7 +78,8 @@ public class HttpModifiedResponseTest extends TestCase
 		assertEquals( "iso-8859-1", resp.charset() );
 	}
 
-	public void testCharsetReturnsCharsetWithSemiColonInHeader() {
+	@Test
+	public void charsetReturnsCharsetWithSemiColonInHeader() {
 		String s =
 				"<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8;\" /><meta http-equiv=\"zxz\"/></head>";
 		SimpleHttpResponse simpleHttpResponse = new SimpleHttpResponse( s );
@@ -83,7 +89,8 @@ public class HttpModifiedResponseTest extends TestCase
 		assertEquals( "utf-8", resp.charset() );
 	}
 
-	public void testNoCacheHeaderIsNotAddedToJavascriptResponses() {
+	@Test
+	public void noCacheHeaderIsNotAddedToJavascriptResponses() {
 		// Javascript cache headers significantly slow down responses.
 		// Check http://sourceforge.net response times with and without NoCacheFilter on js.
 		String s = "var x = 10;\nvar y = x + 11;";
@@ -100,7 +107,8 @@ public class HttpModifiedResponseTest extends TestCase
 		}
 	}
 
-	public void testNoCacheHeaderIsAddedToHTMLResponses() {
+	@Test
+	public void noCacheHeaderIsAddedToHTMLResponses() {
 		String s = "<html><head></head></html>";
 		SimpleHttpResponse simpleHttpResponse = new SimpleHttpResponse( s );
 		HttpModifiedResponse resp = new HttpModifiedResponse( simpleHttpResponse, false, "htm" );

@@ -1,17 +1,18 @@
 package net.sf.sahi.test;
 
-import junit.framework.TestCase;
 import org.junit.Ignore;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 @Ignore
-public class SingleSessionTestRunnerTest extends TestCase
+public class TestSingleSessionTestRunner
 {
-	private static final long serialVersionUID = 4687325716286230955L;
 	private String browserType = "firefox";
 	private String base = "http://sahipro.com/demo/";
 
-	@Ignore
-	public void xtestSingleBrowserSession() throws Exception {
+	@Test
+	public void singleBrowserSession() throws Exception {
 
 		SingleSessionTestRunner testRunner = new SingleSessionTestRunner( "my_session", browserType, base );
 		testRunner.start();
@@ -26,8 +27,8 @@ public class SingleSessionTestRunnerTest extends TestCase
 		System.out.println( suiteStatus );
 	}
 
-	@Ignore
-	public void xtestSessionSpecificInitJs() throws Exception {
+	@Test
+	public void sessionSpecificInitJs() throws Exception {
 		SingleSessionTestRunner testRunner = new SingleSessionTestRunner( "my_session", browserType, base );
 		testRunner.start();
 

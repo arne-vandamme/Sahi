@@ -1,7 +1,9 @@
 package net.sf.sahi.response;
 
-import junit.framework.TestCase;
 import net.sf.sahi.config.Configuration;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -20,27 +22,28 @@ import net.sf.sahi.config.Configuration;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class MimeTypeTest extends TestCase
+public class TestMimeType
 {
-	private static final long serialVersionUID = 5655167639184845294L;
-
 	static {
 		Configuration.init();
 	}
 
-	public void testGetExtension() {
+	@Test
+	public void getExtension() {
 		assertEquals( ".js", MimeType.getExtension( "aa.js" ) );
 		assertEquals( ".JS", MimeType.getExtension( "aa.JS" ) );
 		assertEquals( ".htm", MimeType.getExtension( "aa.htm" ) );
 		assertEquals( "", MimeType.getExtension( "aa" ) );
 	}
 
-	public void testMimeTypeMapping() {
+	@Test
+	public void mimeTypeMapping() {
 		assertEquals( "application/javascript", MimeType.get( ".JS", "text/plain" ) );
 		assertEquals( "text/html", MimeType.get( ".htm", "text/plain" ) );
 	}
 
-	public void testGetMimeTypeOfFile() {
+	@Test
+	public void getMimeTypeOfFile() {
 		assertEquals( "application/javascript", MimeType.getMimeTypeOfFile( "qq.JS" ) );
 		assertEquals( "text/html", MimeType.getMimeTypeOfFile( "a.b.c.htm" ) );
 		assertEquals( "text/plain", MimeType.getMimeTypeOfFile( "xxxx" ) );

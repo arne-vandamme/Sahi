@@ -1,9 +1,11 @@
 package net.sf.sahi.rhino;
 
-import junit.framework.TestCase;
 import net.sf.sahi.config.Configuration;
 import net.sf.sahi.session.Status;
+import org.junit.Test;
 import org.mozilla.javascript.*;
+
+import static org.junit.Assert.*;
 
 /**
  * Sahi - Web Automation and Test Tool
@@ -22,15 +24,14 @@ import org.mozilla.javascript.*;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class ScriptRunnerTest extends TestCase
+public class TestScriptRunner
 {
-	private static final long serialVersionUID = 2339574815897200140L;
-
 	static {
 		Configuration.init();
 	}
 
-	public void testGetPopupNameFromStep() {
+	@Test
+	public void getPopupNameFromStep() {
 		ScriptRunner scriptRunner = new RhinoScriptRunner( "" );
 		assertEquals( "abca", scriptRunner.getPopupNameFromStep( "_sahi._popup('abca')._click()" ) );
 		assertEquals( "abca", scriptRunner.getPopupNameFromStep( "_sahi._popup( 'abca')._click()" ) );
@@ -38,7 +39,8 @@ public class ScriptRunnerTest extends TestCase
 		assertEquals( "abca", scriptRunner.getPopupNameFromStep( "_sahi._popup ('abca')._click()" ) );
 	}
 
-	public void testGetDomainFromStep() {
+	@Test
+	public void getDomainFromStep() {
 		ScriptRunner scriptRunner = new RhinoScriptRunner( "" );
 		assertEquals( "a.example.com", scriptRunner.getDomainFromStep( "_sahi._domain('a.example.com')._click()" ) );
 		assertEquals( "x.example.co.in", scriptRunner.getDomainFromStep(
@@ -82,7 +84,8 @@ public class ScriptRunnerTest extends TestCase
 		return "";
 	}
 
-	public void testStubs() {
+	@Test
+	public void stubs() {
 		check( "_sahi._cell('AA')" );
 		check( "document.forms[0]" );
 		check( "_sahi._cell('AA').parentNode.parentNode" );
@@ -102,12 +105,14 @@ public class ScriptRunnerTest extends TestCase
 		assertEquals( s.replace( '\'', '"' ), evaluate( s ) );
 	}
 
-	public void testAreSameShouldReturnFalseIfStringIsBlank() {
+	@Test
+	public void areSameShouldReturnFalseIfStringIsBlank() {
 		ScriptRunner scriptRunner = new RhinoScriptRunner( "" );
 		assertFalse( scriptRunner.areSame( "", "/.*/" ) ); // blank should always return false
 	}
 
-	public void testAreSame() {
+	@Test
+	public void areSame() {
 		ScriptRunner scriptRunner = new RhinoScriptRunner( "" );
 //		assertTrue(scriptRunner.areSame("abcd", "/bc/"));
 		assertTrue( scriptRunner.areSame( "abcd", "/.*/" ) );
@@ -121,25 +126,29 @@ public class ScriptRunnerTest extends TestCase
 		assertFalse( scriptRunner.areSame( "abcd1234", "abcd" ) );
 	}
 
-	public void testSahiException() {
+	@Test
+	public void sahiException() {
 		evaluate( "throw new SahiException('Step took too long')" );
 	}
 
-	public void testFailureIncrementsErrorCount() throws Exception {
+	@Test
+	public void failureIncrementsErrorCount() throws Exception {
 		ScriptRunner scriptRunner = new RhinoScriptRunner( "" );
 		final int errorCount = scriptRunner.errorCount();
 		scriptRunner.setStatus( Status.FAILURE );
 		assertEquals( errorCount + 1, scriptRunner.errorCount() );
 	}
 
-	public void testErrorDoesNotIncrementErrorCount() throws Exception {
+	@Test
+	public void errorDoesNotIncrementErrorCount() throws Exception {
 		ScriptRunner scriptRunner = new RhinoScriptRunner( "" );
 		final int errorCount = scriptRunner.errorCount();
 		scriptRunner.setStatus( Status.ERROR );
 		assertEquals( errorCount, scriptRunner.errorCount() );
 	}
 
-	public void testSetHasErrorIncrementsErrorCount() throws Exception {
+	@Test
+	public void setHasErrorIncrementsErrorCount() throws Exception {
 		RhinoScriptRunner scriptRunner = new RhinoScriptRunner( "" );
 		final int errorCount = scriptRunner.errorCount();
 		scriptRunner.setHasError();
