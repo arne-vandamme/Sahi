@@ -5241,14 +5241,14 @@ Sahi.prototype.prepareADs = function(){
 	
 	this.addAD({tag: "INPUT", type: "checkbox", event:"click", name: "_checkbox", attributes: ["name", "id", "value", "className", "index"], action: "_click", value: "checked",
 			assertions: function(value){return [("true" == ("" + value)) ? _sahi.language.ASSERT_CHECKED : _sahi.language.ASSERT_NOT_CHECKED];}});
-	this.addAD({tag: "INPUT", type: "password", event:"change", name: "_password", attributes: ["name", "id", "index", "className"], action: "_setValue", value: "value"});
+	this.addAD({tag: "INPUT", type: "password", event:"change", name: "_password", attributes: ["name", "id", "placeholder", "index", "className"], action: "_setValue", value: "value"});
 	this.addAD({tag: "INPUT", type: "radio", event:"click", name: "_radio", attributes: ["id", "name", "value", "className", "index"], action: "_click", value: "checked", 
 			assertions: function(value){return [("true" == ("" + value)) ? _sahi.language.ASSERT_CHECKED : _sahi.language.ASSERT_NOT_CHECKED];}});	
 	
 	this.addAD({tag: "INPUT", type: "submit", event:"click", name: "_submit", attributes: ["value", "name", "id", "className", "index"], action: "_click", value: "value"});	
 	this.addAD({tag: "BUTTON", type: "submit", event:"click", name: "_submit", attributes: ["sahiText", "name", "id", "className", "index"], action: "_click", value: "sahiText"});	
 
-	this.addAD({tag: "INPUT", type: "text", event:"change", name: "_textbox", attributes: ["name", "id", "index", "className"], action: "_setValue", value: "value"});
+	this.addAD({tag: "INPUT", type: "text", event:"change", name: "_textbox", attributes: ["name", "id", "placeholder", "index", "className"], action: "_setValue", value: "value"});
 	
 	this.addAD({tag: "INPUT", type: "reset", event:"click", name: "_reset", attributes: ["value", "name", "id", "className", "index"], action: "_click", value: "value"});	
 	this.addAD({tag: "BUTTON", type: "reset", event:"click", name: "_reset", attributes: ["sahiText", "name", "id", "className", "index"], action: "_click", value: "sahiText"});	
@@ -5258,18 +5258,18 @@ Sahi.prototype.prepareADs = function(){
 	this.addAD({tag: "INPUT", type: "file", event:"click", name: "_file", attributes: ["name", "id", "index", "className"], action: "_setFile", value: "value"});	
 	this.addAD({tag: "INPUT", type: "image", event:"click", name: "_imageSubmitButton", attributes: ["title|alt", "name", "id", 
 	                  this.getFileFromURL, "index", "className"], action: "_click"});	
-	this.addAD({tag: "INPUT", type: "date", event:"change", name: "_datebox", attributes: ["name", "id", "index", "className"], action: "_setValue", value: "value"});
-	this.addAD({tag: "INPUT", type: "datetime", event:"change", name: "_datetimebox", attributes: ["name", "id", "index", "className"], action: "_setValue", value: "value"});
-	this.addAD({tag: "INPUT", type: "datetime-local", event:"change", name: "_datetimelocalbox", attributes: ["name", "id", "index", "className"], action: "_setValue", value: "value"});
-	this.addAD({tag: "INPUT", type: "email", event:"change", name: "_emailbox", attributes: ["name", "id", "index", "className"], action: "_setValue", value: "value"});
-	this.addAD({tag: "INPUT", type: "month", event:"change", name: "_monthbox", attributes: ["name", "id", "index", "className"], action: "_setValue", value: "value"});
-	this.addAD({tag: "INPUT", type: "number", event:"change", name: "_numberbox", attributes: ["name", "id", "index", "className"], action: "_setValue", value: "value"});
-	this.addAD({tag: "INPUT", type: "range", event:"change", name: "_rangebox", attributes: ["name", "id", "index", "className"], action: "_setValue", value: "value"});
-	this.addAD({tag: "INPUT", type: "search", event:"change", name: "_searchbox", attributes: ["name", "id", "index", "className"], action: "_setValue", value: "value"});
-	this.addAD({tag: "INPUT", type: "tel", event:"change", name: "_telephonebox", attributes: ["name", "id", "index", "className"], action: "_setValue", value: "value"});
-	this.addAD({tag: "INPUT", type: "time", event:"change", name: "_timebox", attributes: ["name", "id", "index", "className"], action: "_setValue", value: "value"});
-	this.addAD({tag: "INPUT", type: "url", event:"change", name: "_urlbox", attributes: ["name", "id", "index", "className"], action: "_setValue", value: "value"});
-	this.addAD({tag: "INPUT", type: "week", event:"change", name: "_weekbox", attributes: ["name", "id", "index", "className"], action: "_setValue", value: "value"});
+	this.addAD({tag: "INPUT", type: "date", event:"change", name: "_datebox", attributes: ["name", "id", "placeholder", "index", "className"], action: "_setValue", value: "value"});
+	this.addAD({tag: "INPUT", type: "datetime", event:"change", name: "_datetimebox", attributes: ["name", "id", "placeholder", "index", "className"], action: "_setValue", value: "value"});
+	this.addAD({tag: "INPUT", type: "datetime-local", event:"change", name: "_datetimelocalbox", attributes: ["name", "id", "placeholder", "index", "className"], action: "_setValue", value: "value"});
+	this.addAD({tag: "INPUT", type: "email", event:"change", name: "_emailbox", attributes: ["name", "id", "placeholder", "index", "className"], action: "_setValue", value: "value"});
+	this.addAD({tag: "INPUT", type: "month", event:"change", name: "_monthbox", attributes: ["name", "id", "placeholder", "index", "className"], action: "_setValue", value: "value"});
+	this.addAD({tag: "INPUT", type: "number", event:"change", name: "_numberbox", attributes: ["name", "id", "placeholder", "index", "className"], action: "_setValue", value: "value"});
+	this.addAD({tag: "INPUT", type: "range", event:"change", name: "_rangebox", attributes: ["name", "id", "placeholder", "index", "className"], action: "_setValue", value: "value"});
+	this.addAD({tag: "INPUT", type: "search", event:"change", name: "_searchbox", attributes: ["name", "id", "placeholder", "index", "className"], action: "_setValue", value: "value"});
+	this.addAD({tag: "INPUT", type: "tel", event:"change", name: "_telephonebox", attributes: ["name", "id", "placeholder", "index", "className"], action: "_setValue", value: "value"});
+	this.addAD({tag: "INPUT", type: "time", event:"change", name: "_timebox", attributes: ["name", "id", "placeholder", "index", "className"], action: "_setValue", value: "value"});
+	this.addAD({tag: "INPUT", type: "url", event:"change", name: "_urlbox", attributes: ["name", "id", "placeholder", "index", "className"], action: "_setValue", value: "value"});
+	this.addAD({tag: "INPUT", type: "week", event:"change", name: "_weekbox", attributes: ["name", "id", "placeholder", "index", "className"], action: "_setValue", value: "value"});
 	this.addAD({tag: "FIELDSET", type: null , event:"", name: "_fieldset", attributes: ["name", "id", "className",this.getAssociatedLegendName, "index", "disabled"], action: "", value: "sahiText"});
 	this.addAD({tag: "IFRAME", type: null, event:"", name: "_iframe", attributes: ["id", "name", "className", "index"], action: "", value: ""});
 	this.addAD({tag: "FRAME", type: null, event:"", name: "_frame", attributes: ["id", "name", "className", "index"], action: "", value: ""});
