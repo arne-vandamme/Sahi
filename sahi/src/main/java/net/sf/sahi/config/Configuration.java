@@ -891,23 +891,23 @@ public class Configuration
 	}
 
 	public static String getVersion() {
-		InputStream in = Configuration.class.getResourceAsStream( "/META-INF/MANIFEST.MF" );
+		InputStream in = Configuration.class.getClassLoader().getResourceAsStream( "/META-INF/MANIFEST.MF" );
 		try {
 			Manifest m = new Manifest( in );
 			return m.getMainAttributes().getValue( "Implementation-Version" );
 		}
-		catch ( IOException ioe ) {
+		catch ( Exception ioe ) {
 			return "dev";
 		}
 	}
 
 	public static String getVersionTimeStamp() {
-		InputStream in = Configuration.class.getResourceAsStream( "/META-INF/MANIFEST.MF" );
+		InputStream in = Configuration.class.getClassLoader().getResourceAsStream( "/META-INF/MANIFEST.MF" );
 		try {
 			Manifest m = new Manifest( in );
 			return m.getMainAttributes().getValue( "Build-Date" );
 		}
-		catch ( IOException ioe ) {
+		catch ( Exception ioe ) {
 			return "dev";
 		}
 	}
