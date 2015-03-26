@@ -327,17 +327,26 @@ public class ScriptRunner
 
 		String popupNameFromStep = getPopupNameFromStep( step );
 		String domainFromStep = getDomainFromStep( step );
-		if ( ( ( popupNameFromStep.equals( "" ) && derivedName.equals( "" ) && !"1".equals( wasOpened ) )
-				|| ( !popupNameFromStep.equals( "" ) &&
-				( areSame( windowName, popupNameFromStep )
-						|| areSame( windowTitle, popupNameFromStep ) ) ) )
-				&& ( ( domainFromStep.equals( "" ) && domain.equals( "" ) ) || areSame( domain, domainFromStep ) )
+
+		if ( (
+				( popupNameFromStep.equals( "" ) && derivedName.equals( "" ) && !"1".equals( wasOpened ) )
+						|| (
+						!popupNameFromStep.equals( "" )
+								&& (
+								areSame( windowName, popupNameFromStep )
+										|| areSame( windowTitle, popupNameFromStep )
+						)
+				)
+		)
+				&&
+				( ( domainFromStep.equals( "" ) && domain.equals( "" ) ) || areSame( domain, domainFromStep ) )
 				) {
 			String json = "{'origStep': \"" + Utils.makeString( step ) + "\", "
 					+ "'step': \"" + Utils.makeString( stripPopup( step ) )
 					+ "\", " + "'type': \"" + type + "\", " + "'debugInfo': \""
 					+ Utils.makeString( debugInfo ) + "\", " + "'stepId':"
 					+ counter + "}";
+
 			return encode( json );
 		}
 		else {

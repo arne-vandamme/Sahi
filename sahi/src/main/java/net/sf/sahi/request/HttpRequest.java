@@ -425,4 +425,9 @@ public class HttpRequest extends StreamHandler
 	public void setMatchedPattern( String pattern ) {
 		this.pattern = pattern;
 	}
+
+	@Override
+	public String toString() {
+		return this.hostWithPort + uri + queryString;
+	}
 }

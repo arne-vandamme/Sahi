@@ -141,8 +141,10 @@ public class Player
 		String domain = request.getParameter( "domain" );
 		String wasOpened = request.getParameter( "wasOpened" );
 		//System.out.println("scriptRunner="+scriptRunner);
-		return new SimpleHttpResponse( scriptRunner.getStepJSON( derivedName, windowName, windowTitle, domain,
-		                                                         wasOpened ) );
+
+		return new SimpleHttpResponse(
+				scriptRunner.getStepJSON( derivedName, windowName, windowTitle, domain, wasOpened )
+		);
 	}
 
 	public void markStepDone( final HttpRequest request ) {
