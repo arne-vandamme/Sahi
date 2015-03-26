@@ -1,7 +1,5 @@
 package net.sf.sahi.client;
 
-import net.sf.sahi.util.Utils;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,7 +61,7 @@ public class ElementStub
 				s = s + "[" + ix + "]";
 			}
 			if ( !( s.length() > 1 && s.startsWith( "/" ) && s.endsWith( "/" ) ) ) {
-				return "\"" + Utils.escapeDoubleQuotesAndBackSlashes( s ) + "\"";
+				return "\"" + ClientUtils.escapeDoubleQuotesAndBackSlashes( s ) + "\"";
 			}
 		}
 		return s;
@@ -122,7 +120,6 @@ public class ElementStub
 	/**
 	 * Brings focus on the element.
 	 *
-	 * @param element
 	 * @throws ExecutionException
 	 */
 	public void focus() throws ExecutionException {
@@ -132,7 +129,6 @@ public class ElementStub
 	/**
 	 * Removes focus from the element.
 	 *
-	 * @param element
 	 * @throws ExecutionException
 	 */
 	public void removeFocus() throws ExecutionException {
@@ -152,9 +148,8 @@ public class ElementStub
 	/**
 	 * Drags the element and drops it at the given x, y coordinate.
 	 *
-	 * @param dropElement Element to be dropped on
-	 * @param x           X coordinate
-	 * @param y           Y coordinate
+	 * @param x X coordinate
+	 * @param y Y coordinate
 	 * @throws ExecutionException
 	 */
 	public void dragAndDropOn( int x, int y ) throws ExecutionException {
@@ -457,8 +452,7 @@ public class ElementStub
 	 * Returns the computed css style <br/>
 	 * eg. browser.div("blackdiv").style("backgroundColor")
 	 *
-	 * @param el
-	 * @param attribute
+	 * @param html
 	 * @return the computed css style
 	 */
 	public String style( String html ) {
@@ -506,7 +500,7 @@ public class ElementStub
 	 * Eg. {@code browser.link("delete").near(browser.cell("user1")).click();}<br/>
 	 * This clicks on the delete link near a cell with content "user1"
 	 *
-	 * @param nearEl
+	 * @param aboveEl
 	 * @return Element with relation established
 	 */
 

@@ -32,7 +32,9 @@ import java.util.regex.Pattern;
  */
 public class Utils
 {
-	final static public SimpleDateFormat COMMON_DATE_FORMAT = new SimpleDateFormat( "MMM dd, yyyy hh:mm:ss a" );
+	public static int BUFFER_SIZE = 8192;
+
+	private static final Map<String, Object> fileCache = new HashMap<String, Object>();
 
 	public static String escapeDoubleQuotesAndBackSlashes( final String line ) {
 		if ( line == null ) {
@@ -138,9 +140,6 @@ public class Utils
 		}
 		return data;
 	}
-
-	static Map<String, Object> fileCache = new HashMap<String, Object>();
-	public static int BUFFER_SIZE = 8192;
 
 	public static byte[] readCachedFile( final File file ) {
 		return readCachedFile( file.getAbsolutePath() );

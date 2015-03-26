@@ -7,16 +7,10 @@
 	<parent>
 		<groupId>com.foreach.sahi</groupId>
 		<artifactId>sahi</artifactId>
-		<version>5.0-SNAPSHOT</version>
+		<version>5.1-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>sahi-proxy</artifactId>
-
-	<properties>
-		<project.finalVersion>5.0</project.finalVersion>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-	</properties>
 
 	<build>
 		<finalName>sahi-${project.finalVersion}</finalName>
