@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/sahi.iml" filepath="$PROJECT_DIR$/sahi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sahi-client/sahi-client.iml" filepath="$PROJECT_DIR$/sahi-client/sahi-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sahi-proxy/sahi-proxy.iml" filepath="$PROJECT_DIR$/sahi-proxy/sahi-proxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sahi-test-webapp/sahi-test-webapp.iml" filepath="$PROJECT_DIR$/sahi-test-webapp/sahi-test-webapp.iml" />
+    </modules>
+  </component>
+</project>

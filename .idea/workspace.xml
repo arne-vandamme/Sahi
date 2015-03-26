@@ -1,0 +1,1530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bdeb6e71-7f70-4520-9cc8-3382dc1c4125" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/sample_java_project/.classpath" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/401.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/php/500.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/5xx.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/Copy of concat.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/EventViewer.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/sample_java_project/src/in/co/sahi/JavaClientTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/ext/javascript-xpath/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/sample_java_project/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/RegExp_toString_Fix.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/WebServer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/ajax1.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/ajax1iframes.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/ajax5xx.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/runner/android.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/base.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/blank.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/training/books.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/training/v2/books.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/callee.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/cannotConnect.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/checkbox_onchange.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/clickCombo.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/clicks.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/plain/close.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/plain/codes.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/training/common.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/training/v2/common.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/common.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/common.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/sample_java_project/compile.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/concat3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/jstest/concatTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/manage/configureUI.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/controller3.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/controller4.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/controller4.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/controller7.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/controller7.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/controllertw.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/controllertw.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/cookies.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/count.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/cryllic_lang.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/css_selector.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/bin/dashboard.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/php/delayedLoad.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/php/delayedLoadInner.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/diffDomain.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/diffDomainExt.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/diffDomain_dummy1.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/diffDomain_dummy2.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/diffDomain_iframe.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/diffDomain_traverse.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/docWriteFramesTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/docWriteIFrame.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/doc_written_popup.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/docdomain.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/docdomain_dummy1.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/docdomain_dummy2.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/docwrite.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/docwriteframes.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/docwritten.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/domRel.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/domainfix.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/userdata_template/config/download_contenttypes.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/downloaded.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/dummyFunctions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/css/error.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/error.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/errorPages.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/euro.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/eventSequence.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/events.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/userdata_template/config/exclude_inject.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/sample_java_project/myuserdata/config/exclude_inject.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/ext_player.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/ext_player.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/extensions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/fileUpload.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/php/fileUpload.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/php/fileUpload.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/focusTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/footer.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/framesTestWithTitle.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/getFocus.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/headingsTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/history.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/html5_form_fields.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/htmlUnit.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/ifTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/iframesTest_inc.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/training/index.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/training/v2/index.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/initialized.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/inject_top.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/ext/javascript-xpath/javascript-xpath.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/userdata_template/config/jira.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/regression/jquery_onchange.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/jseval.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/keyevent.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/keypress.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/label.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/lang.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/lang_back.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/language_pack.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/launch.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/lib.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/license.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/license_html.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/link.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/linkInTd.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/browser_types/linux.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/userdata_template/config/log.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/sample_java_project/myuserdata/config/log.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/training/login.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/training/v2/login.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/browser_types/mac.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/manage.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/manage/ssl/manager.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/map.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/menu.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/method_delete.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/php/method_delete.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/method_put.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/php/method_put.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/mime-types.mapping" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/plain/modifier.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/mouseover.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/nestedTds.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/normal_functions.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/onBeforeUnloadTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/onLoadTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/onchange.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/sample_java_project/.settings/org.eclipse.jdt.core.prefs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/os.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-client/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/poundTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/ff_profile_template/prefs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/proxy.pac" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/tools/proxy.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/regexp.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/training/register.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/training/v2/register.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/rel.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/runner/runner.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/runner/runner2.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/safariClickBug.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-client/sahi-client.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/sahi-proxy.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/sahi-test-webapp.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/sahiextjs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/sanity.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/saveAs.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/bin/scheduler.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/scheduler.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/scheduler_functions.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/script.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/selectTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/settings.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/showModal.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/showModal_Modal.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/simpleMock.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/spandiv.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/ssl.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/php/status.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/strict_visible.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/jstest/stubs.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/manage/ssl/success.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/suggest.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/temp.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/temp.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/temp2.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/temp2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/temp3.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/temp4.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/testapp.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/testapploggedin.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/test/ultratextarea.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/under.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/userdata_template/config/userdata.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/sample_java_project/myuserdata/config/userdata.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/visible.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/waitCondition1.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/waitCondition2.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/waitCondition3.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/waitFor.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/config/browser_types/win64.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/window_opener.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/window_opener_close.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/window_opener_close_1.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/window_opener_iframe.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\.idea\ant.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\.idea\codeStyleSettings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\.idea\compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__cglib_cglib_nodep_2_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__jmock_jmock_1_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__jmock_jmock_cglib_1_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__org_apache_ant_ant_1_9_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__org_apache_ant_ant_launcher_1_9_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__org_apache_ant_ant_testutil_1_9_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\bin\dashboard.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\bin\scheduler.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\browser_types\linux.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\browser_types\mac.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\browser_types\win64.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\ff_profile_template\prefs.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\inject_top.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\license.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\license_html.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\mime-types.mapping" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\normal_functions.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\os.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\proxy.pac" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\scheduler.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\scheduler_functions.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\ssl.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\userdata_template\config\download_contenttypes.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\userdata_template\config\exclude_inject.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\userdata_template\config\jira.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\userdata_template\config\log.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\config\userdata_template\config\userdata.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\EventViewer.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\RegExp_toString_Fix.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\ajax1.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\ajax1iframes.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\ajax5xx.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\base.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\callee.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\checkbox_onchange.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\clickCombo.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\clicks.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\common.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\count.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\cryllic_lang.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\css_selector.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\diffDomain.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\diffDomainExt.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\diffDomain_dummy1.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\diffDomain_dummy2.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\diffDomain_iframe.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\diffDomain_traverse.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\docWriteFramesTest.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\docWriteIFrame.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\doc_written_popup.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\docdomain.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\docdomain_dummy1.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\docdomain_dummy2.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\docwrite.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\docwriteframes.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\docwritten.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\domRel.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\error.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\errorPages.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\euro.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\eventSequence.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\events.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\fileUpload.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\focusTest.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\framesTestWithTitle.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\headingsTest.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\html5_form_fields.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\htmlUnit.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\ifTest.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\iframesTest_inc.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\jseval.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\keyevent.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\keypress.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\label.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\lang.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\lang_back.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\linkInTd.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\map.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\menu.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\method_delete.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\method_put.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\mouseover.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\nestedTds.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\onBeforeUnloadTest.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\onLoadTest.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\onchange.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\php\500.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\php\delayedLoad.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\php\delayedLoadInner.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\php\fileUpload.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\php\fileUpload.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\php\method_delete.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\php\method_put.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\php\status.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\plain\close.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\plain\codes.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\plain\modifier.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\poundTest.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\regexp.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\regression\jquery_onchange.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\rel.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\safariClickBug.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\sanity.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\saveAs.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\selectTest.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\showModal.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\showModal_Modal.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\spandiv.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\strict_visible.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\temp.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\temp.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\temp2.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\temp2.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\temp3.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\temp4.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\testapp.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\testapploggedin.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\training\books.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\training\common.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\training\index.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\training\login.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\training\register.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\training\v2\books.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\training\v2\common.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\training\v2\index.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\training\v2\login.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\training\v2\register.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\under.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\visible.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\waitCondition1.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\waitCondition2.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\waitCondition3.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\waitFor.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\window_opener.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\window_opener_close.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\window_opener_close_1.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\window_opener_iframe.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\jstest\Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\jstest\concatTest.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\jstest\stubs.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\401.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\5xx.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\Copy of concat.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\blank.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\cannotConnect.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\common.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\concat3.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\controller3.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\controller4.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\controller4.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\controller7.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\controller7.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\controllertw.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\controllertw.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\cookies.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\css\error.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\domainfix.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\downloaded.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\dummyFunctions.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\ext\javascript-xpath\README.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\ext\javascript-xpath\javascript-xpath.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\ext_player.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\ext_player.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\extensions.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\footer.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\getFocus.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\history.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\initialized.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\language_pack.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\launch.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\lib.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\link.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\manage.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\manage\configureUI.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\manage\ssl\manager.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\manage\ssl\success.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\runner\android.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\runner\runner.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\runner\runner2.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\sahiextjs.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\script.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\settings.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\simpleMock.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\suggest.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\test\ultratextarea.htm" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\sahi.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\sample_java_project\.classpath" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\sample_java_project\.project" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\sample_java_project\.settings\org.eclipse.jdt.core.prefs" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\sample_java_project\README.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\sample_java_project\compile.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\sample_java_project\myuserdata\config\exclude_inject.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\sample_java_project\myuserdata\config\log.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\sample_java_project\myuserdata\config\userdata.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\sample_java_project\src\in\co\sahi\JavaClientTest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\WebServer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\tools\backup_proxy_config.exe" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\tools\proxy.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\tools\proxy_config.exe" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\tools\toggle_IE_proxy.exe" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\all.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\android.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\chrome.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\ff.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\ff.sh" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\ff4b.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\ff_launch.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\htmlunit.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\ie.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\start_dashboard.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\start_dashboard.sh" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\start_sahi.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\start_sahi.sh" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\start_web.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\start_web.sh" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\test_new.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\test_old.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\testrunner.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\bin\testrunner.sh" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\config\block_ssl_domains.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\config\domainfix.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\config\download_contenttypes.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\config\download_urls.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\config\exclude_inject.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\config\jira.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\config\log.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\config\userdata.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\apis.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\createDoc.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\204.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\64K.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\RegExp_toString_Fix.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\alert.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\android\android.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\android\android.suite" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\android\android_google.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\back.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\blank.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\browser.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\checkbox_onchange.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\clickCombo.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\clickNative.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\clicksTest.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\clicksTest_1.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\clicksTest_2.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\clipboard.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\close_window.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\collect.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\confirm.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\confirmUserInput.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\containsText.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\csv.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\data_drive.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\date.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\db.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\debug_include.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\debug_include_1.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\debug_include_2.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\debug_include_2_1.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\debug_include_3.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\delayedLoad.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\demo.suite" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\diffDomainExt.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\dismiss_close_dialog.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\docWriteIFrame.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\doc_written_popup.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\download_in_popup.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\dragDrop.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\dragDropXY.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\empty.suite" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\errorPages.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\error_local_stack.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\evalOnRhino.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\events.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\excel.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\execute.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\executeTimeout.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\external.suite" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\extjs1.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\fetchAPIs.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\fetch_table_data.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\fileUpload.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\file_ops.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\find_in_google.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\find_in_google_new.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\flickr_upload.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\for.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\framesTop.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\getSet.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\globalget.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\globalset.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\globalvar.suite" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\google_search_dd.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\greek.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\headingsTest.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\hidden.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\if.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\if_include.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\in.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\includes\sahi_demo_include.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\includes\sahi_test_helper.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\includes\values.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\integration.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\is_visible.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\jquery.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\jserror.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\keepAlive.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\keypress.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\label.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\language.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\libTest.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\link_test.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\local_stack.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\logGTLT.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\log_custom.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\log_exception.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\mailer.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\manual_interactive.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\map.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\memory_hog.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\misc.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\modal.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\onScriptEnd.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\onchange.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\opener.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\opentest.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\popup_title.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\popup_title_name_mix.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\positionals.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\print.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\prompt.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\promptUserInput.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\propertyfile.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\readURL.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\readfile.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\referer.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\regexp.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\reset.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\safariClickBug.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\sahi_demo.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\sahi_demo_frames.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\sahi_demo_include.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\sahicsv.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\sanity.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\save_as.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\script_name.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\select.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\selectWindow.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\sencha_combobox.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\sequence.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\set.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\setRecovery.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\set_array.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\set_google.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\set_included.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\set_included2.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\set_r.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\shouldfail\click_null.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\shouldfail\continue_on_error.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\shouldfail\fail.suite" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\shouldfail\fail_missing.suite" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\shouldfail\fail_stop_on_error.suite" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\shouldfail\log_browser_exception_as_failure.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\shouldfail\log_exception_as_failure.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\shouldfail\nosteps.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\shouldfail\set_recovery.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\shouldfail\stop_on_error.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\shouldfail\syntax_error_line_number.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\simple_1.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\simple_2.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\small.suite" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\snapshot.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\spandiv.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\startfrom.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\strict_visible.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\stub.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\table_2darray.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\table_cell.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\test.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\test_https.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\test_seq.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\testuff.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\textarea.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\trycatch.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\under.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\uploadme.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\uploadme2.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\verify_shorthands.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\verify_shorthands_gen.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\verify_shorthands_inc.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\wait_for.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\wait_for_with_reload.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\wait_long.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\waitbug.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\web_demo.suite" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\while.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\window_opener_close.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\xhrstates.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\xml.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\yahoo_demo.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\demo\zk_speed.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\echoer.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\test\if.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\test\parsing.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\training\1_raw_recorded.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\training\2_split_to_functions.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\training\3_included.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\training\3_use_include.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\training\4_datadrive1.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\training\5_file_with_near.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\training\5_included.sah" afterPath="" />
+      <change type="DELETED" beforePath="C:\code\sahi-modified\sahi\userdata\scripts\training\training.suite" afterPath="" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.gitignore" afterPath="$PROJECT_DIR$/sahi-proxy/.gitignore" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.idea\copyright\profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__commons_codec_commons_codec_1_10.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__commons_io_commons_io_2_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__javax_activation_activation_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__javax_mail_javax_mail_api_1_5_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_javax_mail_api_1_5_2.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__junit_junit_4_11.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__org_apache_commons_commons_lang3_3_3_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_3_2.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__org_apache_ws_commons_util_ws_commons_util_1_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ws_commons_util_ws_commons_util_1_0_2.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__org_apache_xmlrpc_xmlrpc_client_3_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlrpc_xmlrpc_client_3_1_3.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__org_apache_xmlrpc_xmlrpc_common_3_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlrpc_xmlrpc_common_3_1_3.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__org_mockito_mockito_core_1_9_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_1_9_5.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__org_mozilla_rhino_1_7R4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mozilla_rhino_1_7R4.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__org_objenesis_objenesis_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_1_0.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.idea\libraries\Maven__xml_apis_xml_apis_1_0_b2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.idea\scopes\scope_settings.xml" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\.idea\uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\bin\dashboard.sh" afterPath="$PROJECT_DIR$/sahi-proxy/bin/dashboard.sh" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\bin\mail.bat" afterPath="$PROJECT_DIR$/sahi-proxy/bin/mail.bat" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\bin\sahi.bat" afterPath="$PROJECT_DIR$/sahi-proxy/bin/sahi.bat" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\bin\sahi.sh" afterPath="$PROJECT_DIR$/sahi-proxy/bin/sahi.sh" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\bin\web.bat" afterPath="$PROJECT_DIR$/sahi-proxy/bin/web.bat" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\bin\web.sh" afterPath="$PROJECT_DIR$/sahi-proxy/bin/web.sh" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\config\browser_types\win32.xml" afterPath="$PROJECT_DIR$/sahi-proxy/config/browser_types/win32.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\config\inject_bottom.txt" afterPath="$PROJECT_DIR$/sahi-proxy/config/inject_bottom.txt" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\config\proxy_config_alert.txt" afterPath="$PROJECT_DIR$/sahi-proxy/config/proxy_config_alert.txt" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\config\sahi.properties" afterPath="$PROJECT_DIR$/sahi-proxy/config/sahi.properties" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\config\userdata_template\config\domainfix.txt" afterPath="$PROJECT_DIR$/sahi-proxy/config/userdata_template/config/domainfix.txt" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\config\userdata_template\config\download_urls.txt" afterPath="$PROJECT_DIR$/sahi-proxy/config/userdata_template/config/download_urls.txt" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\404.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/404.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\add.gif" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/add.gif" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\ajaxResponse1.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/ajaxResponse1.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\alertTest.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/alertTest.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\badIframesTest.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/badIframesTest.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\blank.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/blank.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\confirmTest.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/confirmTest.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\containTest.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/containTest.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\docwrite.js" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/docwrite.js" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\formTest.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/formTest.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\formTest2.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/formTest2.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\framesTest.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/framesTest.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\greek.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/greek.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\iframesTest.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/iframesTest.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\index.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/index.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\inputImage.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/inputImage.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\linkByContent.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/linkByContent.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\linkByHtml.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/linkByHtml.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\linkTest.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/linkTest.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\map.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/map.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\modal.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/modal.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\plain\clickSimulTest.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/plain/clickSimulTest.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\plain\diffDomain.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/plain/diffDomain.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\plain\diffDomain2.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/plain/diffDomain2.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\plain\event.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/plain/event.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\plain\event2.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/plain/event2.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\plain\iframeLoadTest.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/plain/iframeLoadTest.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\plain\interact.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/plain/interact.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\plain\sel.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/plain/sel.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\plain\sim2.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/plain/sim2.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\promptTest.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/promptTest.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\tableTest.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/tableTest.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\testStart.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/testStart.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\demo\testsaveas.zip" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/demo/testsaveas.zip" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\favicon.ico" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/favicon.ico" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\jstest\access\Frame1.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/jstest/access/Frame1.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\jstest\access\NoFrames.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/jstest/access/NoFrames.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\jstest\access\WithFrames.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/jstest/access/WithFrames.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\jstest\add.gif" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/jstest/add.gif" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\jstest\cookieTest.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/jstest/cookieTest.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\jstest\jsunit.js" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/jstest/jsunit.js" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\jstest\linkTest.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/jstest/linkTest.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\jstest\table.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/jstest/table.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\jstest\utilTest.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/jstest/utilTest.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\auto.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/auto.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\close.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/close.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\concat.js" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/concat.js" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\concat.zip" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/concat.zip" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\controller2.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/controller2.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\controller2.js" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/controller2.js" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\controllerAlt.css" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/controllerAlt.css" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\controllerAlt.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/controllerAlt.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\controllerAlt.js" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/controllerAlt.js" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\controllerCommon.js" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/controllerCommon.js" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\cookie.js" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/cookie.js" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\css\consolidated_log_format.css" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/css/consolidated_log_format.css" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\css\playback_log_format.css" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/css/playback_log_format.css" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\download_installer.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/download_installer.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\editor.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/editor.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\event.js" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/event.js" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\exception.js" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/exception.js" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\ext\selenium\README.txt" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/ext/selenium/README.txt" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\ext\selenium\locatorBuilders.js" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/ext/selenium/locatorBuilders.js" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\favicon.ico" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/favicon.ico" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\favicon.jpg" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/favicon.jpg" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\document-new.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/document-new.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\document-open.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/document-open.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\edit-clear.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/edit-clear.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\folder.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/folder.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\go-next.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/go-next.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\go-previous.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/go-previous.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\go-up.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/go-up.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\installer_logo.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/installer_logo.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\installer_logo_sq.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/installer_logo_sq.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\list-add.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/list-add.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\list-remove.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/list-remove.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\logsimages\controller_playback.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/logsimages/controller_playback.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\logsimages\controller_recorder.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/logsimages/controller_recorder.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\logsimages\editor_UI.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/logsimages/editor_UI.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\logsimages\editor_playback.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/logsimages/editor_playback.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\logsimages\failed_script_log_with_screenshot.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/logsimages/failed_script_log_with_screenshot.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\logsimages\graph2.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/logsimages/graph2.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\logsimages\logs.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/logsimages/logs.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\logsimages\suite.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/logsimages/suite.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\logsimages\suites-report-with-graph.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/logsimages/suites-report-with-graph.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\logsimages\testcase.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/logsimages/testcase.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\mail-send-receive.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/mail-send-receive.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\media-floppy.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/media-floppy.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\media-playback-pause.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/media-playback-pause.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\media-playback-start.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/media-playback-start.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\media-playback-stop.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/media-playback-stop.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\media-record.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/media-record.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\media-skip-forward.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/media-skip-forward.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\process-stop.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/process-stop.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\sahi_logo_web.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/sahi_logo_web.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\sahi_logo_web_alpha.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/sahi_logo_web_alpha.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\sahi_os_icon.ico" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/sahi_os_icon.ico" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\sahi_os_icon.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/sahi_os_icon.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\sahi_os_logo1.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/sahi_os_logo1.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\sahi_os_logo2.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/sahi_os_logo2.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\sahi_pro_logo1.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/sahi_pro_logo1.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\sahi_pro_logo2.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/sahi_pro_logo2.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\images\view-refresh.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/images/view-refresh.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\json.js" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/json.js" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\logs_template.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/logs_template.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\manage\ssl\green.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/manage/ssl/green.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\manage\ssl\red.png" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/manage/ssl/red.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\mock.gif" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/mock.gif" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\parsed.js" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/parsed.js" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\playback.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/playback.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\playback.js" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/playback.js" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\probe.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/probe.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\recorder.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/recorder.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\rte.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/rte.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\sahi_playback_help.jpg" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/sahi_playback_help.jpg" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\sahi_recorder_help.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/sahi_recorder_help.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\sahi_recorder_help.jpg" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/sahi_recorder_help.jpg" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\state.js" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/state.js" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\tabs.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/tabs.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\util.js" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/util.js" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\htdocs\spr\viewlogs.htm" afterPath="$PROJECT_DIR$/sahi-proxy/htdocs/spr/viewlogs.htm" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\sample_java_project\DriverClientTest.java" afterPath="$PROJECT_DIR$/sahi-proxy/sample_java_project/DriverClientTest.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\sample_java_project\SahiTestCase.java" afterPath="$PROJECT_DIR$/sahi-proxy/sample_java_project/SahiTestCase.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\sample_java_project\myuserdata\config\download_urls.txt" afterPath="$PROJECT_DIR$/sahi-proxy/sample_java_project/myuserdata/config/download_urls.txt" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\sample_java_project\run.bat" afterPath="$PROJECT_DIR$/sahi-proxy/sample_java_project/run.bat" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\assembly\win64.xml" afterPath="$PROJECT_DIR$/sahi-proxy/src/assembly/win64.xml" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\HttpHeaders.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/HttpHeaders.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\LocalRequestProcessor.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/LocalRequestProcessor.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\Proxy.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/Proxy.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\ProxyProcessor.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/ProxyProcessor.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\RemoteRequestProcessor.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/RemoteRequestProcessor.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\StreamHandler.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/StreamHandler.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\WebProcessor.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/WebProcessor.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\ant\CreateIssue.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/ant/CreateIssue.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\ant\Mailer.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/ant/Mailer.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\ant\Report.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/ant/Report.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\ant\Scheduler.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/ant/Scheduler.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\client\Browser.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/client/Browser.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\client\BrowserCondition.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/client/BrowserCondition.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\client\BrowserElements.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/client/BrowserElements.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\client\BrowserUnresponsiveException.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/client/BrowserUnresponsiveException.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\client\ElementStub.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/client/ElementStub.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\client\ExecutionException.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/client/ExecutionException.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\Command.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/Command.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\CommandExecuter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/CommandExecuter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\CommandInvoker.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/CommandInvoker.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\Configuration.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/Configuration.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\ConfigureUI.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/ConfigureUI.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\ControllerUI.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/ControllerUI.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\Cookies.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/Cookies.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\Debug.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/Debug.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\Driver.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/Driver.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\FileUpload.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/FileUpload.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\Hits.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/Hits.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\ImageMock.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/ImageMock.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\Log.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/Log.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\Messages.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/Messages.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\MockResponder.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/MockResponder.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\ModalMocker.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/ModalMocker.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\Player.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/Player.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\Recorder.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/Recorder.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\Recorder2.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/Recorder2.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\RequestConstants.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/RequestConstants.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\RhinoRuntime.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/RhinoRuntime.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\SSLManager.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/SSLManager.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\SaveAs.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/SaveAs.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\Script.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/Script.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\SessionState.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/SessionState.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\StepWiseRecorder.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/StepWiseRecorder.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\Suite.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/Suite.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\command\TestReporter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/TestReporter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\config\Configuration.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/Configuration.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\config\SahiAuthenticator.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/SahiAuthenticator.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\issue\Issue.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/issue/Issue.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\issue\IssueCreator.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/issue/IssueCreator.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\issue\IssueFormatter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/issue/IssueFormatter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\issue\IssueReporter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/issue/IssueReporter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\issue\JiraIssueCreator.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/issue/JiraIssueCreator.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\playback\FileScript.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/playback/FileScript.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\playback\RequestCredentials.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/playback/RequestCredentials.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\playback\SahiScript.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/playback/SahiScript.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\playback\SahiScriptHTMLAdapter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/playback/SahiScriptHTMLAdapter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\playback\ScriptFactory.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/playback/ScriptFactory.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\playback\ScriptUtil.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/playback/ScriptUtil.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\playback\URLScript.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/playback/URLScript.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\plugin\DBClient.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/plugin/DBClient.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\plugin\FileReader.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/plugin/FileReader.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\plugin\Substituter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/plugin/Substituter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\record\Recorder.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/record/Recorder.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\report\Formatter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/report/Formatter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\report\HtmlFormatter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/report/HtmlFormatter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\report\HtmlReporter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/report/HtmlReporter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\report\JUnitFormatter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/report/JUnitFormatter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\report\JunitReporter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/report/JunitReporter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\report\LogViewer.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/report/LogViewer.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\report\Report.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/report/Report.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\report\ResultType.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/report/ResultType.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\report\SahiReporter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/report/SahiReporter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\report\TM6Formatter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/report/TM6Formatter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\report\TM6Reporter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/report/TM6Reporter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\report\TestResult.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/report/TestResult.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\report\TestSummary.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/report/TestSummary.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\request\HttpRequest.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/request/HttpRequest.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\request\MultiPartRequest.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/request/MultiPartRequest.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\request\MultiPartSubRequest.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/request/MultiPartSubRequest.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\response\HttpFileResponse.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/response/HttpFileResponse.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\response\HttpModifiedResponse.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/response/HttpModifiedResponse.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\response\HttpModifiedResponse2.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/response/HttpModifiedResponse2.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\response\HttpResponse.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/response/HttpResponse.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\response\MimeType.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/response/MimeType.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\response\NoCacheFilter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/response/NoCacheFilter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\response\NoCacheHttpResponse.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/response/NoCacheHttpResponse.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\response\NoContentResponse.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/response/NoContentResponse.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\response\SimpleHttpResponse.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/response/SimpleHttpResponse.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\response\StreamingHttpResponse.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/response/StreamingHttpResponse.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\response\TrafficLoggerFilter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/response/TrafficLoggerFilter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\rhino\RhinoScriptRunner.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/rhino/RhinoScriptRunner.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\rhino\ScriptRunner.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/rhino/ScriptRunner.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\session\Session.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/session/Session.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\session\Status.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/session/Status.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\ssl\SSLHelper.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/ssl/SSLHelper.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\stream\filter\CharacterFilter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/stream/filter/CharacterFilter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\stream\filter\ChunkedFilter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/stream/filter/ChunkedFilter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\stream\filter\HTMLModifierFilter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/stream/filter/HTMLModifierFilter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\stream\filter\JSModifierFilter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/stream/filter/JSModifierFilter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\stream\filter\ReadWriteThread.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/stream/filter/ReadWriteThread.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\stream\filter\StreamFilter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/stream/filter/StreamFilter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\stream\filter\StreamFilterInputStream.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/stream/filter/StreamFilterInputStream.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\test\BrowserLauncher.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/test/BrowserLauncher.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\test\ProcessExitDetector.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/test/ProcessExitDetector.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\test\ProcessHelper.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/test/ProcessHelper.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\test\ProcessListener.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/test/ProcessListener.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\test\SahiTestSuite.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/test/SahiTestSuite.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\test\ShutDownHook.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/test/ShutDownHook.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\test\SingleSessionTestRunner.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/test/SingleSessionTestRunner.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\test\SuiteLoader.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/test/SuiteLoader.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\test\TestLauncher.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/test/TestLauncher.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\test\TestRunner.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/test/TestRunner.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\ui\Dashboard.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/ui/Dashboard.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\ui\LinkButton.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/ui/LinkButton.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\util\BrowserType.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/BrowserType.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\util\BrowserTypesLoader.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/BrowserTypesLoader.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\util\ClassLoadHelper.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/ClassLoadHelper.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\util\Diagnostics.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/Diagnostics.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\util\FileIsDirectoryException.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/FileIsDirectoryException.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\util\FileNotFoundRuntimeException.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/FileNotFoundRuntimeException.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\util\FileUtils.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/FileUtils.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\util\HTMLDecorator.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/HTMLDecorator.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\util\JSDocCreator.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/JSDocCreator.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\util\OSUtils.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/OSUtils.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\util\ProxySwitcher.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/ProxySwitcher.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\util\SocketPool.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/SocketPool.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\util\ThreadLocalMap.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/ThreadLocalMap.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\util\TrafficLogger.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/TrafficLogger.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\util\URLParser.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/URLParser.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\java\net\sf\sahi\util\Utils.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/Utils.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\resources\chrome.png" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/resources/chrome.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\resources\facebook24.png" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/resources/facebook24.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\resources\firefox.png" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/resources/firefox.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\resources\google24.png" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/resources/google24.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\resources\ie.png" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/resources/ie.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\resources\linkedin24.png" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/resources/linkedin24.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\resources\logo_new.png" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/resources/logo_new.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\resources\opera.png" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/resources/opera.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\resources\safari.png" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/resources/safari.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\resources\sahi_os_logo2.png" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/resources/sahi_os_logo2.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\resources\sahi_pro_logo2.png" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/resources/sahi_pro_logo2.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\main\resources\twitter24.png" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/resources/twitter24.png" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\TestHttpHeaders.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/TestHttpHeaders.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\TestProxy.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/TestProxy.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\TestRemoteRequestProcessor.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/TestRemoteRequestProcessor.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\client\AbstractSahiTest.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/client/AbstractSahiTest.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\client\TestDriverClient.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/client/TestDriverClient.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\client\TestDriverPlayRecord.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/client/TestDriverPlayRecord.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\client\TestElementStub.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/client/TestElementStub.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\client\TestMockURL.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/client/TestMockURL.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\client\TestNtlmBrowser.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/client/TestNtlmBrowser.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\command\TestClass.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/command/TestClass.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\command\TestCommandExecutor.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/command/TestCommandExecutor.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\command\TestCommandInvoker.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/command/TestCommandInvoker.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\command\TestCustomResponseManager.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/command/TestCustomResponseManager.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\command\test.cmd" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/command/test.cmd" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\config\TestConfiguration.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/config/TestConfiguration.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\issue\TestIssueFormatter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/issue/TestIssueFormatter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\issue\TestJiraIssueCreator.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/issue/TestJiraIssueCreator.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\playback\TestFileScript.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/playback/TestFileScript.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\playback\TestSahiScript.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/playback/TestSahiScript.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\playback\TestSahiScriptHTMLAdapter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/playback/TestSahiScriptHTMLAdapter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\playback\TestScriptHandler.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/playback/TestScriptHandler.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\playback\TestURLScript.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/playback/TestURLScript.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\plugin\TestDbClient.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/plugin/TestDbClient.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\report\ReportUtil.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/report/ReportUtil.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\report\TestHtmlFormatter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/report/TestHtmlFormatter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\report\TestHtmlReporter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/report/TestHtmlReporter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\report\TestJUnitFormatter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/report/TestJUnitFormatter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\report\TestJunitReporter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/report/TestJunitReporter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\report\TestLogViewer.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/report/TestLogViewer.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\report\TestReport.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/report/TestReport.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\report\TestSahiReporter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/report/TestSahiReporter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\request\TestHttpRequest.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/request/TestHttpRequest.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\request\TestMultiPartSubRequest.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/request/TestMultiPartSubRequest.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\response\TestHttpFileResponse.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/response/TestHttpFileResponse.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\response\TestHttpModifiedResponse.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/response/TestHttpModifiedResponse.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\response\TestMimeType.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/response/TestMimeType.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\rhino\TestScriptRunner.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/rhino/TestScriptRunner.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\session\TestSession.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/session/TestSession.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\ssl\TestSslHelper.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/ssl/TestSslHelper.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\stream\filter\AbstractFilterTest.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/stream/filter/AbstractFilterTest.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\stream\filter\TestHtmlModifierFilter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/stream/filter/TestHtmlModifierFilter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\stream\filter\TestJsModifierFilter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/stream/filter/TestJsModifierFilter.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\test\TestBrowserLauncher.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/test/TestBrowserLauncher.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\test\TestProcessHelper.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/test/TestProcessHelper.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\test\TestSahiTest.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/test/TestSahiTest.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\test\TestSingleSessionTestRunner.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/test/TestSingleSessionTestRunner.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\test\TestSuiteLoader.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/test/TestSuiteLoader.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\test\TestTestRunner.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/test/TestTestRunner.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\util\TestFileUtils.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/util/TestFileUtils.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\util\TestOsUtils.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/util/TestOsUtils.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\util\TestSocketPool.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/util/TestSocketPool.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\util\TestUrlParser.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/util/TestUrlParser.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\src\test\java\net\sf\sahi\util\TestUtils.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/util/TestUtils.java" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\tools\changeproxy.sh" afterPath="$PROJECT_DIR$/sahi-proxy/tools/changeproxy.sh" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\tools\focus.vbs" afterPath="$PROJECT_DIR$/sahi-proxy/tools/focus.vbs" />
+      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi\tools\revertproxy.sh" afterPath="$PROJECT_DIR$/sahi-proxy/tools/revertproxy.sh" />
+    </list>
+    <ignored path="sahi.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/sahi/target/" />
+    <ignored path="$PROJECT_DIR$/sahi-client/target/" />
+    <ignored path="$PROJECT_DIR$/sahi-test-webapp/target/" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <ignored path="$PROJECT_DIR$/sahi-proxy/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="sahi" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sahi-test-webapp/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+              <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sahi-client/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3275862" vertical-offset="0" max-vertical-offset="986">
+              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sahi-proxy/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2567">
+              <caret line="22" column="17" selection-start-line="20" selection-start-column="4" selection-end-line="29" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/sahi-test-webapp/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/sahi-client/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1618" />
+    <option name="height" value="1184" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-modified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-modified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <option name="show-excluded-files" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="LayoutCode.rearrangeEntriesXML" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="false" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bdeb6e71-7f70-4520-9cc8-3382dc1c4125" name="Default" comment="" />
+      <created>1427372104207</created>
+      <option name="number" value="Default" />
+      <updated>1427372104207</updated>
+      <workItem from="1427372107221" duration="436000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="436000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1618" height="1184" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32862645" sideWeight="0.6019608" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28818998" sideWeight="0.6509804" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947233" sideWeight="0.60375494" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34901962" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39803922" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31444445" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15517241" vertical-offset="0" max-vertical-offset="986">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-test-webapp/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2567">
+          <caret line="22" column="17" selection-start-line="20" selection-start-column="4" selection-end-line="29" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-client/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3275862" vertical-offset="0" max-vertical-offset="986">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
