@@ -32,5 +32,11 @@
 			<version>5.1-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.foreach.sahi</groupId>
+			<artifactId>sahi-test-webapp</artifactId>
+			<version>5.1-SNAPSHOT</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 </project>

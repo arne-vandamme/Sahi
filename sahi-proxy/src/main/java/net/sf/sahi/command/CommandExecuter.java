@@ -28,8 +28,8 @@ import java.util.logging.Logger;
 
 public class CommandExecuter
 {
-
 	private static final Logger logger = Logger.getLogger( "net.sf.sahi.command.CommandExecuter" );
+
 	private String commandMethod;
 	private String commandClass;
 	private final HttpRequest request;

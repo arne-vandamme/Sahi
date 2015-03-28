@@ -36,6 +36,16 @@ public class Configuration
 
 	// static Properties properties = new Properties();
 
+	static int enableKeepAlive = 0;
+
+	private static String overriddenControllerMode;
+
+	private static String[] downloadURLList;
+
+	private static String[] blockableSSLDomainList;
+
+	private static String domainFixInfo;
+
 	static Properties userProperties; // = new Properties(properties);
 
 	private static final String HTDOCS_ROOT = "htdocs/";
@@ -112,6 +122,7 @@ public class Configuration
 		return Utils.concatPaths( userDataDir, "/config/log.properties" );
 	}
 
+	@Deprecated
 	private static int getBufferSize() {
 		try {
 			return Integer.parseInt( getUserProperty( "io.buffer_size" ) );
@@ -122,7 +133,7 @@ public class Configuration
 	}
 
 	public static void loadProperties( String sahiProperties, Properties props ) throws FileNotFoundException,
-			IOException {
+	                                                                                    IOException {
 		FileInputStream inStream = new FileInputStream( sahiProperties );
 		props.load( inStream );
 		inStream.close();
@@ -236,6 +247,7 @@ public class Configuration
 		}
 	}
 
+	@Deprecated
 	public static int getPort() {
 		try {
 			return Integer.parseInt( getUserProperty( "proxy.port" ) );
@@ -249,6 +261,7 @@ public class Configuration
 		return Logger.getLogger( name );
 	}
 
+	@Deprecated
 	public static String getLogsRoot() {
 		String fileName = Utils.concatPaths( userDataDir, getUserProperty( "logs.dir", "logs" ) );
 		File file = new File( fileName );
@@ -418,6 +431,7 @@ public class Configuration
 		}
 	}
 
+	@Deprecated
 	public static int getTimeBetweenSteps() {
 		try {
 			return Integer.parseInt( getUserProperty( "script.time_between_steps" ) );
@@ -427,10 +441,12 @@ public class Configuration
 		}
 	}
 
+	@Deprecated
 	public static void setTimeBetweenSteps( int speed ) {
 		userProperties.setProperty( "script.time_between_steps", "" + speed );
 	}
 
+	@Deprecated
 	public static int getTimeBetweenStepsOnError() {
 		try {
 			return Integer.parseInt( getUserProperty( "script.time_between_steps_on_error" ) );
@@ -440,6 +456,7 @@ public class Configuration
 		}
 	}
 
+	@Deprecated
 	public static int getMaxReAttemptsOnError() {
 		try {
 			return Integer.parseInt( getUserProperty( "script.max_reattempts_on_error" ) );
@@ -449,6 +466,7 @@ public class Configuration
 		}
 	}
 
+	@Deprecated
 	public static int getMaxCyclesForPageLoad() {
 		try {
 			return Integer.parseInt( getUserProperty( "script.max_cycles_for_page_load" ) );
@@ -505,16 +523,6 @@ public class Configuration
 		return domainFixInfo;
 	}
 
-	static int enableKeepAlive = 0;
-
-	private static String overriddenControllerMode;
-
-	private static String[] downloadURLList;
-
-	private static String[] blockableSSLDomainList;
-
-	private static String domainFixInfo;
-
 	public static void enableKeepAlive() {
 		enableKeepAlive++;
 	}
@@ -538,15 +546,6 @@ public class Configuration
 
 	public static boolean spanVariablesAcrossSuite() {
 		return "true".equals( getUserProperty( "suite.global_variables" ) );
-	}
-
-	public static int getMaxReAttemptsOnNotMyWindowError() {
-		try {
-			return Integer.parseInt( getUserProperty( "script.max_reattempts_on_window_not_found_error" ) );
-		}
-		catch ( Exception e ) {
-			return 30;
-		}
 	}
 
 	public static Pattern getDownloadContentTypesRegExp() {
@@ -628,32 +627,6 @@ public class Configuration
 
 	public static String tempDownloadDir() {
 		return Utils.concatPaths( userDataDir, TMP_DOWNLOAD_DIR );
-	}
-
-	public static String getPIDListCommand() {
-		return getUserProperty( "processhelper.pid_list_cmd", "" );
-	}
-
-	public static String getPIDKillCommand() {
-		return getUserProperty( "processhelper.pid_kill_cmd", "" );
-	}
-
-	public static int getPIDListColumnNo() {
-		try {
-			return Integer.parseInt( getUserProperty( "processhelper.pid_list_pid_column_no" ) );
-		}
-		catch ( Exception e ) {
-			return 2;
-		}
-	}
-
-	public static int getScriptMaxIdleTime() {
-		try {
-			return Integer.parseInt( getUserProperty( "script.max_idle_time" ) );
-		}
-		catch ( Exception e ) {
-			return 1000;
-		}
 	}
 
 	public static void setProxyProperties() {
@@ -746,26 +719,17 @@ public class Configuration
 		userProperties.setProperty( "debug.traffic.log.unmodified", "" + flag );
 	}
 
-	public static void main( String args[] ) {
-		String[] scriptRoots = Configuration.getScriptRoots();
-		System.out.println( scriptRoots[0] );
-	}
-
 	public static boolean downloadIfContentDispositionIsAttachment() {
 		return "true".equals( getUserProperty( "download.download_if_contentdisposition_is_attachment" ) );
 	}
 
+	@Deprecated
 	public static String getMimeTypesMappingFile() {
 		return Utils.concatPaths( basePath, "config/mime-types.mapping" );
 	}
 
 	public static String getAbsolutePath( String relPath ) {
 		return Utils.concatPaths( basePath, relPath );
-	}
-
-	public static String getAbsoluteTestDataPath( String relPath ) {
-		final String testDataPath = Utils.concatPaths( basePath, "testdata" );
-		return Utils.concatPaths( testDataPath, relPath );
 	}
 
 	public static String getAbsoluteUserPath( String relPath ) {
@@ -921,6 +885,7 @@ public class Configuration
 		}
 	}
 
+	@Deprecated
 	public static int getStabilityIndex() {
 		try {
 			int i = Integer.parseInt( getUserProperty( "script.stability_index" ) );
@@ -954,6 +919,7 @@ public class Configuration
 		return getUserProperty( "sahi.common_domain", "sahi.example.com" ).trim();
 	}
 
+	@Deprecated
 	public static String getBrowserTypesPath() {
 		return getAbsoluteUserPath( "config/browser_types.xml" );
 	}

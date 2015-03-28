@@ -11,16 +11,29 @@
 	<packaging>pom</packaging>
 
 	<properties>
+		<spring.platform.version>1.1.1.RELEASE</spring.platform.version>
 		<project.finalVersion>5.1</project.finalVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
-	
+
 	<modules>
 		<module>sahi-client</module>
 		<module>sahi-test-webapp</module>
 		<module>sahi-proxy</module>
 	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.spring.platform</groupId>
+				<artifactId>platform-bom</artifactId>
+				<version>${spring.platform.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<dependencies>
 		<dependency>

@@ -34,7 +34,7 @@ public class TestNtlmBrowser
 
 	@Test
 	public void ntlmBrowser() {
-		browser.navigateTo( baseURL + "/demo/formTest.htm" );
+		browser.navigateTo( baseURL + "/html/demo/formTest.htm" );
 		browser.textbox( "t1" ).setValue( "aaa" );
 
 		browser.waitFor( 10000 );

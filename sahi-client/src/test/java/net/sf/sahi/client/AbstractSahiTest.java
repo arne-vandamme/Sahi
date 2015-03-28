@@ -18,23 +18,37 @@ package net.sf.sahi.client;
  * limitations under the License.
  */
 
+import com.foreach.sahi.testweb.TestWebServer;
 import net.sf.sahi.Proxy;
 import net.sf.sahi.config.Configuration;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 
 public abstract class AbstractSahiTest
 {
-	private static final long serialVersionUID = 9094239240720483156L;
 	protected Browser browser;
 	protected Browser b;
 	protected Proxy proxy;
-	protected String sahiBasePath = ".";
-	protected String userDataDirectory = "./userdata/";
-	protected boolean isProxyInSameProcess = false;
+	protected String sahiBasePath = "c:/sahi-5.0";
+	protected String userDataDirectory = "c:/sahi-5.0/userdata/";
+	protected boolean isProxyInSameProcess = true;
 	protected String browserName;
 
 	public abstract void setBrowser();
+
+	private static final TestWebServer webServer = new TestWebServer();
+
+	@BeforeClass
+	public static void startWebServer() {
+		webServer.start();
+	}
+
+	@AfterClass
+	public static void stopWebServer() {
+		webServer.stop();
+	}
 
 	@Before
 	public void setUp() {

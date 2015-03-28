@@ -1,27 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdeb6e71-7f70-4520-9cc8-3382dc1c4125" name="Default" comment="New project structure">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-client/src/main/java/net/sf/sahi/client/ClientUtils.java" />
-      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi-proxy\src\main\java\net\sf\sahi\client\Browser.java" afterPath="$PROJECT_DIR$/sahi-client/src/main/java/net/sf/sahi/client/Browser.java" />
-      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi-proxy\src\main\java\net\sf\sahi\client\BrowserCondition.java" afterPath="$PROJECT_DIR$/sahi-client/src/main/java/net/sf/sahi/client/BrowserCondition.java" />
-      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi-proxy\src\main\java\net\sf\sahi\client\BrowserElements.java" afterPath="$PROJECT_DIR$/sahi-client/src/main/java/net/sf/sahi/client/BrowserElements.java" />
-      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi-proxy\src\main\java\net\sf\sahi\client\BrowserUnresponsiveException.java" afterPath="$PROJECT_DIR$/sahi-client/src/main/java/net/sf/sahi/client/BrowserUnresponsiveException.java" />
-      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi-proxy\src\main\java\net\sf\sahi\client\ElementStub.java" afterPath="$PROJECT_DIR$/sahi-client/src/main/java/net/sf/sahi/client/ElementStub.java" />
-      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi-proxy\src\main\java\net\sf\sahi\client\ExecutionException.java" afterPath="$PROJECT_DIR$/sahi-client/src/main/java/net/sf/sahi/client/ExecutionException.java" />
-      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi-proxy\src\test\java\net\sf\sahi\client\AbstractSahiTest.java" afterPath="$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/AbstractSahiTest.java" />
-      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi-proxy\src\test\java\net\sf\sahi\client\TestDriverClient.java" afterPath="$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/TestDriverClient.java" />
-      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi-proxy\src\test\java\net\sf\sahi\client\TestDriverPlayRecord.java" afterPath="$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/TestDriverPlayRecord.java" />
-      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi-proxy\src\test\java\net\sf\sahi\client\TestElementStub.java" afterPath="$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/TestElementStub.java" />
-      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi-proxy\src\test\java\net\sf\sahi\client\TestMockURL.java" afterPath="$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/TestMockURL.java" />
-      <change type="MOVED" beforePath="C:\code\sahi-modified\sahi-proxy\src\test\java\net\sf\sahi\client\TestNtlmBrowser.java" afterPath="$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/TestNtlmBrowser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/Utils.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/Utils.java" />
+    <list default="true" id="bdeb6e71-7f70-4520-9cc8-3382dc1c4125" name="Default" comment="Create separate client library">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/add.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/map.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/testsaveas.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/php/500.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/ApplicationConfiguration.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/BrowserTypeRegistry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/BrowserTypeRegistryBuilder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/EventViewer.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mortbay_jetty_jetty_6_1_26.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mortbay_jetty_jetty_util_6_1_26.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mortbay_jetty_servlet_api_2_5_20081211.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_8.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_8.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_1_4_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_1_4_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_1_4_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_1_4_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_1_4_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_1_4_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/ProxyConfiguration.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/RegExp_toString_Fix.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/SessionConfiguration.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/config/TestProxyConfiguration.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/java/com/foreach/sahi/testweb/TestWebServer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/ajax1.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/ajax1iframes.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/ajax5xx.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/ajaxResponse1.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/alertTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/badIframesTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/base.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/blank.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/training/books.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/training/v2/books.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/callee.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/checkbox_onchange.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/clickCombo.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/plain/clickSimulTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/clicks.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/plain/close.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/plain/codes.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/training/common.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/training/v2/common.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/common.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/confirmTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/containTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/count.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/cryllic_lang.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/css_selector.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/php/delayedLoad.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/php/delayedLoadInner.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/diffDomain.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/plain/diffDomain.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/plain/diffDomain2.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/diffDomainExt.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/diffDomain_dummy1.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/diffDomain_dummy2.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/diffDomain_iframe.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/diffDomain_traverse.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/docWriteFramesTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/docWriteIFrame.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/doc_written_popup.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/docdomain.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/docdomain_dummy1.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/docdomain_dummy2.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/docwrite.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/docwrite.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/docwriteframes.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/docwritten.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/domRel.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/error.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/errorPages.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/euro.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/plain/event.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/plain/event2.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/eventSequence.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/events.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/fileUpload.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/php/fileUpload.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/php/fileUpload.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/focusTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/formTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/formTest2.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/framesTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/framesTestWithTitle.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/greek.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/headingsTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/html5_form_fields.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/htmlUnit.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/ifTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/plain/iframeLoadTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/iframesTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/iframesTest_inc.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/index.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/training/index.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/training/v2/index.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/inputImage.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/plain/interact.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/regression/jquery_onchange.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/jseval.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/keyevent.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/keypress.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/label.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/lang.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/lang_back.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/linkByContent.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/linkByHtml.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/linkInTd.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/linkTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/training/login.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/training/v2/login.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/map.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/menu.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/method_delete.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/php/method_delete.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/method_put.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/php/method_put.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/modal.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/plain/modifier.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/mouseover.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/nestedTds.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/onBeforeUnloadTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/onLoadTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/onchange.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/poundTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/promptTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/resources/proxy.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/regexp.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/training/register.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/training/v2/register.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/rel.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/safariClickBug.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/sahi_test_webapp_war.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/sahi_test_webapp_war_exploded.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/sanity.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/saveAs.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/plain/sel.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/selectTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/showModal.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/showModal_Modal.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/plain/sim2.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/spandiv.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/php/status.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/strict_visible.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/tableTest.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/temp.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/temp.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/temp2.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/temp2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/temp3.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/temp4.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/testStart.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/testapp.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/testapploggedin.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/under.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/visible.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/waitCondition1.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/waitCondition2.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/waitCondition3.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/waitFor.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/window_opener.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/window_opener_close.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/window_opener_close_1.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/window_opener_iframe.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/AbstractSahiTest.java" afterPath="$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/AbstractSahiTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/BrowserTypesLoader.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/BrowserTypesLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/CommandExecuter.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/CommandExecuter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/Configuration.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/Configuration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/ui/Dashboard.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/ui/Dashboard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/Diagnostics.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/Diagnostics.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/response/HttpResponse.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/response/HttpResponse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/test/ProcessExitDetector.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/test/ProcessExitDetector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/Proxy.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/Proxy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/ProxyProcessor.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/ProxyProcessor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/TestDriverClient.java" afterPath="$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/TestDriverClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/TestNtlmBrowser.java" afterPath="$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/TestNtlmBrowser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/TestProxy.java" afterPath="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/TestProxy.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-client/pom.xml" afterPath="$PROJECT_DIR$/sahi-client/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-proxy/pom.xml" afterPath="$PROJECT_DIR$/sahi-proxy/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-test-webapp/pom.xml" afterPath="$PROJECT_DIR$/sahi-test-webapp/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-client/sahi-client.iml" afterPath="$PROJECT_DIR$/sahi-client/sahi-client.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-proxy/sahi-proxy.iml" afterPath="$PROJECT_DIR$/sahi-proxy/sahi-proxy.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi-test-webapp/sahi-test-webapp.iml" afterPath="$PROJECT_DIR$/sahi-test-webapp/sahi-test-webapp.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sahi.iml" afterPath="$PROJECT_DIR$/sahi.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -54,101 +222,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Browser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sahi-client/src/main/java/net/sf/sahi/client/Browser.java">
+      <file leaf-file-name="ProxyProcessor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/ProxyProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="21637" max-vertical-offset="23936">
-              <caret line="1367" column="1" selection-start-line="1367" selection-start-column="1" selection-end-line="1367" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3349" max-vertical-offset="4335">
+              <caret line="206" column="17" selection-start-line="206" selection-start-column="17" selection-end-line="206" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2471#2479#0" expanded="true" />
-                <element signature="e#2809#2810#0" expanded="true" />
-                <element signature="e#2863#2864#0" expanded="true" />
-                <element signature="e#4232#4233#0" expanded="true" />
-                <element signature="e#4259#4260#0" expanded="true" />
-                <element signature="e#4300#4301#0" expanded="true" />
-                <element signature="e#4334#4335#0" expanded="true" />
-                <element signature="e#4395#4396#0" expanded="true" />
-                <element signature="e#4442#4443#0" expanded="true" />
-                <element signature="e#4510#4511#0" expanded="true" />
-                <element signature="e#4565#4566#0" expanded="true" />
-                <element signature="e#5594#5595#0" expanded="true" />
-                <element signature="e#5636#5637#0" expanded="true" />
-                <element signature="e#5708#5709#0" expanded="true" />
-                <element signature="e#5755#5756#0" expanded="true" />
-                <element signature="e#7318#7319#0" expanded="true" />
-                <element signature="e#7382#7383#0" expanded="true" />
-                <element signature="e#7419#7420#0" expanded="true" />
-                <element signature="e#7457#7458#0" expanded="true" />
-                <element signature="e#9237#9238#0" expanded="true" />
-                <element signature="e#9268#9269#0" expanded="true" />
-                <element signature="e#9299#9300#0" expanded="true" />
-                <element signature="e#9331#9332#0" expanded="true" />
-                <element signature="e#10519#10520#0" expanded="true" />
-                <element signature="e#10549#10550#0" expanded="true" />
-                <element signature="e#10646#10647#0" expanded="true" />
-                <element signature="e#10690#10691#0" expanded="true" />
-                <element signature="e#10795#10796#0" expanded="true" />
-                <element signature="e#10826#10827#0" expanded="true" />
-                <element signature="e#13106#13107#0" expanded="true" />
-                <element signature="e#13134#13135#0" expanded="true" />
-                <element signature="e#18330#18331#0" expanded="true" />
-                <element signature="e#18382#18383#0" expanded="true" />
-                <element signature="e#22935#22936#0" expanded="true" />
-                <element signature="e#22968#22969#0" expanded="true" />
-                <element signature="e#25313#25314#0" expanded="true" />
-                <element signature="e#25361#25362#0" expanded="true" />
-                <element signature="e#25787#25788#0" expanded="true" />
-                <element signature="e#25835#25836#0" expanded="true" />
-                <element signature="e#28348#28349#0" expanded="true" />
-                <element signature="e#28386#28387#0" expanded="true" />
-                <element signature="e#28498#28499#0" expanded="true" />
-                <element signature="e#28535#28536#0" expanded="true" />
-                <element signature="e#28709#28710#0" expanded="true" />
-                <element signature="e#28787#28788#0" expanded="true" />
-                <element signature="e#32357#32358#0" expanded="true" />
-                <element signature="e#32421#32422#0" expanded="true" />
-                <element signature="e#32994#32995#0" expanded="true" />
-                <element signature="e#33061#33062#0" expanded="true" />
-                <element signature="e#33350#33351#0" expanded="true" />
-                <element signature="e#33421#33422#0" expanded="true" />
-                <element signature="e#33523#33524#0" expanded="true" />
-                <element signature="e#33579#33580#0" expanded="true" />
-                <element signature="e#34836#34837#0" expanded="true" />
-                <element signature="e#34902#34903#0" expanded="true" />
-                <element signature="e#36102#36103#0" expanded="true" />
-                <element signature="e#36135#36136#0" expanded="true" />
-                <element signature="e#36165#36166#0" expanded="true" />
-                <element signature="e#36188#36189#0" expanded="true" />
-                <element signature="e#37490#37491#0" expanded="true" />
-                <element signature="e#37549#37550#0" expanded="true" />
-                <element signature="e#37637#37638#0" expanded="true" />
-                <element signature="e#37692#37693#0" expanded="true" />
-                <element signature="e#37775#37776#0" expanded="true" />
-                <element signature="e#37830#37831#0" expanded="true" />
-                <element signature="e#37923#37924#0" expanded="true" />
-                <element signature="e#37978#37979#0" expanded="true" />
-                <element signature="e#38064#38065#0" expanded="true" />
-                <element signature="e#38123#38124#0" expanded="true" />
-                <element signature="e#38207#38208#0" expanded="true" />
-                <element signature="e#38265#38266#0" expanded="true" />
-                <element signature="e#39109#39110#0" expanded="true" />
-                <element signature="e#39159#39160#0" expanded="true" />
-                <element signature="e#39492#39508#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/Utils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="11900">
-              <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="e#9822#9852#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,83 +237,148 @@
       <file leaf-file-name="Configuration.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/Configuration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1134" max-vertical-offset="15436">
-              <caret line="114" column="23" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sahi.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sahi-proxy/config/sahi.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="523" max-vertical-offset="3162">
-              <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sahi-client/src/main/java/net/sf/sahi/client/ClientUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1785" max-vertical-offset="2771">
-              <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="4414" max-vertical-offset="15368">
+              <caret line="299" column="48" selection-start-line="299" selection-start-column="48" selection-end-line="299" selection-end-column="48" />
               <folding>
-                <element signature="e#444#445#0" expanded="false" />
-                <element signature="e#506#507#0" expanded="false" />
-                <element signature="e#1301#1302#0" expanded="false" />
-                <element signature="e#1335#1336#0" expanded="false" />
+                <element signature="e#3841#3842#0" expanded="true" />
+                <element signature="e#3913#3914#0" expanded="true" />
+                <element signature="e#4827#4828#0" expanded="true" />
+                <element signature="e#4861#4862#0" expanded="true" />
+                <element signature="e#8267#8268#0" expanded="true" />
+                <element signature="e#8305#8306#0" expanded="true" />
+                <element signature="e#8598#8599#0" expanded="true" />
+                <element signature="e#8645#8646#0" expanded="true" />
+                <element signature="e#9719#9720#0" expanded="true" />
+                <element signature="e#9781#9782#0" expanded="true" />
+                <element signature="e#10849#10850#0" expanded="true" />
+                <element signature="e#10912#10913#0" expanded="true" />
+                <element signature="e#11598#11599#0" expanded="true" />
+                <element signature="e#11666#11667#0" expanded="true" />
+                <element signature="e#11989#11990#0" expanded="true" />
+                <element signature="e#12050#12051#0" expanded="true" />
+                <element signature="e#12312#12313#0" expanded="true" />
+                <element signature="e#12365#12366#0" expanded="true" />
+                <element signature="e#15791#15792#0" expanded="true" />
+                <element signature="e#15815#15816#0" expanded="true" />
+                <element signature="e#16047#16048#0" expanded="true" />
+                <element signature="e#16122#16123#0" expanded="true" />
+                <element signature="e#18424#18425#0" expanded="true" />
+                <element signature="e#18473#18474#0" expanded="true" />
+                <element signature="e#21006#21007#0" expanded="true" />
+                <element signature="e#21070#21071#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ElementStub.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sahi-client/src/main/java/net/sf/sahi/client/ElementStub.java">
+      <file leaf-file-name="Proxy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/Proxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="10348" max-vertical-offset="12189">
-              <caret line="502" column="6" selection-start-line="502" selection-start-column="6" selection-end-line="502" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1870" max-vertical-offset="3281">
+              <caret line="176" column="50" selection-start-line="176" selection-start-column="50" selection-end-line="176" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sahi-client/pom.xml">
+      <file leaf-file-name="BrowserTypesLoader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/BrowserTypesLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="697">
-              <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1768">
+              <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sahi-proxy/pom.xml">
+      <file leaf-file-name="ApplicationConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/ApplicationConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2465">
-              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sahi-test-webapp/pom.xml">
+      <file leaf-file-name="BrowserTypeRegistry.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/BrowserTypeRegistry.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+              <caret line="14" column="70" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#393#394#0" expanded="true" />
+                <element signature="e#451#452#0" expanded="true" />
+                <element signature="e#827#828#0" expanded="true" />
+                <element signature="e#862#863#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="BrowserTypeRegistryBuilder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/BrowserTypeRegistryBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4827586" vertical-offset="0" max-vertical-offset="986">
-              <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1224">
+              <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#704#705#0" expanded="true" />
+                <element signature="e#757#758#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SessionConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/SessionConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="1241">
+              <caret line="37" column="49" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#651#652#0" expanded="true" />
+                <element signature="e#681#682#0" expanded="true" />
+                <element signature="e#887#888#0" expanded="true" />
+                <element signature="e#924#925#0" expanded="true" />
+                <element signature="e#1166#1167#0" expanded="true" />
+                <element signature="e#1201#1202#0" expanded="true" />
+                <element signature="e#1428#1429#0" expanded="true" />
+                <element signature="e#1462#1463#0" expanded="true" />
+                <element signature="e#1680#1681#0" expanded="true" />
+                <element signature="e#1708#1709#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProxyConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/ProxyConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1411">
+              <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#763#764#0" expanded="true" />
+                <element signature="e#781#782#0" expanded="true" />
+                <element signature="e#1100#1101#0" expanded="true" />
+                <element signature="e#1126#1127#0" expanded="true" />
+                <element signature="e#1220#1221#0" expanded="true" />
+                <element signature="e#1259#1260#0" expanded="true" />
+                <element signature="e#1299#1300#0" expanded="true" />
+                <element signature="e#1359#1360#0" expanded="true" />
+                <element signature="e#1475#1476#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SahiAuthenticator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/SahiAuthenticator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.29330254" vertical-offset="290" max-vertical-offset="1156">
+              <caret line="38" column="57" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -252,10 +397,32 @@
         <option value="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/Utils.java" />
         <option value="$PROJECT_DIR$/sahi-client/src/main/java/net/sf/sahi/client/ElementStub.java" />
         <option value="$PROJECT_DIR$/sahi-client/src/main/java/net/sf/sahi/client/Browser.java" />
+        <option value="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/CommandExecuter.java" />
+        <option value="$PROJECT_DIR$/sahi-test-webapp/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/sahi-client/pom.xml" />
+        <option value="$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/AbstractWebTest.java" />
         <option value="$PROJECT_DIR$/sahi-test-webapp/pom.xml" />
-        <option value="$PROJECT_DIR$/sahi-proxy/pom.xml" />
+        <option value="$PROJECT_DIR$/sahi-test-webapp/src/main/java/com/foreach/sahi/testweb/TestWebServer.java" />
+        <option value="$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/TestDriverClient.java" />
+        <option value="$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/AbstractSahiTest.java" />
+        <option value="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/test/ProcessExitDetector.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/TestProxy.java" />
+        <option value="$PROJECT_DIR$/sahi-proxy/pom.xml" />
+        <option value="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/ui/Dashboard.java" />
+        <option value="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/Diagnostics.java" />
+        <option value="$PROJECT_DIR$/sahi-proxy/src/test/resources/proxy.properties" />
+        <option value="$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/config/TestProxyConfiguration.java" />
+        <option value="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/response/HttpResponse.java" />
+        <option value="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/SessionConfiguration.java" />
+        <option value="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/ProxyConfiguration.java" />
+        <option value="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/Configuration.java" />
+        <option value="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/ProxyProcessor.java" />
+        <option value="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/BrowserTypeRegistryBuilder.java" />
+        <option value="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/BrowserTypeRegistry.java" />
+        <option value="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/BrowserTypesLoader.java" />
+        <option value="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/ApplicationConfiguration.java" />
+        <option value="$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/Proxy.java" />
       </list>
     </option>
   </component>
@@ -275,8 +442,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1618" />
-    <option name="height" value="1184" />
+    <option name="width" value="1938" />
+    <option name="height" value="1064" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -310,6 +477,10 @@
               <option name="myItemId" value="sahi" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -318,6 +489,350 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="sahi-modified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-modified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-test-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-modified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-test-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-modified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-test-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-modified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-test-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-modified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-modified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-modified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-modified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-modified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-modified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-modified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-modified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-modified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-modified" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sahi-client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -341,8 +856,146 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="recentsLimit" value="5" />
+    <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\code\sahi-modified\sahi-test-webapp\src\main\webapp\html" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\code\sahi-modified\sahi-test-webapp\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Configuration">
+    <configuration default="false" name="TestProxy.createAndStartProxyFromJava" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="net.sf.sahi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="sahi-proxy" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="net.sf.sahi" />
+      <option name="MAIN_CLASS_NAME" value="net.sf.sahi.TestProxy" />
+      <option name="METHOD_NAME" value="createAndStartProxyFromJava" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Proxy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="net.sf.sahi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="net.sf.sahi.Proxy" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="sahi-proxy" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestProxyConfiguration.defaultPropertyValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="net.sf.sahi.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="sahi-proxy" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="net.sf.sahi.config" />
+      <option name="MAIN_CLASS_NAME" value="net.sf.sahi.config.TestProxyConfiguration" />
+      <option name="METHOD_NAME" value="defaultPropertyValues" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestProxyConfiguration.configuredPropertyValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="net.sf.sahi.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="sahi-proxy" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="net.sf.sahi.config" />
+      <option name="MAIN_CLASS_NAME" value="net.sf.sahi.config.TestProxyConfiguration" />
+      <option name="METHOD_NAME" value="configuredPropertyValues" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Configuration" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="net.sf.sahi.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="net.sf.sahi.config.Configuration" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="sahi-proxy" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="" />
       <setting name="vmparams" value="" />
@@ -580,16 +1233,34 @@
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <list size="0" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.TestProxy.createAndStartProxyFromJava" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Proxy" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TestProxyConfiguration.defaultPropertyValues" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TestProxyConfiguration.configuredPropertyValues" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Configuration" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.Configuration" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestProxyConfiguration.configuredPropertyValues" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TestProxyConfiguration.defaultPropertyValues" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Proxy" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TestProxy.createAndStartProxyFromJava" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="bdeb6e71-7f70-4520-9cc8-3382dc1c4125" name="Default" comment="" />
       <created>1427372104207</created>
       <option name="number" value="Default" />
       <updated>1427372104207</updated>
-      <workItem from="1427372107221" duration="2552000" />
+      <workItem from="1427372107221" duration="18037000" />
     </task>
     <task id="LOCAL-00001" summary="New project structure">
       <created>1427372605486</created>
@@ -597,14 +1268,20 @@
       <option name="project" value="LOCAL" />
       <updated>1427372605486</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Create separate client library">
+      <created>1427374701607</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1427374701607</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2552000" />
+    <option name="totallyTimeSpent" value="18037000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1618" height="1184" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1064" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -616,25 +1293,27 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938856" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39803922" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31360948" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32862645" sideWeight="0.6019608" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28818998" sideWeight="0.6509804" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23908414" sideWeight="0.6509804" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51775146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947233" sideWeight="0.60375494" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34901962" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39803922" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -656,7 +1335,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="New project structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="New project structure" />
+    <MESSAGE value="Create separate client library" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create separate client library" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -668,86 +1348,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sahi-proxy/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15517241" vertical-offset="0" max-vertical-offset="986">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sahi-client/src/main/java/net/sf/sahi/client/BrowserCondition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sahi-client/src/main/java/net/sf/sahi/client/BrowserElements.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="18832" max-vertical-offset="19805">
-          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sahi-client/src/main/java/net/sf/sahi/client/BrowserUnresponsiveException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sahi-client/src/main/java/net/sf/sahi/client/ExecutionException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/AbstractSahiTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1156">
-          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/test/ProcessHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="29" max-vertical-offset="6120">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/request/HttpRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4186" max-vertical-offset="6341">
-          <caret line="309" column="34" selection-start-line="309" selection-start-column="34" selection-end-line="309" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/util/TestUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1215" max-vertical-offset="2822">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sahi-proxy/config/sahi.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="523" max-vertical-offset="3162">
@@ -761,18 +1361,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="11900">
           <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#9822#9852#0" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#9822#9852#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/Configuration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1134" max-vertical-offset="15436">
-          <caret line="114" column="23" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -881,34 +1473,459 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sahi-client/pom.xml">
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/htdocs/demo/training/v2/books.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="697">
-          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1479">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-test-webapp/src/main/resources/html/demo/php/500.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08133971" vertical-offset="0" max-vertical-offset="627">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/TestElementStub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1167" max-vertical-offset="1819">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/CommandExecuter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
+          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26-sources.jar!/org/mortbay/resource/Resource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1727" max-vertical-offset="8874">
+          <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sahi-test-webapp/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/TestDriverPlayRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1456" max-vertical-offset="2108">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-test-webapp/src/main/java/com/foreach/sahi/testweb/TestWebServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1292">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/TestDriverClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2666667" vertical-offset="493" max-vertical-offset="14875">
+          <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
+          <folding>
+            <element signature="e#12299#12300#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/AbstractSahiTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1343">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="e#1360#1361#0" expanded="false" />
+            <element signature="e#1384#1385#0" expanded="false" />
+            <element signature="e#1436#1437#0" expanded="false" />
+            <element signature="e#1459#1460#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/test/ProcessExitDetector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/test/BrowserLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="684" max-vertical-offset="2533">
+          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-client/src/test/java/net/sf/sahi/client/TestNtlmBrowser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="79" max-vertical-offset="986">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-client/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <marker date="1427375948983" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427375948983" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427375948983" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/io/spring/platform/platform-bom/1.1.1.RELEASE/platform-bom-1.1.1.RELEASE.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1007195" vertical-offset="1071" max-vertical-offset="25228">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/ProxySwitcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="582" max-vertical-offset="2040">
+          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+          <folding>
+            <element signature="e#1333#1334#0" expanded="true" />
+            <element signature="e#1363#1364#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4777">
+          <caret line="282" column="5" selection-start-line="282" selection-start-column="5" selection-end-line="282" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sahi-proxy/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2465">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2533">
+          <caret line="114" column="21" selection-start-line="114" selection-start-column="21" selection-end-line="114" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/ui/Dashboard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4827586" vertical-offset="0" max-vertical-offset="986">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7480">
+          <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/test/resources/proxy.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/config/TestProxyConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="969">
+          <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1000#1001#0" expanded="false" />
+            <element signature="e#1057#1058#0" expanded="false" />
+            <element signature="e#1254#1255#0" expanded="false" />
+            <element signature="e#1294#1295#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/test/java/net/sf/sahi/TestProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="833">
+          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/Diagnostics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40030676" vertical-offset="79" max-vertical-offset="731">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/config/inject_top.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1303681" vertical-offset="0" max-vertical-offset="652">
+          <caret line="5" column="63" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/htdocs/spr/manage/configureUI.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18107668" vertical-offset="2388" max-vertical-offset="3893">
+          <caret line="147" column="56" selection-start-line="147" selection-start-column="56" selection-end-line="147" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/command/SessionState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3621">
+          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/request/HttpRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4560" max-vertical-offset="6341">
+          <caret line="331" column="18" selection-start-line="331" selection-start-column="18" selection-end-line="331" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/LocalRequestProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15644172" vertical-offset="0" max-vertical-offset="1020">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/response/SimpleHttpResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/RemoteRequestProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7202" max-vertical-offset="7854">
+          <caret line="475" column="8" selection-start-line="475" selection-start-column="8" selection-end-line="475" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/response/HttpResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17638037" vertical-offset="1534" max-vertical-offset="3111">
+          <caret line="127" column="38" selection-start-line="127" selection-start-column="38" selection-end-line="127" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/StreamHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2958">
+          <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
+          <folding>
+            <element signature="e#2362#2363#0" expanded="true" />
+            <element signature="e#2400#2401#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/response/HttpFileResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33282208" vertical-offset="123" max-vertical-offset="1037">
+          <caret line="42" column="49" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/test/ProcessHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="684" max-vertical-offset="6120">
+          <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/HttpHeaders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1360">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4414" max-vertical-offset="15368">
+          <caret line="299" column="48" selection-start-line="299" selection-start-column="48" selection-end-line="299" selection-end-column="48" />
+          <folding>
+            <element signature="e#3841#3842#0" expanded="true" />
+            <element signature="e#3913#3914#0" expanded="true" />
+            <element signature="e#4827#4828#0" expanded="true" />
+            <element signature="e#4861#4862#0" expanded="true" />
+            <element signature="e#8267#8268#0" expanded="true" />
+            <element signature="e#8305#8306#0" expanded="true" />
+            <element signature="e#8598#8599#0" expanded="true" />
+            <element signature="e#8645#8646#0" expanded="true" />
+            <element signature="e#9719#9720#0" expanded="true" />
+            <element signature="e#9781#9782#0" expanded="true" />
+            <element signature="e#10849#10850#0" expanded="true" />
+            <element signature="e#10912#10913#0" expanded="true" />
+            <element signature="e#11598#11599#0" expanded="true" />
+            <element signature="e#11666#11667#0" expanded="true" />
+            <element signature="e#11989#11990#0" expanded="true" />
+            <element signature="e#12050#12051#0" expanded="true" />
+            <element signature="e#12312#12313#0" expanded="true" />
+            <element signature="e#12365#12366#0" expanded="true" />
+            <element signature="e#15791#15792#0" expanded="true" />
+            <element signature="e#15815#15816#0" expanded="true" />
+            <element signature="e#16047#16048#0" expanded="true" />
+            <element signature="e#16122#16123#0" expanded="true" />
+            <element signature="e#18424#18425#0" expanded="true" />
+            <element signature="e#18473#18474#0" expanded="true" />
+            <element signature="e#21006#21007#0" expanded="true" />
+            <element signature="e#21070#21071#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/BrowserTypeRegistryBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1224">
+          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#704#705#0" expanded="true" />
+            <element signature="e#757#758#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/BrowserTypeRegistry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+          <caret line="14" column="70" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/ApplicationConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/util/BrowserTypesLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1768">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/Proxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1870" max-vertical-offset="3281">
+          <caret line="176" column="50" selection-start-line="176" selection-start-column="50" selection-end-line="176" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/ProxyProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3349" max-vertical-offset="4335">
+          <caret line="206" column="17" selection-start-line="206" selection-start-column="17" selection-end-line="206" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/SessionConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="1241">
+          <caret line="37" column="49" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
+            <element signature="e#1166#1167#0" expanded="true" />
+            <element signature="e#1201#1202#0" expanded="true" />
+            <element signature="e#1428#1429#0" expanded="true" />
+            <element signature="e#1462#1463#0" expanded="true" />
+            <element signature="e#1680#1681#0" expanded="true" />
+            <element signature="e#1708#1709#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/ProxyConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1411">
+          <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#763#764#0" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
+            <element signature="e#1100#1101#0" expanded="true" />
+            <element signature="e#1126#1127#0" expanded="true" />
+            <element signature="e#1220#1221#0" expanded="true" />
+            <element signature="e#1259#1260#0" expanded="true" />
+            <element signature="e#1299#1300#0" expanded="true" />
+            <element signature="e#1359#1360#0" expanded="true" />
+            <element signature="e#1475#1476#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sahi-proxy/src/main/java/net/sf/sahi/config/SahiAuthenticator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29330254" vertical-offset="290" max-vertical-offset="1156">
+          <caret line="38" column="57" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
           <folding />
         </state>
       </provider>

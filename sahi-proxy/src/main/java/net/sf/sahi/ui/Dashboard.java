@@ -75,7 +75,7 @@ public class Dashboard extends JFrame
 	private void startProxy() {
 		final Proxy proxy = new Proxy( Configuration.getPort() );
 		currentInstance = proxy;
-		proxy.start( true );
+		proxy.start();
 	}
 
 	private void buildUI() {

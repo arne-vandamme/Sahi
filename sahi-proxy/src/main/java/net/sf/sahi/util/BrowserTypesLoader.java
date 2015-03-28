@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+@Deprecated
 public class BrowserTypesLoader
 {
 	private static Map<String, BrowserType> browserTypes = new HashMap<String, BrowserType>();

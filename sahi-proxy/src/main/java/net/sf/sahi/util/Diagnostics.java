@@ -20,7 +20,6 @@ package net.sf.sahi.util;
 
 public class Diagnostics implements Runnable
 {
-
 	public static boolean TASKLIST_STATUS;
 
 	public void run() {

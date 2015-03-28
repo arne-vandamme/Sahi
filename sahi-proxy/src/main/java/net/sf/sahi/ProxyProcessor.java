@@ -28,6 +28,10 @@ import net.sf.sahi.ssl.SSLHelper;
 import net.sf.sahi.util.ThreadLocalMap;
 import net.sf.sahi.util.TrafficLogger;
 import net.sf.sahi.util.Utils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import javax.net.ssl.SSLHandshakeException;
 import javax.net.ssl.SSLSocket;
@@ -40,18 +44,17 @@ import java.net.UnknownHostException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Properties;
-import java.util.logging.Logger;
 
-/**
- * User: nraman Date: May 13, 2005 Time: 7:06:11 PM To
- */
+@Component
+@Scope("prototype")
 public class ProxyProcessor implements Runnable
 {
+	private static final Logger LOG = LoggerFactory.getLogger( ProxyProcessor.class );
+
 	private Socket client;
 
 	private boolean isSSLSocket = false;
 
-	private static Logger logger = Configuration.getLogger( "net.sf.sahi.ProxyProcessor" );
 	public RemoteRequestProcessor remoteRequestProcessor = new RemoteRequestProcessor();
 
 	private static HashMap<String, String> hostAddresses = new HashMap<String, String>( 100 );
@@ -81,7 +84,7 @@ public class ProxyProcessor implements Runnable
 		try {
 			requestFromBrowser = getRequestFromBrowser();
 			String uri = requestFromBrowser.uri();
-			logger.finest( uri );
+			LOG.trace( uri );
 			if ( uri != null ) {
 				int _s_ = uri.indexOf( "/_s_/" );
 				int q = uri.indexOf( "?" );
@@ -110,17 +113,17 @@ public class ProxyProcessor implements Runnable
 			}
 		}
 		catch ( SSLHandshakeException ssle ) {
-			logger.fine( ssle.getMessage() );
+			LOG.debug( ssle.getMessage() );
 		}
 		catch ( Exception e ) {
 			//e.printStackTrace();
-			logger.fine( e.getMessage() );
+			LOG.debug( e.getMessage() );
 			try {
 				// should close only in case of exception. Do not move this to finally. Will cause sockets to not be reused.
 				client.close();
 			}
 			catch ( IOException e2 ) {
-				logger.warning( e2.getMessage() );
+				LOG.warn( e2.getMessage() );
 			}
 		}
 	}

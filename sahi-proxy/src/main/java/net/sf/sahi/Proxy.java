@@ -18,12 +18,18 @@
 
 package net.sf.sahi;
 
+import net.sf.sahi.config.ApplicationConfiguration;
 import net.sf.sahi.config.Configuration;
-import net.sf.sahi.util.BrowserTypesLoader;
 import net.sf.sahi.util.Diagnostics;
 import net.sf.sahi.util.ProxySwitcher;
 import net.sf.sahi.util.Utils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.GenericApplicationContext;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
@@ -54,49 +60,36 @@ import java.util.concurrent.Executors;
  */
 public class Proxy
 {
+	public static final int DEFAULT_PORT = 9999;
+
+	private static final Logger LOG = LoggerFactory.getLogger( Proxy.class );
+
 	static Proxy currentInstance;
 
-	private int port = 9999;
+	private int port = DEFAULT_PORT;
+	private boolean runInSeparateThread = true;
+
 	private ServerSocket server;
 	private ExecutorService pool;
 
 	private boolean forceClosed;
 
+	public Proxy() {
+	}
+
 	public Proxy( int port ) {
 		this.port = port;
 	}
 
-	public Proxy() {
-		this.port = Configuration.getPort();
-	}
-
-	public static void main( String[] args ) {
-		if ( args.length > 0 ) {
-			Configuration.init( args[0], args[1] );
-		}
-		else {
-			Configuration.init();
-		}
-		final Proxy proxy = new Proxy( Configuration.getPort() );
-		currentInstance = proxy;
-		try {
-			Thread thread = new Thread( new ResetProxy() );
-			Runtime.getRuntime().addShutdownHook( thread );
-			System.out.println( "Added shutdown hook." );
-		}
-		catch ( Exception e ) {
-			e.printStackTrace();
-		}
-		proxy.start( false );
-	}
-
-	public static void stopCurrentIntance() {
-		currentInstance.stop();
+	public Proxy( int port, boolean runInSeparateThread ) {
+		this.port = port;
+		this.runInSeparateThread = runInSeparateThread;
 	}
 
 	/**
 	 * Stops the proxy.
 	 */
+	@PreDestroy
 	public void stop() {
 		if ( server != null ) {
 			try {
@@ -111,11 +104,10 @@ public class Proxy
 
 	/**
 	 * Starts the proxy.
-	 *
-	 * @param asynch If true, starts Sahi's proxy in a separate thread.
 	 */
-	public void start( boolean asynch ) {
-		if ( !asynch ) {
+	@PostConstruct
+	public void start() {
+		if ( !runInSeparateThread ) {
 			try {
 				startProxy();
 			}
@@ -155,11 +147,12 @@ public class Proxy
 	}
 
 	private synchronized void startProxy() throws IOException {
+
 		try {
-			byte[] probe = Utils.readURL( "http://localhost:" + Configuration.getPort() + "/_s_/spr/probe.htm", false );
+			byte[] probe = Utils.readURL( "http://localhost:" + port + "/_s_/spr/probe.htm", false );
 			if ( probe != null ) {
 				System.out.println( "---" );
-				System.out.println( "--- ERROR: Port " + Configuration.getPort() + " is already being used ---" );
+				System.out.println( "--- ERROR: Port " + port + " is already being used ---" );
 				System.out.println( "---" );
 				return;
 			}
@@ -173,8 +166,8 @@ public class Proxy
 			System.out.println( ">>>> Configure your browser to use this server and port as its proxy" );
 			System.out.println(
 					">>>> Browse any page and CTRL-ALT-DblClick on the page to bring up the Sahi Controller" );
-
-			BrowserTypesLoader.getAvailableBrowserTypes( true );
+//
+//			BrowserTypesLoader.getAvailableBrowserTypes( true );
 
 			new Thread( new Diagnostics() ).start();
 			while ( true && !forceClosed && !server.isClosed() ) {
@@ -196,6 +189,34 @@ public class Proxy
 				server.close();
 			}
 		}
+	}
+
+	/**
+	 * Start ApplicationContext with proxy.
+	 */
+	public static void main( String[] args ) {
+		if ( args.length > 0 ) {
+			Configuration.init( args[0], args[1] );
+		}
+		else {
+			Configuration.init();
+		}
+
+		GenericApplicationContext applicationContext =
+				new AnnotationConfigApplicationContext( ApplicationConfiguration.class );
+
+		/*final Proxy proxy = new Proxy( Configuration.getPort() );
+		currentInstance = proxy;
+		*/
+		try {
+			Thread thread = new Thread( new ResetProxy() );
+			Runtime.getRuntime().addShutdownHook( thread );
+			System.out.println( "Added shutdown hook." );
+		}
+		catch ( Exception e ) {
+			e.printStackTrace();
+		}
+		//proxy.start( false );
 	}
 }
 

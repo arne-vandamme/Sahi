@@ -136,6 +136,8 @@ public class HttpResponse extends StreamHandler
 		removeHeader( "Frame-Options" );
 		removeHeader( "X-Content-Type-Options" );
 		removeHeader( "X-XSS-Protection" );
+		// Experimental!
+		removeHeader( "Access-Control-Allow-Origin" );
 		setContentLength( getModifiedContentLength() );
 	}
 

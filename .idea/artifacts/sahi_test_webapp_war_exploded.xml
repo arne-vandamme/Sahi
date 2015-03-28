@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="sahi-test-webapp:war exploded">
+    <output-path>$PROJECT_DIR$/sahi-test-webapp/target/sahi-test-webapp-5.1-SNAPSHOT</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="sahi-test-webapp" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.mortbay.jetty:jetty:6.1.26" />
+          <element id="library" level="project" name="Maven: org.mortbay.jetty:jetty-util:6.1.26" />
+          <element id="library" level="project" name="Maven: org.mortbay.jetty:servlet-api:2.5-20081211" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/sahi-test-webapp/target/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="sahi-test-webapp/web/Web" />
+    </root>
+  </artifact>
+</component>

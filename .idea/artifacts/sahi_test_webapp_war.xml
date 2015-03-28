@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="sahi-test-webapp:war">
+    <output-path>$PROJECT_DIR$/sahi-test-webapp/target</output-path>
+    <root id="archive" name="sahi-test-webapp-5.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="sahi-test-webapp:war exploded" />
+    </root>
+  </artifact>
+</component>

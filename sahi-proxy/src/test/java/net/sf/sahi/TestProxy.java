@@ -31,8 +31,8 @@ public class TestProxy
 		assertFalse( proxy.isRunning() );
 
 		try {
-			proxy.start( true );
-			Thread.sleep( 1500 );
+			proxy.start();
+			Thread.sleep( 3000 );
 			assertTrue( proxy.isRunning() );
 		}
 		catch ( Exception e ) {

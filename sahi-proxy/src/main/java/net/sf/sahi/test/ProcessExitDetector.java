@@ -5,7 +5,6 @@ import java.util.List;
 
 public class ProcessExitDetector extends Thread
 {
-
 	private Process process;
 	private List<ProcessListener> listeners = new ArrayList<ProcessListener>();
 

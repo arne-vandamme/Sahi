@@ -30,7 +30,7 @@ import static org.junit.Assert.*;
 @Ignore
 public class TestDriverClient extends AbstractSahiTest
 {
-	protected String baseURL = "http://sahipro.com";
+	protected String baseURL = "http://127.0.1.1:10000";
 
 	@Test
 	@Ignore
@@ -872,6 +872,6 @@ public class TestDriverClient extends AbstractSahiTest
 
 	@Override
 	public void setBrowser() {
-		setBrowser( "firefox" );
+		setBrowser( "chrome" );
 	}
 }
