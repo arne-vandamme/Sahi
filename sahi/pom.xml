@@ -76,6 +76,7 @@
 						<configuration>
 							<descriptors>
 								<descriptor>${project.basedir}/src/assembly/win64.xml</descriptor>
+								<descriptor>${project.basedir}/src/assembly/mac.xml</descriptor>
 							</descriptors>
 						</configuration>
 					</execution>
