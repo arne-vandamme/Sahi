@@ -70,7 +70,7 @@ public class HttpHeaders
 					output.append( entry.getKey() )
 					      .append( ": " )
 					      .append( headerValue )
-					      .append( System.lineSeparator() );
+					      .append( "\r\n");
 				}
 			}
 		}
