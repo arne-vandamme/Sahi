@@ -1019,7 +1019,7 @@ public class Configuration
 	}
 
 	public static String getVersionNumber() {
-		return "5.0";
+		return "5.1";
 	}
 	// Pro start
 
