@@ -777,9 +777,10 @@ Sahi.dB = function (driver, jdbcurl, username, password, sahi) {
 
 Sahi.prototype.isCheckboxRadioSimulationRequired = function(){
 	if (this._isChrome()) {
+		if (this.getChromeVersion() > 42) return false;
 		return this.chromeExplicitCheckboxRadioToggle;
 	}
-	return this.isSafariLike();
+	return this.isSafariLike() && !this._isEdge();
 };
 Sahi.prototype.simulateDoubleClick = function (el, isRight, isDouble, combo) {
     var n = el;
@@ -991,13 +992,13 @@ Sahi.prototype.getChromeBrowserVersion = function(){
 	return RegExp.$1
 }
 Sahi.prototype.simulateMouseEvent = function (el, type, isRight, isDouble, combo) {
-    var xy = this.findClientPos(el);
+    var xy = this.findClientPosWithOffset(el);
     var x = xy[0];
     var y = xy[1];
     this.simulateMouseEventXY(el, type, xy[0], xy[1], isRight, isDouble, combo);
 };
 Sahi.prototype.simulateDragEvent = function (el, type, dataTransfer, combo) {
-    var xy = this.findClientPos(el);
+    var xy = this.findClientPosWithOffset(el);
     var x = xy[0];
     var y = xy[1];
     this.simulateDragEventXY(el, type, xy[0], xy[1], dataTransfer, combo);
@@ -1019,7 +1020,9 @@ Sahi.prototype.simulateDragEventXY = function (el, type, x, y, dataTransfer, com
         evt.altKey = isAlt;
         evt.metaKey = isMeta;            
         evt.shiftKey = isShift;
-        if (type == "mousedown" || type == "mouseup" || type == "mousemove"){
+        if (type == "pointerdown" || type == "pointerup" || type == "pointermove" || 
+            	type == "MSPointerDown" || type == "MSPointerUp" || type == "MSPointerMove" || 
+            	type == "mousedown" || type == "mouseup" || type == "mousemove"){
         	evt.button = isRight ? 2 : 1;
         }
         //evt.dataTransfer = dataTransfer;
@@ -1043,7 +1046,7 @@ Sahi.prototype.simulateDragEventXY = function (el, type, x, y, dataTransfer, com
         isMeta,
         isRight ? 2 : 0, //button
         null,//relatedTarget
-        dataTransfer
+        (this._getFFVersion() >= 30 ? null : dataTransfer)
         );
         el.dispatchEvent(evt);
     } else if (this._isChrome() || this._isIE11Plus()) {
@@ -1079,46 +1082,20 @@ Sahi.prototype.simulateMouseEventXY = function (el, type, x, y, isRight, isDoubl
     if (!this._isIE() || (this._isIE9PlusStrictMode() && !(type == "click" && isDouble))) {
         if (this.isSafariLike() || this._isIE9PlusStrictMode() || this._isOpera()) {
         	if (el.ownerDocument.createEvent) {
-	            var evt = el.ownerDocument.createEvent('HTMLEvents');
-		            type = type;
-	            evt.initEvent(type, true, true);
-	            evt.clientX = x;
-	            evt.clientY = y;
-	            evt.pageX = x + this.getScrollOffsetX();
-	            evt.pageY = y + this.getScrollOffsetY();
-	            evt.screenX = x;
-	            evt.screenY = y;
-	            evt.button = isRight ? 2 : 0;
-	            evt.which = isRight ? 3 : 1;
-	            evt.detail = isDouble ? 2 : (type == "contextmenu" ? 0 : 1);
-	            evt.ctrlKey = isCtrl;
-	            evt.altKey = isAlt;
-	            evt.metaKey = isMeta;            
-	            evt.shiftKey = isShift;
-	            el.dispatchEvent(evt);
+        		if (this._isChrome() && this.getChromeVersion() > 42) {
+        			this.simulateViaMouseEventConstructor(el, type, x, y, isRight, isDouble, isShift, isCtrl, isAlt, isMeta);
+        		} else {
+        			this.simulateMouseViaHTMLEvents(el, type, x, y, isRight, isDouble, isShift, isCtrl, isAlt, isMeta);
+	        	}
 	        }
         }
         else {
             // FF
-            var evt = el.ownerDocument.createEvent("MouseEvents");
-            evt.initMouseEvent(
-            type,
-            true, //can bubble
-            true, //cancelable
-            el.ownerDocument.defaultView, //view
-            (isDouble ? 2 : 1), //detail
-            x + this.getScrollOffsetX(), //screen x
-            y + this.getScrollOffsetY(), //screen y
-            x, //client x
-            y, //client y
-            isCtrl,
-            isAlt,
-            isShift,
-            isMeta,
-            isRight ? 2 : 0, //button
-            null//relatedTarget
-            );
-            el.dispatchEvent(evt);
+        	if (this._getFFVersion() < 11) {
+        		this.simulateViaInitMouseEvent(el, type, x, y, isRight, isDouble, isShift, isCtrl, isAlt, isMeta);
+        	} else { 
+        		this.simulateViaMouseEventConstructor(el, type, x, y, isRight, isDouble, isShift, isCtrl, isAlt, isMeta);
+        	}
         }
     } 
     if (this.checkForDuplicateEventsOnIE9Plus(el, type) && !this._isIE11Plus()) {
@@ -1130,17 +1107,92 @@ Sahi.prototype.simulateMouseEventXY = function (el, type, x, y, isRight, isDoubl
         evt.altKey = isAlt;
         evt.metaKey = isMeta;            
         evt.shiftKey = isShift;
-        if (type == "mousedown" || type == "mouseup" || type == "mousemove"){
+        if (type == "pointerdown" || type == "pointerup" || type == "pointermove" || 
+        		type == "MSPointerDown" || type == "MSPointerUp" || type == "MSPointerMove" || 
+        		type == "mousedown" || type == "mouseup" || type == "mousemove"){
         	evt.button = isRight ? 2 : 1;
         }
         el.fireEvent(this.getEventTypeName(type), evt);
         evt.cancelBubble = true;
     }
 };
+Sahi.prototype.simulateViaMouseEventConstructor = function(el, type, x, y, isRight, isDouble, isShift, isCtrl, isAlt, isMeta) {
+	var buttons = 0;
+	if (type == 'mousedown') buttons = isRight ? 2 : 1;
+	var detail = (isDouble ? 2 : 1);
+	if (this._isChrome() && type == 'contextmenu') detail = 0;
+	var evt = new MouseEvent(type, {
+		'bubbles' : true,
+		'cancelable' : true,
+		'view' : el.ownerDocument.defaultView.window,
+		'detail' : detail,
+		'screenX' : (x + this.getScrollOffsetX()),
+		'screenY' : (y + this.getScrollOffsetY()),
+		'clientX' : x,
+		'clientY' : y,
+		'ctrlKey' : isCtrl,
+		'altKey' : isAlt,
+		'shiftKey' : isShift,
+		'metaKey' : isMeta,
+		'button' : (isRight ? 2 : 0),
+		'buttons' : buttons
+	});
+	el.dispatchEvent(evt);     
+}
+Sahi.prototype.simulateViaInitMouseEvent = function(el, type, x, y, isRight, isDouble, isShift, isCtrl, isAlt, isMeta) {
+    var evt = el.ownerDocument.createEvent("MouseEvents");
+    evt.initMouseEvent(
+    type,
+    true, //can bubble
+    true, //cancelable
+    el.ownerDocument.defaultView.window, //view
+    (isDouble ? 2 : 1), //detail
+    x + this.getScrollOffsetX(), //screen x
+    y + this.getScrollOffsetY(), //screen y
+    x, //client x
+    y, //client y
+    isCtrl,
+    isAlt,
+    isShift,
+    isMeta,
+    isRight ? 2 : 0, //button
+    null//relatedTarget
+    );
+    el.dispatchEvent(evt);
+}
+Sahi.prototype.simulateMouseViaHTMLEvents = function(el, type, x, y, isRight, isDouble, isShift, isCtrl, isAlt, isMeta) {
+	var buttons = 0;
+	if (type == 'mousedown') buttons = isRight ? 2 : 1;
+	
+    var evt = el.ownerDocument.createEvent('HTMLEvents');
+    evt.initEvent(type, true, true);
+    evt.clientX = x;
+    evt.clientY = y;
+    evt.pageX = x + this.getScrollOffsetX();
+    evt.pageY = y + this.getScrollOffsetY();
+    evt.screenX = x;
+    evt.screenY = y;
+    evt.button = isRight ? 2 : 0;
+    evt.which = isRight ? 3 : 1;
+    evt.detail = isDouble ? 2 : (type == "contextmenu" ? 0 : 1);
+    evt.ctrlKey = isCtrl;
+    evt.altKey = isAlt;
+    evt.metaKey = isMeta;            
+    evt.shiftKey = isShift;
+    if (type.toLowerCase().indexOf("pointer") != -1) {
+        evt.pointerId = 1;
+        evt.isPrimary = true;
+        evt.buttons = buttons;
+    }
+    el.dispatchEvent(evt);
+}
 Sahi.prototype.checkForDuplicateEventsOnIE9Plus = function(el, type){
 	if (!this._isIE()) return false;
 	if (!this._isIE9Plus()) return true;
 	return ((el["on" + type] == null) || (el["on" + type] != null && !this._isIE9PlusStrictMode()));
+}
+Sahi.prototype.findClientPosWithOffset = function (el){
+	return this.addOffset(el, this._position(el, true)); // trying clientRect for now. Remove below code later.
 }
 Sahi.prototype.addOffset = function(el, origin){
 	var x=origin[0];
@@ -3992,6 +4044,11 @@ Sahi.prototype._isSafari = function () {return /Safari/.test(this.navigator.user
 Sahi.prototype._isOpera = function () {return /Opera/.test(this.navigator.userAgent);};
 Sahi.prototype.isSafariLike = function () {return /Konqueror|Safari|KHTML/.test(this.navigator.userAgent);};
 Sahi.prototype._isHTMLUnit = function() {return /HTMLUnit/.test(this.navigator.userAgent);}
+Sahi.prototype.getChromeVersion = function() {
+	var m = window.navigator.appVersion.match(/Chrome\/(\d+)\./);
+	return m ? parseInt(m[1], 10) : 0;
+}
+
 Sahi.prototype.createRequestObject = function () {
     var obj;
     if (window.XMLHttpRequest){
